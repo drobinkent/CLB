@@ -94,7 +94,7 @@ TRAFFIC_CLASS_AS_LIST = [TRAFFIC_CLASS_LOW_DELAY, TRAFFIC_CLASS_MAXIMIZE_THROUGH
 #-- for only one category of flow if we prioritize rate for that we can get better perofrmance.
 #here for large flow giving 70%- gives better peprformance compare to ECMP
 #PERCENTAGE_OF_TOTAL_UPWARD_TRAFFIC_FOR_TRAFFIC_CLASS = [40, 70, 10]
-PERCENTAGE_OF_TOTAL_UPWARD_TRAFFIC_FOR_TRAFFIC_CLASS = [30,25, 5] # How much of the link capacity should a traffic class get.
+PERCENTAGE_OF_TOTAL_UPWARD_TRAFFIC_FOR_TRAFFIC_CLASS = [10,40, 5] # How much of the link capacity should a traffic class get.
 #======================thread control and timer related
 STATISTICS_PULLING_INTERVAL = 15 # This meand after each 15 second controller will wake up the StatisticsPuller thread and collect stats from the switches
 PORT_STATISTICS_HISTORY_LENGTH = 1000 # this means the history will be

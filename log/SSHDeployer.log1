@@ -708,3 +708,12 @@
 [01-23 03:13:05] p22778 {/home/deba/Desktop/CLB/testAndMeasurement/TestConfig.py:323} INFO - Finished reading and loading cfg
 [01-23 03:13:05] p22778 {TestCaseDeployer.py:90} INFO - Creating folder for test case
 [01-23 03:13:05] p22778 {TestCaseDeployer.py:93} INFO - Current working Directory is /home/deba/Desktop/CLB
+[01-23 03:42:34] p30292 {/home/deba/Desktop/CLB/testAndMeasurement/TestConfig.py:323} INFO - Finished reading and loading cfg
+[01-23 03:42:34] p30292 {TestCaseDeployer.py:90} INFO - Creating folder for test case
+[01-23 03:42:34] p30292 {TestCaseDeployer.py:93} INFO - Current working Directory is /home/deba/Desktop/CLB
+[01-23 03:47:37] p31258 {/home/deba/Desktop/CLB/testAndMeasurement/TestConfig.py:323} INFO - Finished reading and loading cfg
+[01-23 03:47:37] p31258 {TestCaseDeployer.py:90} INFO - Creating folder for test case
+[01-23 03:47:37] p31258 {TestCaseDeployer.py:93} INFO - Current working Directory is /home/deba/Desktop/CLB
+[01-23 03:56:42] p34351 {/home/deba/Desktop/CLB/testAndMeasurement/TestConfig.py:323} INFO - Finished reading and loading cfg
+[01-23 03:56:42] p34351 {TestCaseDeployer.py:90} INFO - Creating folder for test case
+[01-23 03:56:42] p34351 {TestCaseDeployer.py:93} INFO - Current working Directory is /home/deba/Desktop/CLB
