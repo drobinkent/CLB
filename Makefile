@@ -161,3 +161,11 @@ process-high-contention-window-16000:
 
 process-strideSmallLarge-window-16000:
 	python3 ResultProcessorExecutor.py testAndMeasurement/TEST_RESULTS_WWITH_16K_WINDOW/ecmp/strideSmallLarge testAndMeasurement/TEST_RESULTS_WWITH_16K_WINDOW/P4TE/strideSmallLarge ECMP P4TE /home/deba/Desktop/P4TE/ProcessedResultImages/strideSmallLarge-window-16000
+
+
+process-l2strideSmallLarge:
+	python3 ResultProcessorExecutor.py testAndMeasurement/TEST_RESULTS/ecmp/l2strideSmallLarge testAndMeasurement/TEST_RESULTS/P4TE/l2strideSmallLarge ECMP P4TE /home/deba/Desktop/CLB/ProcessedResultImages/l2strideSmallLarge
+
+
+process-l2highContention:
+	python3 ResultProcessorExecutor.py testAndMeasurement/TEST_RESULTS/ecmp/l2highContention testAndMeasurement/TEST_RESULTS/P4TE/l2highContention ECMP P4TE /home/deba/Desktop/CLB/ProcessedResultImages/l2highContention

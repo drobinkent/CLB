@@ -53,12 +53,39 @@ def getPeerHostName(hostIndex, leafSwitchIndex, podIndex , portCount):
     peerHostName = "h"+str(peerHostIndex)+"p"+str(peerPodIndex)+"l"+str(peerLeafSwitchIndex)
     return peerHostName
 
+def getL2StrdePeerHostName(hostIndex, leafSwitchIndex, podIndex , portCount):
+    peerHostIndex = int((int(hostIndex)+1+ int(portCount)/2) % (int(portCount)/2))
+    peerLeafSwitchIndex = int( (int(leafSwitchIndex)+1+ (int(portCount)/2)) % int((portCount)/2))
+    peerPodIndex = int(podIndex)
+    peerHostName = "h"+str(peerHostIndex)+"p"+str(peerPodIndex)+"l"+str(peerLeafSwitchIndex)
+    return peerHostName
+
 def randomSamePodTestPairCreator(nameToHostMap,maxPortcountInSwitch, podId = 1):
     #maxPortcountInSwitch means this many pods are their. so we can rnadomly take one and generate flow
     # or take the podId passed as parameter.
     #2 type combination a) stride inside pod
     # all pair 
     pass
+
+def l2StridePatternTestPairCreator(nameToHostMap, maxPortcountInSwitch, pattern, flow, strideCount=8):
+
+    srcList = []
+    destList=[]
+    count = 0
+    for srcHostName in nameToHostMap:
+        srcHost = nameToHostMap.get(srcHostName)
+        hostIndex, leafSwitchIndex, podIndex = srcHost.getLocationIndexes()
+        peerName = getL2StrdePeerHostName(hostIndex, leafSwitchIndex, podIndex, maxPortcountInSwitch)
+        peerHostObject = nameToHostMap.get(peerName)
+        if (srcHost!=None) and (peerHostObject != None):
+            srcList.append(srcHost)
+            destList.append((peerHostObject))
+            count = count+1
+        if(count>=strideCount):
+            break;
+        print("Src: "+srcHostName+" peer host:"+peerName)
+
+    return srcList, destList
 
 def stridePatternTestPairCreator(nameToHostMap, maxPortcountInSwitch, pattern, flow, strideCount=16):
 
@@ -341,16 +368,16 @@ class IPerfDeplymentPair:
             #self.clientCmdString=  self.clientCmdString + " " + "--flowlabel"+ " " + " --set-mss "+str(self.flowInfo.pkt_size) + " -w "+str(self.flowInfo.src_window_size)
             self.clientCmdString=  self.clientCmdString + " " + " " + " --set-mss "+str(self.flowInfo.pkt_size) + " "
             self.clientCmdString=  self.clientCmdString + " -n "+ str(self.flowInfo.flow_volume)
-            # if( str(self.flowInfo.src_window_size) != ""):
-            #     self.clientCmdString=  self.clientCmdString + " -w "+ str(self.flowInfo.src_window_size)
-            #     #self.clientCmdString= self.clientCmdString + " -w " + confConst.IPERF_DEFAULT_WINDOW_SIZE_FOR_SERVER + " "
-            # else:
-            #     self.clientCmdString= self.clientCmdString + " -w " + confConst.IPERF_DEFAULT_WINDOW_SIZE_FOR_SERVER + " "
-            # if( str(self.flowInfo.src_data_rate) != ""): # If src-data rate is empty stringn then iperf will use it's own setting for data rate. which is unlimited for tcp
-            #     self.clientCmdString=  self.clientCmdString + " -b "+ str(self.flowInfo.src_data_rate)
-            # else:
-            #     self.clientCmdString=  self.clientCmdString + " -b "+ str(confConst.IPERF_MAX_FLOW_RATE_FOR_SERVER)
-            self.clientCmdString= self.clientCmdString + " -w " + confConst.IPERF_DEFAULT_WINDOW_SIZE_FOR_SERVER + " "
+            if( str(self.flowInfo.src_window_size) != ""):
+                self.clientCmdString=  self.clientCmdString + " -w "+ str(self.flowInfo.src_window_size)
+                #self.clientCmdString= self.clientCmdString + " -w " + confConst.IPERF_DEFAULT_WINDOW_SIZE_FOR_SERVER + " "
+            else:
+                self.clientCmdString= self.clientCmdString + " -w " + confConst.IPERF_DEFAULT_WINDOW_SIZE_FOR_SERVER + " "
+            if( str(self.flowInfo.src_data_rate) != ""): # If src-data rate is empty stringn then iperf will use it's own setting for data rate. which is unlimited for tcp
+                self.clientCmdString=  self.clientCmdString + " -b "+ str(self.flowInfo.src_data_rate)
+            else:
+                self.clientCmdString=  self.clientCmdString + " -b "+ str(confConst.IPERF_MAX_FLOW_RATE_FOR_SERVER)
+            # self.clientCmdString= self.clientCmdString + " -w " + confConst.IPERF_DEFAULT_WINDOW_SIZE_FOR_SERVER + " "
             self.clientCmdString = self.clientCmdString + " -S "+ str(self.flowInfo.flow_traffic_class)
             self.clientCmdString = self.clientCmdString + " -C dctcp "
             #self.clientCmdString=  self.clientCmdString +  " --set-mss "+str(self.flowInfo.pkt_size) + " --window "+str(self.flowInfo.src_window_size)+" "
@@ -456,6 +483,9 @@ class SrcDstPair:
             return deploymentPairList
         elif self.pattern.lower().startswith("stride") :
             srcList, destList = stridePatternTestPairCreator(nameToHostMap, maxPortcountInSwitch,self.pattern, self.flows[0])
+            pass
+        elif self.pattern.lower().startswith("l2stride") :
+            srcList, destList = l2StridePatternTestPairCreator(nameToHostMap, maxPortcountInSwitch,self.pattern, self.flows[0])
             pass
         elif self.pattern.lower() == "mesh":
             srcList, destList = allPairHostTestPairCreator(nameToHostMap,maxPortcountInSwitch)

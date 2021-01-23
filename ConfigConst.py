@@ -103,8 +103,8 @@ class DataplnaeAlgorithm(Enum):
     DP_ALGO_BASIC_ECMP = "ecmp"
     DP_ALGO_CP_ASSISTED_POLICY_ROUTING = "DP_ALGO_CP_ASSISTED_POLICY_ROUTING"
 
-#ALGORITHM_IN_USE = DataplnaeAlgorithm.DP_ALGO_BASIC_ECMP
-ALGORITHM_IN_USE = DataplnaeAlgorithm.DP_ALGO_CP_ASSISTED_POLICY_ROUTING
+ALGORITHM_IN_USE = DataplnaeAlgorithm.DP_ALGO_BASIC_ECMP  #For CLB it will be always ECMP
+#ALGORITHM_IN_USE = DataplnaeAlgorithm.DP_ALGO_CP_ASSISTED_POLICY_ROUTING
 
 queueRateForHostFacingPortsOfLeafSwitch = 40
 queueRateForSpineFacingPortsOfLeafSwitch = 20
@@ -168,7 +168,7 @@ IPERF3_SERVER_PORT_START = 42000
 IPERF3_CLIENT_PORT_START = 32000
 #We are forced to pass the absolute path because the Iperf tests are ctually run from mininet hosts. which do not understand
 #the relative path. so please use the absolute path where you want to store your result
-TEST_RESULT_FOLDER = "/home/deba/Desktop/P4TE/testAndMeasurement/TEST_RESULTS"
+TEST_RESULT_FOLDER = "/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS"
 TEST_RESULT_FOLDER_SERVER = "/server-logs"
 TEST_RESULT_FOLDER_CLIENT = "/client-logs"
 TEST_START_TIME_FILE_NAME ="/test_start_timer.txt"
