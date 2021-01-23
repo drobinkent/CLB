@@ -16,7 +16,7 @@
               "src-window-size": "8K",
               "src-data-rate": "16K",
               "pkt-size": "1400",
-              "repeat": "4",
+              "repeat": "8",
               "repeat_interval": "0",
               "is-interactive": "true"
             }
@@ -34,7 +34,7 @@
               "src-window-size": "8K",
               "src-data-rate": "16K",
               "pkt-size": "1400",
-              "repeat": "4",
+              "repeat": "8",
               "repeat_interval": "0",
               "is-interactive": "true"
             }

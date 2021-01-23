@@ -1551,6 +1551,20 @@ actions {
 }
 actions {
   preamble {
+    id: 20672791
+    name: "EgressPipeImpl.build_p2p_feedback_with_fake_ack"
+    alias: "build_p2p_feedback_with_fake_ack"
+  }
+}
+actions {
+  preamble {
+    id: 21373656
+    name: "EgressPipeImpl.build_p2p_feedback_with_fake_ack_for_increase"
+    alias: "build_p2p_feedback_with_fake_ack_for_increase"
+  }
+}
+actions {
+  preamble {
     id: 28949872
     name: "EgressPipeImpl.egress_rate_monitor_control_block.monitor_outgoing_flow"
     alias: "monitor_outgoing_flow"
