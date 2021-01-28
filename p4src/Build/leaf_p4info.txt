@@ -1562,34 +1562,6 @@ actions {
 }
 actions {
   preamble {
-    id: 20672791
-    name: "EgressPipeImpl.build_p2p_feedback_with_fake_ack"
-    alias: "build_p2p_feedback_with_fake_ack"
-  }
-}
-actions {
-  preamble {
-    id: 21373656
-    name: "EgressPipeImpl.build_p2p_feedback_with_fake_ack_for_increase"
-    alias: "build_p2p_feedback_with_fake_ack_for_increase"
-  }
-}
-actions {
-  preamble {
-    id: 17475628
-    name: "EgressPipeImpl.build_fake_ack_only"
-    alias: "build_fake_ack_only"
-  }
-}
-actions {
-  preamble {
-    id: 22131695
-    name: "EgressPipeImpl.build_fake_ack_only_for_increase"
-    alias: "build_fake_ack_only_for_increase"
-  }
-}
-actions {
-  preamble {
     id: 28949872
     name: "EgressPipeImpl.egress_rate_monitor_control_block.monitor_outgoing_flow"
     alias: "monitor_outgoing_flow"
@@ -2227,21 +2199,6 @@ registers {
     }
   }
   size: 256
-}
-registers {
-  preamble {
-    id: 380592011
-    name: "EgressPipeImpl.leaf_rate_control_processor_control_block.flowlet_id_to_seq_number_of_last_rate_control_action_map"
-    alias: "flowlet_id_to_seq_number_of_last_rate_control_action_map"
-  }
-  type_spec {
-    bitstring {
-      bit {
-        bitwidth: 32
-      }
-    }
-  }
-  size: 8192
 }
 type_info {
 }

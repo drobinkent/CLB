@@ -1,6 +1,5 @@
 
 #import CentralizedAlgorithms as centrAlgo
-import DistributedAlgorithms.CPAssistedMultiCriteriaPolicyRouting as multiCritPolicyRouting
 import DistributedAlgorithms.ECMPRouting as ecmpRouting
 import math
 
@@ -280,8 +279,7 @@ def getAlgo(dev, dpAlgo):
     # TODO : Can we make an array in config and write them there. This function will only read the arrray and load relevant classses??
     if (dpAlgo == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_ECMP) :
         return ecmpRouting.ECMPRouting(dev = dev)
-    elif (dpAlgo == ConfConst.DataplnaeAlgorithm.DP_ALGO_CP_ASSISTED_POLICY_ROUTING) :
-        return multiCritPolicyRouting.CPAssistedMultiCriteriaPolicyRoutingAlgorithm(dev = dev)
+
     pass
 
 # def getLinearMetricsLevels(startingValue, interval, endingValue):
