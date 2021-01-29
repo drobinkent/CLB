@@ -8,12 +8,15 @@ distribution
 
 In statisticspuller we will pull only the upaward ports counter. all other will be not read to minimize the time 
 
-
+The statsticspuller thread will have a function to configure the distribution. -- load_balancer_config_thread_function
+this function 
 start a new thread 
 then in the therad follow the algorihtm in presentation 
 we will prepare all the message and dispatch them together. 
 -- obviously if too many packets are sent together then buffer can be overhelmed. to handle that in this experiement wer will 
 keep buffer capacity a lot. 
+
+The statsticspuller thread will pull only  pull statictics from the configured device. all other device will be lleft untouched. 
 
 # As out target is only testing algorothm we will only run the CLB from one switch.
 #This parameter defines that name. The algorithm will be only run with that device

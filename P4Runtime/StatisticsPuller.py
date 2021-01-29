@@ -47,9 +47,26 @@ class StatisticsPuller:
         logger.info("Main    : before running thread")
         x.start()
         logger.info("StatisticsPuller thread started")
+        x = threading.Thread(target=self.load_balancer_config_thread_function, args=())
+        x.start()
+        logger.info("load_balancer_config_thread_function thread started")
 
+    def load_balancer_config_thread_function(self):
+        logger.info("Thread %s: starting", "load_balancer_config_thread_function")
+        while(self.isRunning):
+            accumulatedDistribution = self.getAccumulatedDistribution(ConfConst.LOAD_DISTRIBUTION_1)
+            print("Old distrib was "+str(json.dumps(ConfConst.LOAD_DISTRIBUTION_1)))
+            print("accumulated distrib is "+str(json.dumps(accumulatedDistribution)))
+            time.sleep(1000000)
+        pass
 
-
+    def getAccumulatedDistribution(self, disrtibution):
+        accumulatedDistribution = []
+        sum =0
+        for e in disrtibution:
+            sum = sum + e[1]
+            accumulatedDistribution.append((e[0],sum-1))
+        return accumulatedDistribution
     def thread_function(self):
         logger.info("Thread %s: starting", "StatisticsPuller")
         # totalNumOfSwitches = len(self.nameToSwitchMap)
@@ -63,22 +80,10 @@ class StatisticsPuller:
         while(self.isRunning):
             time.sleep(ConfConst.STATISTICS_PULLING_INTERVAL)
             index=0
-            for dev in self.nameToSwitchMap:
-                hostObject = self.nameToSwitchMap.get(dev)
-                statJson = self.pullStatsFromSwitch(dev=hostObject)
-                #TODO draw the diagrams
-                #Create an axis here
-                # Call a function that will take the axis object as arguent and it will plot the relevant data. So if anytome we want different plot we can build another function
-                # row, col = self.indexToRowColumn(index= index, totalColumns= nColumn)
-                # x = np.linspace(0, 2, 100)
-                # np.power(x,[index])
-                # axes[row,col].plot(x, x*x)
-                # index  = index+1
-                #plot.show()
-                #save to file
-                hostObject.controllerStatsFile.write(json.dumps(statJson, cls=statJsonWrapper.PortStatisticsJSONWrapper))
-                hostObject.controllerStatsFile.flush()
-                # logger.info("Finished reading statistics from data plane for device ."+str(dev))
+            hostObject = self.nameToSwitchMap.get(ConfConst.CLB_TESTER_DEVICE_NAME)
+            statJson = self.pullStatsFromSwitch(dev=hostObject)
+            hostObject.controllerStatsFile.write(json.dumps(statJson, cls=statJsonWrapper.PortStatisticsJSONWrapper))
+            hostObject.controllerStatsFile.flush()
 
     logger.info("Thread %s: finishing", "StatisticsPuller")
 
@@ -124,45 +129,12 @@ class StatisticsPuller:
         #     print("Gotcha")
         tempPortStats = ps.PortStatistics()
         if (dev.fabric_device_config.switch_type == jp.SwitchType.LEAF ):
-            for hPort in dev.portToHostMap:
-                egressPortCounterValueForHost = egressPortStats.get(hPort)
-                ingressPortCounterValueForHosts = ingressPortStats.get(hPort)
-                portStatistics.setDownwardPortEgressPacketCounter(  (hPort), egressPortCounterValueForHost)
-                portStatistics.setDownwardPortIngressPacketCounter(  (hPort), ingressPortCounterValueForHosts)
-
             for sPort in dev.portToSpineSwitchMap:
                 egressPortCounterValueForSpine =egressPortStats.get(sPort)
-                ingressPortCounterValueForSpine = ingressPortStats.get(sPort)
-                portStatistics.setUpwardPortEgressPacketCounter(  (sPort), egressPortCounterValueForSpine)
-                portStatistics.setUpwardPortIngressPacketCounter((sPort), ingressPortCounterValueForSpine)
 
-        elif (dev.fabric_device_config.switch_type == jp.SwitchType.SPINE ):
-            for lPort in dev.portToLeafSwitchMap:
-                egressPortCounterValueForLeaf = egressPortStats.get(lPort)
-                ingressPortCounterValueForLeaf = ingressPortStats.get(lPort)
-                portStatistics.setDownwardPortEgressPacketCounter(  (lPort), egressPortCounterValueForLeaf)
-                portStatistics.setDownwardPortIngressPacketCounter(  (lPort), ingressPortCounterValueForLeaf)
 
-            for ssPort in dev.portToSuperSpineSwitchMap:
-                egressPortCounterValueForSuperSpine = egressPortStats.get(ssPort)
-                ingressPortCounterValueForSuperSpine = ingressPortStats.get(ssPort)
-                portStatistics.setUpwardPortEgressPacketCounter(  (ssPort), egressPortCounterValueForSuperSpine)
-                portStatistics.setUpwardPortIngressPacketCounter((ssPort), ingressPortCounterValueForSuperSpine)
-        elif (dev.fabric_device_config.switch_type == jp.SwitchType.SUPER_SPINE ):
-            for sPort in dev.portToSpineSwitchMap:
-                egressPortCounterValueForSpine = egressPortStats.get(sPort)
-                ingressPortCounterValueForSpine = ingressPortStats.get(sPort)
-                portStatistics.setDownwardPortEgressPacketCounter(  (sPort), egressPortCounterValueForSpine)
-                portStatistics.setDownwardPortIngressPacketCounter(  (sPort), ingressPortCounterValueForSpine)
-        else:
-            logger.info("Unknown switch type. Exiting")
-            exit(1)
-        portStatistics.setCPUPortEgressPacketCounter(ctrlPkttoCPStats.get(InternalConfig.CPU_PORT))
-        portStatistics.setQueueRateAnDepthInfo(dev.portToQueueRateMap, dev.portToQueueDepthMap )
-        # plot continuous graph
-        #dev.portStatisticsCollection.append(portStatistics)
-        # if(dev.devName == "device:p0l0"):
-        #     print("Gotcha")
+
+
         statJson = statJsonWrapper.PortStatisticsJSONWrapper()
         statJson.setData(recordPullingtime,portStatistics, dev.devName)
         # logger.info("Stat is "+ json.dumps(statJson,cls=statJsonWrapper.PortStatisticsJSONWrapper))

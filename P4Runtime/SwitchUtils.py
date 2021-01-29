@@ -234,7 +234,8 @@ def readPacketCounter(dev, counterName, counterIndex):
 
 def collectPacketCounterForAllPort(dev, counterName):
     statMap = {}
-    for i in range(0, dev.maxPort):
+    upwardPortList = list(dev.portToSpineSwitchMap.keys())  #assuming that the in our test the device is a leaf switch
+    for i in upwardPortList:
         val = readPacketCounter(dev, counterName,i)
         # if(val>0):
         #     statMap[i] = val
@@ -256,11 +257,11 @@ def readAllCounters(dev):
     COUNTER_NAMES = {"egressPortCounter", "ingressPortCounter", "ctrlPktToCPCounter", "p2pFeedbackCounter"}
 
     egressPortStats = collectPacketCounterForAllPort(dev, "egressPortCounter")
-    ingressPortStats = collectPacketCounterForAllPort(dev, "ingressPortCounter")
-    ctrlPkttoCPStats = collectPacketCounterForAllPort(dev, "ctrlPktToCPCounter")
-    p2pFeedbackStats = collectPacketCounterForAllPort(dev, "p2pFeedbackCounter")
+    # ingressPortStats = collectPacketCounterForAllPort(dev, "ingressPortCounter")
+    # ctrlPkttoCPStats = collectPacketCounterForAllPort(dev, "ctrlPktToCPCounter")
+    # p2pFeedbackStats = collectPacketCounterForAllPort(dev, "p2pFeedbackCounter")
 
-    return egressPortStats, ingressPortStats , ctrlPkttoCPStats,  p2pFeedbackStats
+    return egressPortStats, [] , [],  []
 
 
 def resetAllCounters(dev):
