@@ -189,11 +189,12 @@ LINUX_CC_ALGORITHM_CUBIC = "cubic"
 #=======================configurations for CLB
 CLB_TESTER_DEVICE_NAME = "p0l0" # As out target is only testing algorithm we will only run the CLB from one switch.
 #This parameter defines that name. The algorithm will be only run with that device
-LOAD_DISTRIBUTION_1 = [(1,4),(2,7),(3,10),(4,12)]
-LOAD_DISTRIBUTION_2 = [(1,4),(2,7),(3,10),(4,12)]
+LOAD_DISTRIBUTION_1 = [(5,1),(6,2),(7,2),(8,3)]
+LOAD_DISTRIBUTION_2 = [(5,2),(6,2),(7,3),(8,1)]
 
 DELAY_BETWEEN_DISTRIBUTION_1_AND_2_CHANGE = 100 #After installing the DISTRIBUTION_1, the system will install DISTRIBUTION_2
 
 MAX_LOAD = 1000 # N in out systesm
 PRECISION = 10
 BITMASK_LENGTH = 4
+TOTAL_LEVELS = 8

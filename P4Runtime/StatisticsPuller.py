@@ -47,26 +47,9 @@ class StatisticsPuller:
         logger.info("Main    : before running thread")
         x.start()
         logger.info("StatisticsPuller thread started")
-        x = threading.Thread(target=self.load_balancer_config_thread_function, args=())
-        x.start()
-        logger.info("load_balancer_config_thread_function thread started")
 
-    def load_balancer_config_thread_function(self):
-        logger.info("Thread %s: starting", "load_balancer_config_thread_function")
-        while(self.isRunning):
-            accumulatedDistribution = self.getAccumulatedDistribution(ConfConst.LOAD_DISTRIBUTION_1)
-            print("Old distrib was "+str(json.dumps(ConfConst.LOAD_DISTRIBUTION_1)))
-            print("accumulated distrib is "+str(json.dumps(accumulatedDistribution)))
-            time.sleep(1000000)
-        pass
 
-    def getAccumulatedDistribution(self, disrtibution):
-        accumulatedDistribution = []
-        sum =0
-        for e in disrtibution:
-            sum = sum + e[1]
-            accumulatedDistribution.append((e[0],sum-1))
-        return accumulatedDistribution
+
     def thread_function(self):
         logger.info("Thread %s: starting", "StatisticsPuller")
         # totalNumOfSwitches = len(self.nameToSwitchMap)

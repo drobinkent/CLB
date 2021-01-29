@@ -31,6 +31,7 @@ import P4Runtime.leafSwitchUtils
 from P4Runtime import JsonParser as jp
 from P4Runtime.JsonParser import DeviceType
 from P4Runtime.utils import getDeviceTypeFromName, reverseAndCreateNewLink
+from DistributedAlgorithms import LoadBalancer
 
 logger = logging.getLogger('DCNTEController')
 logger.handlers = []
@@ -189,6 +190,7 @@ class MyP4Controller():
         # this method will pull various counter and register values from the switches and plot data accordingly.
         #Also save the collected statitstics for each device in corresponding data structure.
         self.statisticsPuller = P4Runtime.StatisticsPuller.StatisticsPuller(self.nameToSwitchMap)
+        self.loadBalancerTester = LoadBalancer(allLinksAsList = [5,6,7,8], totalLevels = ConfConst.TOTAL_LEVELS, bitMaskLength=ConfConst.BITMASK_LENGTH)
 
 
 
