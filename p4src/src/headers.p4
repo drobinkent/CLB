@@ -230,6 +230,10 @@ struct local_metadata_t {
     bit<9> egr_rate_based_path;
     bit<32> temp; //This will be used for various tempporaty operation in various control blocks. But remeber we can not gues anything about it's initial data
     bit<8> temp_8_bit;
+
+    bit<BITMASK_LENGTH> packet_bitmask;
+    bit<BITMASK_ARRAY_INDEX_INDICATOR_BITS_LENGTH> packet_bitmask_array_index;
+    bit<32> link_location_index; //in this location of final stateful memory block, the link will be found
 }
 
 
@@ -289,8 +293,8 @@ header packet_in_t {
         //bit<16>
     bit<8>    path_delay_event_type;
     bit<48>     path_delay_event_data;
+     bit<9>     path_delay_event_port;
     bit<128> dst_addr;   //This is the address for which the switch has found increased or decreased delay
-    bit<9>     path_delay_event_port;
 
 }
 
@@ -315,7 +319,6 @@ header dp_to_cp_feedback_hdr_t {
     bit<48>    egress_rate_event_data;
 
 }
-
 // Packet-out header. Prepended to packets received from the CPU_PORT. Fields of
 // this header are populated by the P4Runtime server based on the P4Runtime
 // PacketOut metadata fields. Here we use it to inform the P4 pipeline on which
@@ -324,6 +327,22 @@ header dp_to_cp_feedback_hdr_t {
 header packet_out_t {
     port_num_t  egress_port;
     bit<7>      _pad;
+    //Previous all fields are not necessary for CLB. TODO  at sometime we will trey to clean up them. But at this moment we are not focusing on that
+    bit<8> clb_flags; //Here we will keep various falgs for CLB
+    //--------bit-7--------|| If this bit is set then reet the counter
+    //--------bit-6--------|| If this bit is set then this is a port delete packet
+    //--------bit-5--------|| If this bit is set then this is a port insert packet
+    //--------bit-4--------|| Other bits are ununsed at this moment
+    //--------bit-3--------||
+    //--------bit-2--------||
+    //--------bit-1--------||
+    //--------bit-0--------||
+
+    bit<32> bitmask_array_index;  //
+    bit<32> bitmask_position;
+    bit<32> link_id;
+    bit<32> bitmask; //Here we are keeping all 32 bit to avoid compile time configuration complexity. At apply blo0ck we will slice necesssary bits.
+    bit<32> level_to_link_id_store_index;  //
 }
 
 // Header for sensing peer to peer feedback

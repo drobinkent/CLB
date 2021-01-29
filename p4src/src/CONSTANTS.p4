@@ -173,5 +173,18 @@ meter((bit<32>)MAX_PORTS_IN_SWITCH, MeterType.packets) egress_port_meters;
 const bit<48> FLOWLET_INTER_PACKET_GAP_THRESHOLD = 48w15000 ;  //40 packets per second rate means 1/40 second means 25000 microsecond
 const bit<8> WINDOW_DECREASE_RATIO = 2;  // this is used when there is some congestion how mnay times ^ -1 a windows will be reduced. 2 means 2 times shift. or window size half.
 const bit<8> WINDOW_INCREASE_RATIO = 8;
+
+
+
+
+//===============================================CLB Related Constants
+
+//const int<32> BIT_MASK_LENGTH = 3;
+//const bit<32> BIT_LENGTH_FOR_INDEX = 1; //Assume we have 3 in this variable then we will have 2^3 indexes, in each position there will a statefulmemory of BIT_MASK_LENGTH bits
+//const int<32> TOTAL_INDEXES  = 1 << BIT_LENGTH_FOR_INDEX ;
+
+
+
+
 #endif
 

@@ -39,6 +39,7 @@
 #include "cp_assisted_multicriteria_upstream_routing_tables.p4"
 #include "cp_assisted_multicriteria_upstream_policy_routing.p4"
 #include "metrics_level_calculator.p4"
+#include "dp_only_load_balancer.p4"
 control VerifyChecksumImpl(inout parsed_headers_t hdr,
                            inout local_metadata_t meta)
 {
@@ -144,7 +145,9 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
     egress_queue_depth_metrics_level_calculator() egress_queue_depth_metrics_level_calculator_control_block;
     // *** APPLY BLOCK STATEMENT
 
-
+    #ifdef DP_ALGO_CLB
+    dp_only_load_balancing() dp_only_load_balancing_control_block;
+    #endif
 
     apply {
 
@@ -229,6 +232,10 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
                     upstream_ecmp_routing_control_block.apply(hdr, local_metadata, standard_metadata);
                     //simply Call the new block here
                 }
+                 #ifdef DP_ALGO_CLB
+                dp_only_load_balancing_control_block.apply(hdr, local_metadata, standard_metadata);
+                #endif
+
                 //log_msg("egress spec is {} and egress port is {}",{standard_metadata.egress_spec , standard_metadata.egress_port});
             }
         }

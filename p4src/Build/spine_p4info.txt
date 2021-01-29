@@ -1866,13 +1866,13 @@ controller_packet_metadata {
   }
   metadata {
     id: 18
-    name: "dst_addr"
-    bitwidth: 128
+    name: "path_delay_event_port"
+    bitwidth: 9
   }
   metadata {
     id: 19
-    name: "path_delay_event_port"
-    bitwidth: 9
+    name: "dst_addr"
+    bitwidth: 128
   }
 }
 controller_packet_metadata {
@@ -1891,6 +1891,36 @@ controller_packet_metadata {
     id: 2
     name: "_pad"
     bitwidth: 7
+  }
+  metadata {
+    id: 3
+    name: "clb_flags"
+    bitwidth: 8
+  }
+  metadata {
+    id: 4
+    name: "bitmask_array_index"
+    bitwidth: 32
+  }
+  metadata {
+    id: 5
+    name: "bitmask_position"
+    bitwidth: 32
+  }
+  metadata {
+    id: 6
+    name: "link_id"
+    bitwidth: 32
+  }
+  metadata {
+    id: 7
+    name: "bitmask"
+    bitwidth: 32
+  }
+  metadata {
+    id: 8
+    name: "level_to_link_id_store_index"
+    bitwidth: 32
   }
 }
 registers {

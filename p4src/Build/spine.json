@@ -56,7 +56,14 @@
         ["tmp_41", 32, false],
         ["tmp_42", 32, false],
         ["tmp_43", 32, false],
+        ["tmp_44", 32, false],
+        ["tmp_45", 32, false],
+        ["tmp_46", 32, false],
+        ["tmp_47", 32, false],
+        ["tmp_48", 32, false],
         ["temp_next_hdr_0", 8, false],
+        ["egress_queue_depth_monitor_control_block_old_deq_depth", 19, false],
+        ["egress_queue_depth_monitor_control_block_last_updated_deq_depth", 19, false],
         ["userMetadata.l4_src_port", 16, false],
         ["userMetadata.l4_dst_port", 16, false],
         ["userMetadata.is_multicast", 1, false],
@@ -75,7 +82,10 @@
         ["userMetadata.egr_rate_based_path", 9, false],
         ["userMetadata.temp", 32, false],
         ["userMetadata.temp_8_bit", 8, false],
-        ["_padding_0", 4, false]
+        ["userMetadata.packet_bitmask", 3, false],
+        ["userMetadata.packet_bitmask_array_index", 1, false],
+        ["userMetadata.link_location_index", 32, false],
+        ["_padding_0", 2, false]
       ]
     },
     {
@@ -106,7 +116,13 @@
       "id" : 2,
       "fields" : [
         ["egress_port", 9, false],
-        ["_pad", 7, false]
+        ["_pad", 7, false],
+        ["clb_flags", 8, false],
+        ["bitmask_array_index", 32, false],
+        ["bitmask_position", 32, false],
+        ["link_id", 32, false],
+        ["bitmask", 32, false],
+        ["level_to_link_id_store_index", 32, false]
       ]
     },
     {
@@ -130,8 +146,8 @@
         ["delay_event_src_type", 8, false],
         ["path_delay_event_type", 8, false],
         ["path_delay_event_data", 48, false],
-        ["dst_addr", 128, false],
-        ["path_delay_event_port", 9, false]
+        ["path_delay_event_port", 9, false],
+        ["dst_addr", 128, false]
       ]
     },
     {
@@ -825,6 +841,18 @@
         {
           "type" : "field",
           "value" : ["scalars", "userMetadata.temp_8_bit"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "userMetadata.packet_bitmask"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "userMetadata.packet_bitmask_array_index"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "userMetadata.link_location_index"]
         }
       ]
     },
@@ -1173,6 +1201,18 @@
         {
           "type" : "field",
           "value" : ["scalars", "userMetadata.temp_8_bit"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "userMetadata.packet_bitmask"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "userMetadata.packet_bitmask_array_index"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "userMetadata.link_location_index"]
         }
       ]
     },
@@ -1521,6 +1561,18 @@
         {
           "type" : "field",
           "value" : ["scalars", "userMetadata.temp_8_bit"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "userMetadata.packet_bitmask"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "userMetadata.packet_bitmask_array_index"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "userMetadata.link_location_index"]
         }
       ]
     },
@@ -1541,6 +1593,30 @@
         {
           "type" : "field",
           "value" : ["packet_out", "_pad"]
+        },
+        {
+          "type" : "field",
+          "value" : ["packet_out", "clb_flags"]
+        },
+        {
+          "type" : "field",
+          "value" : ["packet_out", "bitmask_array_index"]
+        },
+        {
+          "type" : "field",
+          "value" : ["packet_out", "bitmask_position"]
+        },
+        {
+          "type" : "field",
+          "value" : ["packet_out", "link_id"]
+        },
+        {
+          "type" : "field",
+          "value" : ["packet_out", "bitmask"]
+        },
+        {
+          "type" : "field",
+          "value" : ["packet_out", "level_to_link_id_store_index"]
         },
         {
           "type" : "field",
@@ -1612,11 +1688,11 @@
         },
         {
           "type" : "field",
-          "value" : ["packet_in", "dst_addr"]
+          "value" : ["packet_in", "path_delay_event_port"]
         },
         {
           "type" : "field",
-          "value" : ["packet_in", "path_delay_event_port"]
+          "value" : ["packet_in", "dst_addr"]
         },
         {
           "type" : "field",
@@ -1896,6 +1972,30 @@
         },
         {
           "type" : "field",
+          "value" : ["packet_out", "clb_flags"]
+        },
+        {
+          "type" : "field",
+          "value" : ["packet_out", "bitmask_array_index"]
+        },
+        {
+          "type" : "field",
+          "value" : ["packet_out", "bitmask_position"]
+        },
+        {
+          "type" : "field",
+          "value" : ["packet_out", "link_id"]
+        },
+        {
+          "type" : "field",
+          "value" : ["packet_out", "bitmask"]
+        },
+        {
+          "type" : "field",
+          "value" : ["packet_out", "level_to_link_id_store_index"]
+        },
+        {
+          "type" : "field",
           "value" : ["packet_in", "ingress_port"]
         },
         {
@@ -1964,11 +2064,11 @@
         },
         {
           "type" : "field",
-          "value" : ["packet_in", "dst_addr"]
+          "value" : ["packet_in", "path_delay_event_port"]
         },
         {
           "type" : "field",
-          "value" : ["packet_in", "path_delay_event_port"]
+          "value" : ["packet_in", "dst_addr"]
         },
         {
           "type" : "field",
@@ -9336,7 +9436,7 @@
       ]
     },
     {
-      "name" : "spine238",
+      "name" : "spine236",
       "id" : 59,
       "runtime_data" : [],
       "primitives" : [
@@ -9356,7 +9456,7 @@
                   "left" : null,
                   "right" : {
                     "type" : "bool",
-                    "value" : false
+                    "value" : true
                   }
                 }
               }
@@ -9364,9 +9464,9 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
-            "line" : 238,
+            "line" : 236,
             "column" : 12,
-            "source_fragment" : "local_metadata.flag_hdr.found_multi_criteria_paths = false"
+            "source_fragment" : "local_metadata.flag_hdr.found_multi_criteria_paths = true"
           }
         }
       ]
@@ -10451,7 +10551,7 @@
       ]
     },
     {
-      "name" : "egress_queue_depth_monitor30",
+      "name" : "egress_queue_depth_monitor42",
       "id" : 71,
       "runtime_data" : [],
       "primitives" : [
@@ -10460,25 +10560,574 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["ipv6", "ecn"]
+              "value" : ["egress_queue_event_hdr", "event_src_type"]
             },
             {
               "type" : "hexstr",
-              "value" : "0x03"
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/CONSTANTS.p4",
+            "line" : 109,
+            "column" : 45,
+            "source_fragment" : "1; //Indicates the event is being reported by this switch itself ..."
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["egress_queue_event_hdr", "egress_queue_event"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0b"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/CONSTANTS.p4",
+            "line" : 128,
+            "column" : 41,
+            "source_fragment" : "11; //These 3 events notifies if a packet has seen change in delay by threshold ..."
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["egress_queue_event_hdr", "egress_queue_event_data"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "deq_qdepth"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffffffff"
+                  }
+                }
+              }
             }
           ],
           "source_info" : {
             "filename" : "p4src/src/egress_queue_depth_monitor.p4",
-            "line" : 30,
+            "line" : 44,
             "column" : 16,
-            "source_fragment" : "hdr.ipv6.ecn = 3"
+            "source_fragment" : "local_metadata.egress_queue_event_hdr.egress_queue_event_data = (bit<48>)standard_metadata.deq_qdepth"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_39"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_spec"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 34,
+            "column" : 30,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_spec"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "EgressPipeImpl.egress_queue_depth_monitor_control_block.port_last_updated_egress_queue_avg_depth"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_39"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "deq_qdepth"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 45,
+            "column" : 16,
+            "source_fragment" : "port_last_updated_egress_queue_avg_depth.write(port_id, standard_metadata.deq_qdepth)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["flag_hdr", "is_control_pkt_from_egr_queue_depth"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 46,
+            "column" : 16,
+            "source_fragment" : "local_metadata.flag_hdr.is_control_pkt_from_egr_queue_depth = true"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "egress_queue_depth_monitor50",
+      "id" : 72,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["egress_queue_event_hdr", "event_src_type"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/CONSTANTS.p4",
+            "line" : 109,
+            "column" : 45,
+            "source_fragment" : "1; //Indicates the event is being reported by this switch itself ..."
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["egress_queue_event_hdr", "egress_queue_event"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0c"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/CONSTANTS.p4",
+            "line" : 129,
+            "column" : 41,
+            "source_fragment" : "12; ..."
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["egress_queue_event_hdr", "egress_queue_event_data"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "deq_qdepth"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 52,
+            "column" : 16,
+            "source_fragment" : "local_metadata.egress_queue_event_hdr.egress_queue_event_data = (bit<48>) standard_metadata.deq_qdepth"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_40"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_spec"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 34,
+            "column" : 30,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_spec"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "EgressPipeImpl.egress_queue_depth_monitor_control_block.port_last_updated_egress_queue_avg_depth"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_40"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "deq_qdepth"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 53,
+            "column" : 16,
+            "source_fragment" : "port_last_updated_egress_queue_avg_depth.write(port_id, standard_metadata.deq_qdepth)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["flag_hdr", "is_control_pkt_from_egr_queue_depth"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 54,
+            "column" : 16,
+            "source_fragment" : "local_metadata.flag_hdr.is_control_pkt_from_egr_queue_depth = true"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "egress_queue_depth_monitor58",
+      "id" : 73,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["egress_queue_event_hdr", "egress_queue_event"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0a"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/CONSTANTS.p4",
+            "line" : 127,
+            "column" : 41,
+            "source_fragment" : "10; ..."
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["flag_hdr", "is_control_pkt_from_egr_queue_depth"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : false
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 63,
+            "column" : 16,
+            "source_fragment" : "local_metadata.flag_hdr.is_control_pkt_from_egr_queue_depth = false"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "egress_queue_depth_monitor36",
+      "id" : 74,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_41"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_spec"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 34,
+            "column" : 30,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_spec"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "egress_queue_depth_monitor_control_block_old_deq_depth"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "EgressPipeImpl.egress_queue_depth_monitor_control_block.port_egress_queue_avg_depth"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_41"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 36,
+            "column" : 12,
+            "source_fragment" : "port_egress_queue_avg_depth.read(old_deq_depth, port_id)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_42"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_spec"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 34,
+            "column" : 30,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_spec"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "egress_queue_depth_monitor_control_block_last_updated_deq_depth"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "EgressPipeImpl.egress_queue_depth_monitor_control_block.port_last_updated_egress_queue_avg_depth"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_42"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 37,
+            "column" : 12,
+            "source_fragment" : "port_last_updated_egress_queue_avg_depth.read(last_updated_deq_depth, port_id)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["egress_queue_event_hdr", "egress_queue_event_port"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_port"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 38,
+            "column" : 12,
+            "source_fragment" : "local_metadata.egress_queue_event_hdr.egress_queue_event_port = standard_metadata.egress_port"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "egress_queue_depth_monitor66",
+      "id" : 75,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_43"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_spec"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 34,
+            "column" : 30,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_spec"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "EgressPipeImpl.egress_queue_depth_monitor_control_block.port_egress_queue_avg_depth"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_43"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "deq_qdepth"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 66,
+            "column" : 12,
+            "source_fragment" : "port_egress_queue_avg_depth.write(port_id, standard_metadata.deq_qdepth )"
           }
         }
       ]
     },
     {
       "name" : "egress_rate_monitor37",
-      "id" : 72,
+      "id" : 76,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -10551,34 +11200,8 @@
       ]
     },
     {
-      "name" : "spine402",
-      "id" : 73,
-      "runtime_data" : [],
-      "primitives" : [
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["ipv6", "ecn"]
-            },
-            {
-              "type" : "hexstr",
-              "value" : "0x03"
-            }
-          ],
-          "source_info" : {
-            "filename" : "p4src/src/spine.p4",
-            "line" : 402,
-            "column" : 61,
-            "source_fragment" : "hdr.ipv6.ecn = 3"
-          }
-        }
-      ]
-    },
-    {
       "name" : "spine405",
-      "id" : 74,
+      "id" : 77,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -10595,7 +11218,7 @@
     },
     {
       "name" : "spine424",
-      "id" : 75,
+      "id" : 78,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -10603,7 +11226,7 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_39"]
+              "value" : ["scalars", "tmp_44"]
             },
             {
               "type" : "expression",
@@ -10655,7 +11278,7 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_39"]
+              "value" : ["scalars", "tmp_44"]
             },
             {
               "type" : "hexstr",
@@ -10673,7 +11296,7 @@
     },
     {
       "name" : "spine427",
-      "id" : 76,
+      "id" : 79,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -10699,7 +11322,7 @@
     },
     {
       "name" : "spine430",
-      "id" : 77,
+      "id" : 80,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -10707,7 +11330,7 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_40"]
+              "value" : ["scalars", "tmp_45"]
             },
             {
               "type" : "expression",
@@ -10739,7 +11362,7 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_40"]
+              "value" : ["scalars", "tmp_45"]
             },
             {
               "type" : "hexstr",
@@ -10757,7 +11380,7 @@
     },
     {
       "name" : "spine445",
-      "id" : 78,
+      "id" : 81,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -10794,7 +11417,7 @@
     },
     {
       "name" : "spine452",
-      "id" : 79,
+      "id" : 82,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -11140,7 +11763,7 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_41"]
+              "value" : ["scalars", "tmp_46"]
             },
             {
               "type" : "expression",
@@ -11176,7 +11799,7 @@
             },
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_41"]
+              "value" : ["scalars", "tmp_46"]
             }
           ],
           "source_info" : {
@@ -11190,7 +11813,7 @@
     },
     {
       "name" : "spine482",
-      "id" : 80,
+      "id" : 83,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -11250,7 +11873,7 @@
     },
     {
       "name" : "spine442",
-      "id" : 81,
+      "id" : 84,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -11258,7 +11881,7 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_42"]
+              "value" : ["scalars", "tmp_47"]
             },
             {
               "type" : "expression",
@@ -11294,7 +11917,7 @@
             },
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_42"]
+              "value" : ["scalars", "tmp_47"]
             }
           ],
           "source_info" : {
@@ -11308,7 +11931,7 @@
     },
     {
       "name" : "spine493",
-      "id" : 82,
+      "id" : 85,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -11702,7 +12325,7 @@
     },
     {
       "name" : "spine527",
-      "id" : 83,
+      "id" : 86,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -12047,7 +12670,7 @@
     },
     {
       "name" : "spine569",
-      "id" : 84,
+      "id" : 87,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -12055,7 +12678,7 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_43"]
+              "value" : ["scalars", "tmp_48"]
             },
             {
               "type" : "expression",
@@ -12091,7 +12714,7 @@
             },
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_43"]
+              "value" : ["scalars", "tmp_48"]
             }
           ],
           "source_info" : {
@@ -13303,11 +13926,11 @@
           }
         },
         {
-          "name" : "tbl_spine238",
+          "name" : "tbl_spine236",
           "id" : 28,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
-            "line" : 238,
+            "line" : 236,
             "column" : 63,
             "source_fragment" : "="
           },
@@ -13319,10 +13942,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [59],
-          "actions" : ["spine238"],
+          "actions" : ["spine236"],
           "base_default_next" : "IngressPipeImpl.cp_assisted_multicriteria_upstream_routing_control_block.delay_based_upstream_path_table",
           "next_tables" : {
-            "spine238" : "IngressPipeImpl.cp_assisted_multicriteria_upstream_routing_control_block.delay_based_upstream_path_table"
+            "spine236" : "IngressPipeImpl.cp_assisted_multicriteria_upstream_routing_control_block.delay_based_upstream_path_table"
           },
           "default_entry" : {
             "action_id" : 59,
@@ -13655,9 +14278,9 @@
           "direct_meters" : null,
           "action_ids" : [26],
           "actions" : ["IngressPipeImpl.cp_assisted_multicriteria_upstream_policy_routing_control_block.update_flowlet_id"],
-          "base_default_next" : "tbl_upstream_routing117",
+          "base_default_next" : "node_76",
           "next_tables" : {
-            "IngressPipeImpl.cp_assisted_multicriteria_upstream_policy_routing_control_block.update_flowlet_id" : "tbl_upstream_routing117"
+            "IngressPipeImpl.cp_assisted_multicriteria_upstream_policy_routing_control_block.update_flowlet_id" : "node_76"
           },
           "default_entry" : {
             "action_id" : 26,
@@ -13713,9 +14336,9 @@
           "direct_meters" : null,
           "action_ids" : [27],
           "actions" : ["IngressPipeImpl.cp_assisted_multicriteria_upstream_policy_routing_control_block.update_flowlet_id"],
-          "base_default_next" : "tbl_upstream_routing117",
+          "base_default_next" : "node_76",
           "next_tables" : {
-            "IngressPipeImpl.cp_assisted_multicriteria_upstream_policy_routing_control_block.update_flowlet_id" : "tbl_upstream_routing117"
+            "IngressPipeImpl.cp_assisted_multicriteria_upstream_policy_routing_control_block.update_flowlet_id" : "node_76"
           },
           "default_entry" : {
             "action_id" : 27,
@@ -13858,9 +14481,9 @@
           "direct_meters" : null,
           "action_ids" : [28],
           "actions" : ["IngressPipeImpl.cp_assisted_multicriteria_upstream_policy_routing_control_block.update_flowlet_id"],
-          "base_default_next" : "tbl_upstream_routing117",
+          "base_default_next" : "node_76",
           "next_tables" : {
-            "IngressPipeImpl.cp_assisted_multicriteria_upstream_policy_routing_control_block.update_flowlet_id" : "tbl_upstream_routing117"
+            "IngressPipeImpl.cp_assisted_multicriteria_upstream_policy_routing_control_block.update_flowlet_id" : "node_76"
           },
           "default_entry" : {
             "action_id" : 28,
@@ -13916,9 +14539,9 @@
           "direct_meters" : null,
           "action_ids" : [29],
           "actions" : ["IngressPipeImpl.cp_assisted_multicriteria_upstream_policy_routing_control_block.update_flowlet_id"],
-          "base_default_next" : "tbl_upstream_routing117",
+          "base_default_next" : "node_76",
           "next_tables" : {
-            "IngressPipeImpl.cp_assisted_multicriteria_upstream_policy_routing_control_block.update_flowlet_id" : "tbl_upstream_routing117"
+            "IngressPipeImpl.cp_assisted_multicriteria_upstream_policy_routing_control_block.update_flowlet_id" : "node_76"
           },
           "default_entry" : {
             "action_id" : 29,
@@ -13945,9 +14568,9 @@
           "direct_meters" : null,
           "action_ids" : [63],
           "actions" : ["cp_assisted_multicriteria_upstream_policy_routing120"],
-          "base_default_next" : "tbl_upstream_routing117",
+          "base_default_next" : "node_76",
           "next_tables" : {
-            "cp_assisted_multicriteria_upstream_policy_routing120" : "tbl_upstream_routing117"
+            "cp_assisted_multicriteria_upstream_policy_routing120" : "node_76"
           },
           "default_entry" : {
             "action_id" : 63,
@@ -14003,9 +14626,9 @@
           "direct_meters" : null,
           "action_ids" : [16],
           "actions" : ["IngressPipeImpl.upstream_ecmp_routing_control_block.lookup_flowlet_map"],
-          "base_default_next" : "node_78",
+          "base_default_next" : "node_79",
           "next_tables" : {
-            "IngressPipeImpl.upstream_ecmp_routing_control_block.lookup_flowlet_map" : "node_78"
+            "IngressPipeImpl.upstream_ecmp_routing_control_block.lookup_flowlet_map" : "node_79"
           },
           "default_entry" : {
             "action_id" : 16,
@@ -15220,7 +15843,7 @@
             }
           },
           "true_next" : "node_43",
-          "false_next" : "tbl_spine238"
+          "false_next" : "tbl_spine236"
         },
         {
           "name" : "node_43",
@@ -15509,8 +16132,72 @@
           "false_next" : "tbl_cp_assisted_multicriteria_upstream_policy_routing_control_block_update_flowlet_id_1"
         },
         {
-          "name" : "node_78",
+          "name" : "node_76",
           "id" : 25,
+          "source_info" : {
+            "filename" : "p4src/src/spine.p4",
+            "line" : 246,
+            "column" : 17,
+            "source_fragment" : "found_multi_criteria_paths"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "not",
+              "left" : null,
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "or",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "or",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["flag_hdr", "found_egr_queue_depth_based_path"]
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["flag_hdr", "found_egr_queue_rate_based_path"]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "d2b",
+                      "left" : null,
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["flag_hdr", "found_path_delay_based_path"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "tbl_upstream_routing117",
+          "false_next" : "IngressPipeImpl.ingress_end_debug.dbg_table"
+        },
+        {
+          "name" : "node_79",
+          "id" : 26,
           "source_info" : {
             "filename" : "p4src/src/upstream_routing.p4",
             "line" : 119,
@@ -15545,16 +16232,45 @@
         "column" : 8,
         "source_fragment" : "EgressPipeImpl"
       },
-      "init_table" : "node_84",
+      "init_table" : "node_85",
       "tables" : [
         {
-          "name" : "tbl_egress_queue_depth_monitor30",
+          "name" : "tbl_egress_queue_depth_monitor36",
           "id" : 54,
           "source_info" : {
             "filename" : "p4src/src/egress_queue_depth_monitor.p4",
-            "line" : 30,
-            "column" : 29,
-            "source_fragment" : "="
+            "line" : 36,
+            "column" : 12,
+            "source_fragment" : "port_egress_queue_avg_depth.read(old_deq_depth, port_id); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [74],
+          "actions" : ["egress_queue_depth_monitor36"],
+          "base_default_next" : "node_87",
+          "next_tables" : {
+            "egress_queue_depth_monitor36" : "node_87"
+          },
+          "default_entry" : {
+            "action_id" : 74,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_egress_queue_depth_monitor42",
+          "id" : 55,
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 42,
+            "column" : 69,
+            "source_fragment" : "= EVENT_ORIGINATOR_LOCAL_SWITCH; ..."
           },
           "key" : [],
           "match_type" : "exact",
@@ -15564,10 +16280,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [71],
-          "actions" : ["egress_queue_depth_monitor30"],
-          "base_default_next" : "EgressPipeImpl.egress_rate_monitor_control_block.egress_rate_monitor_table",
+          "actions" : ["egress_queue_depth_monitor42"],
+          "base_default_next" : "tbl_egress_queue_depth_monitor66",
           "next_tables" : {
-            "egress_queue_depth_monitor30" : "EgressPipeImpl.egress_rate_monitor_control_block.egress_rate_monitor_table"
+            "egress_queue_depth_monitor42" : "tbl_egress_queue_depth_monitor66"
           },
           "default_entry" : {
             "action_id" : 71,
@@ -15577,8 +16293,95 @@
           }
         },
         {
+          "name" : "tbl_egress_queue_depth_monitor50",
+          "id" : 56,
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 50,
+            "column" : 69,
+            "source_fragment" : "= EVENT_ORIGINATOR_LOCAL_SWITCH; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [72],
+          "actions" : ["egress_queue_depth_monitor50"],
+          "base_default_next" : "tbl_egress_queue_depth_monitor66",
+          "next_tables" : {
+            "egress_queue_depth_monitor50" : "tbl_egress_queue_depth_monitor66"
+          },
+          "default_entry" : {
+            "action_id" : 72,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_egress_queue_depth_monitor58",
+          "id" : 57,
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 58,
+            "column" : 73,
+            "source_fragment" : "= EVENT_EGR_QUEUE_UNCHANGED; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [73],
+          "actions" : ["egress_queue_depth_monitor58"],
+          "base_default_next" : "tbl_egress_queue_depth_monitor66",
+          "next_tables" : {
+            "egress_queue_depth_monitor58" : "tbl_egress_queue_depth_monitor66"
+          },
+          "default_entry" : {
+            "action_id" : 73,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_egress_queue_depth_monitor66",
+          "id" : 58,
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 66,
+            "column" : 12,
+            "source_fragment" : "port_egress_queue_avg_depth.write(port_id, standard_metadata.deq_qdepth )"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [75],
+          "actions" : ["egress_queue_depth_monitor66"],
+          "base_default_next" : "EgressPipeImpl.egress_rate_monitor_control_block.egress_rate_monitor_table",
+          "next_tables" : {
+            "egress_queue_depth_monitor66" : "EgressPipeImpl.egress_rate_monitor_control_block.egress_rate_monitor_table"
+          },
+          "default_entry" : {
+            "action_id" : 75,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
           "name" : "EgressPipeImpl.egress_rate_monitor_control_block.egress_rate_monitor_table",
-          "id" : 55,
+          "id" : 59,
           "source_info" : {
             "filename" : "p4src/src/egress_rate_monitor.p4",
             "line" : 24,
@@ -15601,9 +16404,9 @@
           "direct_meters" : "EgressPipeImpl.egress_rate_monitor_control_block.egress_meter",
           "action_ids" : [70],
           "actions" : ["EgressPipeImpl.egress_rate_monitor_control_block.monitor_outgoing_flow"],
-          "base_default_next" : "node_88",
+          "base_default_next" : "node_94",
           "next_tables" : {
-            "EgressPipeImpl.egress_rate_monitor_control_block.monitor_outgoing_flow" : "node_88"
+            "EgressPipeImpl.egress_rate_monitor_control_block.monitor_outgoing_flow" : "node_94"
           },
           "default_entry" : {
             "action_id" : 70,
@@ -15614,7 +16417,7 @@
         },
         {
           "name" : "tbl_egress_rate_monitor37",
-          "id" : 56,
+          "id" : 60,
           "source_info" : {
             "filename" : "p4src/src/egress_rate_monitor.p4",
             "line" : 37,
@@ -15628,43 +16431,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [72],
+          "action_ids" : [76],
           "actions" : ["egress_rate_monitor37"],
-          "base_default_next" : "node_90",
+          "base_default_next" : "node_96",
           "next_tables" : {
-            "egress_rate_monitor37" : "node_90"
+            "egress_rate_monitor37" : "node_96"
           },
           "default_entry" : {
-            "action_id" : 72,
-            "action_const" : true,
-            "action_data" : [],
-            "action_entry_const" : true
-          }
-        },
-        {
-          "name" : "tbl_spine402",
-          "id" : 57,
-          "source_info" : {
-            "filename" : "p4src/src/spine.p4",
-            "line" : 402,
-            "column" : 74,
-            "source_fragment" : "="
-          },
-          "key" : [],
-          "match_type" : "exact",
-          "type" : "simple",
-          "max_size" : 1024,
-          "with_counters" : false,
-          "support_timeout" : false,
-          "direct_meters" : null,
-          "action_ids" : [73],
-          "actions" : ["spine402"],
-          "base_default_next" : "node_92",
-          "next_tables" : {
-            "spine402" : "node_92"
-          },
-          "default_entry" : {
-            "action_id" : 73,
+            "action_id" : 76,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -15672,7 +16446,7 @@
         },
         {
           "name" : "tbl_spine405",
-          "id" : 58,
+          "id" : 61,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 405,
@@ -15686,14 +16460,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [74],
+          "action_ids" : [77],
           "actions" : ["spine405"],
-          "base_default_next" : "node_94",
+          "base_default_next" : "node_98",
           "next_tables" : {
-            "spine405" : "node_94"
+            "spine405" : "node_98"
           },
           "default_entry" : {
-            "action_id" : 74,
+            "action_id" : 77,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -15701,7 +16475,7 @@
         },
         {
           "name" : "tbl_spine424",
-          "id" : 59,
+          "id" : 62,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 424,
@@ -15715,14 +16489,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [75],
+          "action_ids" : [78],
           "actions" : ["spine424"],
           "base_default_next" : "EgressPipeImpl.debug_std_meta_egress_start.dbg_table",
           "next_tables" : {
             "spine424" : "EgressPipeImpl.debug_std_meta_egress_start.dbg_table"
           },
           "default_entry" : {
-            "action_id" : 75,
+            "action_id" : 78,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -15730,7 +16504,7 @@
         },
         {
           "name" : "tbl_spine427",
-          "id" : 60,
+          "id" : 63,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 427,
@@ -15744,14 +16518,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [76],
+          "action_ids" : [79],
           "actions" : ["spine427"],
           "base_default_next" : "EgressPipeImpl.debug_std_meta_egress_start.dbg_table",
           "next_tables" : {
             "spine427" : "EgressPipeImpl.debug_std_meta_egress_start.dbg_table"
           },
           "default_entry" : {
-            "action_id" : 76,
+            "action_id" : 79,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -15759,7 +16533,7 @@
         },
         {
           "name" : "tbl_spine430",
-          "id" : 61,
+          "id" : 64,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 430,
@@ -15773,14 +16547,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [77],
+          "action_ids" : [80],
           "actions" : ["spine430"],
           "base_default_next" : "EgressPipeImpl.debug_std_meta_egress_start.dbg_table",
           "next_tables" : {
             "spine430" : "EgressPipeImpl.debug_std_meta_egress_start.dbg_table"
           },
           "default_entry" : {
-            "action_id" : 77,
+            "action_id" : 80,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -15788,7 +16562,7 @@
         },
         {
           "name" : "EgressPipeImpl.debug_std_meta_egress_start.dbg_table",
-          "id" : 62,
+          "id" : 65,
           "source_info" : {
             "filename" : "p4src/src/debug.p4",
             "line" : 12,
@@ -16123,9 +16897,9 @@
           "direct_meters" : null,
           "action_ids" : [65],
           "actions" : ["NoAction"],
-          "base_default_next" : "node_101",
+          "base_default_next" : "node_105",
           "next_tables" : {
-            "NoAction" : "node_101"
+            "NoAction" : "node_105"
           },
           "default_entry" : {
             "action_id" : 65,
@@ -16136,7 +16910,7 @@
         },
         {
           "name" : "tbl_spine442",
-          "id" : 63,
+          "id" : 66,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 442,
@@ -16150,14 +16924,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [81],
+          "action_ids" : [84],
           "actions" : ["spine442"],
-          "base_default_next" : "node_103",
+          "base_default_next" : "node_107",
           "next_tables" : {
-            "spine442" : "node_103"
+            "spine442" : "node_107"
           },
           "default_entry" : {
-            "action_id" : 81,
+            "action_id" : 84,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -16165,7 +16939,7 @@
         },
         {
           "name" : "tbl_spine445",
-          "id" : 64,
+          "id" : 67,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 445,
@@ -16179,14 +16953,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [78],
+          "action_ids" : [81],
           "actions" : ["spine445"],
           "base_default_next" : null,
           "next_tables" : {
             "spine445" : null
           },
           "default_entry" : {
-            "action_id" : 78,
+            "action_id" : 81,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -16194,7 +16968,7 @@
         },
         {
           "name" : "tbl_set_all_header_invalid",
-          "id" : 65,
+          "id" : 68,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 451,
@@ -16223,7 +16997,7 @@
         },
         {
           "name" : "tbl_spine452",
-          "id" : 66,
+          "id" : 69,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 452,
@@ -16237,14 +17011,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [79],
+          "action_ids" : [82],
           "actions" : ["spine452"],
           "base_default_next" : null,
           "next_tables" : {
             "spine452" : null
           },
           "default_entry" : {
-            "action_id" : 79,
+            "action_id" : 82,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -16252,7 +17026,7 @@
         },
         {
           "name" : "tbl_spine482",
-          "id" : 67,
+          "id" : 70,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 482,
@@ -16266,14 +17040,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [80],
+          "action_ids" : [83],
           "actions" : ["spine482"],
           "base_default_next" : null,
           "next_tables" : {
             "spine482" : null
           },
           "default_entry" : {
-            "action_id" : 80,
+            "action_id" : 83,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -16281,7 +17055,7 @@
         },
         {
           "name" : "tbl_set_all_header_invalid_0",
-          "id" : 68,
+          "id" : 71,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 492,
@@ -16310,7 +17084,7 @@
         },
         {
           "name" : "tbl_spine493",
-          "id" : 69,
+          "id" : 72,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 493,
@@ -16324,14 +17098,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [82],
+          "action_ids" : [85],
           "actions" : ["spine493"],
           "base_default_next" : null,
           "next_tables" : {
             "spine493" : null
           },
           "default_entry" : {
-            "action_id" : 82,
+            "action_id" : 85,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -16339,7 +17113,7 @@
         },
         {
           "name" : "tbl_set_all_header_invalid_1",
-          "id" : 70,
+          "id" : 73,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 526,
@@ -16368,7 +17142,7 @@
         },
         {
           "name" : "tbl_spine527",
-          "id" : 71,
+          "id" : 74,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 527,
@@ -16382,14 +17156,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [83],
+          "action_ids" : [86],
           "actions" : ["spine527"],
           "base_default_next" : null,
           "next_tables" : {
             "spine527" : null
           },
           "default_entry" : {
-            "action_id" : 83,
+            "action_id" : 86,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -16397,7 +17171,7 @@
         },
         {
           "name" : "tbl_spine569",
-          "id" : 72,
+          "id" : 75,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 569,
@@ -16411,14 +17185,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [84],
+          "action_ids" : [87],
           "actions" : ["spine569"],
           "base_default_next" : "tbl_build_p2p_feedback_only",
           "next_tables" : {
             "spine569" : "tbl_build_p2p_feedback_only"
           },
           "default_entry" : {
-            "action_id" : 84,
+            "action_id" : 87,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -16426,7 +17200,7 @@
         },
         {
           "name" : "tbl_build_p2p_feedback_only",
-          "id" : 73,
+          "id" : 76,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 571,
@@ -16457,8 +17231,8 @@
       "action_profiles" : [],
       "conditionals" : [
         {
-          "name" : "node_84",
-          "id" : 26,
+          "name" : "node_85",
+          "id" : 27,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 394,
@@ -16479,17 +17253,17 @@
               }
             }
           },
-          "true_next" : "node_85",
+          "true_next" : "tbl_egress_queue_depth_monitor36",
           "false_next" : "EgressPipeImpl.debug_std_meta_egress_start.dbg_table"
         },
         {
-          "name" : "node_85",
-          "id" : 27,
+          "name" : "node_87",
+          "id" : 28,
           "source_info" : {
             "filename" : "p4src/src/egress_queue_depth_monitor.p4",
-            "line" : 29,
-            "column" : 16,
-            "source_fragment" : "standard_metadata.enq_qdepth >= ECN_THRESHOLD"
+            "line" : 39,
+            "column" : 15,
+            "source_fragment" : "standard_metadata.deq_qdepth >= (last_updated_deq_depth + EGRESS_QUEUE_DEPTH_THRESHOLD)"
           },
           "expression" : {
             "type" : "expression",
@@ -16497,20 +17271,86 @@
               "op" : ">=",
               "left" : {
                 "type" : "field",
-                "value" : ["standard_metadata", "enq_qdepth"]
+                "value" : ["standard_metadata", "deq_qdepth"]
               },
               "right" : {
-                "type" : "hexstr",
-                "value" : "0x000002"
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "egress_queue_depth_monitor_control_block_last_updated_deq_depth"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x000004"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x07ffff"
+                  }
+                }
               }
             }
           },
-          "true_next" : "tbl_egress_queue_depth_monitor30",
-          "false_next" : "EgressPipeImpl.egress_rate_monitor_control_block.egress_rate_monitor_table"
+          "true_next" : "tbl_egress_queue_depth_monitor42",
+          "false_next" : "node_89"
         },
         {
-          "name" : "node_88",
-          "id" : 28,
+          "name" : "node_89",
+          "id" : 29,
+          "source_info" : {
+            "filename" : "p4src/src/egress_queue_depth_monitor.p4",
+            "line" : 49,
+            "column" : 21,
+            "source_fragment" : "standard_metadata.deq_qdepth < (last_updated_deq_depth - EGRESS_QUEUE_DEPTH_THRESHOLD)"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "<",
+              "left" : {
+                "type" : "field",
+                "value" : ["standard_metadata", "deq_qdepth"]
+              },
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "egress_queue_depth_monitor_control_block_last_updated_deq_depth"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x07fffc"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x07ffff"
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "tbl_egress_queue_depth_monitor50",
+          "false_next" : "tbl_egress_queue_depth_monitor58"
+        },
+        {
+          "name" : "node_94",
+          "id" : 30,
           "source_info" : {
             "filename" : "p4src/src/egress_rate_monitor.p4",
             "line" : 36,
@@ -16532,37 +17372,11 @@
             }
           },
           "true_next" : "tbl_egress_rate_monitor37",
-          "false_next" : "node_90"
+          "false_next" : "node_96"
         },
         {
-          "name" : "node_90",
-          "id" : 29,
-          "source_info" : {
-            "filename" : "p4src/src/spine.p4",
-            "line" : 402,
-            "column" : 15,
-            "source_fragment" : "standard_metadata.deq_qdepth > ECN_THRESHOLD"
-          },
-          "expression" : {
-            "type" : "expression",
-            "value" : {
-              "op" : ">",
-              "left" : {
-                "type" : "field",
-                "value" : ["standard_metadata", "deq_qdepth"]
-              },
-              "right" : {
-                "type" : "hexstr",
-                "value" : "0x000002"
-              }
-            }
-          },
-          "true_next" : "tbl_spine402",
-          "false_next" : "node_92"
-        },
-        {
-          "name" : "node_92",
-          "id" : 30,
+          "name" : "node_96",
+          "id" : 31,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 404,
@@ -16581,11 +17395,11 @@
             }
           },
           "true_next" : "tbl_spine405",
-          "false_next" : "node_94"
+          "false_next" : "node_98"
         },
         {
-          "name" : "node_94",
-          "id" : 31,
+          "name" : "node_98",
+          "id" : 32,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 422,
@@ -16729,11 +17543,11 @@
             }
           },
           "true_next" : "tbl_spine424",
-          "false_next" : "node_96"
+          "false_next" : "node_100"
         },
         {
-          "name" : "node_96",
-          "id" : 32,
+          "name" : "node_100",
+          "id" : 33,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 425,
@@ -16820,11 +17634,11 @@
             }
           },
           "true_next" : "tbl_spine427",
-          "false_next" : "node_98"
+          "false_next" : "node_102"
         },
         {
-          "name" : "node_98",
-          "id" : 33,
+          "name" : "node_102",
+          "id" : 34,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 428,
@@ -16886,8 +17700,8 @@
           "false_next" : "EgressPipeImpl.debug_std_meta_egress_start.dbg_table"
         },
         {
-          "name" : "node_101",
-          "id" : 34,
+          "name" : "node_105",
+          "id" : 35,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 441,
@@ -16909,11 +17723,11 @@
             }
           },
           "true_next" : "tbl_spine442",
-          "false_next" : "node_109"
+          "false_next" : "node_113"
         },
         {
-          "name" : "node_103",
-          "id" : 35,
+          "name" : "node_107",
+          "id" : 36,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 443,
@@ -16935,11 +17749,11 @@
             }
           },
           "true_next" : "tbl_spine445",
-          "false_next" : "node_105"
+          "false_next" : "node_109"
         },
         {
-          "name" : "node_105",
-          "id" : 36,
+          "name" : "node_109",
+          "id" : 37,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 447,
@@ -16964,8 +17778,8 @@
           "false_next" : "tbl_spine482"
         },
         {
-          "name" : "node_109",
-          "id" : 37,
+          "name" : "node_113",
+          "id" : 38,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 491,
@@ -16987,11 +17801,11 @@
             }
           },
           "true_next" : "tbl_set_all_header_invalid_0",
-          "false_next" : "node_112"
+          "false_next" : "node_116"
         },
         {
-          "name" : "node_112",
-          "id" : 38,
+          "name" : "node_116",
+          "id" : 39,
           "source_info" : {
             "filename" : "p4src/src/spine.p4",
             "line" : 523,

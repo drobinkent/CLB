@@ -22,100 +22,29 @@ p4-ecmp: p4-leaf-ecmp p4-spine-ecmp
 	$(info *** Building P4 program with ECMP routing for the leaf and spine switch...)
 
 
-p4-leaf-cp-assisted-multicriteria-policy-routing-without-rate-control: p4src/src/leaf.p4
-	$(info *** Building P4 program for the leaf switch...)
+p4-leaf-clb: p4src/src/leaf.p4
+	$(info *** Building P4 program for the leaf switch for CLB...)
 	@mkdir -p p4src/Build
 	p4c-bm2-ss --arch v1model -o p4src/Build/leaf.json \
 		--p4runtime-files p4src/Build/leaf_p4info.txt --Wdisable=unsupported \
-		p4src/src/leaf.p4 -Dports=256 -DENABLE_DEBUG_TABLES -DDP_ALGO_CP_ASSISTED_POLICY_ROUTING
+		p4src/src/leaf.p4 -Dports=256 -DENABLE_DEBUG_TABLES -DDP_ALGO_CLB  -DBITMASK_LENGTH=3 -DBITMASK_ARRAY_LENGTH=2 -DBITMASK_ARRAY_INDEX_INDICATOR_BITS_LENGTH=1 -DPADDING_BITS_LENGTH=4
 	sudo cp ./p4src/Build/leaf.json /tmp/
 	sudo cp ./p4src/Build/leaf_p4info.txt /tmp/
 	@echo "*** P4 program for leaf switch compiled successfully! Output files are in p4src/Build"
 
-p4-spine-cp-assisted-multicriteria-policy-routing-without-rate-control: p4src/src/spine.p4
+p4-spine-clb: p4src/src/spine.p4
 	$(info *** Building P4 program for the spine switch...)
 	@mkdir -p p4src/Build
 	p4c-bm2-ss --arch v1model -o p4src/Build/spine.json \
 		--p4runtime-files p4src/Build/spine_p4info.txt --Wdisable=unsupported \
-		p4src/src/spine.p4 -Dports=256  -DENABLE_DEBUG_TABLES -DDP_ALGO_CP_ASSISTED_POLICY_ROUTING
+		p4src/src/spine.p4 -Dports=256  -DENABLE_DEBUG_TABLES -DDP_ALGO_CLB -DBITMASK_LENGTH=3 -DBITMASK_ARRAY_LENGTH=2 -DBITMASK_ARRAY_INDEX_INDICATOR_BITS_LENGTH=1 -DPADDING_BITS_LENGTH=5
 	sudo cp ./p4src/Build/spine.json /tmp/
 	sudo cp ./p4src/Build/spine_p4info.txt /tmp/
 	@echo "*** P4 program for spine switch compiled successfully! Output files are in p4src/Build"
 
-p4-cp-assisted-multicriteria-policy-routing-without-rate-control: p4-leaf-cp-assisted-multicriteria-policy-routing-without-rate-control p4-spine-cp-assisted-multicriteria-policy-routing-\
-	without-rate-control
-	$(info *** Building P4 program with CP assisted multicriteria policy based routing -without-rate-control for the leaf and spine switch...)
+p4-clb: p4-leaf-clb p4-spine-clb
+	$(info *** Building P4 program with CLB load balancing for the leaf and spine switch...)
 
-p4-leaf-cp-assisted-multicriteria-policy-routing-with-path-reveirication--without-rate-control: p4src/src/leaf.p4
-	$(info *** Building P4 program for the leaf switch...)
-	@mkdir -p p4src/Build
-	p4c-bm2-ss --arch v1model -o p4src/Build/leaf.json \
-		--p4runtime-files p4src/Build/leaf_p4info.txt --Wdisable=unsupported \
-		p4src/src/leaf.p4 -Dports=256 -DENABLE_DEBUG_TABLES -DDP_ALGO_CP_ASSISTED_POLICY_ROUTING -DPATH_REVERIFICATION_ENABLED
-	sudo cp ./p4src/Build/leaf.json /tmp/
-	sudo cp ./p4src/Build/leaf_p4info.txt /tmp/
-	@echo "*** P4 program for leaf switch compiled successfully! Output files are in p4src/Build"
-
-p4-spine-cp-assisted-multicriteria-policy-routing-with-path-reveirication-without-rate-control: p4src/src/spine.p4
-	$(info *** Building P4 program for the spine switch...)
-	@mkdir -p p4src/Build
-	p4c-bm2-ss --arch v1model -o p4src/Build/spine.json \
-		--p4runtime-files p4src/Build/spine_p4info.txt --Wdisable=unsupported \
-		p4src/src/spine.p4 -Dports=256  -DENABLE_DEBUG_TABLES -DDP_ALGO_CP_ASSISTED_POLICY_ROUTING -DPATH_REVERIFICATION_ENABLED
-	sudo cp ./p4src/Build/spine.json /tmp/
-	sudo cp ./p4src/Build/spine_p4info.txt /tmp/
-	@echo "*** P4 program for spine switch compiled successfully! Output files are in p4src/Build"
-
-p4-cp-assisted-multicriteria-policy-routing-with-path-reveirication-without-rate-control: p4-leaf-cp-assisted-multicriteria-policy-routing-with-path-reveirication-without-rate-control p4-spine-cp-assisted-multicriteria-policy-routing-with-path-reveirication-without-rate-control
-	$(info *** Building P4 program with CP assisted multicriteria policy based routing -with-path-reveirication but -without-rate-control for the leaf and spine switch...)
-
-
-
-p4-leaf-cp-assisted-multicriteria-policy-routing-with-rate-control: p4src/src/leaf.p4
-	$(info *** Building P4 program for the leaf switch...)
-	@mkdir -p p4src/Build
-	p4c-bm2-ss --arch v1model -o p4src/Build/leaf.json \
-		--p4runtime-files p4src/Build/leaf_p4info.txt --Wdisable=unsupported \
-		p4src/src/leaf.p4 -Dports=256 -DENABLE_DEBUG_TABLES -DDP_ALGO_CP_ASSISTED_POLICY_ROUTING -DDP_BASED_RATE_CONTROL_ENABLED
-	sudo cp ./p4src/Build/leaf.json /tmp/
-	sudo cp ./p4src/Build/leaf_p4info.txt /tmp/
-	@echo "*** P4 program for leaf switch compiled successfully! Output files are in p4src/Build"
-
-p4-spine-cp-assisted-multicriteria-policy-routing-with-rate-control: p4src/src/spine.p4
-	$(info *** Building P4 program for the spine switch...)
-	@mkdir -p p4src/Build
-	p4c-bm2-ss --arch v1model -o p4src/Build/spine.json \
-		--p4runtime-files p4src/Build/spine_p4info.txt --Wdisable=unsupported \
-		p4src/src/spine.p4 -Dports=256  -DENABLE_DEBUG_TABLES -DDP_ALGO_CP_ASSISTED_POLICY_ROUTING -DDP_BASED_RATE_CONTROL_ENABLED
-	sudo cp ./p4src/Build/spine.json /tmp/
-	sudo cp ./p4src/Build/spine_p4info.txt /tmp/
-	@echo "*** P4 program for spine switch compiled successfully! Output files are in p4src/Build"
-
-p4-cp-assisted-multicriteria-policy-routing-with-rate-control: p4-leaf-cp-assisted-multicriteria-policy-routing-with-rate-control p4-spine-cp-assisted-multicriteria-policy-routing-with-rate-control
-	$(info *** Building P4 program with CP assisted multicriteria policy based routing -with-rate-control for the leaf and spine switch...)
-
-p4-leaf-dp-only-multicriteria-policy-routing: p4src/src/leaf.p4
-	$(info *** Building P4 program for the leaf switch...)
-	@mkdir -p p4src/Build
-	p4c-bm2-ss --arch v1model -o p4src/Build/leaf.json \
-		--p4runtime-files p4src/Build/leaf_p4info.txt --Wdisable=unsupported \
-		p4src/src/leaf.p4 -Dports=256 -DENABLE_DEBUG_TABLES -DDP_ALGO_DP_ONLY_POLICY_ROUTING
-	sudo cp ./p4src/Build/leaf.json /tmp/
-	sudo cp ./p4src/Build/leaf_p4info.txt /tmp/
-	@echo "*** P4 program for leaf switch compiled successfully! Output files are in p4src/Build"
-
-p4-spine-dp-only-multicriteria-policy-routing: p4src/src/spine.p4
-	$(info *** Building P4 program for the spine switch...)
-	@mkdir -p p4src/Build
-	p4c-bm2-ss --arch v1model -o p4src/Build/spine.json \
-		--p4runtime-files p4src/Build/spine_p4info.txt --Wdisable=unsupported \
-		p4src/src/spine.p4 -Dports=256  -DENABLE_DEBUG_TABLES -DDP_ALGO_DP_ONLY_POLICY_ROUTING
-	sudo cp ./p4src/Build/spine.json /tmp/
-	sudo cp ./p4src/Build/spine_p4info.txt /tmp/
-	@echo "*** P4 program for spine switch compiled successfully! Output files are in p4src/Build"
-
-p4-dp-only-multicriteria-policy-routing: p4-leaf-dp-only-multicriteria-policy-routing p4-spine-dp-only-multicriteria-policy-routing 
-	$(info *** Building P4 program with dp only multicriteria policy based routing for the leaf and spine switch...)
 
 start_clos: MininetSimulator/clos.py
 	$(info *** Starting clos topology DCN using MininetSimulator/clos.py...)

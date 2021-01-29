@@ -183,3 +183,16 @@ SSH_PORT = 22
 
 LINUX_CC_ALGORITHM_DCTCP = "dctcp"
 LINUX_CC_ALGORITHM_CUBIC = "cubic"
+
+
+
+#=======================configurations for CLB
+
+DISTRIBUTION_1 = [4,7,10,12]
+DISTRIBUTION_2 = [4,7,10,12]
+
+DELAY_BETWEEN_DISTRIBUTION_1_AND_2_CHANGE = 100 #After installing the DISTRIBUTION_1, the system will install DISTRIBUTION_2
+
+MAX_LOAD = 1000 # N in out systesm
+PRECISION = 10
+BITMASK_LENGTH = 4
