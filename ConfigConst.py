@@ -193,7 +193,8 @@ CLB_TESTER_DEVICE_NAME = "p0l0" # As out target is only testing algorithm we wil
 LOAD_DISTRIBUTION_1 = [(5,1),(6,2),(7,2),(8,3)]
 LOAD_DISTRIBUTION_2 = [(5,2),(6,2),(7,3),(8,1)]
 
-DELAY_BETWEEN_DISTRIBUTION_1_AND_2_CHANGE = 100 #After installing the DISTRIBUTION_1, the system will install DISTRIBUTION_2
+DISTRO1_INSTALL_DELAY = 15   # Weight distribution 1 will be installed after 50 second of the controller thread starts
+DISTRO2_INSTALL_DELAY = 100  # Weight distribution 2 will be installed after 50 second of the controller thread starts
 
 MAX_LOAD = 1000 # N in out systesm
 PRECISION = 10

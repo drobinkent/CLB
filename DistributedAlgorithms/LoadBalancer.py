@@ -50,22 +50,33 @@ class LoadBalanacer:
 
     def load_balancer_config_thread_function(self):
         logger.info("Thread %s: starting", "load_balancer_config_thread_function")
+        start = time.time()
+        hostObject = self.nameToSwitchMap.get(ConfConst.CLB_TESTER_DEVICE_NAME)  # we will test with only one switch. so no need to consider others
+        distr1InstallFlag = False #This means this distribution is not installed
+        distr2InstallFlag = False
         while(self.isRunning):
-            accumulatedDistribution = self.getAccumulatedDistribution(ConfConst.LOAD_DISTRIBUTION_1)
-            print("Old distrib was "+str(json.dumps(ConfConst.LOAD_DISTRIBUTION_1)))
-            print("accumulated distrib is "+str(json.dumps(accumulatedDistribution)))
-            hostObject = self.nameToSwitchMap.get(ConfConst.CLB_TESTER_DEVICE_NAME)
-            packetOutList = self.installDistributionInCPAndGeneratePacketOutMessages(accumulatedDistribution, firstTimeFlag=True)
-            for p in packetOutList:
-                hostObject.send_already_built_control_packet_for_load_balancer(p)
-            time.sleep(20)
-            accumulatedDistribution = self.getAccumulatedDistribution(ConfConst.LOAD_DISTRIBUTION_2)
-            print("Old distrib was "+str(json.dumps(ConfConst.LOAD_DISTRIBUTION_2)))
-            print("accumulated distrib is "+str(json.dumps(accumulatedDistribution)))
-            packetOutList = self.installDistributionInCPAndGeneratePacketOutMessages(accumulatedDistribution)
-            for p in packetOutList:
-                hostObject.send_already_built_control_packet_for_load_balancer(p)
-            time.sleep(200000000)
+            currentTime = time.time()
+            if ( (currentTime - start) > ConfConst.DISTRO1_INSTALL_DELAY) and ( (currentTime - start) < ConfConst.DISTRO2_INSTALL_DELAY) and (distr1InstallFlag == False):
+                accumulatedDistribution = self.getAccumulatedDistribution(ConfConst.LOAD_DISTRIBUTION_1)
+                print("Old distrib was "+str(json.dumps(ConfConst.LOAD_DISTRIBUTION_1)))
+                print("accumulated distrib is "+str(json.dumps(accumulatedDistribution)))
+                packetOutList = self.installDistributionInCPAndGeneratePacketOutMessages(accumulatedDistribution, firstTimeFlag=True)
+                for p in packetOutList:
+                    hostObject.send_already_built_control_packet_for_load_balancer(p)
+                distr1InstallFlag = True
+            if ( (currentTime - start) > ConfConst.DISTRO2_INSTALL_DELAY) and (distr2InstallFlag == False):
+                accumulatedDistribution = self.getAccumulatedDistribution(ConfConst.LOAD_DISTRIBUTION_2)
+                print("Old distrib was "+str(json.dumps(ConfConst.LOAD_DISTRIBUTION_2)))
+                print("accumulated distrib is "+str(json.dumps(accumulatedDistribution)))
+                packetOutList = self.installDistributionInCPAndGeneratePacketOutMessages(accumulatedDistribution)
+                for p in packetOutList:
+                    hostObject.send_already_built_control_packet_for_load_balancer(p)
+                distr2InstallFlag = True
+            time.sleep(1)
+            #Now reset the counter
+            pktForCounterReset = self.buildMetadataBasedPacketOut( clabFlag=128, bitmaskArrayIndex = 0, bitmaskPosition=0, linkID=0,
+                                                                   bitmask=self.bitMaskArray[0], level_to_link_id_store_index = 0) # Here only lcabFlag matters others not
+            hostObject.send_already_built_control_packet_for_load_balancer(pktForCounterReset)
         pass
 
 
@@ -127,6 +138,7 @@ class LoadBalanacer:
         packet_out_req.packet.CopyFrom(packet_out)
         return packet_out_req
 
+
     def installDistributionInCPAndGeneratePacketOutMessages(self, weightDistribution, firstTimeFlag=False):
         '''
         This function process the whole distribution and generates all the pcaket_out messages to be sent to DP
@@ -169,11 +181,3 @@ class LoadBalanacer:
             accumulatedDistribution.append((e[0],sum-1))
         return accumulatedDistribution
 
-    def sendControlMessagesToDataPlane(self, cntrolMessagesList, dev):
-        '''
-        This function will send the messsages to DP
-        :param cntrolMessagesList:
-        :param dev:
-        :return:
-        '''
-        pass
