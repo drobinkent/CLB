@@ -82,10 +82,10 @@
         ["userMetadata.egr_rate_based_path", 9, false],
         ["userMetadata.temp", 32, false],
         ["userMetadata.temp_8_bit", 8, false],
-        ["userMetadata.packet_bitmask", 3, false],
+        ["userMetadata.packet_bitmask", 4, false],
         ["userMetadata.packet_bitmask_array_index", 1, false],
         ["userMetadata.link_location_index", 32, false],
-        ["_padding_0", 2, false]
+        ["_padding_0", 1, false]
       ]
     },
     {
@@ -345,7 +345,8 @@
         ["found_multi_criteria_paths", 1, 0],
         ["is_packet_from_downstream_port", 1, 0],
         ["is_packet_from_upstream_port", 1, 0],
-        ["padding", 7, false]
+        ["is_load_balancer_processing_required", 1, 0],
+        ["padding", 6, false]
       ]
     }
   ],
@@ -760,6 +761,10 @@
         },
         {
           "type" : "field",
+          "value" : ["flag_hdr", "is_load_balancer_processing_required"]
+        },
+        {
+          "type" : "field",
           "value" : ["flag_hdr", "padding"]
         },
         {
@@ -1120,6 +1125,10 @@
         },
         {
           "type" : "field",
+          "value" : ["flag_hdr", "is_load_balancer_processing_required"]
+        },
+        {
+          "type" : "field",
           "value" : ["flag_hdr", "padding"]
         },
         {
@@ -1477,6 +1486,10 @@
         {
           "type" : "field",
           "value" : ["flag_hdr", "is_packet_from_upstream_port"]
+        },
+        {
+          "type" : "field",
+          "value" : ["flag_hdr", "is_load_balancer_processing_required"]
         },
         {
           "type" : "field",
@@ -2389,7 +2402,7 @@
               "type" : "default",
               "value" : null,
               "mask" : null,
-              "next_state" : "parse_ethernet"
+              "next_state" : null
             }
           ],
           "transition_key" : []
@@ -3353,6 +3366,42 @@
       },
       "size" : 256,
       "bitwidth" : 48
+    },
+    {
+      "name" : "load_counter",
+      "id" : 25,
+      "source_info" : {
+        "filename" : "p4src/src/CONSTANTS.p4",
+        "line" : 181,
+        "column" : 42,
+        "source_fragment" : "@name(\\\"load_counter\\\")register<bit<32>>(1) load_counter;"
+      },
+      "size" : 1,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "bitmask_array",
+      "id" : 26,
+      "source_info" : {
+        "filename" : "p4src/src/CONSTANTS.p4",
+        "line" : 182,
+        "column" : 42,
+        "source_fragment" : "@name(\\\"bitmask_array\\\")register<bit<4>>(2) bitmask_array;"
+      },
+      "size" : 2,
+      "bitwidth" : 4
+    },
+    {
+      "name" : "level_to_link_store",
+      "id" : 27,
+      "source_info" : {
+        "filename" : "p4src/src/spine.p4",
+        "line" : 22,
+        "column" : 49,
+        "source_fragment" : "@name(\\\"level_to_link_store\\\")register<bit<32>>(8) level_to_link_store;"
+      },
+      "size" : 8,
+      "bitwidth" : 32
     }
   ],
   "calculations" : [

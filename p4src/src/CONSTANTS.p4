@@ -178,11 +178,9 @@ const bit<8> WINDOW_INCREASE_RATIO = 8;
 
 
 //===============================================CLB Related Constants
-
-//const int<32> BIT_MASK_LENGTH = 3;
-//const bit<32> BIT_LENGTH_FOR_INDEX = 1; //Assume we have 3 in this variable then we will have 2^3 indexes, in each position there will a statefulmemory of BIT_MASK_LENGTH bits
-//const int<32> TOTAL_INDEXES  = 1 << BIT_LENGTH_FOR_INDEX ;
-
+@name("load_counter")register<bit<32>>(1) load_counter;
+@name("bitmask_array")register<bit<BITMASK_LENGTH>>(BITMASK_ARRAY_LENGTH) bitmask_array;
+@name("level_to_link_store")register<bit<32>>(TOTAL_LEVELS) level_to_link_store;
 
 
 

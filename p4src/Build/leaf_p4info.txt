@@ -966,7 +966,7 @@ tables {
   match_fields {
     id: 2
     name: "local_metadata.packet_bitmask"
-    bitwidth: 3
+    bitwidth: 4
     match_type: TERNARY
   }
   action_refs {
@@ -2082,6 +2082,51 @@ registers {
 }
 registers {
   preamble {
+    id: 378236814
+    name: "load_counter"
+    alias: "load_counter"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 32
+      }
+    }
+  }
+  size: 1
+}
+registers {
+  preamble {
+    id: 383406819
+    name: "bitmask_array"
+    alias: "bitmask_array"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 4
+      }
+    }
+  }
+  size: 2
+}
+registers {
+  preamble {
+    id: 384890338
+    name: "level_to_link_store"
+    alias: "level_to_link_store"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 32
+      }
+    }
+  }
+  size: 8
+}
+registers {
+  preamble {
     id: 369210850
     name: "IngressPipeImpl.ingress_delay_processor_control_block.path_avg_delay_registers"
     alias: "path_avg_delay_registers"
@@ -2229,51 +2274,6 @@ registers {
     }
   }
   size: 8192
-}
-registers {
-  preamble {
-    id: 379385199
-    name: "IngressPipeImpl.dp_only_load_balancing_control_block.load_counter"
-    alias: "load_counter"
-  }
-  type_spec {
-    bitstring {
-      bit {
-        bitwidth: 32
-      }
-    }
-  }
-  size: 1
-}
-registers {
-  preamble {
-    id: 384940184
-    name: "IngressPipeImpl.dp_only_load_balancing_control_block.bitmask_array"
-    alias: "bitmask_array"
-  }
-  type_spec {
-    bitstring {
-      bit {
-        bitwidth: 3
-      }
-    }
-  }
-  size: 2
-}
-registers {
-  preamble {
-    id: 370612845
-    name: "IngressPipeImpl.dp_only_load_balancing_control_block.level_to_link_store"
-    alias: "level_to_link_store"
-  }
-  type_spec {
-    bitstring {
-      bit {
-        bitwidth: 32
-      }
-    }
-  }
-  size: 2
 }
 registers {
   preamble {

@@ -2015,6 +2015,51 @@ registers {
 }
 registers {
   preamble {
+    id: 378236814
+    name: "load_counter"
+    alias: "load_counter"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 32
+      }
+    }
+  }
+  size: 1
+}
+registers {
+  preamble {
+    id: 383406819
+    name: "bitmask_array"
+    alias: "bitmask_array"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 4
+      }
+    }
+  }
+  size: 2
+}
+registers {
+  preamble {
+    id: 384890338
+    name: "level_to_link_store"
+    alias: "level_to_link_store"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 32
+      }
+    }
+  }
+  size: 8
+}
+registers {
+  preamble {
     id: 383313281
     name: "IngressPipeImpl.egress_queue_depth_value_map"
     alias: "IngressPipeImpl.egress_queue_depth_value_map"

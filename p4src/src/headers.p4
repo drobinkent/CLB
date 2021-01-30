@@ -181,7 +181,8 @@ header flag_headers_t {
     bool found_multi_criteria_paths;
     bool is_packet_from_downstream_port;
     bool is_packet_from_upstream_port;
-    bit<7> padding;
+    bool is_load_balancer_processing_required;
+    bit<6> padding;
 }
 
 

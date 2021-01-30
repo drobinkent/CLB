@@ -12,12 +12,11 @@ control dp_only_load_balancing(inout parsed_headers_t    hdr,
                         inout local_metadata_t    local_metadata,
                         inout standard_metadata_t standard_metadata)
 {
-    @name("load_counter")register<bit<32>>(1) load_counter;
-    @name("bitmask_array")register<bit<BITMASK_LENGTH>>(BITMASK_ARRAY_LENGTH) bitmask_array;
-    @name("level_to_link_store")register<bit<32>>(BITMASK_ARRAY_LENGTH) level_to_link_store;
+
 
     action nearest_level_finder_mat_action_without_param() {
         local_metadata.link_location_index =0;
+        local_metadata.flag_hdr.found_multi_criteria_paths = false;
     }
     action nearest_level_finder_mat_action_with_param(bit<32> link_location_index) {
         local_metadata.link_location_index = link_location_index;
@@ -39,23 +38,9 @@ control dp_only_load_balancing(inout parsed_headers_t    hdr,
         //counters = direct_counter(CounterType.packets_and_bytes);
     }
     apply {
-         if (hdr.packet_out.isValid()) {
-            //process control packet here -- header format for ctrtIn --> counterReset= yes or no,
-            if(hdr.packet_out.clb_flags[7:7] == (bit<1>)1){
-                bit<32> load_counter_value = 0;
-                load_counter.write(0, load_counter_value); //Reset the counter
-            }
-            if(hdr.packet_out.clb_flags[6:6] == (bit<1>)1){ //This is a delete packet
-                bitmask_array.write( (bit<32>)(hdr.packet_out.bitmask_array_index), hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0]);
-                level_to_link_store.write(hdr.packet_out.link_id, (bit<32>)hdr.packet_out.level_to_link_id_store_index);
-
-            }if(hdr.packet_out.clb_flags[5:5] == (bit<1>)1){ //This is an insert packet
-                bitmask_array.write( (bit<32>)(hdr.packet_out.bitmask_array_index), hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0]);
-                level_to_link_store.write(hdr.packet_out.link_id, (bit<32>)hdr.packet_out.level_to_link_id_store_index);
-            }
-
-         }else{
+         {
             // process normal data packet here
+            log_msg("LB: the message is not a valid control packet");
             bit<32> load_counter_value = 0;
             load_counter.read(load_counter_value, 0); //Read the only value. only one index one value
             load_counter_value = load_counter_value + 1;

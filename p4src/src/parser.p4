@@ -29,7 +29,7 @@ parser ParserImpl (packet_in packet,
 
     state parse_packet_out {
         packet.extract(hdr.packet_out);
-        transition parse_ethernet;
+        transition accept;
     }
 
     state parse_ethernet {

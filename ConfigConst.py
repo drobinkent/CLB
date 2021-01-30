@@ -187,6 +187,7 @@ LINUX_CC_ALGORITHM_CUBIC = "cubic"
 
 
 #=======================configurations for CLB
+CPU_PORT = 255
 CLB_TESTER_DEVICE_NAME = "p0l0" # As out target is only testing algorithm we will only run the CLB from one switch.
 #This parameter defines that name. The algorithm will be only run with that device
 LOAD_DISTRIBUTION_1 = [(5,1),(6,2),(7,2),(8,3)]

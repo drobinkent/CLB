@@ -174,7 +174,25 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
        // Remove the packet-out header...
        hdr.packet_out.setInvalid();
        // Exit the pipeline here, no need to go through other tables.
-       exit;
+       log_msg("LB: found a control packet");
+       //exit;
+
+       //process control packet here -- header format for ctrtIn --> counterReset= yes or no,
+       if(hdr.packet_out.clb_flags[7:7] == (bit<1>)1){
+           bit<32> load_counter_value = 0;
+           load_counter.write(0, load_counter_value); //Reset the counter
+           log_msg("LB: Control Message for reset counter found");
+       }
+       if(hdr.packet_out.clb_flags[6:6] == (bit<1>)1){ //This is a control packet
+           bitmask_array.write( (bit<32>)(hdr.packet_out.bitmask_array_index), hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0]);
+           level_to_link_store.write( (bit<32>)hdr.packet_out.level_to_link_id_store_index, hdr.packet_out.link_id);
+           log_msg("LB: Control Message for path control:: linkID--{}, index --{} position--{} bitmask--{} levelToLink--{}",
+                                          {hdr.packet_out.link_id, hdr.packet_out.bitmask_array_index,  hdr.packet_out.bitmask_position,hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0], hdr.packet_out.level_to_link_id_store_index});
+       }else{
+           log_msg("LB: The CLB flag is unsupported --{}", {hdr.packet_out.clb_flags});
+           log_msg("LB: Control Message for path control:: linkID--{}, index --{} position--{} bitmask--{} levelToLink--{}",
+                               {hdr.packet_out.link_id, hdr.packet_out.bitmask_array_index,  hdr.packet_out.bitmask_position,hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0], hdr.packet_out.level_to_link_id_store_index});
+       }
     }else if (hdr.packet_in.isValid() && IS_RECIRCULATED(standard_metadata)) {  //This means this packet is replicated from egress to setup
         //log_msg("Found a recirculated packet");
         local_metadata.flag_hdr.do_l3_l2 = false; //thie means . this packet doesn;t need normal forwarding processing. It wil only be used for updating the internal routing related information
@@ -228,14 +246,15 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
                 bool found_multi_criteria_paths = (local_metadata.flag_hdr.found_multi_criteria_paths) &&
                             (local_metadata.flag_hdr.found_egr_queue_depth_based_path || local_metadata.flag_hdr.found_egr_queue_rate_based_path ||
                              local_metadata.flag_hdr.found_path_delay_based_path);
+
+                #ifdef DP_ALGO_CLB
+                dp_only_load_balancing_control_block.apply(hdr, local_metadata, standard_metadata);
+
+                #endif
                 if ( found_multi_criteria_paths == false){ // this means in multicriteria table we have not found any paths. This may be due to lack of proper traffic class or IP predix in those tables
                     upstream_ecmp_routing_control_block.apply(hdr, local_metadata, standard_metadata);
                     //simply Call the new block here
                 }
-                 #ifdef DP_ALGO_CLB
-                dp_only_load_balancing_control_block.apply(hdr, local_metadata, standard_metadata);
-                #endif
-
                 //log_msg("egress spec is {} and egress port is {}",{standard_metadata.egress_spec , standard_metadata.egress_port});
             }
         }

@@ -497,7 +497,7 @@ class Device:
                 else:
                     logger.info("Unknown pakt")
         except Exception as e:
-            logger.info("Error in pkt rcvr thread for device "+ str( self.devName) + " error is ",e)
+            logger.info("Error in pkt rcvr thread for device "+ str( self.devName) + " error is "+str(e))
             #logger.info(e)
 
     def handshake(self):
@@ -552,6 +552,40 @@ class Device:
         packet_out_req.packet.CopyFrom(packet_out)
         clnt.stream_out_q.put(packet_out_req)
         self.packetOutLock.release()
+
+    def send_already_built_control_packet_for_load_balancer(self, packet_out_req):
+        self.stream_out_q.put(packet_out_req)
+
+    def send_control_packet_for_load_balancer(self, pktInRaw, port, clnt):
+        self.packetOutLock.acquire(blocking=True)
+        packet_out_req = p4runtime_pb2.StreamMessageRequest()
+        port_hex = port.to_bytes(length=2, byteorder="big")
+        packet_out = p4runtime_pb2.PacketOut()
+        egress_physical_port = packet_out.metadata.add()
+        egress_physical_port.metadata_id = 1
+        egress_physical_port.value = port_hex
+        packet_out.payload = pktInRaw
+        packet_out_req.packet.CopyFrom(packet_out)
+        self.stream_out_q.put(packet_out_req)
+        self.packetOutLock.release()
+
+
+        # self.packetOutLock.acquire(blocking=True)
+        # req = p4runtime_pb2.StreamMessageRequest()
+        # packet = p4runtime_pb2.PacketOut()
+        # packet.payload = pktInRaw
+        # port_hex = port.to_bytes(length=2, byteorder="big")
+        #
+        # metadata = p4runtime_pb2.PacketMetadata()
+        # metadata.metadata_id=1
+        # metadata.value = (1).to_bytes(2,'big')
+        # packet.metadata.add()
+        # metadata.metadata_id=2
+        # metadata.value = (0).to_bytes(2,'big')
+        # packet.metadata.add()
+        # req.packet.CopyFrom(packet)
+        # self.stream_out_q.put(req)
+        # self.packetOutLock.release()
 
     def hostDiscoverySetup(self):
         # This function only works for leaf switch. and is necessary for NDP setup. So irrespective of any test scenario we have this is mandatory
