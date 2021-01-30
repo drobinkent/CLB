@@ -548,14 +548,14 @@ class PortStats:
     def from_dict(obj: Any) -> 'PortStats':
         assert isinstance(obj, dict)
         upward_port_egress_packet_counter = from_dict(from_int, obj.get("_upwardPortEgressPacketCounter"))
-        downward_port_egress_packet_counter = from_dict(from_int, obj.get("_downwardPortEgressPacketCounter"))
-        upward_port_ingress_packet_counter = from_dict(from_int, obj.get("_upwardPortIngressPacketCounter"))
-        downward_port_inress_packet_counter = from_dict(from_int, obj.get("_downwardPortInressPacketCounter"))
-        cpu_port_ingress_packet_counter = from_int(obj.get("_CPUPortIngressPacketCounter"))
-        cpu_port_egress_packet_counter = from_int(obj.get("_CPUPortEgressPacketCounter"))
-        queue_rates = from_dict(from_int, obj.get("queueRates"))
-        queue_depths = from_dict(from_int, obj.get("queueDepths"))
-        return PortStats(upward_port_egress_packet_counter, downward_port_egress_packet_counter, upward_port_ingress_packet_counter, downward_port_inress_packet_counter, cpu_port_ingress_packet_counter, cpu_port_egress_packet_counter, queue_rates, queue_depths)
+        # downward_port_egress_packet_counter = from_dict(from_int, obj.get("_downwardPortEgressPacketCounter"))
+        # upward_port_ingress_packet_counter = from_dict(from_int, obj.get("_upwardPortIngressPacketCounter"))
+        # downward_port_inress_packet_counter = from_dict(from_int, obj.get("_downwardPortInressPacketCounter"))
+        # cpu_port_ingress_packet_counter = from_int(obj.get("_CPUPortIngressPacketCounter"))
+        # cpu_port_egress_packet_counter = from_int(obj.get("_CPUPortEgressPacketCounter"))
+        # queue_rates = from_dict(from_int, obj.get("queueRates"))
+        # queue_depths = from_dict(from_int, obj.get("queueDepths"))
+        return PortStats(upward_port_egress_packet_counter, None, None, None, None, None, None, None)
 
     def to_dict(self) -> dict:
         result: dict = {}

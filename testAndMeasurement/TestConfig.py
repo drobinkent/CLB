@@ -379,7 +379,7 @@ class IPerfDeplymentPair:
                 self.clientCmdString=  self.clientCmdString + " -b "+ str(confConst.IPERF_MAX_FLOW_RATE_FOR_SERVER)
             # self.clientCmdString= self.clientCmdString + " -w " + confConst.IPERF_DEFAULT_WINDOW_SIZE_FOR_SERVER + " "
             self.clientCmdString = self.clientCmdString + " -S "+ str(self.flowInfo.flow_traffic_class)
-            self.clientCmdString = self.clientCmdString + " -C dctcp "
+            # self.clientCmdString = self.clientCmdString + " --pacing-timer "+ str(confConst.IPERF_PACING_TIMER) + " "
             #self.clientCmdString=  self.clientCmdString +  " --set-mss "+str(self.flowInfo.pkt_size) + " --window "+str(self.flowInfo.src_window_size)+" "
             #self.clientCmdString=  self.clientCmdString + " -k "+ str(flowVloumeToBlockCountConverter(self.flowInfo.flow_volume, blockSize))+ " -b "+ str(self.flowInfo.src_data_rate) + " -l "+blockSize+" "
             self.clientCmdString = self.clientCmdString+ " -C dctcp  "

@@ -181,7 +181,7 @@ const bit<8> WINDOW_INCREASE_RATIO = 8;
 @name("load_counter")register<bit<32>>(1) load_counter;
 @name("bitmask_array")register<bit<BITMASK_LENGTH>>(BITMASK_ARRAY_LENGTH) bitmask_array;
 @name("level_to_link_store")register<bit<32>>(TOTAL_LEVELS) level_to_link_store;
-
+const bit<32> ALL_ONE_BIT_MASK= 0b11111111111111111111111111111111;
 
 
 #endif

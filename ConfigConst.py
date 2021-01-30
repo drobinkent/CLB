@@ -22,6 +22,7 @@ MAX_LOG_FILE_SIZE  =  52428800 #50 MB
 MAX_LOG_FILE_BACKUP_COUNT = 250  # MAximum 25 files will be kept
 IPERF_MAX_FLOW_RATE_FOR_SERVER = "4K"  #Iperf flow rate is made maximum to 64K. if we keep ubnlimited it swamps the buffer and experiemnts doesn't work really good
 IPERF_DEFAULT_WINDOW_SIZE_FOR_SERVER = "1.4K"
+IPERF_PACING_TIMER = 32
 #This is the path where all the counter values from devices will be written. Or we can directly show some data in live view of gnuplot
 LAMBDA = 25
 CONTROLLER_STATISTICS_RESULT_FILE_PATH = "./result/"
@@ -63,7 +64,7 @@ RESULT_PROCESSOR_LOG_FILE_PATH = "./log/RESULT_PROCESSOR_LOG.log"
 
 #------------Usually  buffer size should be Delay *  bandwidth . for bmv2 based testing this have to be represented and configured through Queue depth.
 # ------ So we will multiply port bandwidth by a factor to estimate the Delay *  BW . So by this factor we are actually estimating the Delay factor.
-QUEUE_RATE_TO_QUEUE_DEPTH_FACTOR = 2 # this means if for a port queu rate is x it's queue deth will be 5x
+QUEUE_RATE_TO_QUEUE_DEPTH_FACTOR = 50 # this means if for a port queu rate is x it's queue deth will be 5x
 MAX_PORT_NUMBER = 256 # This field means each switch will have maximum 1024 ports. Corresponding value (MAX_PORTS_IN_SWITCH=1024) also needed to be set in P4 constant.p4 file
 MAX_PORT_NUMBER_PLUS_ONE = MAX_PORT_NUMBER+1  # This special number is used for creating multicast sessions
 
@@ -106,12 +107,12 @@ class DataplnaeAlgorithm(Enum):
 ALGORITHM_IN_USE = DataplnaeAlgorithm.DP_ALGO_BASIC_ECMP  #For CLB it will be always ECMP
 
 
-queueRateForHostFacingPortsOfLeafSwitch = 40
-queueRateForSpineFacingPortsOfLeafSwitch = 20
-queueRateForLeafSwitchFacingPortsOfSpineSwitch= 20
-queueRateForSuperSpineSwitchFacingPortsOfSpineSwitch=10
-queueRateForSpineSwitchFacingPortsOfSuperSpineSwitch=10
-queueRateForExternalInternetFacingPortsOfSuperSpineSwitch=100
+queueRateForHostFacingPortsOfLeafSwitch = 16
+queueRateForSpineFacingPortsOfLeafSwitch = 16
+queueRateForLeafSwitchFacingPortsOfSpineSwitch= 16
+queueRateForSuperSpineSwitchFacingPortsOfSpineSwitch=16
+queueRateForSpineSwitchFacingPortsOfSuperSpineSwitch=16
+queueRateForExternalInternetFacingPortsOfSuperSpineSwitch=16
 
 
 
@@ -193,8 +194,8 @@ CLB_TESTER_DEVICE_NAME = "p0l0" # As out target is only testing algorithm we wil
 LOAD_DISTRIBUTION_1 = [(5,1),(6,2),(7,2),(8,3)]
 LOAD_DISTRIBUTION_2 = [(5,2),(6,2),(7,3),(8,1)]
 
-DISTRO1_INSTALL_DELAY = 15   # Weight distribution 1 will be installed after 50 second of the controller thread starts
-DISTRO2_INSTALL_DELAY = 100  # Weight distribution 2 will be installed after 50 second of the controller thread starts
+DISTRO1_INSTALL_DELAY = 0   # Weight distribution 1 will be installed after 50 second of the controller thread starts
+DISTRO2_INSTALL_DELAY = 200  # Weight distribution 2 will be installed after 50 second of the controller thread starts
 
 MAX_LOAD = 1000 # N in out systesm
 PRECISION = 10

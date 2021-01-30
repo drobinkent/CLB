@@ -1,0 +1,25 @@
+{
+	"start":	{
+		"connected":	[],
+		"version":	"iperf 3.7",
+		"system_info":	"Linux deba 5.8.0-41-generic #46~20.04.1-Ubuntu SMP Mon Jan 18 17:52:23 UTC 2021 x86_64",
+		"timestamp":	{
+			"time":	"Sat, 30 Jan 2021 10:28:55 GMT",
+			"timesecs":	1612002535
+		},
+		"connecting_to":	{
+			"host":	"2001:1:1:1:0:0000:0001:0000",
+			"port":	42001
+		},
+		"cookie":	"zt3sgoxg7ud7jpikdnymljbsgm5qutjybicu",
+		"tcp_mss":	1400,
+		"target_bitrate":	56000,
+		"sock_bufsize":	1433,
+		"sndbuf_actual":	4608,
+		"rcvbuf_actual":	2866
+	},
+	"intervals":	[],
+	"end":	{
+	},
+	"error":	"error - unable to connect stream: Connection timed out"
+}

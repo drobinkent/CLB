@@ -110,11 +110,11 @@ class StatisticsPuller:
 
         # if(dev.devName == "device:p0l0"):
         #     print("Gotcha")
-        tempPortStats = ps.PortStatistics()
+        # tempPortStats = ps.PortStatistics()
         if (dev.fabric_device_config.switch_type == jp.SwitchType.LEAF ):
             for sPort in dev.portToSpineSwitchMap:
                 egressPortCounterValueForSpine =egressPortStats.get(sPort)
-
+                portStatistics.setUpwardPortEgressPacketCounter(sPort,egressPortCounterValueForSpine)
 
 
 

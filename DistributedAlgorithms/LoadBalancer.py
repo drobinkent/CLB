@@ -58,6 +58,24 @@ class LoadBalanacer:
                 maskAsString = mask.getBinaryString()
                 switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskArrayIndex = i, packetBitmaskValueWithMaskAsString = allOneMAskBinaryString+"&&&"+maskAsString,
                                                          actionParamValue=i * bitMaskLength + j , priority=i * bitMaskLength + j+1) #1 added in the prioity bcz  0 priority doesn;t work
+                # switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskArrayIndex = i, packetBitmaskValueWithMaskAsString = allOneMAskBinaryString+"&&&"+maskAsString,
+                #                                           actionParamValue=i * bitMaskLength + j ,
+                #                                           priority= (bitMaskArrayMaxIndex * bitMaskLength)-(i * bitMaskLength + j)) #1 added in the prioity bcz  0 priority doesn;t work
+
+    def initMATOld(self, switchObject, bitMaskLength, bitMaskArrayMaxIndex):
+        allZeroMAsk = BinaryMask(bitMaskLength)
+        allZeroMAskBinaryStrings = allZeroMAsk.getBinaryString()
+        for i in range (0, bitMaskArrayMaxIndex):
+            for j in range(0, bitMaskLength):
+                mask = BinaryMask(bitMaskLength)
+                mask.setAllBitOne()
+                mask.setNthBitWithB(n=j,b=0)
+                maskAsString = mask.getBinaryString()
+                switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskArrayIndex = i, packetBitmaskValueWithMaskAsString = allZeroMAskBinaryStrings+"&&&"+maskAsString,
+                                                          actionParamValue=i * bitMaskLength + j , priority=i * bitMaskLength + j+1) #1 added in the prioity bcz  0 priority doesn;t work
+                # switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskArrayIndex = i, packetBitmaskValueWithMaskAsString = allOneMAskBinaryString+"&&&"+maskAsString,
+                #                                           actionParamValue=i * bitMaskLength + j ,
+                #                                           priority= (bitMaskArrayMaxIndex * bitMaskLength)-(i * bitMaskLength + j)) #1 added in the prioity bcz  0 priority doesn;t work
 
     def load_balancer_config_thread_function(self):
         logger.info("Thread %s: starting", "load_balancer_config_thread_function")
@@ -204,13 +222,19 @@ class BinaryMask:
         self.bits[n] = b
     def setAllBitOne(self):
         for i in range(0,self.length):
-            self.bits.append(1)
+            self.bits[i]  = 1
+
+    def setAllBitMinuxOneEqualX(self):
+        for i in range(0,self.length):
+            self.bits[i]  = -1
 
     def getBinaryString(self):
         val = "0b"
         for i in range(0, self.length):
             if(self.bits[i] == 0):
                 val = val + "0"
-            else:
+            elif (self.bits[i] == 1):
                 val = val + "1"
+            else:
+                val = val + "X"
         return  val

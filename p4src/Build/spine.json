@@ -82,10 +82,11 @@
         ["userMetadata.egr_rate_based_path", 9, false],
         ["userMetadata.temp", 32, false],
         ["userMetadata.temp_8_bit", 8, false],
+        ["userMetadata.packet_bitmask_shift_times", 2, false],
         ["userMetadata.packet_bitmask", 4, false],
         ["userMetadata.packet_bitmask_array_index", 1, false],
         ["userMetadata.link_location_index", 32, false],
-        ["_padding_0", 1, false]
+        ["_padding_0", 7, false]
       ]
     },
     {
@@ -849,6 +850,10 @@
         },
         {
           "type" : "field",
+          "value" : ["scalars", "userMetadata.packet_bitmask_shift_times"]
+        },
+        {
+          "type" : "field",
           "value" : ["scalars", "userMetadata.packet_bitmask"]
         },
         {
@@ -1213,6 +1218,10 @@
         },
         {
           "type" : "field",
+          "value" : ["scalars", "userMetadata.packet_bitmask_shift_times"]
+        },
+        {
+          "type" : "field",
           "value" : ["scalars", "userMetadata.packet_bitmask"]
         },
         {
@@ -1574,6 +1583,10 @@
         {
           "type" : "field",
           "value" : ["scalars", "userMetadata.temp_8_bit"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "userMetadata.packet_bitmask_shift_times"]
         },
         {
           "type" : "field",
@@ -3395,8 +3408,8 @@
       "name" : "level_to_link_store",
       "id" : 27,
       "source_info" : {
-        "filename" : "p4src/src/spine.p4",
-        "line" : 22,
+        "filename" : "p4src/src/CONSTANTS.p4",
+        "line" : 183,
         "column" : 49,
         "source_fragment" : "@name(\\\"level_to_link_store\\\")register<bit<32>>(8) level_to_link_store;"
       },
