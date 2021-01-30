@@ -10417,6 +10417,48 @@
           "parameters" : [
             {
               "type" : "field",
+              "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : ">>",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x4"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/dp_only_load_balancer.p4",
+            "line" : 49,
+            "column" : 12,
+            "source_fragment" : "load_counter_value = load_counter_value >> 4"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
               "value" : ["scalars", "userMetadata.packet_bitmask"]
             },
             {
@@ -10439,7 +10481,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 50,
+            "line" : 51,
             "column" : 12,
             "source_fragment" : "local_metadata.packet_bitmask = load_counter_value[ 4 - 1 : 0 ]"
           }
@@ -10491,7 +10533,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 51,
+            "line" : 52,
             "column" : 12,
             "source_fragment" : "local_metadata.packet_bitmask_array_index = load_counter_value[ 4 + 1 -1 : 4 ]"
           }
@@ -10553,7 +10595,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 54,
+            "line" : 55,
             "column" : 47,
             "source_fragment" : "(bit<32>)(local_metadata.packet_bitmask_array_index)"
           }
@@ -10576,7 +10618,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 54,
+            "line" : 55,
             "column" : 12,
             "source_fragment" : "bitmask_array.read(stored_bitmask, (bit<32>)(local_metadata.packet_bitmask_array_index))"
           }
@@ -10618,7 +10660,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 56,
+            "line" : 57,
             "column" : 12,
             "source_fragment" : "local_metadata.packet_bitmask = local_metadata.packet_bitmask & stored_bitmask"
           }
@@ -10670,7 +10712,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 51,
+            "line" : 52,
             "column" : 56,
             "source_fragment" : "load_counter_value[ 4 + 1 -1 : 4 ]"
           }
@@ -10704,7 +10746,7 @@
       ]
     },
     {
-      "name" : "dp_only_load_balancer60",
+      "name" : "dp_only_load_balancer61",
       "id" : 75,
       "runtime_data" : [],
       "primitives" : [
@@ -10726,7 +10768,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 60,
+            "line" : 61,
             "column" : 12,
             "source_fragment" : "level_to_link_store.read(temp, (bit<32>)local_metadata.link_location_index)"
           }
@@ -10758,7 +10800,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 61,
+            "line" : 62,
             "column" : 12,
             "source_fragment" : "standard_metadata.egress_spec = (bit<9>) temp"
           }
@@ -16072,10 +16114,10 @@
           "direct_meters" : null,
           "action_ids" : [40, 41],
           "actions" : ["IngressPipeImpl.dp_only_load_balancing_control_block.nearest_level_finder_mat_action_without_param", "IngressPipeImpl.dp_only_load_balancing_control_block.nearest_level_finder_mat_action_with_param"],
-          "base_default_next" : "tbl_dp_only_load_balancer60",
+          "base_default_next" : "tbl_dp_only_load_balancer61",
           "next_tables" : {
-            "IngressPipeImpl.dp_only_load_balancing_control_block.nearest_level_finder_mat_action_without_param" : "tbl_dp_only_load_balancer60",
-            "IngressPipeImpl.dp_only_load_balancing_control_block.nearest_level_finder_mat_action_with_param" : "tbl_dp_only_load_balancer60"
+            "IngressPipeImpl.dp_only_load_balancing_control_block.nearest_level_finder_mat_action_without_param" : "tbl_dp_only_load_balancer61",
+            "IngressPipeImpl.dp_only_load_balancing_control_block.nearest_level_finder_mat_action_with_param" : "tbl_dp_only_load_balancer61"
           },
           "default_entry" : {
             "action_id" : 40,
@@ -16085,11 +16127,11 @@
           }
         },
         {
-          "name" : "tbl_dp_only_load_balancer60",
+          "name" : "tbl_dp_only_load_balancer61",
           "id" : 58,
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 60,
+            "line" : 61,
             "column" : 12,
             "source_fragment" : "level_to_link_store.read(temp, (bit<32>)local_metadata.link_location_index); ..."
           },
@@ -16101,10 +16143,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [75],
-          "actions" : ["dp_only_load_balancer60"],
+          "actions" : ["dp_only_load_balancer61"],
           "base_default_next" : "node_88",
           "next_tables" : {
-            "dp_only_load_balancer60" : "node_88"
+            "dp_only_load_balancer61" : "node_88"
           },
           "default_entry" : {
             "action_id" : 75,

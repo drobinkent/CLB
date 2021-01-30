@@ -2,7 +2,7 @@ import json
 import logging
 import threading
 import time
-
+import P4Runtime.shell as sh
 from p4.v1 import p4runtime_pb2
 
 import ConfigConst as ConfConst
@@ -47,13 +47,27 @@ class LoadBalanacer:
         x.start()
         logger.info("load_balancer_config_thread_function thread started")
 
+    def initMAT(self, switchObject, bitMaskLength, bitMaskArrayMaxIndex):
+        allOneMAsk = BinaryMask(bitMaskLength)
+        allOneMAsk.setAllBitOne()
+        allOneMAskBinaryString = allOneMAsk.getBinaryString()
+        for i in range (0, bitMaskArrayMaxIndex):
+            for j in range(0, bitMaskLength):
+                mask = BinaryMask(bitMaskLength)
+                mask.setNthBitWithB(n=j,b=1)
+                maskAsString = mask.getBinaryString()
+                switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskArrayIndex = i, packetBitmaskValueWithMaskAsString = allOneMAskBinaryString+"&&&"+maskAsString,
+                                                         actionParamValue=i * bitMaskLength + j , priority=i * bitMaskLength + j+1) #1 added in the prioity bcz  0 priority doesn;t work
 
     def load_balancer_config_thread_function(self):
         logger.info("Thread %s: starting", "load_balancer_config_thread_function")
         start = time.time()
-        hostObject = self.nameToSwitchMap.get(ConfConst.CLB_TESTER_DEVICE_NAME)  # we will test with only one switch. so no need to consider others
+        switchObject = self.nameToSwitchMap.get(ConfConst.CLB_TESTER_DEVICE_NAME)  # we will test with only one switch. so no need to consider others
         distr1InstallFlag = False #This means this distribution is not installed
         distr2InstallFlag = False
+        # Here we will insert tcam entries
+        print("Initializinf the MAT")
+        self.initMAT(switchObject = switchObject, bitMaskLength = ConfConst.BITMASK_LENGTH, bitMaskArrayMaxIndex= int(ConfConst.TOTAL_LEVELS/ConfConst.BITMASK_LENGTH))
         while(self.isRunning):
             currentTime = time.time()
             if ( (currentTime - start) > ConfConst.DISTRO1_INSTALL_DELAY) and ( (currentTime - start) < ConfConst.DISTRO2_INSTALL_DELAY) and (distr1InstallFlag == False):
@@ -62,7 +76,7 @@ class LoadBalanacer:
                 print("accumulated distrib is "+str(json.dumps(accumulatedDistribution)))
                 packetOutList = self.installDistributionInCPAndGeneratePacketOutMessages(accumulatedDistribution, firstTimeFlag=True)
                 for p in packetOutList:
-                    hostObject.send_already_built_control_packet_for_load_balancer(p)
+                    switchObject.send_already_built_control_packet_for_load_balancer(p)
                 distr1InstallFlag = True
             if ( (currentTime - start) > ConfConst.DISTRO2_INSTALL_DELAY) and (distr2InstallFlag == False):
                 accumulatedDistribution = self.getAccumulatedDistribution(ConfConst.LOAD_DISTRIBUTION_2)
@@ -70,13 +84,13 @@ class LoadBalanacer:
                 print("accumulated distrib is "+str(json.dumps(accumulatedDistribution)))
                 packetOutList = self.installDistributionInCPAndGeneratePacketOutMessages(accumulatedDistribution)
                 for p in packetOutList:
-                    hostObject.send_already_built_control_packet_for_load_balancer(p)
+                    switchObject.send_already_built_control_packet_for_load_balancer(p)
                 distr2InstallFlag = True
             time.sleep(1)
             #Now reset the counter
             pktForCounterReset = self.buildMetadataBasedPacketOut( clabFlag=128, bitmaskArrayIndex = 0, bitmaskPosition=0, linkID=0,
-                                                                   bitmask=self.bitMaskArray[0], level_to_link_id_store_index = 0) # Here only lcabFlag matters others not
-            hostObject.send_already_built_control_packet_for_load_balancer(pktForCounterReset)
+                                                                   bitmask=0, level_to_link_id_store_index = 0) # Here only lcabFlag matters others not
+            switchObject.send_already_built_control_packet_for_load_balancer(pktForCounterReset)
         pass
 
 
@@ -171,8 +185,6 @@ class LoadBalanacer:
             packetOutList.append(pktForInsertlink)
         return packetOutList
 
-
-
     def getAccumulatedDistribution(self, disrtibution):
         accumulatedDistribution = []
         sum =0
@@ -181,3 +193,24 @@ class LoadBalanacer:
             accumulatedDistribution.append((e[0],sum-1))
         return accumulatedDistribution
 
+class BinaryMask:
+    def __init__(self, length):
+        self.bits=[]
+        self.length = length
+        for i in range(0,self.length):
+            self.bits.append(0)
+
+    def setNthBitWithB(self,n,b):
+        self.bits[n] = b
+    def setAllBitOne(self):
+        for i in range(0,self.length):
+            self.bits.append(1)
+
+    def getBinaryString(self):
+        val = "0b"
+        for i in range(0, self.length):
+            if(self.bits[i] == 0):
+                val = val + "0"
+            else:
+                val = val + "1"
+        return  val

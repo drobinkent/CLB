@@ -1,2 +1,0 @@
-For stride pattern you need to use the rate settings. 
-But for high contention you do not need it. only window need to be setup at 1400

@@ -45,7 +45,8 @@ control dp_only_load_balancing(inout parsed_headers_t    hdr,
             load_counter.read(load_counter_value, 0); //Read the only value. only one index one value
             load_counter_value = load_counter_value + 1;
             load_counter.write(0, load_counter_value); //Write back the counter value after increasing
-            //TODO : Devide by the precision scaler. Precision Scaler will be provided at compile time
+            // Devide by the precision scaler. Precision Scaler will be provided at compile time
+            load_counter_value = load_counter_value >> PRECISION_FACTOR;
             //Find the position and index --> right most
             local_metadata.packet_bitmask = load_counter_value[ BITMASK_LENGTH - 1 : 0 ];
             local_metadata.packet_bitmask_array_index = load_counter_value[ BITMASK_LENGTH + BITMASK_ARRAY_INDEX_INDICATOR_BITS_LENGTH-1 : BITMASK_LENGTH ];

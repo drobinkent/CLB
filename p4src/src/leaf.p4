@@ -183,7 +183,7 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
            load_counter.write(0, load_counter_value); //Reset the counter
            log_msg("LB: Control Message for reset counter found");
        }
-       if(hdr.packet_out.clb_flags[6:6] == (bit<1>)1){ //This is a control packet
+       else if(hdr.packet_out.clb_flags[6:6] == (bit<1>)1){ //This is a control packet
            bitmask_array.write( (bit<32>)(hdr.packet_out.bitmask_array_index), hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0]);
            level_to_link_store.write( (bit<32>)hdr.packet_out.level_to_link_id_store_index, hdr.packet_out.link_id);
            log_msg("LB: Control Message for path control:: linkID--{}, index --{} position--{} bitmask--{} levelToLink--{}",
