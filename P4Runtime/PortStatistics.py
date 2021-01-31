@@ -9,7 +9,12 @@ class PortStatistics:
         self._downwardPortInressPacketCounter= {}
         self._CPUPortIngressPacketCounter= 0 # This will keeep counter for how many packets have been recived through CPU port.
         self._CPUPortEgressPacketCounter= 0
+        self._LBMissedPackets =0
         return
+    def setLBMissedPackets(self, lBMissedPackets):
+        self._LBMissedPackets = lBMissedPackets
+    def getLBMissedPackets(self):
+        return self._LBMissedPackets
 
     def setUpwardPortEgressPacketCounter(self, port, value=0):
         self._upwardPortEgressPacketCounter[port] = value

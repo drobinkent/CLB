@@ -254,6 +254,8 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
                 if ( local_metadata.flag_hdr.found_multi_criteria_paths  == false){ // this means in multicriteria table we have not found any paths. This may be due to lack of proper traffic class or IP predix in those tables
                     upstream_ecmp_routing_control_block.apply(hdr, local_metadata, standard_metadata);
                     //simply Call the new block here
+                    log_msg("LB: Load balanced path not found. USing ECMP");
+                    load_balancer_missed_counter.count((bit<32>)0);
                 }
                 //log_msg("egress spec is {} and egress port is {}",{standard_metadata.egress_spec , standard_metadata.egress_port});
             }

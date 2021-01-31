@@ -82,7 +82,7 @@ class StatisticsPuller:
 
         #logger.info("Pulling record from device:"+ str(dev.devName))
         recordPullingtime = time.time()
-        egressPortStats, ingressPortStats , ctrlPkttoCPStats,  p2pFeedbackStats = swUtils.readAllCounters(dev)
+        egressPortStats, ingressPortStats , ctrlPkttoCPStats,  p2pFeedbackStats, lbMissedPackets = swUtils.readAllCounters(dev)
         # logger.info(egressPortStats)
         # logger.info(ingressPortStats)
         # logger.info(ctrlPkttoCPStats)
@@ -115,7 +115,7 @@ class StatisticsPuller:
             for sPort in dev.portToSpineSwitchMap:
                 egressPortCounterValueForSpine =egressPortStats.get(sPort)
                 portStatistics.setUpwardPortEgressPacketCounter(sPort,egressPortCounterValueForSpine)
-
+        portStatistics.setLBMissedPackets(lbMissedPackets)
 
 
         statJson = statJsonWrapper.PortStatisticsJSONWrapper()

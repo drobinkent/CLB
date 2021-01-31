@@ -1696,6 +1696,17 @@ counters {
   }
   size: 256
 }
+counters {
+  preamble {
+    id: 304167189
+    name: "load_balancer_missed_counter"
+    alias: "load_balancer_missed_counter"
+  }
+  spec {
+    unit: PACKETS
+  }
+  size: 1
+}
 direct_counters {
   preamble {
     id: 330338703

@@ -242,6 +242,10 @@ def collectPacketCounterForAllPort(dev, counterName):
         statMap[i] = val
     return statMap
 
+def readLBMissedPackets(dev):
+    val = readPacketCounter(dev=dev, counterName="load_balancer_missed_counter", counterIndex = 0)
+    return val
+
 def resetPacketCounterForAllPort(dev, counterName):
     for i in range(0, dev.maxPort):
         modifyPacketCounter(dev, counterName,i, 0)
@@ -257,11 +261,12 @@ def readAllCounters(dev):
     COUNTER_NAMES = {"egressPortCounter", "ingressPortCounter", "ctrlPktToCPCounter", "p2pFeedbackCounter"}
 
     egressPortStats = collectPacketCounterForAllPort(dev, "egressPortCounter")
+    lbMissedPAckets = readLBMissedPackets(dev)
     # ingressPortStats = collectPacketCounterForAllPort(dev, "ingressPortCounter")
     # ctrlPkttoCPStats = collectPacketCounterForAllPort(dev, "ctrlPktToCPCounter")
     # p2pFeedbackStats = collectPacketCounterForAllPort(dev, "p2pFeedbackCounter")
 
-    return egressPortStats, [] , [],  []
+    return egressPortStats, [] , [],  [], lbMissedPAckets
 
 
 def resetAllCounters(dev):

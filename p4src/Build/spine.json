@@ -3077,6 +3077,18 @@
       },
       "size" : 256,
       "is_direct" : false
+    },
+    {
+      "name" : "load_balancer_missed_counter",
+      "id" : 11,
+      "source_info" : {
+        "filename" : "p4src/src/spine.p4",
+        "line" : 22,
+        "column" : 41,
+        "source_fragment" : "load_balancer_missed_counter"
+      },
+      "size" : 1,
+      "is_direct" : false
     }
   ],
   "register_arrays" : [

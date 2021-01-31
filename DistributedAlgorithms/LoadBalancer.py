@@ -219,7 +219,7 @@ class BinaryMask:
             self.bits.append(0)
 
     def setNthBitWithB(self,n,b):
-        self.bits[n] = b
+        self.bits[(len(self.bits) - 1 )-n] = b
     def setAllBitOne(self):
         for i in range(0,self.length):
             self.bits[i]  = 1
