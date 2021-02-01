@@ -18,10 +18,10 @@
         ["userMetadata.flow_inter_packet_gap", 48, false],
         ["userMetadata.flowlet_last_pkt_seen_time", 48, false],
         ["userMetadata.flowlet_last_used_path", 9, false],
-        ["userMetadata.packet_bitmask_shift_times", 3, false],
-        ["userMetadata.packet_bitmask", 8, false],
+        ["userMetadata.packet_bitmask_shift_times", 4, false],
+        ["userMetadata.packet_bitmask", 16, false],
         ["userMetadata.link_location_index", 32, false],
-        ["_padding_0", 2, false]
+        ["_padding_0", 1, false]
       ]
     },
     {
@@ -757,11 +757,11 @@
       "source_info" : {
         "filename" : "p4src/src/CONSTANTS.p4",
         "line" : 172,
-        "column" : 43,
-        "source_fragment" : "@name(\\\"stored_bitmask\\\")register<bit<8>>(1) stored_bitmask;"
+        "column" : 44,
+        "source_fragment" : "@name(\\\"stored_bitmask\\\")register<bit<16>>(1) stored_bitmask;"
       },
       "size" : 1,
-      "bitwidth" : 8
+      "bitwidth" : 16
     },
     {
       "name" : "level_to_link_store",
@@ -769,10 +769,10 @@
       "source_info" : {
         "filename" : "p4src/src/CONSTANTS.p4",
         "line" : 173,
-        "column" : 49,
-        "source_fragment" : "@name(\\\"level_to_link_store\\\")register<bit<32>>(8) level_to_link_store;"
+        "column" : 50,
+        "source_fragment" : "@name(\\\"level_to_link_store\\\")register<bit<32>>(16) level_to_link_store;"
       },
-      "size" : 8,
+      "size" : 16,
       "bitwidth" : 32
     }
   ],

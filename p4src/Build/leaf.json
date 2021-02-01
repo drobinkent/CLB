@@ -8,16 +8,16 @@
         ["tmp_0", 32, false],
         ["tmp_1", 32, false],
         ["tmp_2", 32, false],
-        ["tmp_3", 8, false],
-        ["tmp_4", 8, false],
-        ["tmp_5", 8, false],
-        ["tmp_6", 3, false],
+        ["tmp_3", 16, false],
+        ["tmp_4", 16, false],
+        ["tmp_5", 16, false],
+        ["tmp_6", 4, false],
         ["tmp_7", 32, false],
-        ["tmp_8", 8, false],
+        ["tmp_8", 16, false],
         ["ndp_processing_control_block_host_ipv6_tmp", 128, false],
         ["dp_only_load_balancing_control_block_load_counter_value", 32, false],
         ["dp_only_load_balancing_control_block_load_counter_level", 32, false],
-        ["dp_only_load_balancing_control_block_stored_bitmask_read_value", 8, false],
+        ["dp_only_load_balancing_control_block_stored_bitmask_read_value", 16, false],
         ["dp_only_load_balancing_control_block_temp", 32, false],
         ["tmp_9", 32, false],
         ["userMetadata.l4_src_port", 16, false],
@@ -29,10 +29,10 @@
         ["userMetadata.flow_inter_packet_gap", 48, false],
         ["userMetadata.flowlet_last_pkt_seen_time", 48, false],
         ["userMetadata.flowlet_last_used_path", 9, false],
-        ["userMetadata.packet_bitmask_shift_times", 3, false],
-        ["userMetadata.packet_bitmask", 8, false],
+        ["userMetadata.packet_bitmask_shift_times", 4, false],
+        ["userMetadata.packet_bitmask", 16, false],
         ["userMetadata.link_location_index", 32, false],
-        ["_padding_0", 7, false]
+        ["_padding_0", 5, false]
       ]
     },
     {
@@ -780,11 +780,11 @@
       "source_info" : {
         "filename" : "p4src/src/CONSTANTS.p4",
         "line" : 172,
-        "column" : 43,
-        "source_fragment" : "@name(\\\"stored_bitmask\\\")register<bit<8>>(1) stored_bitmask;"
+        "column" : 44,
+        "source_fragment" : "@name(\\\"stored_bitmask\\\")register<bit<16>>(1) stored_bitmask;"
       },
       "size" : 1,
-      "bitwidth" : 8
+      "bitwidth" : 16
     },
     {
       "name" : "level_to_link_store",
@@ -792,10 +792,10 @@
       "source_info" : {
         "filename" : "p4src/src/CONSTANTS.p4",
         "line" : 173,
-        "column" : 49,
-        "source_fragment" : "@name(\\\"level_to_link_store\\\")register<bit<32>>(8) level_to_link_store;"
+        "column" : 50,
+        "source_fragment" : "@name(\\\"level_to_link_store\\\")register<bit<32>>(16) level_to_link_store;"
       },
-      "size" : 8,
+      "size" : 16,
       "bitwidth" : 32
     }
   ],
@@ -2049,7 +2049,7 @@
                   },
                   "right" : {
                     "type" : "hexstr",
-                    "value" : "0xff"
+                    "value" : "0xffff"
                   }
                 }
               }
@@ -2059,7 +2059,7 @@
             "filename" : "p4src/src/leaf.p4",
             "line" : 101,
             "column" : 45,
-            "source_fragment" : "hdr.packet_out.bitmask[8 - 1 :0]"
+            "source_fragment" : "hdr.packet_out.bitmask[16 - 1 :0]"
           }
         },
         {
@@ -2082,7 +2082,7 @@
             "filename" : "p4src/src/leaf.p4",
             "line" : 101,
             "column" : 11,
-            "source_fragment" : "stored_bitmask.write( (bit<32>)0, hdr.packet_out.bitmask[8 - 1 :0])"
+            "source_fragment" : "stored_bitmask.write( (bit<32>)0, hdr.packet_out.bitmask[16 - 1 :0])"
           }
         },
         {
@@ -2127,7 +2127,7 @@
                   },
                   "right" : {
                     "type" : "hexstr",
-                    "value" : "0xff"
+                    "value" : "0xffff"
                   }
                 }
               }
@@ -2137,7 +2137,7 @@
             "filename" : "p4src/src/leaf.p4",
             "line" : 104,
             "column" : 67,
-            "source_fragment" : "hdr.packet_out.bitmask[8 - 1 :0]"
+            "source_fragment" : "hdr.packet_out.bitmask[16 - 1 :0]"
           }
         },
         {
@@ -2222,7 +2222,7 @@
                   },
                   "right" : {
                     "type" : "hexstr",
-                    "value" : "0xff"
+                    "value" : "0xffff"
                   }
                 }
               }
@@ -2232,7 +2232,7 @@
             "filename" : "p4src/src/leaf.p4",
             "line" : 108,
             "column" : 78,
-            "source_fragment" : "hdr.packet_out.bitmask[8 - 1 :0]"
+            "source_fragment" : "hdr.packet_out.bitmask[16 - 1 :0]"
           }
         },
         {
@@ -2999,19 +2999,19 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x07"
+                            "value" : "0x0f"
                           }
                         }
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0x07"
+                        "value" : "0x0f"
                       }
                     }
                   },
                   "right" : {
                     "type" : "hexstr",
-                    "value" : "0x07"
+                    "value" : "0x0f"
                   }
                 }
               }
@@ -3021,7 +3021,7 @@
             "filename" : "p4src/src/dp_only_load_balancer.p4",
             "line" : 56,
             "column" : 12,
-            "source_fragment" : "local_metadata.packet_bitmask_shift_times = load_counter_level[ 3 - 1 : 0 ] -1"
+            "source_fragment" : "local_metadata.packet_bitmask_shift_times = load_counter_level[ 4 - 1 : 0 ] -1"
           }
         },
         {
@@ -3051,19 +3051,19 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x07"
+                            "value" : "0x0f"
                           }
                         }
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0x07"
+                        "value" : "0x0f"
                       }
                     }
                   },
                   "right" : {
                     "type" : "hexstr",
-                    "value" : "0x07"
+                    "value" : "0x0f"
                   }
                 }
               }
@@ -3073,7 +3073,7 @@
             "filename" : "p4src/src/dp_only_load_balancer.p4",
             "line" : 56,
             "column" : 56,
-            "source_fragment" : "load_counter_level[ 3 - 1 : 0 ] -1"
+            "source_fragment" : "load_counter_level[ 4 - 1 : 0 ] -1"
           }
         },
         {
@@ -3186,19 +3186,19 @@
                                   },
                                   "right" : {
                                     "type" : "hexstr",
-                                    "value" : "0x07"
+                                    "value" : "0x0f"
                                   }
                                 }
                               },
                               "right" : {
                                 "type" : "hexstr",
-                                "value" : "0x07"
+                                "value" : "0x0f"
                               }
                             }
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x07"
+                            "value" : "0x0f"
                           }
                         }
                       }
@@ -3290,19 +3290,19 @@
                                           },
                                           "right" : {
                                             "type" : "hexstr",
-                                            "value" : "0x07"
+                                            "value" : "0x0f"
                                           }
                                         }
                                       },
                                       "right" : {
                                         "type" : "hexstr",
-                                        "value" : "0x07"
+                                        "value" : "0x0f"
                                       }
                                     }
                                   },
                                   "right" : {
                                     "type" : "hexstr",
-                                    "value" : "0x07"
+                                    "value" : "0x0f"
                                   }
                                 }
                               }
@@ -3316,7 +3316,7 @@
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0xff"
+                        "value" : "0xffff"
                       }
                     }
                   },
@@ -3332,7 +3332,7 @@
             "filename" : "p4src/src/dp_only_load_balancer.p4",
             "line" : 65,
             "column" : 12,
-            "source_fragment" : "local_metadata.packet_bitmask = temp1[ 8 - 1 : 0 ] & stored_bitmask_read_value[ 8 - 1 : 0 ]"
+            "source_fragment" : "local_metadata.packet_bitmask = temp1[ 16 - 1 : 0 ] & stored_bitmask_read_value[ 16 - 1 : 0 ]"
           }
         },
         {
@@ -3382,19 +3382,19 @@
                                           },
                                           "right" : {
                                             "type" : "hexstr",
-                                            "value" : "0x07"
+                                            "value" : "0x0f"
                                           }
                                         }
                                       },
                                       "right" : {
                                         "type" : "hexstr",
-                                        "value" : "0x07"
+                                        "value" : "0x0f"
                                       }
                                     }
                                   },
                                   "right" : {
                                     "type" : "hexstr",
-                                    "value" : "0x07"
+                                    "value" : "0x0f"
                                   }
                                 }
                               }
@@ -3408,7 +3408,7 @@
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0xff"
+                        "value" : "0xffff"
                       }
                     }
                   },
@@ -3424,7 +3424,7 @@
             "filename" : "p4src/src/dp_only_load_balancer.p4",
             "line" : 65,
             "column" : 44,
-            "source_fragment" : "temp1[ 8 - 1 : 0 ] & stored_bitmask_read_value[ 8 - 1 : 0 ]"
+            "source_fragment" : "temp1[ 16 - 1 : 0 ] & stored_bitmask_read_value[ 16 - 1 : 0 ]"
           }
         },
         {
@@ -3853,7 +3853,7 @@
             "filename" : "p4src/src/leaf.p4",
             "line" : 101,
             "column" : 11,
-            "source_fragment" : "stored_bitmask.write( (bit<32>)0, hdr.packet_out.bitmask[8 - 1 :0]); ..."
+            "source_fragment" : "stored_bitmask.write( (bit<32>)0, hdr.packet_out.bitmask[16 - 1 :0]); ..."
           },
           "key" : [],
           "match_type" : "exact",
