@@ -12,19 +12,7 @@ header ethernet_t {
     mac_addr_t  src_addr;
     bit<16>     ether_type;
 }
-header  mdn_int_t {
-    bit<8>   next_hdr;
-    bit<48>  src_enq_timestamp;
-    bit<48>  src_deq_timestamp; // Thie may be also not needed. just for future reference
-    //bit <8> has_ctrl_hdr;
-    bit<2>  rate_control_allowed_for_the_tcp_flow;
-    bit<6>  rate_control_event; // by default this will be 0. non zero value means 2 thing. a) at some point this flow have seen rate control b) las ttime when it have seen rate control.
-    // only a single bit should be good enough for a single packet. Because if we do per packet rate control then single bit is enough. But if we want per flow rate control,
-    //then we need to propagate the info that when a flow have last time seen rate control. Though it is not scalable, but still if someone wants to use that kind of thechnique
-    // we have kept the option open.
-    bit<32>  last_seq_no_with_rate_control;
 
-}
 
 header ipv6_t {
     bit<4>   version;
@@ -108,59 +96,6 @@ header ndp_t {
 
 
 
-//This header is for building conrtol packet
-header delay_event_info_t{
-    bit<8>      event_src_type;  //This field is for notifying whther an event is hop to hop or came from a hop more than 1 hop distance
-    //Next fields are event data
-    //bit<16>
-    bit<8>      path_delay_event_type;
-    bit<48>     path_delay_event_data;
-    bit<128>    dst_addr;   //This is the address for which the switch has found increased or decreased delay
-    bit<9>     path_delay_event_port;
-    bit<7> padding;
-}
-
-header ingress_queue_event_info_t{
-    bit<8> event_src_type;  //This field is for notifying whther an event is hop to hop or came from a hop more than 1 hop distance
-    //Next fields are event data
-    bit<8>     ingress_queue_event;
-    bit<48>    ingress_queue_event_data;
-    bit<9>     ingress_queue_event_port;
-    bit<7> padding;
-}
-header egress_queue_event_info_t{
-    bit<8> event_src_type;  //This field is for notifying whther an event is hop to hop or came from a hop more than 1 hop distance
-    //Next fields are event data
-    bit<8>     egress_queue_event;
-    bit<48>    egress_queue_event_data;
-    bit<9>     egress_queue_event_port;
-    bit<7> padding;
-}
-header ingress_rate_event_info_t{
-    bit<8> event_src_type;  //This field is for notifying whther an event is hop to hop or came from a hop more than 1 hop distance
-    //Next fields are event data
-    bit<32>    ingress_traffic_color;
-    bit<48>    ingress_rate_event_data;
-    bit<9>     ingress_rate_event_port;
-    bit<7> padding;
-
-}
-header egress_rate_event_info_t{
-    bit<8> event_src_type;  //This field is for notifying whther an event is hop to hop or came from a hop more than 1 hop distance
-    //Next fields are event data
-    bit<32>    egress_traffic_color;
-    bit<48>    egress_rate_event_data;
-    bit<9>     egress_rate_event_port;
-    bit<7> padding;
-}
-
-struct test{
-    bit<8> event_src_type;  //This field is for notifying whther an event is hop to hop or came from a hop more than 1 hop distance
-    //Next fields are event data
-    bit<32>    egress_traffic_color;
-    bit<48>    egress_rate_event_data;
-
-}
 //this will be part of hdr. but this will only be used for carrying data betn stages. and just before deparsing it will made invalid. We are forced to do this, bcz, cloingn no saves metadata.
 header flag_headers_t {
 
@@ -198,13 +133,8 @@ struct local_metadata_t {
     bool       is_multicast;
 
     bool is_pkt_rcvd_from_downstream;   //This signifies whether a packet was rcvd from upstream or downstream packet.
-    delay_event_info_t delay_info_hdr;
-    ingress_queue_event_info_t ingress_queue_event_hdr;
-    egress_queue_event_info_t egress_queue_event_hdr;
-    ingress_rate_event_info_t ingress_rate_event_hdr;
-    egress_rate_event_info_t egress_rate_event_hdr;
+
     flag_headers_t flag_hdr;
-    mdn_int_t     pkt_timestamp;
     bit<16> flowlet_map_index;
     bit<16> flowlet_id;
     bit<48> flow_inter_packet_gap;
@@ -212,28 +142,12 @@ struct local_metadata_t {
     bit<9> flowlet_last_used_path;
 
 
-//    bit<10> range_val_test;
-  //  bit<10> range_val_test_result;
-    bit<10>  egr_port_rate_value_range ;
-    bit<10>  egr_queue_depth_value_range ;
-    bit<10>  delay_value_range;
 
-    // TODO : at this moment all level requirements are 1. but in future we are planning for policy based routing on that case this will be required
-    bit<10> minimum_group_members_requirement; //this is to handle the empty group problem. If there are 0 members in the high priority group then bmv2 yields. We can not allow that
-    // As  a result in each group based routing table, we have to keep a flag whther the table is empty or not. this filed will so this task. we can keep it either a bool or int. we are just keeping
-    // it as an int. because in future we have plan to extend this memebrship related things.
-    //bit<4> path_ing_queue_level_requirement;
-    //bit<4> path_egr_queue_level_requirement;
 
-    // These are the placeholder where the egress ports will be kept after matching.
-    bit<9> delay_based_path;
-    bit<9> egr_queue_based_path;
-    bit<9> egr_rate_based_path;
     bit<32> temp; //This will be used for various tempporaty operation in various control blocks. But remeber we can not gues anything about it's initial data
     bit<8> temp_8_bit;
     bit<BITMASK_POSITION_INDICATOR_BITS_LENGTH> packet_bitmask_shift_times;
     bit<BITMASK_LENGTH> packet_bitmask;
-    bit<BITMASK_ARRAY_INDEX_INDICATOR_BITS_LENGTH> packet_bitmask_array_index;
     bit<32> link_location_index; //in this location of final stateful memory block, the link will be found
 }
 
@@ -267,59 +181,15 @@ struct standard_metadata_t {
 @controller_header("packet_in")
 header packet_in_t {
     port_num_t  ingress_port;
-    bit<2>      _pad;
+    bit<7>      _pad;
 
  //===
-    bit<8>     ingress_queue_event;
-    bit<48>    ingress_queue_event_data;
-    bit<9>     ingress_queue_event_port;
 
-    //===
-    bit<8>     egress_queue_event;
-    bit<48>    egress_queue_event_data;
-    bit<9>     egress_queue_event_port;
-
-    //===
-    bit<32>    ingress_traffic_color;
-    bit<48>    ingress_rate_event_data;
-    bit<9>     ingress_rate_event_port;
-
-    //===
-    bit<32>    egress_traffic_color;
-    bit<48>    egress_rate_event_data;
-    bit<9>     egress_rate_event_port;
-
-    bit<8> delay_event_src_type;  //This field is for notifying whther an event is hop to hop or came from a hop more than 1 hop distance
-        //Next fields are event data
-        //bit<16>
-    bit<8>    path_delay_event_type;
-    bit<48>     path_delay_event_data;
-     bit<9>     path_delay_event_port;
-    bit<128> dst_addr;   //This is the address for which the switch has found increased or decreased delay
 
 }
 
 
-header dp_to_cp_feedback_hdr_t {
 
-    //===
-    bit<8>     ingress_queue_event;
-    bit<48>    ingress_queue_event_data;
-
-    //===
-    bit<8>     egress_queue_event;
-    bit<48>    egress_queue_event_data;
-
-
-    //===
-    bit<32>    ingress_traffic_color;
-    bit<48>    ingress_rate_event_data;
-
-    //===
-    bit<32>    egress_traffic_color;
-    bit<48>    egress_rate_event_data;
-
-}
 // Packet-out header. Prepended to packets received from the CPU_PORT. Fields of
 // this header are populated by the P4Runtime server based on the P4Runtime
 // PacketOut metadata fields. Here we use it to inform the P4 pipeline on which
@@ -339,8 +209,7 @@ header packet_out_t {
     //--------bit-1--------||
     //--------bit-0--------||
 
-    bit<32> bitmask_array_index;  //
-    bit<32> bitmask_position;
+
     bit<32> link_id;
     bit<32> bitmask; //Here we are keeping all 32 bit to avoid compile time configuration complexity. At apply blo0ck we will slice necesssary bits.
     bit<32> level_to_link_id_store_index;  //
@@ -348,13 +217,6 @@ header packet_out_t {
 
 // Header for sensing peer to peer feedback
 
-header p2p_feedback_t {
-   port_num_t port_id;  //9 bits
-   bit <8> delay_event_type;
-   bit <48> delay_event_data;
-   bit<8> next_hdr;
-   bit<7> padding;
-}
 
 // We collect all headers under the same data structure, associated with each
 // packet. The goal of the parser is to populate the fields of this struct.
@@ -365,8 +227,6 @@ struct parsed_headers_t {
     ethernet_t    ethernet;
     ipv4_t        ipv4;
     ipv6_t        ipv6;
-    mdn_int_t     mdn_int;   //this is for peer to peer info passing for a packet
-    p2p_feedback_t p2p_feedback;
     tcp_t         tcp;
     udp_t         udp;
     icmpv6_t      icmpv6;

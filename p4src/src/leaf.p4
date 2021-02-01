@@ -24,21 +24,12 @@
 #include "headers.p4"
 #include "parser.p4"
 #include "debug.p4"
-#include "ingress_queue_depth_monitor.p4"
-#include "egress_queue_depth_monitor.p4"
-#include "ingress_rate_monitor.p4"
-#include "egress_rate_monitor.p4"
-#include "rate_control.p4"
-#include "int_delay_processor.p4"
 #include "upstream_routing.p4"
 #include "ndp.p4"
 #include "l2_ternary.p4"
 #include "my_station.p4"
 #include "l2_ternary.p4"
 #include "leaf_downstream_routing.p4"
-#include "cp_assisted_multicriteria_upstream_routing_tables.p4"
-#include "cp_assisted_multicriteria_upstream_policy_routing.p4"
-#include "metrics_level_calculator.p4"
 #include "dp_only_load_balancer.p4"
 control VerifyChecksumImpl(inout parsed_headers_t hdr,
                            inout local_metadata_t meta)
@@ -56,62 +47,7 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
 
     //================================This section will contain all isolated actions=======================================
 
-    action init_pkt(){
-        local_metadata.delay_info_hdr.setValid();
-        local_metadata.delay_info_hdr.event_src_type = INVALID;  //This field is for notifying whther an event is hop to hop or came from a hop more than 1 hop distance
-        //Next fields are event data
-        //bit<16>
-        local_metadata.delay_info_hdr.path_delay_event_type = (INVALID);
-        local_metadata.delay_info_hdr.path_delay_event_data=(bit<48>)INVALID;
-        local_metadata.ingress_queue_event_hdr.setValid();
-        local_metadata.ingress_queue_event_hdr.event_src_type= INVALID;  //This field is for notifying whther an event is hop to hop or came from a hop more than 1 hop distance
-        //Next fields are event data
-        local_metadata.ingress_queue_event_hdr.ingress_queue_event= INVALID;
-        local_metadata.ingress_queue_event_hdr.ingress_queue_event_data = (bit<48>)INVALID;
-        local_metadata.egress_queue_event_hdr.setValid();
-        local_metadata.egress_queue_event_hdr.event_src_type = INVALID;   //This field is for notifying whther an event is hop to hop or came from a hop more than 1 hop distance
-        //Next fields are event data
-        local_metadata.egress_queue_event_hdr.egress_queue_event= INVALID;
-        local_metadata.egress_queue_event_hdr.egress_queue_event_data = (bit<48>)INVALID;
 
-        local_metadata.ingress_rate_event_hdr.setValid();
-        local_metadata.ingress_rate_event_hdr.event_src_type = INVALID;    //This field is for notifying whther an event is hop to hop or came from a hop more than 1 hop distance
-        //Next fields are event data
-        local_metadata.ingress_rate_event_hdr.ingress_traffic_color = (bit<32>)GREEN;
-        local_metadata.ingress_rate_event_hdr.ingress_rate_event_data = (bit<48>)EVENT_EGR_RATE_UNCHANGED;
-        local_metadata.egress_rate_event_hdr.setValid();
-        local_metadata.egress_rate_event_hdr.event_src_type = INVALID;   //This field is for notifying whther an event is hop to hop or came from a hop more than 1 hop distance
-        //Next fields are event data
-        local_metadata.egress_rate_event_hdr.egress_traffic_color = (bit<32>)GREEN;
-        local_metadata.egress_rate_event_hdr.egress_rate_event_data = (bit<48>)INVALID;
-        local_metadata.flag_hdr.setValid();
-        local_metadata.pkt_timestamp.setValid();
-        local_metadata.pkt_timestamp.src_enq_timestamp = standard_metadata.ingress_global_timestamp;
-        local_metadata.pkt_timestamp.src_deq_timestamp = standard_metadata.ingress_global_timestamp;
-        //========== Flag headers initialization part
-        local_metadata.flag_hdr.do_l3_l2 = true;
-        local_metadata.flag_hdr.is_control_pkt_from_delay_proc = false;  //Initially this packet is not generating a control packet. But later if this field is true, that means a
-        //relevant control packet is needed to be sent to Controll plane or other switch.
-        local_metadata.flag_hdr.is_control_pkt_from_ing_queue_rate = false;
-        local_metadata.flag_hdr.is_control_pkt_from_ing_queue_depth = false;
-        local_metadata.flag_hdr.is_control_pkt_from_egr_queue_depth = false;
-        local_metadata.flag_hdr.is_control_pkt_from_egr_queue_rate = false;
-
-        ingressPortCounter.count((bit<32>)standard_metadata.ingress_port);
-
-        local_metadata.flag_hdr.downstream_routing_table_hit = false;
-        local_metadata.flag_hdr.is_dp_only_multipath_algo_processing_required = false;
-        local_metadata.flag_hdr.is_fake_ack_for_rate_ctrl_required = false;
-
-        local_metadata.minimum_group_members_requirement=1;  //We want to select path from a routing group with non zero memebers. Because a ny group with zero memebers yields the switch processing pipeline
-        local_metadata.delay_value_range = 1;
-        local_metadata.egr_queue_depth_value_range  = 1;
-        local_metadata.egr_port_rate_value_range  = 1;
-
-        // We will not set these 2 values in spine switches, bcz they will be intitiated from the leaf switches.
-        hdr.mdn_int.rate_control_allowed_for_the_tcp_flow = RATE_CONTROL_NOT_ALLOWED_FOR_THE_FLOW; // At start rate control is not allowed. we will not set this field in spine packet initialization part
-        hdr.mdn_int.rate_control_event = RATE_CONTROL_EVENT_NOT_YET_APPLIED ; // Means no rate contrl happned yet
-    }
     // Drop action definition, shared by many tables. Hence we define it on top.
    action drop() {
        // Sets an architecture-specific metadata field to signal that the
@@ -125,9 +61,7 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
     debug_std_meta() ingress_end_debug;
     #endif  // ENABLE_DEBUG_TABLES
 
-    int_delay_processor() ingress_delay_processor_control_block;
-    ingress_queue_depth_monitor() ingress_queue_depth_monitor_control_block;
-    ingress_rate_monitor() ingress_rate_monitor_control_block;
+
     leaf_downstream_routing () downstream_routing_control_clock;
     l2_ternary_processing() l2_ternary_processing_control_block;
     my_station_processing() my_station_processing_control_block;
@@ -137,38 +71,14 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
     //upstream_routing() upstream_ecmp_routing_control_block;
     //#endif
     upstream_routing() upstream_ecmp_routing_control_block;
-    cp_assisted_multicriteria_upstream_routing_tables() cp_assisted_multicriteria_upstream_routing_control_block;
-    cp_assisted_multicriteria_upstream_policy_routing() cp_assisted_multicriteria_upstream_policy_routing_control_block;
 
-    //metrics level calculator tables
-    path_delay_metrics_level_calculator() path_delay_metrics_level_calculator_control_block;
-    egress_queue_depth_metrics_level_calculator() egress_queue_depth_metrics_level_calculator_control_block;
-    // *** APPLY BLOCK STATEMENT
 
     #ifdef DP_ALGO_CLB
     dp_only_load_balancing() dp_only_load_balancing_control_block;
     #endif
 
     apply {
-
-    if(hdr.p2p_feedback.isValid()){
-       //log_msg("Received p2p feedback from neighbour switch. Need to process the delay here instead of exiting"); //This is a feedback from peer for change in delay found for a port. call
-        if(hdr.p2p_feedback.delay_event_type != EVENT_PATH_DELAY_UNCHANGED){
-            path_delay_metrics_level_calculator_control_block.apply(hdr, local_metadata, standard_metadata);
-        }
-       //if (fake ack ) clone to cpu and and original eggress port of the fake ack. this will be selected at routing part. we have to sert a flag. and then in egress clone and forward to both cp
-       //and the intended egress port. we do not need to think about the trouble of ingress to egress clone bcz packet content will be same so parsing will create no trouble
-       if (hdr.mdn_int.isValid() && (hdr.tcp.ack_control_flag == FLAG_1 )  && (hdr.mdn_int.rate_control_event  == RATE_CONTROL_EVENT_ALREADY_APPLIED)){
-            hdr.mdn_int.rate_control_event  = RATE_CONTROL_EVENT_ALREADY_APPLIED ;
-            //technically it is do nothing. the else part is important here. This flag will by default stop applying rate control on this packet
-            //In rate control we check iff hdr.mdn_int.rate_control_event  != RATE_CONTROL_EVENT_ALREADY_APPLIED --> then we only apply rate control fake ack generation
-       }else{
-            standard_metadata.egress_spec = CPU_PORT;
-            local_metadata.flag_hdr.do_l3_l2 = false; //thie means . this packet doesn;t need normal forwarding processing. It wil only be used for updating the internal routing related information
-            exit;
-       }
-
-    }else if (hdr.packet_out.isValid()) {
+    if (hdr.packet_out.isValid()) {
        // Set the egress port to that found in the packet-out metadata...
        standard_metadata.egress_spec = hdr.packet_out.egress_port;
        // Remove the packet-out header...
@@ -182,29 +92,26 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
            bit<32> load_counter_value = 0;
            load_counter.write(0, load_counter_value); //Reset the counter
            log_msg("LB: Control Message for reset counter found");
+           mark_to_drop(standard_metadata);
+           exit;
        }
        else if(hdr.packet_out.clb_flags[6:6] == (bit<1>)1){ //This is a control packet
-           bitmask_array.write( (bit<32>)(hdr.packet_out.bitmask_array_index), hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0]);
+           stored_bitmask.write( (bit<32>)0, hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0]);
            level_to_link_store.write( (bit<32>)hdr.packet_out.level_to_link_id_store_index, hdr.packet_out.link_id);
-           log_msg("LB: Control Message for path control:: linkID--{}, index --{} position--{} bitmask--{} levelToLink--{}",
-                                          {hdr.packet_out.link_id, hdr.packet_out.bitmask_array_index,  hdr.packet_out.bitmask_position,hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0], hdr.packet_out.level_to_link_id_store_index});
+           log_msg("LB: Control Message for path control:: linkID--{},  bitmask--{} level_to_link_id_store_index--{}",
+                                          {hdr.packet_out.link_id, hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0], hdr.packet_out.level_to_link_id_store_index});
        }else{
            log_msg("LB: The CLB flag is unsupported --{}", {hdr.packet_out.clb_flags});
-           log_msg("LB: Control Message for path control:: linkID--{}, index --{} position--{} bitmask--{} levelToLink--{}",
-                               {hdr.packet_out.link_id, hdr.packet_out.bitmask_array_index,  hdr.packet_out.bitmask_position,hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0], hdr.packet_out.level_to_link_id_store_index});
+           log_msg("LB: Control Message for path control:: linkID--{},  bitmask--{} level_to_link_id_store_index--{}",
+                                                     {hdr.packet_out.link_id, hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0], hdr.packet_out.level_to_link_id_store_index});
        }
     }else if (hdr.packet_in.isValid() && IS_RECIRCULATED(standard_metadata)) {  //This means this packet is replicated from egress to setup
         //log_msg("Found a recirculated packet");
         local_metadata.flag_hdr.do_l3_l2 = false; //thie means . this packet doesn;t need normal forwarding processing. It wil only be used for updating the internal routing related information
-        egress_queue_depth_metrics_level_calculator_control_block.apply(hdr, local_metadata, standard_metadata);
-        egress_queue_rate_value_map.write((bit<32>)hdr.packet_in.path_delay_event_port, (bit<48>)local_metadata.egress_rate_event_hdr.egress_traffic_color );
-        egress_queue_rate_last_update_time_map.write((bit<32>)hdr.packet_in.path_delay_event_port, standard_metadata.ingress_global_timestamp);
         mark_to_drop(standard_metadata);
    }else{ //This means these packets are normal packets and they will generate the events
-        init_pkt();
-        ingress_delay_processor_control_block.apply(hdr, local_metadata, standard_metadata);
-        ingress_queue_depth_monitor_control_block.apply(hdr, local_metadata, standard_metadata);;
-        ingress_rate_monitor_control_block.apply(hdr, local_metadata, standard_metadata);  //TODO we need to make this hash and meter based to adapt with per flow or some policy based admission control
+
+
     }
 
     #ifdef ENABLE_DEBUG_TABLES
@@ -240,12 +147,6 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
                 local_metadata.flag_hdr.found_multi_criteria_paths = false; // this means we must need to use ecmp path
                 #endif
 
-                cp_assisted_multicriteria_upstream_routing_control_block.apply(hdr, local_metadata, standard_metadata);
-                cp_assisted_multicriteria_upstream_policy_routing_control_block.apply(hdr, local_metadata, standard_metadata);
-                // this bool fields ensure that we do same processing for all algorithm and when ecmp is used we use ecmp path and if no policy path is found then se ecmp path
-                bool found_multi_criteria_paths = (local_metadata.flag_hdr.found_multi_criteria_paths) &&
-                            (local_metadata.flag_hdr.found_egr_queue_depth_based_path || local_metadata.flag_hdr.found_egr_queue_rate_based_path ||
-                             local_metadata.flag_hdr.found_path_delay_based_path);
 
                 #ifdef DP_ALGO_CLB
                 dp_only_load_balancing_control_block.apply(hdr, local_metadata, standard_metadata);
@@ -305,369 +206,38 @@ control EgressPipeImpl (inout parsed_headers_t hdr,
                         inout standard_metadata_t standard_metadata) {
     //==================My cuistom actions====================
 
-    action set_all_header_invalid(){
-        hdr.packet_out.setInvalid();
-        hdr.packet_in.setInvalid();
-        hdr.ethernet.setInvalid();
-        hdr.ipv4.setInvalid();
-        hdr.ipv6.setInvalid();
-        hdr.mdn_int.setInvalid();
-        hdr.p2p_feedback.setInvalid();
-        hdr.tcp.setInvalid();
-        hdr.udp.setInvalid();
-        hdr.icmpv6.setInvalid();
-        hdr.ndp.setInvalid();
-        //hdr.delay_event_feedback.setInvalid();
-    }
-    action build_p2p_feedback_only(){
-        hdr.p2p_feedback.setValid();
-        bit<8> temp_next_hdr =   hdr.ipv6.next_hdr;
-        hdr.ipv6.next_hdr = CONTROL_PACKET;
-        hdr.p2p_feedback.next_hdr = temp_next_hdr;
-        hdr.p2p_feedback.port_id = local_metadata.delay_info_hdr.path_delay_event_port;
-        hdr.p2p_feedback.delay_event_type = local_metadata.delay_info_hdr.path_delay_event_type ;
-        hdr.p2p_feedback.delay_event_data = local_metadata.delay_info_hdr.path_delay_event_data;
-        hdr.mdn_int.setInvalid();
-    }
-    action build_p2p_feedback_with_fake_ack(){
-        hdr.p2p_feedback.setValid();
-        bit<8> temp_next_hdr =   hdr.ipv6.next_hdr;
-        hdr.ipv6.next_hdr = CONTROL_PACKET;
-        hdr.p2p_feedback.port_id = local_metadata.delay_info_hdr.path_delay_event_port;
-        hdr.p2p_feedback.delay_event_type = local_metadata.delay_info_hdr.path_delay_event_type ;
-        hdr.p2p_feedback.delay_event_data = local_metadata.delay_info_hdr.path_delay_event_data;
-        hdr.p2p_feedback.next_hdr = MDN_INT;
-        hdr.mdn_int.setValid();
-        //mdn_int values are already set
-        hdr.mdn_int.next_hdr = temp_next_hdr;
-        hdr.tcp.ack_control_flag = FLAG_1 ;
-        bit<128> temp_src_addr = hdr.ipv6.src_addr;
-        hdr.ipv6.src_addr = hdr.ipv6.dst_addr;
-        hdr.ipv6.dst_addr = temp_src_addr;
-        hdr.ipv6.payload_len = 20; //Only the length of tcop header
-        // now tcp header eschange
-        bit<16> temp_src_port = hdr.tcp.src_port;
-        hdr.tcp.src_port = hdr.tcp.dst_port;
-        hdr.tcp.dst_port = temp_src_port;
-        bit<32>  temp_ack_no = hdr.tcp.ack_no;
-        hdr.tcp.ack_no = hdr.tcp.seq_no + 1;
-        hdr.tcp.seq_no = temp_ack_no; // this means we are sending the seq number what the sender have acknowledged. that means no new data
-        // REst of the fields are find. Just need  calculate the ipv6.payload_len
-        bit<16>  new_window = hdr.tcp.window >>WINDOW_DECREASE_RATIO;
-        hdr.tcp.window  = hdr.tcp.window - new_window;
-        hdr.mdn_int.rate_control_event  = RATE_CONTROL_EVENT_ALREADY_APPLIED ;
-        hdr.ipv6.ecn = 3;
-    }
-    action build_p2p_feedback_with_fake_ack_for_increase(){
-        hdr.p2p_feedback.setValid();
-        bit<8> temp_next_hdr =   hdr.ipv6.next_hdr;
-        hdr.ipv6.next_hdr = CONTROL_PACKET;
-        hdr.p2p_feedback.port_id = local_metadata.delay_info_hdr.path_delay_event_port;
-        hdr.p2p_feedback.delay_event_type = local_metadata.delay_info_hdr.path_delay_event_type ;
-        hdr.p2p_feedback.delay_event_data = local_metadata.delay_info_hdr.path_delay_event_data;
-        hdr.p2p_feedback.next_hdr = MDN_INT;
-        hdr.mdn_int.setValid();
-        //mdn_int values are already set
-        hdr.mdn_int.next_hdr = temp_next_hdr;
-        hdr.tcp.ack_control_flag = FLAG_1 ;
-        bit<128> temp_src_addr = hdr.ipv6.src_addr;
-        hdr.ipv6.src_addr = hdr.ipv6.dst_addr;
-        hdr.ipv6.dst_addr = temp_src_addr;
-        hdr.ipv6.payload_len = 20; //Only the length of tcop header
-        // now tcp header eschange
-        bit<16> temp_src_port = hdr.tcp.src_port;
-        hdr.tcp.src_port = hdr.tcp.dst_port;
-        hdr.tcp.dst_port = temp_src_port;
-        bit<32>  temp_ack_no = hdr.tcp.ack_no;
-        hdr.tcp.ack_no = hdr.tcp.seq_no + 1;
-        hdr.tcp.seq_no = temp_ack_no; // this means we are sending the seq number what the sender have acknowledged. that means no new data
-        // REst of the fields are find. Just need  calculate the ipv6.payload_len
-        bit<16>  new_window = hdr.tcp.window >>WINDOW_INCREASE_RATIO;
-        hdr.tcp.window  = hdr.tcp.window + new_window;
-        hdr.mdn_int.rate_control_event  = RATE_CONTROL_EVENT_ALREADY_APPLIED ;
 
-    }
-    action build_fake_ack_only(){
-        hdr.mdn_int.setInvalid();
-        hdr.p2p_feedback.setInvalid();
 
-        hdr.tcp.ack_control_flag = FLAG_1 ;
-        bit<128> temp_src_addr = hdr.ipv6.src_addr;
-        hdr.ipv6.src_addr = hdr.ipv6.dst_addr;
-        hdr.ipv6.dst_addr = temp_src_addr;
-        hdr.ipv6.payload_len = 20; //Only the length of tcop header
-        // now tcp header eschange
-        bit<16> temp_src_port = hdr.tcp.src_port;
-        hdr.tcp.src_port = hdr.tcp.dst_port;
-        hdr.tcp.dst_port = temp_src_port;
-        bit<32>  temp_ack_no = hdr.tcp.ack_no;
-        hdr.tcp.ack_no = hdr.tcp.seq_no + 1;
-        hdr.tcp.seq_no = temp_ack_no; // this means we are sending the seq number what the sender have acknowledged. that means no new data
-        // REst of the fields are find. Just need  calculate the ipv6.payload_len
-        bit<16>  new_window = hdr.tcp.window >>WINDOW_DECREASE_RATIO;
-        hdr.tcp.window  = hdr.tcp.window - new_window;
-        hdr.ipv6.ecn = 3;
-    }
-    action build_fake_ack_only_for_increase(){
-        hdr.mdn_int.setInvalid();
-        hdr.p2p_feedback.setInvalid();
-
-        hdr.tcp.ack_control_flag = FLAG_1 ;
-        bit<128> temp_src_addr = hdr.ipv6.src_addr;
-        hdr.ipv6.src_addr = hdr.ipv6.dst_addr;
-        hdr.ipv6.dst_addr = temp_src_addr;
-        hdr.ipv6.payload_len = 20; //Only the length of tcop header
-        // now tcp header eschange
-        bit<16> temp_src_port = hdr.tcp.src_port;
-        hdr.tcp.src_port = hdr.tcp.dst_port;
-        hdr.tcp.dst_port = temp_src_port;
-        bit<32>  temp_ack_no = hdr.tcp.ack_no;
-        hdr.tcp.ack_no = hdr.tcp.seq_no + 1;
-        hdr.tcp.seq_no = temp_ack_no; // this means we are sending the seq number what the sender have acknowledged. that means no new data
-        // REst of the fields are find. Just need  calculate the ipv6.payload_len
-        bit<16>  new_window = hdr.tcp.window >>WINDOW_INCREASE_RATIO;
-        hdr.tcp.window  = hdr.tcp.window + new_window;
-
-        }
     //========================
     #ifdef ENABLE_DEBUG_TABLES
     debug_std_meta() debug_std_meta_egress_start;
     #endif  // ENABLE_DEBUG_TABLES
-    egress_rate_monitor() egress_rate_monitor_control_block;
-    egress_queue_depth_monitor() egress_queue_depth_monitor_control_block;
-    #ifdef DP_BASED_RATE_CONTROL_ENABLED
-    leaf_rate_control_processor() leaf_rate_control_processor_control_block;
-    #endif
 
     apply {
-        //if (local_metadata.is_multicast == true &&
-        //      standard_metadata.ingress_port == standard_metadata.egress_port) {
-        //    mark_to_drop(standard_metadata);
-        //}
-        bool is_recirculation_needed = false;
-        // we can only do these stuuffs if this packet is a normal packet .
-        if(IS_NORMAL(standard_metadata)){
+       if (standard_metadata.egress_port == CPU_PORT) {
+           // Add packet_in header and set relevant fields, such as the
+           // switch ingress port where the packet was received.
+           hdr.packet_in.setValid();
+           hdr.packet_in.ingress_port = standard_metadata.ingress_port;
+           // Exit the pipeline here.
+           exit;
+       }
 
-            egress_queue_depth_monitor_control_block.apply(hdr, local_metadata, standard_metadata);
-            egress_rate_monitor_control_block.apply(hdr, local_metadata, standard_metadata);
-            #ifdef DP_BASED_RATE_CONTROL_ENABLED
-            leaf_rate_control_processor_control_block.apply(hdr, local_metadata, standard_metadata);
-            #elif  DP_ALGO_ECMP
-            if(standard_metadata.deq_qdepth > ECN_THRESHOLD) hdr.ipv6.ecn = 3; //setting ecm mark
-            #endif
+               // If this is a multicast packet (flag set by l2_ternary_table), make
+               // sure we are not replicating the packet on the same port where it was
+               // received. This is useful to avoid broadcasting NDP requests on the
+               // ingress port.
+       if (local_metadata.is_multicast == true &&
+             standard_metadata.ingress_port == standard_metadata.egress_port) {
+           mark_to_drop(standard_metadata);
+       }
 
-            if (local_metadata.is_multicast == true ) {
-                exit;
-            }
-            #ifdef DP_ALGO_CP_ASSISTED_POLICY_ROUTING
-            if(IS_RECIRC_NEEDED(local_metadata)) {
-                is_recirculation_needed = true;
-            }
-            #endif
-            //TODO : if everything goes ok. We can convert this if-else to a single MAT
 
-            if(is_recirculation_needed &&   IS_CONTROL_PKT_TO_NEIGHBOUR(local_metadata) && IS_CONTROL_PKT_TO_CP(local_metadata)){
-                //log_msg("clone to session id  ing_port + Max_port * 2 --> this have both ingress port and CPU port and recirculation port");
-                clone3(CloneType.E2E, (bit<32>)(standard_metadata.ingress_port)+ ((bit<32>)MAX_PORTS_IN_SWITCH * 2), {standard_metadata, local_metadata});
-            }else if(  IS_CONTROL_PKT_TO_NEIGHBOUR(local_metadata) && IS_CONTROL_PKT_TO_CP(local_metadata)){
-                //log_msg("clone to session id ing_port + Max_port  --> this have both ingress port and CPU port");
-                clone3(CloneType.E2E, (bit<32>)(standard_metadata.ingress_port)+ (bit<32>)MAX_PORTS_IN_SWITCH, {standard_metadata, local_metadata});
-            }else if (IS_CONTROL_PKT_TO_CP(local_metadata)) {
-                //log_msg("clone to CPU port only");
-                clone3(CloneType.E2E, CPU_CLONE_SESSION_ID, {standard_metadata, local_metadata});
-            }else if ( IS_CONTROL_PKT_TO_NEIGHBOUR(local_metadata)) {
-                 //log_msg("clone to ingress port for feedback to neighbour");
-                 clone3(CloneType.E2E, (bit<32>)(standard_metadata.ingress_port), {standard_metadata, local_metadata});
-            }else{
-                 //log_msg("Unhandled logic in cloning control block");
-            }
-        }
     #ifdef ENABLE_DEBUG_TABLES
     debug_std_meta_egress_start.apply(hdr, local_metadata, standard_metadata);
     #endif  // ENABLE_DEBUG_TABLES
 
-// for handling the fake ACK we need to do 2 things
-// 1) the switch it is generating -- here in egress we ned to build the fake ack based on some flags
-// 2)  in other switches when this pkt is rcvd, it is normal pkt. but we have to make sure that this packet is not generating any other fake ack. so we have to identify if the pkt is a fake ack.
 
-//if the pkt have valid mdn_int && ack_flag==1 && instance_type == e2i && hdr.mdn_int.rate_control_event ==RATE_CONTROL_EVENT_ALREADY_APPLIED -- that means this is a pkt generated for fake ack from egress. we need to forward it
-  //     if this happens then we do not need to build neighbour hood feedback pkt
-
-
-    if(IS_NORMAL(standard_metadata)){
-        egressPortCounter.count((bit<32>)standard_metadata.egress_port);
-        if(local_metadata.flag_hdr.is_pkt_toward_host){
-            //log_msg("Egress_log: found packet toward host. Removing all extra headers. In future we may need to control tcp headers here");
-            if(hdr.p2p_feedback.isValid() && hdr.mdn_int.isValid()){ //this is a fake ack
-                //log_msg("A fake ack is being sent to the host");
-                hdr.ipv6.next_hdr = hdr.mdn_int.next_hdr ;
-                hdr.mdn_int.setInvalid();
-                hdr.p2p_feedback.setInvalid();
-            }else if(hdr.mdn_int.isValid()){
-                //log_msg("This is a packet from a switch toward a host.Getting rid of the extra headers");
-                hdr.ipv6.next_hdr = hdr.mdn_int.next_hdr;
-                hdr.mdn_int.setInvalid();
-                //ekhane somehow deklay_hdr valid paccje. j karone ndp ns er reply vull next_hdr soho
-            }else{
-                //log_msg("This is a packet from a host toward a host. So no need to clone E2E for feedback");
-                hdr.mdn_int.setInvalid();  //This is not needed for else part. But no harm in doing extra invalid. NOt optimized obviously
-            }
-        }else if (standard_metadata.egress_port == PORT_ZERO) {
-             //log_msg("A normal packet has been  decided to be sent on port 0. Which should not be. Debug it");
-             recirculate<parsed_headers_t>(hdr);
-             mark_to_drop(standard_metadata);
-        }else if (standard_metadata.egress_port == CPU_PORT) {
-            //log_msg("This is a p2p feedback received from some neighbour switch. and sending it to CP");
-            // Add packet_in header and set relevant fields, such as the
-            // switch ingress port where the packet was received.
-            set_all_header_invalid();
-            hdr.packet_in.setValid();
-            //hdr.dp_to_cp_feedback_hdr.setValid();
-            hdr.packet_in.ingress_port = standard_metadata.ingress_port;
-            //log_msg("Found msg for CP from created by p2p feedback ingress port {} with delay event type {}",{standard_metadata.ingress_port, local_metadata.delay_info_hdr.path_delay_event_type});
-            //===
-            hdr.packet_in.ingress_queue_event = local_metadata.ingress_queue_event_hdr.ingress_queue_event;
-            hdr.packet_in.ingress_queue_event_data = local_metadata.ingress_queue_event_hdr.ingress_queue_event_data ;
-            hdr.packet_in.ingress_queue_event_port =local_metadata.ingress_queue_event_hdr.ingress_queue_event_port;
-            //===
-            hdr.packet_in.egress_queue_event = local_metadata.egress_queue_event_hdr.egress_queue_event ;
-            hdr.packet_in.egress_queue_event_data = local_metadata.egress_queue_event_hdr.egress_queue_event_data  ;
-            hdr.packet_in.egress_queue_event_port = local_metadata.egress_queue_event_hdr.egress_queue_event_port;
-            //===
-            hdr.packet_in.ingress_traffic_color = local_metadata.ingress_rate_event_hdr.ingress_traffic_color  ;
-            hdr.packet_in.ingress_rate_event_data = local_metadata.ingress_rate_event_hdr.ingress_rate_event_data  ;
-            hdr.packet_in.ingress_rate_event_port = local_metadata.ingress_rate_event_hdr.ingress_rate_event_port;
-            //log_msg("In cp feedback msg. egress traffic color is {}",{hdr.packet_in.egress_traffic_color});
-            //===
-            hdr.packet_in.egress_traffic_color = local_metadata.egress_rate_event_hdr.egress_traffic_color  ;
-            hdr.packet_in.egress_rate_event_data = local_metadata.egress_rate_event_hdr.egress_rate_event_data  ;
-            hdr.packet_in.egress_rate_event_port = local_metadata.egress_rate_event_hdr.egress_rate_event_port;
-            //============
-            hdr.packet_in.path_delay_event_type = hdr.p2p_feedback.delay_event_type ;
-            hdr.packet_in.path_delay_event_data = hdr.p2p_feedback.delay_event_data;
-            hdr.packet_in.dst_addr = local_metadata.delay_info_hdr.dst_addr;  //TODO : this is not correct. but we are not using this for now
-            hdr.packet_in.path_delay_event_port =  local_metadata.delay_info_hdr.path_delay_event_port;
-            //Set all other headers except the acket_in as invalid
-        }
-        else{
-            //log_msg("Egress_log: Before sending a packet from leaf switch to non host neighbour. So adding the delay header{} {}", {hdr.ipv6.next_hdr, hdr.mdn_int.next_hdr});
-            hdr.mdn_int.setValid();
-            bit<8> temp_next_hdr =   hdr.ipv6.next_hdr ;
-            hdr.ipv6.next_hdr = MDN_INT;
-            hdr.mdn_int.src_enq_timestamp = local_metadata.pkt_timestamp.src_enq_timestamp;
-            hdr.mdn_int.src_deq_timestamp = local_metadata.pkt_timestamp.src_deq_timestamp;
-            hdr.mdn_int.next_hdr = temp_next_hdr;
-            //log_msg("Egress_log: After sending a packet from leaf switch to non host neighbour. So adding the delay header{} {}", {hdr.ipv6.next_hdr, hdr.mdn_int.next_hdr});
-        }
-    }else{ //this is a cloned packet for control events
-                // if dp_only_flag-- then recirculate
-        if (standard_metadata.egress_port == PORT_ZERO) {
-            set_all_header_invalid();
-            hdr.ethernet.setValid();
-            hdr.ethernet.ether_type = 0;
-            hdr.packet_in.setValid();
-                            //hdr.dp_to_cp_feedback_hdr.setValid();
-            hdr.packet_in.ingress_port = standard_metadata.ingress_port;
-
-            //===
-            hdr.packet_in.ingress_queue_event = local_metadata.ingress_queue_event_hdr.ingress_queue_event;
-            hdr.packet_in.ingress_queue_event_data = local_metadata.ingress_queue_event_hdr.ingress_queue_event_data ;
-            hdr.packet_in.ingress_queue_event_port =local_metadata.ingress_queue_event_hdr.ingress_queue_event_port;
-            //===
-            hdr.packet_in.egress_queue_event = local_metadata.egress_queue_event_hdr.egress_queue_event ;
-            hdr.packet_in.egress_queue_event_data = local_metadata.egress_queue_event_hdr.egress_queue_event_data  ;
-            hdr.packet_in.egress_queue_event_port = local_metadata.egress_queue_event_hdr.egress_queue_event_port;
-            //===
-            hdr.packet_in.ingress_traffic_color = local_metadata.ingress_rate_event_hdr.ingress_traffic_color  ;
-            hdr.packet_in.ingress_rate_event_data = local_metadata.ingress_rate_event_hdr.ingress_rate_event_data  ;
-            hdr.packet_in.ingress_rate_event_port = local_metadata.ingress_rate_event_hdr.ingress_rate_event_port;
-            //===
-            hdr.packet_in.egress_traffic_color = local_metadata.egress_rate_event_hdr.egress_traffic_color  ;
-            hdr.packet_in.egress_rate_event_data = local_metadata.egress_rate_event_hdr.egress_rate_event_data  ;
-            hdr.packet_in.egress_rate_event_port = local_metadata.egress_rate_event_hdr.egress_rate_event_port;
-            //log_msg("In cp feedback msg. egress traffic color is {}",{hdr.packet_in.egress_traffic_color});
-            //============
-            hdr.packet_in.path_delay_event_type = local_metadata.delay_info_hdr.path_delay_event_type ;
-            hdr.packet_in.path_delay_event_data = local_metadata.delay_info_hdr.path_delay_event_data;
-            hdr.packet_in.dst_addr = local_metadata.delay_info_hdr.dst_addr;
-            hdr.packet_in.path_delay_event_port =  local_metadata.delay_info_hdr.path_delay_event_port;
-            recirculate<parsed_headers_t>(hdr);
-            //log_msg("A cloned packet is being recirculated");
-        }else if (standard_metadata.egress_port == CPU_PORT) {
-            // Add packet_in header and set relevant fields, such as the
-            // switch ingress port where the packet was received.
-            set_all_header_invalid();
-            hdr.packet_in.setValid();
-            //hdr.dp_to_cp_feedback_hdr.setValid();
-            hdr.packet_in.ingress_port = standard_metadata.ingress_port;
-            // Exit the pipeline here.
-            //log_msg("Found msg for CP from ingress port {} with delay event type {}",{standard_metadata.ingress_port, local_metadata.delay_info_hdr.path_delay_event_type});
-            //===
-            hdr.packet_in.ingress_queue_event = local_metadata.ingress_queue_event_hdr.ingress_queue_event;
-            hdr.packet_in.ingress_queue_event_data = local_metadata.ingress_queue_event_hdr.ingress_queue_event_data ;
-            hdr.packet_in.ingress_queue_event_port =local_metadata.ingress_queue_event_hdr.ingress_queue_event_port;
-            //===
-            hdr.packet_in.egress_queue_event = local_metadata.egress_queue_event_hdr.egress_queue_event ;
-            hdr.packet_in.egress_queue_event_data = local_metadata.egress_queue_event_hdr.egress_queue_event_data  ;
-            hdr.packet_in.egress_queue_event_port = local_metadata.egress_queue_event_hdr.egress_queue_event_port;
-            //===
-            hdr.packet_in.ingress_traffic_color = local_metadata.ingress_rate_event_hdr.ingress_traffic_color  ;
-            hdr.packet_in.ingress_rate_event_data = local_metadata.ingress_rate_event_hdr.ingress_rate_event_data  ;
-            hdr.packet_in.ingress_rate_event_port = local_metadata.ingress_rate_event_hdr.ingress_rate_event_port;
-            //===
-            hdr.packet_in.egress_traffic_color = local_metadata.egress_rate_event_hdr.egress_traffic_color  ;
-            hdr.packet_in.egress_rate_event_data = local_metadata.egress_rate_event_hdr.egress_rate_event_data  ;
-            hdr.packet_in.egress_rate_event_port = local_metadata.egress_rate_event_hdr.egress_rate_event_port;
-            //log_msg("In cp feedback msg. egress traffic color is {}",{hdr.packet_in.egress_traffic_color});
-            //============
-            hdr.packet_in.path_delay_event_type = local_metadata.delay_info_hdr.path_delay_event_type ;
-            hdr.packet_in.path_delay_event_data = local_metadata.delay_info_hdr.path_delay_event_data;
-            hdr.packet_in.dst_addr = local_metadata.delay_info_hdr.dst_addr;
-            hdr.packet_in.path_delay_event_port =  local_metadata.delay_info_hdr.path_delay_event_port;
-            ctrlPktToCPCounter.count((bit<32>)standard_metadata.egress_port);
-            ////log_msg("chceking feedback values{}", {local_metadata});
-        }else{
-            //log_msg("This is a peer to peer feedback message in cloned part (for fake ack). this means a original packet is being cloned to ingress port. At this moment only add delay feedback and feedback ACK. Later we may add more stuffs");
-            p2pFeedbackCounter.count((bit<32>)standard_metadata.egress_port);
-            #ifdef DP_BASED_RATE_CONTROL_ENABLED
-            if (hdr.mdn_int.isValid()   && (hdr.mdn_int.rate_control_event  == RATE_DECREASE_EVENT_NEED_TO_BE_APPLIED_IN_THIS_SWITCH)){
-                if(local_metadata.flag_hdr.is_packet_from_downstream_port == true){
-                    build_fake_ack_only();
-                }else if (local_metadata.flag_hdr.is_packet_from_upstream_port == true){
-                    build_p2p_feedback_with_fake_ack();
-                }
-            }else{
-                if(local_metadata.flag_hdr.is_packet_from_downstream_port == true){
-                    mark_to_drop(standard_metadata);
-                }else if (local_metadata.flag_hdr.is_packet_from_upstream_port == true){
-                    build_p2p_feedback_only();
-                }
-
-            }
-            if (hdr.mdn_int.isValid()   && (hdr.mdn_int.rate_control_event  == RATE_INCREASE_EVENT_NEED_TO_BE_APPLIED_IN_THIS_SWITCH)){
-                if(local_metadata.flag_hdr.is_packet_from_downstream_port == true){
-                    build_fake_ack_only_for_increase();
-                }else if (local_metadata.flag_hdr.is_packet_from_upstream_port == true){
-                    build_p2p_feedback_with_fake_ack_for_increase();
-                }
-            }else{
-                if(local_metadata.flag_hdr.is_packet_from_downstream_port == true){
-                    mark_to_drop(standard_metadata);
-                }else if (local_metadata.flag_hdr.is_packet_from_upstream_port == true){
-                    build_p2p_feedback_only();
-                }
-
-            }
-            //build_p2p_feedback_only();
-            #else
-            if(local_metadata.flag_hdr.is_packet_from_downstream_port == true){
-                mark_to_drop(standard_metadata); //Because we do not want to send the feedback packets to hosts
-            }else if (local_metadata.flag_hdr.is_packet_from_upstream_port == true){
-                build_p2p_feedback_only();
-            }
-            #endif
-        }
-    }
 
     }
 }
@@ -720,8 +290,6 @@ control DeparserImpl(packet_out packet, in parsed_headers_t hdr) {
         packet.emit(hdr.packet_in);
         packet.emit(hdr.ethernet);
         packet.emit(hdr.ipv6);
-        packet.emit(hdr.mdn_int);
-        packet.emit(hdr.p2p_feedback);
         packet.emit(hdr.tcp);
         packet.emit(hdr.udp);
         packet.emit(hdr.icmpv6);

@@ -154,19 +154,9 @@ const bit<32> SEQ_NUMBER_THRESHOLD_FOR_RATE_CONTROL = 5000; // this means for ea
 
 //======================================= Stateful data structures============================================================
 counter((bit<32>)MAX_PORTS_IN_SWITCH, CounterType.packets) egressPortCounter;
-counter((bit<32>)MAX_PORTS_IN_SWITCH, CounterType.packets) ingressPortCounter;
-counter((bit<32>)MAX_PORTS_IN_SWITCH, CounterType.packets) ctrlPktToCPCounter;
-counter((bit<32>)MAX_PORTS_IN_SWITCH, CounterType.packets) p2pFeedbackCounter;
 
-meter((bit<32>)MAX_PORTS_IN_SWITCH, MeterType.packets) egress_port_meters;
 
-//=====================================stateful data strucutre for CP-assisted multipath routing algorithm
- @name("egress_queue_depth_value_map")register<bit<48>>(MAX_PORTS_IN_SWITCH) egress_queue_depth_value_map;
- @name("egress_queue_depth_last_update_time_map")register<bit<48>>(MAX_PORTS_IN_SWITCH) egress_queue_depth_last_update_time_map;
- @name("egress_queue_rate_value_map")register<bit<48>>(MAX_PORTS_IN_SWITCH) egress_queue_rate_value_map;
- @name("egress_queue_rate_last_update_time_map")register<bit<48>>(MAX_PORTS_IN_SWITCH) egress_queue_rate_last_update_time_map;
- @name("port_to_port_delay_value_map")register<bit<48>>(MAX_PORTS_IN_SWITCH) port_to_port_delay_value_map;
- @name("port_to_port_delay_last_update_time_map")register<bit<48>>(MAX_PORTS_IN_SWITCH) port_to_port_delay_last_update_time_map;
+
 
 
 //============================flowlet regrading constnts
@@ -179,8 +169,8 @@ const bit<8> WINDOW_INCREASE_RATIO = 8;
 
 //===============================================CLB Related Constants
 @name("load_counter")register<bit<32>>(1) load_counter;
-@name("bitmask_array")register<bit<BITMASK_LENGTH>>(BITMASK_ARRAY_LENGTH) bitmask_array;
-@name("level_to_link_store")register<bit<32>>(TOTAL_LEVELS) level_to_link_store;
+@name("stored_bitmask")register<bit<BITMASK_LENGTH>>(1) stored_bitmask;
+@name("level_to_link_store")register<bit<32>>(BITMASK_LENGTH) level_to_link_store;
 const bit<32> ALL_ONE_BIT_MASK= 0b11111111111111111111111111111111;
 counter((bit<32>)1, CounterType.packets) load_balancer_missed_counter;
 

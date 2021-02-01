@@ -19,8 +19,7 @@ control leaf_downstream_routing(inout parsed_headers_t    hdr,
            hdr.ethernet.dst_addr = dmac;
            // Decrement TTL
            hdr.ipv6.hop_limit = hdr.ipv6.hop_limit - 1;
-           host_egress_meter.read( local_metadata.egress_rate_event_hdr.egress_traffic_color);
-            local_metadata.flag_hdr.downstream_routing_table_hit = true;
+
    }
    table downstream_routing_table {
          key = {
@@ -32,7 +31,6 @@ control leaf_downstream_routing(inout parsed_headers_t    hdr,
          }
          @name("downstream_routing_table")
          counters = direct_counter(CounterType.packets_and_bytes);
-         meters = host_egress_meter;
    }
    apply {
         downstream_routing_table.apply();

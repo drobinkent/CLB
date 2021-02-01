@@ -166,11 +166,8 @@ class MyP4Controller():
             if (s.fabric_device_config.switch_type == jp.SwitchType.SUPER_SPINE ):
                 s.queueRateSetupForSuperspineSwitch(queueRateForSpineSwitchFacingPortsOfSuperSpineSwitch, queueRateForExternalInternetFacingPortsOfSuperSpineSwitch, queueRateToDepthFactor)
             swUtils.addCloneSessionForEachPort(s, s.maxPort)
-            swUtils.setupFlowtypeBasedIngressRateMonitoring(s)
-            swUtils.portBasedEgressRateMonitoring(s)  # Here we setup the actual egress link rate
             #TODO : need to save the metric level in device. So that we4 can later use dynamic scale up for metrices
-            swUtils.setupEgressQueueDepthMetricsLevelCalculatorTables(s, swUtils.getMetricsLevelFromTuppleList(ConfConst.EGRESS_QUEUE_DEPTH_DELAY_LEVELS_LINEAR))
-            swUtils.setupPortToPortDelayMetricsLevelCalculatorTables(s, swUtils.getMetricsLevelFromTuppleList(ConfConst.PORT_TO_PORT_DELAY_LEVELS_LINEAR))
+
             s.initialCommonSetup()
             #====================
             # -- execute initial setup tasks
@@ -190,7 +187,7 @@ class MyP4Controller():
         # this method will pull various counter and register values from the switches and plot data accordingly.
         #Also save the collected statitstics for each device in corresponding data structure.
         self.statisticsPuller = P4Runtime.StatisticsPuller.StatisticsPuller(self.nameToSwitchMap)
-        self.loadBalancerTester = LoadBalancer.LoadBalanacer(allLinksAsList = [5,6,7,8], totalLevels = ConfConst.TOTAL_LEVELS, bitMaskLength=ConfConst.BITMASK_LENGTH, nameToSwitchMap = self.nameToSwitchMap)
+        self.loadBalancerTester = LoadBalancer.LoadBalanacer(allLinksAsList = [5,6,7,8],  bitMaskLength=ConfConst.BITMASK_LENGTH, nameToSwitchMap = self.nameToSwitchMap)
 
 
 

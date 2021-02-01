@@ -792,9 +792,8 @@ class Device:
         te.priority = priority
         te.insert()
 
-    def addTernaryEntriesForCLBTMAt(self, packetBitmaskArrayIndex, packetBitmaskValueWithMaskAsString, actionParamValue , priority):
-        te = sh.TableEntry(self,"nearest_level_finder_mat")(action="nearest_level_finder_mat_action_with_param")
-        te.match["local_metadata.packet_bitmask_array_index"] = "" + str(packetBitmaskArrayIndex)
+    def addTernaryEntriesForCLBTMAt(self,  packetBitmaskValueWithMaskAsString, actionParamValue , priority):
+        te = sh.TableEntry(self,"weight_group_finder_mat")(action="weight_group_finder_action_with_param")
         te.match["local_metadata.packet_bitmask"] = packetBitmaskValueWithMaskAsString
         te.action["link_location_index"] = str(actionParamValue)
         te.priority = priority

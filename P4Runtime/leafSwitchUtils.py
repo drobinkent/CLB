@@ -56,13 +56,7 @@ def addDownstreamRoutingRuleForLeafSwitch(dev):
                                                           actionName="IngressPipeImpl.downstream_routing_control_clock.set_downstream_egress_port",
                                                           actionParamNameList=actionParamNameList,
                                                           actionParamValueList=actionParamValueList)
-        ce = sh.DirectMeterEntry(dev, "host_egress_meter")
-        ce.table_entry.match["hdr.ipv6.dst_addr"] = host.basic.ips[0]
-        ce.cir = 500 * 1024
-        ce.cburst = 25 * 1024
-        ce.pir = 600 * 1024
-        ce.pburst = 25 * 1024
-        ce.modify()
+
 
 
 def addUpStreamRoutingGroupForLeafSwitch(dev, upstreamPortsList):

@@ -195,9 +195,8 @@ LOAD_DISTRIBUTION_1 = [(5,1),(6,2),(7,2),(8,3)]
 LOAD_DISTRIBUTION_2 = [(5,2),(6,2),(7,3),(8,1)]
 
 DISTRO1_INSTALL_DELAY = 0   # Weight distribution 1 will be installed after 50 second of the controller thread starts
-DISTRO2_INSTALL_DELAY = 200  # Weight distribution 2 will be installed after 50 second of the controller thread starts
+DISTRO2_INSTALL_DELAY = 99999  # Weight distribution 2 will be installed after 50 second of the controller thread starts
 
 MAX_LOAD = 1000 # N in out systesm
 PRECISION = 10
-BITMASK_LENGTH = 4
-TOTAL_LEVELS = 8
+BITMASK_LENGTH = 8

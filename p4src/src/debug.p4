@@ -55,19 +55,11 @@
 
                 //all hdr field
 
-                hdr.mdn_int.next_hdr: exact;
-                hdr.mdn_int.src_enq_timestamp: exact;
-                hdr.mdn_int.src_deq_timestamp: exact;
 
 
 
-                //All control header fields
-                local_metadata.delay_info_hdr.event_src_type: exact;
-                local_metadata.delay_info_hdr.path_delay_event_type: exact;
-                local_metadata.delay_info_hdr.path_delay_event_data: exact;
+                hdr.icmpv6.type: exact;
 
-
-                local_metadata.egress_rate_event_hdr.egress_traffic_color: exact;
 
                 hdr.ipv6.next_hdr: exact;
                 hdr.ipv6.flow_label : exact;

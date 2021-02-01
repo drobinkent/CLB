@@ -31,15 +31,14 @@ def modifyBit( n,  p,  b):
 
 class LoadBalanacer:
 
-    def __init__(self,  allLinksAsList, totalLevels, bitMaskLength, nameToSwitchMap ):
+    def __init__(self,  allLinksAsList, bitMaskLength, nameToSwitchMap ):
         self.linkToCurrentLevel={}
-        self.totalLevels = totalLevels
         self.bitMaskLength = bitMaskLength
         self.bitMaskArray = []
         self.nameToSwitchMap = nameToSwitchMap
         for l in allLinksAsList:
             self.linkToCurrentLevel[l] = 0
-        for i in range(0,int(self.totalLevels/self.bitMaskLength)):
+        for i in range(0,self.bitMaskLength):
             #Initializing all the bit masks with 0
             self.bitMaskArray.append(0)
         self.isRunning =True
@@ -47,20 +46,19 @@ class LoadBalanacer:
         x.start()
         logger.info("load_balancer_config_thread_function thread started")
 
-    def initMAT(self, switchObject, bitMaskLength, bitMaskArrayMaxIndex):
+    def initMAT(self, switchObject, bitMaskLength):
         allOneMAsk = BinaryMask(bitMaskLength)
         allOneMAsk.setAllBitOne()
         allOneMAskBinaryString = allOneMAsk.getBinaryString()
-        for i in range (0, bitMaskArrayMaxIndex):
-            for j in range(0, bitMaskLength):
-                mask = BinaryMask(bitMaskLength)
-                mask.setNthBitWithB(n=j,b=1)
-                maskAsString = mask.getBinaryString()
-                switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskArrayIndex = i, packetBitmaskValueWithMaskAsString = allOneMAskBinaryString+"&&&"+maskAsString,
-                                                         actionParamValue=i * bitMaskLength + j , priority=i * bitMaskLength + j+1) #1 added in the prioity bcz  0 priority doesn;t work
-                # switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskArrayIndex = i, packetBitmaskValueWithMaskAsString = allOneMAskBinaryString+"&&&"+maskAsString,
-                #                                           actionParamValue=i * bitMaskLength + j ,
-                #                                           priority= (bitMaskArrayMaxIndex * bitMaskLength)-(i * bitMaskLength + j)) #1 added in the prioity bcz  0 priority doesn;t work
+        for j in range(0, bitMaskLength):
+            mask = BinaryMask(bitMaskLength)
+            mask.setNthBitWithB(n=j,b=1)
+            maskAsString = mask.getBinaryString()
+            switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskValueWithMaskAsString = allOneMAskBinaryString+"&&&"+maskAsString,
+                                                     actionParamValue=  j , priority= j+1) #1 added in the prioity bcz  0 priority doesn;t work
+            # switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskArrayIndex = i, packetBitmaskValueWithMaskAsString = allOneMAskBinaryString+"&&&"+maskAsString,
+            #                                           actionParamValue=i * bitMaskLength + j ,
+            #                                           priority= (bitMaskArrayMaxIndex * bitMaskLength)-(i * bitMaskLength + j)) #1 added in the prioity bcz  0 priority doesn;t work
 
     def initMATOld(self, switchObject, bitMaskLength, bitMaskArrayMaxIndex):
         allZeroMAsk = BinaryMask(bitMaskLength)
@@ -85,7 +83,7 @@ class LoadBalanacer:
         distr2InstallFlag = False
         # Here we will insert tcam entries
         print("Initializinf the MAT")
-        self.initMAT(switchObject = switchObject, bitMaskLength = ConfConst.BITMASK_LENGTH, bitMaskArrayMaxIndex= int(ConfConst.TOTAL_LEVELS/ConfConst.BITMASK_LENGTH))
+        self.initMAT(switchObject = switchObject, bitMaskLength = ConfConst.BITMASK_LENGTH)
         while(self.isRunning):
             currentTime = time.time()
             if ( (currentTime - start) > ConfConst.DISTRO1_INSTALL_DELAY) and ( (currentTime - start) < ConfConst.DISTRO2_INSTALL_DELAY) and (distr1InstallFlag == False):
@@ -106,31 +104,37 @@ class LoadBalanacer:
                 distr2InstallFlag = True
             time.sleep(1)
             #Now reset the counter
-            pktForCounterReset = self.buildMetadataBasedPacketOut( clabFlag=128, bitmaskArrayIndex = 0, bitmaskPosition=0, linkID=0,
+            pktForCounterReset = self.buildMetadataBasedPacketOut( clabFlag=128,  linkID=0,
                                                                    bitmask=0, level_to_link_id_store_index = 0) # Here only lcabFlag matters others not
             switchObject.send_already_built_control_packet_for_load_balancer(pktForCounterReset)
         pass
 
 
 
-    def buildMetadataBasedPacketOut(self,  clabFlag, bitmaskArrayIndex, bitmaskPosition, linkID, bitmask, level_to_link_id_store_index , port = 255):
+    def buildMetadataBasedPacketOut(self,  clabFlag,   linkID, bitmask, level_to_link_id_store_index , port = 255):
         '''
+
         port_num_t  egress_port;
         bit<7>      _pad;
         //Previous all fields are not necessary for CLB. TODO  at sometime we will trey to clean up them. But at this moment we are not focusing on that
-        bit<8> clb_flags; //Here we will keep various falgs for CLB //--------bit-7--------|| If this bit is set then reet the counter//--------bit-6--------|| If this bit is set then this is a port delete packet
-        bit<32> bitmask_array_index;  //
-        bit<32> bitmask_position;
+        bit<8> clb_flags; //Here we will keep various falgs for CLB
+        //--------bit-7--------|| If this bit is set then reet the counter
+        //--------bit-6--------|| If this bit is set then this is a port delete packet
+        //--------bit-5--------|| If this bit is set then this is a port insert packet
+        //--------bit-4--------|| Other bits are ununsed at this moment
+        //--------bit-3--------||
+        //--------bit-2--------||
+        //--------bit-1--------||
+        //--------bit-0--------||
+
+
         bit<32> link_id;
         bit<32> bitmask; //Here we are keeping all 32 bit to avoid compile time configuration complexity. At apply blo0ck we will slice necesssary bits.
         bit<32> level_to_link_id_store_index;  //
-        :return:
         '''
 
         rawPktContent = (255).to_bytes(2,'big') # first 2 byte egressport and padding
         rawPktContent = rawPktContent + (clabFlag).to_bytes(1,'big')
-        rawPktContent = rawPktContent + (bitmaskArrayIndex).to_bytes(4,'big')
-        rawPktContent = rawPktContent + (bitmaskPosition).to_bytes(4,'big')
         rawPktContent = rawPktContent + (linkID).to_bytes(4,'big')
         rawPktContent = rawPktContent + (bitmask).to_bytes(4,'big')
         rawPktContent = rawPktContent + (level_to_link_id_store_index).to_bytes(4,'big')
@@ -146,24 +150,16 @@ class LoadBalanacer:
         clb_flag_metadata_field.metadata_id = 3
         clb_flag_metadata_field.value = (clabFlag).to_bytes(1,'big')
 
-        bitmaskArrayIndex_metadata_field = packet_out.metadata.add()
-        bitmaskArrayIndex_metadata_field.metadata_id = 4
-        bitmaskArrayIndex_metadata_field.value = (bitmaskArrayIndex).to_bytes(4,'big')
-
-        bitmaskPosition_metadata_field = packet_out.metadata.add()
-        bitmaskPosition_metadata_field.metadata_id = 5
-        bitmaskPosition_metadata_field.value = (bitmaskPosition).to_bytes(4,'big')
-
         linkID_metadata_field = packet_out.metadata.add()
-        linkID_metadata_field.metadata_id = 6
+        linkID_metadata_field.metadata_id = 4
         linkID_metadata_field.value = (linkID).to_bytes(4,'big')
 
         bitmask_metadata_field = packet_out.metadata.add()
-        bitmask_metadata_field.metadata_id = 7
+        bitmask_metadata_field.metadata_id = 5
         bitmask_metadata_field.value = (bitmask).to_bytes(4,'big')
 
         level_to_link_id_store_index_metadata_field = packet_out.metadata.add()
-        level_to_link_id_store_index_metadata_field.metadata_id = 8
+        level_to_link_id_store_index_metadata_field.metadata_id = 6
         level_to_link_id_store_index_metadata_field.value = (level_to_link_id_store_index).to_bytes(4,'big')
 
         packet_out.payload = rawPktContent
@@ -189,7 +185,7 @@ class LoadBalanacer:
                 self.bitMaskArray[index] = modifyBit(self.bitMaskArray[index], position, 0)
                 #make a packet_out message
                 # 64 = 01000000--> pkt delete
-                pktForDeletelink = self.buildMetadataBasedPacketOut( clabFlag=64, bitmaskArrayIndex = index, bitmaskPosition=position, linkID=0,
+                pktForDeletelink = self.buildMetadataBasedPacketOut( clabFlag=64, linkID=0,
                                                        bitmask=self.bitMaskArray[index], level_to_link_id_store_index = oldLevel)
                 packetOutList.append(pktForDeletelink)
             newLevel = e[1]
@@ -198,7 +194,7 @@ class LoadBalanacer:
             position = newLevel % self.bitMaskLength
             #make a packet_out message now and insert In List parallely modify the self.bitMaskArray[index]
             self.bitMaskArray[index] = modifyBit(self.bitMaskArray[index], position, 1)
-            pktForInsertlink = self.buildMetadataBasedPacketOut( clabFlag=64, bitmaskArrayIndex = index, bitmaskPosition=position, linkID=link,
+            pktForInsertlink = self.buildMetadataBasedPacketOut( clabFlag=64,  linkID=link,
                                                    bitmask=self.bitMaskArray[index], level_to_link_id_store_index = newLevel)
             packetOutList.append(pktForInsertlink)
         return packetOutList
