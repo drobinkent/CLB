@@ -20,6 +20,7 @@ control spine_downstream_routing(inout parsed_headers_t    hdr,
           hdr.ethernet.dst_addr = dmac;
           // Decrement TTL
           hdr.ipv6.hop_limit = hdr.ipv6.hop_limit - 1;
+          local_metadata.flag_hdr.downstream_routing_table_hit = true;
 
 
   }

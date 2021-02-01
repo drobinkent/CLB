@@ -55,7 +55,7 @@ class LoadBalanacer:
             mask.setNthBitWithB(n=j,b=1)
             maskAsString = mask.getBinaryString()
             switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskValueWithMaskAsString = allOneMAskBinaryString+"&&&"+maskAsString,
-                                                     actionParamValue=  j , priority= j+1) #1 added in the prioity bcz  0 priority doesn;t work
+                                                     actionParamValue=  j , priority= bitMaskLength-j+1) #1 added in the prioity bcz  0 priority doesn;t work
             # switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskArrayIndex = i, packetBitmaskValueWithMaskAsString = allOneMAskBinaryString+"&&&"+maskAsString,
             #                                           actionParamValue=i * bitMaskLength + j ,
             #                                           priority= (bitMaskArrayMaxIndex * bitMaskLength)-(i * bitMaskLength + j)) #1 added in the prioity bcz  0 priority doesn;t work

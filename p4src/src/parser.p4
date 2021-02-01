@@ -29,7 +29,7 @@ parser ParserImpl (packet_in packet,
 
     state parse_packet_out {
         packet.extract(hdr.packet_out);
-        transition accept;
+        transition parse_ethernet;
     }
 
     state parse_ethernet {
@@ -37,14 +37,10 @@ parser ParserImpl (packet_in packet,
         transition select(hdr.ethernet.ether_type){
             ETHERTYPE_IPV6: parse_ipv6;
             ETHERTYPE_IPV4 : parse_ipv4;
-            0 :  parse_packet_in; //We need this because for egress to ingress information passing we are using the packet_in header type. this is just for saving header vector space
             default: accept;
         }
     }
-    state parse_packet_in {
-        packet.extract(hdr.packet_in);
-         transition accept;
-    }
+
     state parse_ipv4 {
         packet.extract(hdr.ipv4);
         transition accept;
@@ -59,7 +55,6 @@ parser ParserImpl (packet_in packet,
             default: accept;
         }
     }
-
 
     state parse_tcp {
         packet.extract(hdr.tcp);
@@ -88,12 +83,11 @@ parser ParserImpl (packet_in packet,
             default: accept;
         }
     }
+
     state parse_ndp {
-            packet.extract(hdr.ndp);
-            transition accept;
-        }
-
-
+        packet.extract(hdr.ndp);
+        transition accept;
+    }
 }
 
 #endif

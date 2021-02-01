@@ -78,6 +78,8 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
     #endif
 
     apply {
+    local_metadata.flag_hdr.do_l3_l2=true;
+    local_metadata.flag_hdr.downstream_routing_table_hit = false;
     if (hdr.packet_out.isValid()) {
        // Set the egress port to that found in the packet-out metadata...
        standard_metadata.egress_spec = hdr.packet_out.egress_port;

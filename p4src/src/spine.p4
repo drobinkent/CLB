@@ -98,6 +98,8 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
 
     // *** APPLY BLOCK STATEMENT
     apply {
+    local_metadata.flag_hdr.do_l3_l2=true;
+    local_metadata.flag_hdr.downstream_routing_table_hit = false;
     if (hdr.packet_out.isValid()) {
        // Set the egress port to that found in the packet-out metadata...
        standard_metadata.egress_spec = hdr.packet_out.egress_port;
@@ -131,7 +133,7 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
             }else{
             //Route the packet to upstream paths
 
-            upstream_ecmp_routing_control_block.apply(hdr, local_metadata, standard_metadata);
+                upstream_ecmp_routing_control_block.apply(hdr, local_metadata, standard_metadata);
 
             //log_msg("egress spec is {} and egress port is {}",{standard_metadata.egress_spec , standard_metadata.egress_port});
             }
