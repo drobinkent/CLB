@@ -76,3 +76,45 @@ on the other hand we have 4 dfrnt spine switch. so easily we can do this.
 can we make a table showing 
 
 which paper needs which of our feature? 
+
+
+
+
+===============================================================
+
+# traffic csplitting finalized 
+
+How to do test : 
+
+Assume we want to test 32 packets per second using 4 links. our precision tolerance is 2 packets. So total weight group can be 16
+
+so in make file, DBITMASK_LENGTH = 16 and DPRECISION_FACTOR = 1 
+-- here 16 means 16 weight groups and 1 means shofting right 1 times. which is equivalent to divide by 2 that means precision of 2. 
+and for representing 16 we need 4 bits (0 to 15)
+
+-DENABLE_DEBUG_TABLES -DDP_ALGO_CLB  -DBITMASK_LENGTH=16  -DBITMASK_POSITION_INDICATOR_BITS_LENGTH=4  -DPRECISION_FACTOR=1
+
+
+-- This is for P4 program 
+
+
+for controller we need to open ConfigConst.py and at the bottom we need to change the configs
+
+#=======================configurations for CLB
+CPU_PORT = 255
+CLB_TESTER_DEVICE_NAME = "p0l0" # As out target is only testing algorithm we will only run the CLB from one switch.
+#This parameter defines that name. The algorithm will be only run with that device
+LOAD_DISTRIBUTION_1 = [(5,2),(6,6),(7,1),(8,7)]
+LOAD_DISTRIBUTION_2 = [(5,7),(6,1),(7,6),(8,2)]
+
+DISTRO1_INSTALL_DELAY = 0   # Weight distribution 1 will be installed after 50 second of the controller thread starts
+DISTRO2_INSTALL_DELAY = 125  # Weight distribution 2 will be installed after 50 second of the controller thread starts
+
+
+BITMASK_LENGTH = 16  # This must match with the P4 program 
+
+----
+
+Next open CNF and there configure pps = 32 
+because we are testing for 32 packets per second
+
