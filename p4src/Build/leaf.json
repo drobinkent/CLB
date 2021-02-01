@@ -16,8 +16,10 @@
         ["tmp_8", 8, false],
         ["ndp_processing_control_block_host_ipv6_tmp", 128, false],
         ["dp_only_load_balancing_control_block_load_counter_value", 32, false],
+        ["dp_only_load_balancing_control_block_load_counter_level", 32, false],
         ["dp_only_load_balancing_control_block_stored_bitmask_read_value", 8, false],
         ["dp_only_load_balancing_control_block_temp", 32, false],
+        ["tmp_9", 32, false],
         ["userMetadata.l4_src_port", 16, false],
         ["userMetadata.l4_dst_port", 16, false],
         ["userMetadata.is_multicast", 1, false],
@@ -642,7 +644,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "p4src/src/leaf.p4",
-        "line" : 290,
+        "line" : 291,
         "column" : 8,
         "source_fragment" : "DeparserImpl"
       },
@@ -836,7 +838,7 @@
       "id" : 1,
       "source_info" : {
         "filename" : "p4src/src/leaf.p4",
-        "line" : 260,
+        "line" : 261,
         "column" : 8,
         "source_fragment" : "update_checksum(hdr.ndp.isValid(), ..."
       },
@@ -2812,7 +2814,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 45,
+            "line" : 46,
             "column" : 12,
             "source_fragment" : "load_counter.read(load_counter_value, 0)"
           }
@@ -2822,96 +2824,7 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
-            },
-            {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "&",
-                  "left" : {
-                    "type" : "expression",
-                    "value" : {
-                      "op" : "+",
-                      "left" : {
-                        "type" : "field",
-                        "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
-                      },
-                      "right" : {
-                        "type" : "hexstr",
-                        "value" : "0x00000001"
-                      }
-                    }
-                  },
-                  "right" : {
-                    "type" : "hexstr",
-                    "value" : "0xffffffff"
-                  }
-                }
-              }
-            }
-          ],
-          "source_info" : {
-            "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 46,
-            "column" : 12,
-            "source_fragment" : "load_counter_value = load_counter_value + 1"
-          }
-        },
-        {
-          "op" : "register_write",
-          "parameters" : [
-            {
-              "type" : "register_array",
-              "value" : "load_counter"
-            },
-            {
-              "type" : "hexstr",
-              "value" : "0x00000000"
-            },
-            {
-              "type" : "field",
-              "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
-            }
-          ],
-          "source_info" : {
-            "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 47,
-            "column" : 12,
-            "source_fragment" : "load_counter.write(0, load_counter_value)"
-          }
-        },
-        {
-          "op" : "log_msg",
-          "parameters" : [
-            {
-              "type" : "string",
-              "value" : "LB: Counter Value is {}"
-            },
-            {
-              "type" : "parameters_vector",
-              "value" : [
-                {
-                  "type" : "field",
-                  "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
-                }
-              ]
-            }
-          ],
-          "source_info" : {
-            "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 48,
-            "column" : 12,
-            "source_fragment" : "            log_msg(\\\"LB: Counter Value is {}\\\", {load_counter_value});"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
+              "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_level"]
             },
             {
               "type" : "expression",
@@ -2943,9 +2856,108 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 50,
+            "line" : 48,
             "column" : 12,
-            "source_fragment" : "load_counter_value = load_counter_value >> 1"
+            "source_fragment" : "load_counter_level = load_counter_value >> 1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "+",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00000001"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffffffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x0000000f"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/dp_only_load_balancer.p4",
+            "line" : 49,
+            "column" : 12,
+            "source_fragment" : "load_counter_value = (load_counter_value + 1) % 16"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "load_counter"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/dp_only_load_balancer.p4",
+            "line" : 51,
+            "column" : 12,
+            "source_fragment" : "load_counter.write(0, load_counter_value)"
+          }
+        },
+        {
+          "op" : "log_msg",
+          "parameters" : [
+            {
+              "type" : "string",
+              "value" : "LB: Counter Value is {}"
+            },
+            {
+              "type" : "parameters_vector",
+              "value" : [
+                {
+                  "type" : "field",
+                  "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
+                }
+              ]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/dp_only_load_balancer.p4",
+            "line" : 52,
+            "column" : 12,
+            "source_fragment" : "            log_msg(\\\"LB: Counter Value is {}\\\", {load_counter_value});"
           }
         },
         {
@@ -2960,16 +2972,16 @@
               "value" : [
                 {
                   "type" : "field",
-                  "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
+                  "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_level"]
                 }
               ]
             }
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 51,
+            "line" : 54,
             "column" : 12,
-            "source_fragment" : "            log_msg(\\\"LB: Counter level is {}\\\", {load_counter_value});"
+            "source_fragment" : "            log_msg(\\\"LB: Counter level is {}\\\", {load_counter_level});"
           }
         },
         {
@@ -2986,8 +2998,28 @@
                 "value" : {
                   "op" : "&",
                   "left" : {
-                    "type" : "field",
-                    "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_level"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x07"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x07"
+                      }
+                    }
                   },
                   "right" : {
                     "type" : "hexstr",
@@ -2999,9 +3031,9 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 53,
+            "line" : 56,
             "column" : 12,
-            "source_fragment" : "local_metadata.packet_bitmask_shift_times = load_counter_value[ 3 - 1 : 0 ]"
+            "source_fragment" : "local_metadata.packet_bitmask_shift_times = load_counter_level[ 3 - 1 : 0 ] -1"
           }
         },
         {
@@ -3018,8 +3050,28 @@
                 "value" : {
                   "op" : "&",
                   "left" : {
-                    "type" : "field",
-                    "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_level"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x07"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x07"
+                      }
+                    }
                   },
                   "right" : {
                     "type" : "hexstr",
@@ -3031,9 +3083,9 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 53,
+            "line" : 56,
             "column" : 56,
-            "source_fragment" : "load_counter_value[ 3 - 1 : 0 ]"
+            "source_fragment" : "load_counter_level[ 3 - 1 : 0 ] -1"
           }
         },
         {
@@ -3055,7 +3107,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 54,
+            "line" : 57,
             "column" : 12,
             "source_fragment" : "            log_msg(\\\"LB: All 1 bitmask will be left shifted  {} times \\\", {local_metadata.packet_bitmask_shift_times});"
           }
@@ -3078,7 +3130,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 57,
+            "line" : 60,
             "column" : 12,
             "source_fragment" : "stored_bitmask.read(stored_bitmask_read_value, (bit<32>)0)"
           }
@@ -3102,7 +3154,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 58,
+            "line" : 61,
             "column" : 12,
             "source_fragment" : "            log_msg(\\\"LB: Loaded value sis {}\\\", {stored_bitmask_read_value});"
           }
@@ -3133,8 +3185,28 @@
                         "value" : {
                           "op" : "&",
                           "left" : {
-                            "type" : "field",
-                            "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "+",
+                              "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "&",
+                                  "left" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_level"]
+                                  },
+                                  "right" : {
+                                    "type" : "hexstr",
+                                    "value" : "0x07"
+                                  }
+                                }
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x07"
+                              }
+                            }
                           },
                           "right" : {
                             "type" : "hexstr",
@@ -3154,7 +3226,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 60,
+            "line" : 63,
             "column" : 27,
             "source_fragment" : "ALL_ONE_BIT_MASK << local_metadata.packet_bitmask_shift_times"
           }
@@ -3178,7 +3250,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 61,
+            "line" : 64,
             "column" : 12,
             "source_fragment" : "            log_msg(\\\"LB: all 1 bit bitmask value ofter left shifting is {} \\\", {temp1});"
           }
@@ -3217,8 +3289,28 @@
                                 "value" : {
                                   "op" : "&",
                                   "left" : {
-                                    "type" : "field",
-                                    "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
+                                    "type" : "expression",
+                                    "value" : {
+                                      "op" : "+",
+                                      "left" : {
+                                        "type" : "expression",
+                                        "value" : {
+                                          "op" : "&",
+                                          "left" : {
+                                            "type" : "field",
+                                            "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_level"]
+                                          },
+                                          "right" : {
+                                            "type" : "hexstr",
+                                            "value" : "0x07"
+                                          }
+                                        }
+                                      },
+                                      "right" : {
+                                        "type" : "hexstr",
+                                        "value" : "0x07"
+                                      }
+                                    }
                                   },
                                   "right" : {
                                     "type" : "hexstr",
@@ -3250,7 +3342,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 62,
+            "line" : 65,
             "column" : 12,
             "source_fragment" : "local_metadata.packet_bitmask = temp1[ 8 - 1 : 0 ] & stored_bitmask_read_value[ 8 - 1 : 0 ]"
           }
@@ -3289,8 +3381,28 @@
                                 "value" : {
                                   "op" : "&",
                                   "left" : {
-                                    "type" : "field",
-                                    "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_value"]
+                                    "type" : "expression",
+                                    "value" : {
+                                      "op" : "+",
+                                      "left" : {
+                                        "type" : "expression",
+                                        "value" : {
+                                          "op" : "&",
+                                          "left" : {
+                                            "type" : "field",
+                                            "value" : ["scalars", "dp_only_load_balancing_control_block_load_counter_level"]
+                                          },
+                                          "right" : {
+                                            "type" : "hexstr",
+                                            "value" : "0x07"
+                                          }
+                                        }
+                                      },
+                                      "right" : {
+                                        "type" : "hexstr",
+                                        "value" : "0x07"
+                                      }
+                                    }
                                   },
                                   "right" : {
                                     "type" : "hexstr",
@@ -3322,7 +3434,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 62,
+            "line" : 65,
             "column" : 44,
             "source_fragment" : "temp1[ 8 - 1 : 0 ] & stored_bitmask_read_value[ 8 - 1 : 0 ]"
           }
@@ -3346,7 +3458,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 63,
+            "line" : 66,
             "column" : 12,
             "source_fragment" : "            log_msg(\\\"LB: packet bitmask is {}\\\", {local_metadata.packet_bitmask});"
           }
@@ -3426,7 +3538,7 @@
       ]
     },
     {
-      "name" : "dp_only_load_balancer67",
+      "name" : "dp_only_load_balancer70",
       "id" : 32,
       "runtime_data" : [],
       "primitives" : [
@@ -3449,7 +3561,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 67,
+            "line" : 70,
             "column" : 12,
             "source_fragment" : "            log_msg(\\\"LB: Link location index is {}\\\", {local_metadata.link_location_index});"
           }
@@ -3472,7 +3584,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 68,
+            "line" : 71,
             "column" : 12,
             "source_fragment" : "level_to_link_store.read(temp, (bit<32>)local_metadata.link_location_index)"
           }
@@ -3504,7 +3616,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 69,
+            "line" : 72,
             "column" : 12,
             "source_fragment" : "standard_metadata.egress_spec = (bit<9>) temp"
           }
@@ -3528,7 +3640,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 70,
+            "line" : 73,
             "column" : 12,
             "source_fragment" : "            log_msg(\\\"LB: selected link is {}\\\", {temp});"
           }
@@ -3610,6 +3722,64 @@
             "line" : 234,
             "column" : 11,
             "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "leaf242",
+      "id" : 36,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_9"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/leaf.p4",
+            "line" : 242,
+            "column" : 28,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "count",
+          "parameters" : [
+            {
+              "type" : "counter_array",
+              "value" : "egressPortCounter"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_9"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/leaf.p4",
+            "line" : 242,
+            "column" : 4,
+            "source_fragment" : "egressPortCounter.count((bit<32>)standard_metadata.egress_port)"
           }
         }
       ]
@@ -4547,10 +4717,10 @@
           "direct_meters" : null,
           "action_ids" : [13, 14],
           "actions" : ["IngressPipeImpl.dp_only_load_balancing_control_block.weight_group_finder_action_without_param", "IngressPipeImpl.dp_only_load_balancing_control_block.weight_group_finder_action_with_param"],
-          "base_default_next" : "tbl_dp_only_load_balancer67",
+          "base_default_next" : "tbl_dp_only_load_balancer70",
           "next_tables" : {
-            "IngressPipeImpl.dp_only_load_balancing_control_block.weight_group_finder_action_without_param" : "tbl_dp_only_load_balancer67",
-            "IngressPipeImpl.dp_only_load_balancing_control_block.weight_group_finder_action_with_param" : "tbl_dp_only_load_balancer67"
+            "IngressPipeImpl.dp_only_load_balancing_control_block.weight_group_finder_action_without_param" : "tbl_dp_only_load_balancer70",
+            "IngressPipeImpl.dp_only_load_balancing_control_block.weight_group_finder_action_with_param" : "tbl_dp_only_load_balancer70"
           },
           "default_entry" : {
             "action_id" : 13,
@@ -4560,11 +4730,11 @@
           }
         },
         {
-          "name" : "tbl_dp_only_load_balancer67",
+          "name" : "tbl_dp_only_load_balancer70",
           "id" : 21,
           "source_info" : {
             "filename" : "p4src/src/dp_only_load_balancer.p4",
-            "line" : 67,
+            "line" : 70,
             "column" : 12,
             "source_fragment" : "            log_msg(\\\"LB: Link location index is {}\\\", {local_metadata.link_location_index});"
           },
@@ -4576,10 +4746,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [32],
-          "actions" : ["dp_only_load_balancer67"],
+          "actions" : ["dp_only_load_balancer70"],
           "base_default_next" : "node_33",
           "next_tables" : {
-            "dp_only_load_balancer67" : "node_33"
+            "dp_only_load_balancer70" : "node_33"
           },
           "default_entry" : {
             "action_id" : 32,
@@ -5856,12 +6026,41 @@
           "direct_meters" : null,
           "action_ids" : [33],
           "actions" : ["NoAction"],
-          "base_default_next" : null,
+          "base_default_next" : "tbl_leaf242",
           "next_tables" : {
-            "NoAction" : null
+            "NoAction" : "tbl_leaf242"
           },
           "default_entry" : {
             "action_id" : 33,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_leaf242",
+          "id" : 31,
+          "source_info" : {
+            "filename" : "p4src/src/leaf.p4",
+            "line" : 242,
+            "column" : 4,
+            "source_fragment" : "egressPortCounter.count((bit<32>)standard_metadata.egress_port)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [36],
+          "actions" : ["leaf242"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "leaf242" : null
+          },
+          "default_entry" : {
+            "action_id" : 36,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -5948,7 +6147,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "p4src/src/leaf.p4",
-        "line" : 260,
+        "line" : 261,
         "column" : 8,
         "source_fragment" : "update_checksum(hdr.ndp.isValid(), ..."
       },

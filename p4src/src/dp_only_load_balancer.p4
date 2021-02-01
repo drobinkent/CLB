@@ -42,15 +42,18 @@ control dp_only_load_balancing(inout parsed_headers_t    hdr,
             // process normal data packet here
             log_msg("LB: the message is not a valid control packet");
             bit<32> load_counter_value = 0;
+            bit<32> load_counter_level = 0;
             load_counter.read(load_counter_value, 0); //Read the only value. only one index one value
-            load_counter_value = load_counter_value + 1;
+            // Devide by the precision scaler. Precision Scaler will be provided at compile time
+            load_counter_level = load_counter_value >> PRECISION_FACTOR;
+            load_counter_value = (load_counter_value + 1) % 16;
+            //load_counter_value = (load_counter_value + 1) ;
             load_counter.write(0, load_counter_value); //Write back the counter value after increasing
             log_msg("LB: Counter Value is {}", {load_counter_value});
-            // Devide by the precision scaler. Precision Scaler will be provided at compile time
-            load_counter_value = load_counter_value >> PRECISION_FACTOR;
-            log_msg("LB: Counter level is {}", {load_counter_value});
+
+            log_msg("LB: Counter level is {}", {load_counter_level});
             //Find the position and index --> right most
-            local_metadata.packet_bitmask_shift_times = load_counter_value[ BITMASK_POSITION_INDICATOR_BITS_LENGTH - 1 : 0 ];
+            local_metadata.packet_bitmask_shift_times = load_counter_level[ BITMASK_POSITION_INDICATOR_BITS_LENGTH - 1 : 0 ] -1;
             log_msg("LB: All 1 bitmask will be left shifted  {} times ", {local_metadata.packet_bitmask_shift_times});
             //Read from the memory the distribution mask
             bit<BITMASK_LENGTH> stored_bitmask_read_value = 0;

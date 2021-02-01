@@ -239,6 +239,7 @@ control EgressPipeImpl (inout parsed_headers_t hdr,
     debug_std_meta_egress_start.apply(hdr, local_metadata, standard_metadata);
     #endif  // ENABLE_DEBUG_TABLES
 
+    egressPortCounter.count((bit<32>)standard_metadata.egress_port);
 
 
     }

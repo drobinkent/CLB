@@ -104,9 +104,9 @@ class LoadBalanacer:
                 distr2InstallFlag = True
             time.sleep(1)
             #Now reset the counter
-            pktForCounterReset = self.buildMetadataBasedPacketOut( clabFlag=128,  linkID=0,
-                                                                   bitmask=0, level_to_link_id_store_index = 0) # Here only lcabFlag matters others not
-            switchObject.send_already_built_control_packet_for_load_balancer(pktForCounterReset)
+            # pktForCounterReset = self.buildMetadataBasedPacketOut( clabFlag=128,  linkID=0,
+            #                                                        bitmask=0, level_to_link_id_store_index = 0) # Here only lcabFlag matters others not
+            # switchObject.send_already_built_control_packet_for_load_balancer(pktForCounterReset)
         pass
 
 

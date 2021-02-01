@@ -11,8 +11,8 @@
             {
               "flow_type": "tcp",
               "flow_traffic_class" : "0x10",
-              "flow-volume": "1M",
-              "src-window-size": "1.4K",
+              "flow-volume": "2M",
+              "src-window-size": "65K",
               "src-data-rate": "56K",
               "pkt-size":  "1400",
               "repeat" : "1",
@@ -28,8 +28,8 @@
             {
               "flow_type": "tcp",
               "flow_traffic_class" : "0x10",
-              "flow-volume": "1M",
-              "src-window-size": "1.4K",
+              "flow-volume": "2M",
+              "src-window-size": "65K",
               "src-data-rate": "56K",
               "pkt-size":  "1400",
               "repeat" : "1",

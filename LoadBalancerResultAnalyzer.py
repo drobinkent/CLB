@@ -1,3 +1,5 @@
+import math
+
 import ConfigConst as CC
 from testAndMeasurement.ResultParsers import ConfigLoader
 import  testAndMeasurement.ResultProcessor as resProc
@@ -22,6 +24,36 @@ def upwardLinkUtilizationVisualizerProcessor(folderPath="/home/deba/Desktop/CLB/
     for e in portVsCounterValueListMap.keys():
         print("Values for port "+str(e)+ "are follwoing ")
         print(portVsCounterValueListMap.get(e))
+
+    processedPortVsCounterValueListMap = {}
+    listLengths=[]
+    for portId in portVsCounterValueListMap.keys():   # this is a port vs counter map
+        if(processedPortVsCounterValueListMap.get(portId) == None) :
+            processedPortVsCounterValueListMap[portId] = []
+        listLengths.append(len(portVsCounterValueListMap.get(portId)))
+
+    min = 99999999999
+    for i in range(0, len(listLengths)):
+        if listLengths[i]<=min:
+            min = listLengths[i]
+
+
+    for i in range(1, min):  #len(portVsCounterValueListMap.get(portId))
+        iThValueList = []
+        for portId in portVsCounterValueListMap.keys():
+            iThValueList.append(abs(portVsCounterValueListMap[portId][i] - portVsCounterValueListMap[portId][i-1]))
+        minValue = 9999999
+        for j in range(0, len(iThValueList)):
+            if iThValueList[j]<=minValue:
+                minValue = iThValueList[j]
+        for portId in portVsCounterValueListMap.keys():
+            if minValue ==0:
+                processedPortVsCounterValueListMap[portId].append(0)
+            else:
+                processedPortVsCounterValueListMap[portId].append((portVsCounterValueListMap[portId][i] - portVsCounterValueListMap[portId][i-1])/minValue)
+    for e in processedPortVsCounterValueListMap.keys():
+        print("Values for port "+str(e)+ "are follwoing ")
+        print(processedPortVsCounterValueListMap.get(e))
 
 
 

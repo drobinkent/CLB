@@ -97,7 +97,7 @@ TRAFFIC_CLASS_AS_LIST = [TRAFFIC_CLASS_LOW_DELAY, TRAFFIC_CLASS_MAXIMIZE_THROUGH
 #PERCENTAGE_OF_TOTAL_UPWARD_TRAFFIC_FOR_TRAFFIC_CLASS = [40, 70, 10]
 PERCENTAGE_OF_TOTAL_UPWARD_TRAFFIC_FOR_TRAFFIC_CLASS = [10,40, 5] # How much of the link capacity should a traffic class get.
 #======================thread control and timer related
-STATISTICS_PULLING_INTERVAL = 15 # This meand after each 15 second controller will wake up the StatisticsPuller thread and collect stats from the switches
+STATISTICS_PULLING_INTERVAL = 3 # This meand after each 15 second controller will wake up the StatisticsPuller thread and collect stats from the switches
 PORT_STATISTICS_HISTORY_LENGTH = 1000 # this means the history will be
 #======================= Different Test Scenarios
 class DataplnaeAlgorithm(Enum):
@@ -107,12 +107,12 @@ class DataplnaeAlgorithm(Enum):
 ALGORITHM_IN_USE = DataplnaeAlgorithm.DP_ALGO_BASIC_ECMP  #For CLB it will be always ECMP
 
 
-queueRateForHostFacingPortsOfLeafSwitch = 16
-queueRateForSpineFacingPortsOfLeafSwitch = 16
-queueRateForLeafSwitchFacingPortsOfSpineSwitch= 16
-queueRateForSuperSpineSwitchFacingPortsOfSpineSwitch=16
-queueRateForSpineSwitchFacingPortsOfSuperSpineSwitch=16
-queueRateForExternalInternetFacingPortsOfSuperSpineSwitch=16
+queueRateForHostFacingPortsOfLeafSwitch = 18
+queueRateForSpineFacingPortsOfLeafSwitch = 18
+queueRateForLeafSwitchFacingPortsOfSpineSwitch= 18
+queueRateForSuperSpineSwitchFacingPortsOfSpineSwitch=18
+queueRateForSpineSwitchFacingPortsOfSuperSpineSwitch=18
+queueRateForExternalInternetFacingPortsOfSuperSpineSwitch=18
 
 
 
@@ -195,8 +195,7 @@ LOAD_DISTRIBUTION_1 = [(5,1),(6,2),(7,2),(8,3)]
 LOAD_DISTRIBUTION_2 = [(5,2),(6,2),(7,3),(8,1)]
 
 DISTRO1_INSTALL_DELAY = 0   # Weight distribution 1 will be installed after 50 second of the controller thread starts
-DISTRO2_INSTALL_DELAY = 99999  # Weight distribution 2 will be installed after 50 second of the controller thread starts
+DISTRO2_INSTALL_DELAY = 225  # Weight distribution 2 will be installed after 50 second of the controller thread starts
 
-MAX_LOAD = 1000 # N in out systesm
-PRECISION = 10
+
 BITMASK_LENGTH = 8

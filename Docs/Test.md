@@ -28,3 +28,22 @@ the path to -1.
 then we will check if no vlaid path is found then use ECMP. As a result only our configured switch will 
 use the load balanicng algorohtm. Al other will use ECMP.
     
+
+
+# Result Visualization
+
+Repeat the test with statisticpulling interval 3 sec and .5 sec
+Then plot a single diagram with 4 ports time vs normalized (with ratio to smallest one) value. 
+This plot will show the ratio. We need to take a large gap bcz in small gap synchronizing controller log and data plane vlaues is not possible
+
+another graph we show each ports time vs normalized vlaue in .5 sec interval statictics pulling. 
+This plot will have a lot of spike. butwe need to form a curve over these spiked values with some kind of average values to show that, 
+overall the ratio is maintained. 
+This small interval graph will also show the distribution transition time. 
+
+
+check same set of graphs with 2 approaches 
+a) counter set hard value 16 wrap up
+b) counter value reset by CP
+
+If the 2 nd approach gves clear visibility of our algo then we will prefer that one. 
