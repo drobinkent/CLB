@@ -60,9 +60,19 @@ a) best path --> all short flows send through these path -- what of we use high 
 b) worst path --> all large flows through this path ---- low queue rate for this path 
 c) K't path --> assume we have configured the path with a sepcific queu rate. now we want a flow to achieve specific bw. then we tag a flow with 
 a specific value and based on that tag we use that path. if after test we can achieve the full rate of the link for this flow then we are done 
+d) specific range --- m to n th bit on needed.
+
+our whole assumption is lied on that we know the range of the metrics earlier 
+
 
 -- for all of these 3 tests we need to implement per port rate assignment. 
 
 then we start 3 flows from 3 hosts of same leaf to dfrnt destinations. 
 configure the port rates in such a way that, each flow get a disjoint path . destination of the flow will be in 3 dfrnt leaf. 
 on the other hand we have 4 dfrnt spine switch. so easily we can do this. 
+
+
+
+can we make a table showing 
+
+which paper needs which of our feature? 

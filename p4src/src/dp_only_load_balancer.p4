@@ -46,8 +46,8 @@ control dp_only_load_balancing(inout parsed_headers_t    hdr,
             load_counter.read(load_counter_value, 0); //Read the only value. only one index one value
             // Devide by the precision scaler. Precision Scaler will be provided at compile time
             load_counter_level = load_counter_value >> PRECISION_FACTOR;
-            load_counter_value = (load_counter_value + 1) % 16;
-            //load_counter_value = (load_counter_value + 1) ;
+            //load_counter_value = (load_counter_value + 1) % 16;
+            load_counter_value = (load_counter_value + 1) ;
             load_counter.write(0, load_counter_value); //Write back the counter value after increasing
             log_msg("LB: Counter Value is {}", {load_counter_value});
 

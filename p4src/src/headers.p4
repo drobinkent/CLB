@@ -144,8 +144,8 @@ struct local_metadata_t {
 
 
 
-    bit<32> temp; //This will be used for various tempporaty operation in various control blocks. But remeber we can not gues anything about it's initial data
-    bit<8> temp_8_bit;
+    //bit<32> temp; //This will be used for various tempporaty operation in various control blocks. But remeber we can not gues anything about it's initial data
+   // bit<8> temp_8_bit;
     bit<BITMASK_POSITION_INDICATOR_BITS_LENGTH> packet_bitmask_shift_times;
     bit<BITMASK_LENGTH> packet_bitmask;
     bit<32> link_location_index; //in this location of final stateful memory block, the link will be found

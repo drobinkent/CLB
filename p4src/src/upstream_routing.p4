@@ -75,7 +75,7 @@ control upstream_routing(inout parsed_headers_t    hdr,
     @name("ecmp_flowlet_lasttime_map") register<bit<48>>(32w8192) ecmp_flowlet_lasttime_map;
 
     @name("lookup_flowlet_map") action lookup_flowlet_map() {
-        hash(local_metadata.flowlet_map_index, HashAlgorithm.crc16, (bit<13>)0, { hdr.ipv6.src_addr, hdr.ipv6.dst_addr,  local_metadata.temp_8_bit, hdr.tcp.src_port, hdr.tcp.dst_port,local_metadata.flowlet_id }, (bit<13>)8191);
+        hash(local_metadata.flowlet_map_index, HashAlgorithm.crc16, (bit<13>)0, { hdr.ipv6.src_addr, hdr.ipv6.dst_addr,hdr.ipv6.next_hdr, hdr.tcp.src_port, hdr.tcp.dst_port,local_metadata.flowlet_id }, (bit<13>)8191);
         ecmp_flowlet_id_map.read(local_metadata.flowlet_id, (bit<32>)local_metadata.flowlet_map_index);
         local_metadata.flow_inter_packet_gap = (bit<48>)standard_metadata.ingress_global_timestamp;
         ecmp_flowlet_lasttime_map.read(local_metadata.flowlet_last_pkt_seen_time, (bit<32>)local_metadata.flowlet_map_index);
@@ -100,7 +100,7 @@ control upstream_routing(inout parsed_headers_t    hdr,
             //===================================================
             hdr.ipv6.dst_addr:          selector;
             hdr.ipv6.src_addr:          selector;
-            local_metadata.temp_8_bit:   selector;  //As we have modified the protcool headers according to our needs . we are using tempporary variable to store tcp protocol version to replicate
+            hdr.ipv6.next_hdr:   selector;  //As we have modified the protcool headers according to our needs . we are using tempporary variable to store tcp protocol version to replicate
             //the exact behavior of ECMP
             local_metadata.l4_src_port: selector;
             local_metadata.l4_dst_port: selector;
@@ -114,7 +114,6 @@ control upstream_routing(inout parsed_headers_t    hdr,
         counters = direct_counter(CounterType.packets_and_bytes);
     }
     apply {
-        local_metadata.temp_8_bit = IP_PROTO_TCP;
         lookup_flowlet_map();
         if (local_metadata.flow_inter_packet_gap  > FLOWLET_INTER_PACKET_GAP_THRESHOLD)
              update_flowlet_id();

@@ -7,23 +7,29 @@ import CNF
 import threading
 import time
 
-HOST = '2001:1:1:1::3:1'                 # Symbolic name meaning the local host
+               # Symbolic name meaning the local host
 
 SEND_BUF_SIZE = 1400
 RECV_BUF_SIZE = 1400
 
 
 class ServerThread:
-    def __init__(self, HOST, PORT, index):
+    def __init__(self, HOST, PORT, index, protocol="tcp"):
         self.host = HOST
         self.port =PORT
         self.index  = index
-        x = threading.Thread(target=self.serverThreadFunction, args=())
-        x.start()
-        print("Server thread --"+str(index)+ "started")
+        self.protocol = protocol
+        if(self.protocol == "tcp"):
+            x = threading.Thread(target=self.serverThreadFunctionTCP, args=())
+            x.start()
+            print("Server thread --"+str(index)+ "started with tcp protocol")
+        if(self.protocol == "udp"):
+            x = threading.Thread(target=self.serverThreadFunctionUDP, args=())
+            x.start()
+            print("Server thread --"+str(index)+ "started with udp protocol")
         pass
 
-    def serverThreadFunction(self):
+    def serverThreadFunctionTCP(self):
         s = None
         for res in socket.getaddrinfo(self.host, self.port+self.index, socket.AF_INET6, socket.SOCK_STREAM, 0, socket.AI_PASSIVE):
             af, socktype, proto, canonname, sa = res
@@ -71,10 +77,44 @@ class ServerThread:
         print("total time required to transfer these data is "+str(end-start))
         conn.close()
 
+    def serverThreadFunctionUDP(self):
+        try :
+            s = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
+            print("Udp Socket created")
+        except socket.error as msg :
+            print ('Failed to create udp socket. Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
+            sys.exit()
+
+
+        # Bind socket to local host and port
+        try:
+            s.bind((self.host, self.port))
+        except socket.error as msg:
+            print ('UDP Bind failed. Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
+            sys.exit()
+
+        print ('UDP Socket bind complete with ip and port '+str(self.host)+" -- "+str(self.port))
+        # conn, addr = s.accept()
+        # print('Connected by udp client', addr)
+
+        #now keep talking with the client
+        while True:
+            # receive data from client (data, addr)
+            data, addr = s.recvfrom(1024) # buffer size is 1024 bytes
+            if not data:
+                break
+            #print("rcvd")
+            reply = 'OK...disconnecting'
+
+            # s.sendto(reply , addr)
+            # print ('Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + reply.strip())
+
+        s.close()
+
 
 def driverFunction():
     for i in range (0,CNF.TOTAL_CONNECTION):
-        srvrThrd = ServerThread(HOST=HOST, PORT=CNF.PORT_START, index = i)
+        srvrThrd = ServerThread(HOST=CNF.SERVER_HOST, PORT=CNF.PORT_START, index = i, protocol="udp")
 
 
 driverFunction()
