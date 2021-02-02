@@ -191,7 +191,7 @@ LINUX_CC_ALGORITHM_CUBIC = "cubic"
 CPU_PORT = 255
 CLB_TESTER_DEVICE_NAME = "p0l0" # As out target is only testing algorithm we will only run the CLB from one switch.
 #This parameter defines that name. The algorithm will be only run with that device
-LOAD_DISTRIBUTION_1 = [(5,2),(6,6),(7,1),(8,7)]
+LOAD_DISTRIBUTION_1 = [(5,2),(6,12),(7,1),(8,3)]
 LOAD_DISTRIBUTION_2 = [(5,7),(6,1),(7,6),(8,2)]
 
 DISTRO1_INSTALL_DELAY = 0   # Weight distribution 1 will be installed after 50 second of the controller thread starts
