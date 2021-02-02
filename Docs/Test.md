@@ -113,6 +113,8 @@ DISTRO2_INSTALL_DELAY = 125  # Weight distribution 2 will be installed after 50 
 
 BITMASK_LENGTH = 16  # This must match with the P4 program 
 
+And do not forget to configure the packet processing rate of the links in ConfigConst.py
+
 ----
 
 Next open CNF and there configure pps = 32 
