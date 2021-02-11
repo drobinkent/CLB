@@ -87,7 +87,7 @@ which paper needs which of our feature?
 How to do test : 
 
 Assume we want to test 32 packets per second using 4 links. our precision tolerance is 2 packets. So total weight group can be 16
-
+Also you have to make sure that the sum of the wight is at max 16.
 so in make file, DBITMASK_LENGTH = 16 and DPRECISION_FACTOR = 1 
 -- here 16 means 16 weight groups and 1 means shofting right 1 times. which is equivalent to divide by 2 that means precision of 2. 
 and for representing 16 we need 4 bits (0 to 15)

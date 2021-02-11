@@ -179,7 +179,8 @@ class LoadBalanacer:
             link = e[0]
             if(firstTimeFlag == False): # At the first time we do not need to delete any distribution. If we delte link i+1 may delete Link i th newly installed distribution
                 oldLevel = self.linkToCurrentLevel.get(link)
-                index = int(oldLevel / self.bitMaskLength)
+                #index = int(oldLevel / self.bitMaskLength)
+                index = 0 #For fat bitmask index is always 0
                 position = oldLevel % self.bitMaskLength
                 #modify the bitmask
                 self.bitMaskArray[index] = modifyBit(self.bitMaskArray[index], position, 0)
@@ -190,7 +191,8 @@ class LoadBalanacer:
                 packetOutList.append(pktForDeletelink)
             newLevel = e[1]
             self.linkToCurrentLevel[link] = newLevel
-            index = int(newLevel / self.bitMaskLength)
+            #index = int(newLevel / self.bitMaskLength)
+            index = 0 #For fat bitmask index is always 0
             position = newLevel % self.bitMaskLength
             #make a packet_out message now and insert In List parallely modify the self.bitMaskArray[index]
             self.bitMaskArray[index] = modifyBit(self.bitMaskArray[index], position, 1)
