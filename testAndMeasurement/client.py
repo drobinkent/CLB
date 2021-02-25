@@ -5,7 +5,7 @@ import threading
 import time
 
 import CNF
-HOST = '2001:1:1:1::3:1'    # The remote host
+HOST = '2001:1:1:1::3:1'    # The remote host h1p0l3
 s = None
 
 packetContent = bytes('Hello, world test packet what is content is not important. just send it is it aokay with you. '+

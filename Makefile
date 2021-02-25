@@ -102,3 +102,8 @@ process-l2highContention:
 
 process-stride-custom:
 	python3 ResultProcessorExecutor.py testAndMeasurement/TEST_RESULTS/P4TE/l2strideSmallLarge-80-20/ testAndMeasurement/TEST_RESULTS/P4TE/l2strideSmallLarge Custom P4TE /home/deba/Desktop/CLB/ProcessedResultImages/custom
+
+
+generate-p4c-graphs:
+	p4c-graphs --arch v1model --Wdisable=unsupported p4src/src/leaf.p4 -DENABLE_DEBUG_TABLES -DDP_ALGO_CLB  -DBITMASK_LENGTH=16  -DBITMASK_POSITION_INDICATOR_BITS_LENGTH=4  -DPRECISION_FACTOR=1  --graphs-dir p4src/graphs/leaf
+	dot -Tpng p4src/graphs/leaf/IngressPipeImpl.dot > p4src/graphs/leaf/IngressPipeImpl.png

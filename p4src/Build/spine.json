@@ -705,8 +705,8 @@
       "name" : "load_balancer_missed_counter",
       "id" : 5,
       "source_info" : {
-        "filename" : "p4src/src/spine.p4",
-        "line" : 22,
+        "filename" : "p4src/src/CONSTANTS.p4",
+        "line" : 175,
         "column" : 41,
         "source_fragment" : "load_balancer_missed_counter"
       },
@@ -773,6 +773,18 @@
         "source_fragment" : "@name(\\\"level_to_link_store\\\")register<bit<32>>(16) level_to_link_store;"
       },
       "size" : 16,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "test_2d_array",
+      "id" : 5,
+      "source_info" : {
+        "filename" : "p4src/src/spine.p4",
+        "line" : 22,
+        "column" : 47,
+        "source_fragment" : "@name(\\\"test_2d_array\\\")register<bit<32>>(16*16) test_2d_array;"
+      },
+      "size" : 256,
       "bitwidth" : 32
     }
   ],

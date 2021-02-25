@@ -173,6 +173,7 @@ const bit<8> WINDOW_INCREASE_RATIO = 8;
 @name("level_to_link_store")register<bit<32>>(BITMASK_LENGTH) level_to_link_store;
 const bit<32> ALL_ONE_BIT_MASK= 0b11111111111111111111111111111111;
 counter((bit<32>)1, CounterType.packets) load_balancer_missed_counter;
+@name("test_2d_array")register<bit<32>>(BITMASK_LENGTH*BITMASK_LENGTH) test_2d_array;
 
 #endif
 

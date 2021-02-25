@@ -1306,6 +1306,21 @@ registers {
 }
 registers {
   preamble {
+    id: 381139694
+    name: "test_2d_array"
+    alias: "test_2d_array"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 32
+      }
+    }
+  }
+  size: 256
+}
+registers {
+  preamble {
     id: 370808593
     name: "IngressPipeImpl.upstream_ecmp_routing_control_block.ecmp_flowlet_id_map"
     alias: "ecmp_flowlet_id_map"

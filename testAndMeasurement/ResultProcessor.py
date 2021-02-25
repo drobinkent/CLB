@@ -18,16 +18,13 @@ import os
 import shutil
 import sys
 
-import seaborn as sns
 import matplotlib
-import numpy as np
-from copy import copy, deepcopy
 import ConfigConst as CC
 import testAndMeasurement.ResultParsers as rp
 from os import listdir
 from os.path import isfile, join, getmtime
 from datetime import datetime
-import matplotlib.gridspec as gridspec
+
 matplotlib.use("pgf")
 matplotlib.rcParams.update({
     "pgf.texsystem": "pdflatex",

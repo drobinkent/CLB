@@ -1,5 +1,3 @@
-import math
-
 import matplotlib
 
 import ConfigConst as CC
