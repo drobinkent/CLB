@@ -60,8 +60,8 @@ def upwardLinkUtilizationVisualizerProcessor(pdffileNameTobeSaved, folderPath="/
             if minValue ==0:
                 processedPortVsCounterValueListMap[portId].append(0)
             else:
-                #processedPortVsCounterValueListMap[portId].append((portVsCounterValueListMap[portId][i] - portVsCounterValueListMap[portId][i-1])/minValue)
-                processedPortVsCounterValueListMap[portId].append((portVsCounterValueListMap[portId][i] - portVsCounterValueListMap[portId][i-1]))
+                processedPortVsCounterValueListMap[portId].append((portVsCounterValueListMap[portId][i] - portVsCounterValueListMap[portId][i-1])/minValue)
+                #processedPortVsCounterValueListMap[portId].append((portVsCounterValueListMap[portId][i] - portVsCounterValueListMap[portId][i-1]))
     for e in processedPortVsCounterValueListMap.keys():
         print("Values for port "+str(e)+ "are follwoing ")
         print(processedPortVsCounterValueListMap.get(e))

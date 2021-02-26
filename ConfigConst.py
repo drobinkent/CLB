@@ -107,12 +107,12 @@ class DataplnaeAlgorithm(Enum):
 ALGORITHM_IN_USE = DataplnaeAlgorithm.DP_ALGO_BASIC_ECMP  #For CLB it will be always ECMP
 
 
-queueRateForHostFacingPortsOfLeafSwitch = 18
-queueRateForSpineFacingPortsOfLeafSwitch = 18
-queueRateForLeafSwitchFacingPortsOfSpineSwitch= 18
-queueRateForSuperSpineSwitchFacingPortsOfSpineSwitch=18
-queueRateForSpineSwitchFacingPortsOfSuperSpineSwitch=18
-queueRateForExternalInternetFacingPortsOfSuperSpineSwitch=18
+queueRateForHostFacingPortsOfLeafSwitch = 180
+queueRateForSpineFacingPortsOfLeafSwitch = 180
+queueRateForLeafSwitchFacingPortsOfSpineSwitch= 180
+queueRateForSuperSpineSwitchFacingPortsOfSpineSwitch=180
+queueRateForSpineSwitchFacingPortsOfSuperSpineSwitch=180
+queueRateForExternalInternetFacingPortsOfSuperSpineSwitch=180
 
 
 
@@ -195,7 +195,7 @@ LOAD_DISTRIBUTION_1 = [(5,2),(6,10),(7,1),(8,3)]
 LOAD_DISTRIBUTION_2 = [(5,7),(6,1),(7,6),(8,2)]
 
 DISTRO1_INSTALL_DELAY = 0   # Weight distribution 1 will be installed after 50 second of the controller thread starts
-DISTRO2_INSTALL_DELAY = 175  # Weight distribution 2 will be installed after 50 second of the controller thread starts
+DISTRO2_INSTALL_DELAY = 110  # Weight distribution 2 will be installed after 50 second of the controller thread starts
 
 
 BITMASK_LENGTH = 16
