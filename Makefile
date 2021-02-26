@@ -27,7 +27,7 @@ p4-leaf-clb: p4src/src/leaf.p4
 	@mkdir -p p4src/Build
 	p4c-bm2-ss --arch v1model -o p4src/Build/leaf.json \
 		--p4runtime-files p4src/Build/leaf_p4info.txt --Wdisable=unsupported \
-		p4src/src/leaf.p4 -Dports=256 -DENABLE_DEBUG_TABLES -DDP_ALGO_CLB  -DBITMASK_LENGTH=16  -DBITMASK_POSITION_INDICATOR_BITS_LENGTH=4  -DPRECISION_FACTOR=3
+		p4src/src/leaf.p4 -Dports=256 -DENABLE_DEBUG_TABLES -DDP_ALGO_CLB  -DBITMASK_LENGTH=16  -DBITMASK_POSITION_INDICATOR_BITS_LENGTH=4  -DPRECISION_FACTOR=2
 	sudo cp ./p4src/Build/leaf.json /tmp/
 	sudo cp ./p4src/Build/leaf_p4info.txt /tmp/
 	@echo "*** P4 program for leaf switch compiled successfully! Output files are in p4src/Build"
@@ -37,7 +37,7 @@ p4-spine-clb: p4src/src/spine.p4
 	@mkdir -p p4src/Build
 	p4c-bm2-ss --arch v1model -o p4src/Build/spine.json \
 		--p4runtime-files p4src/Build/spine_p4info.txt --Wdisable=unsupported \
-		p4src/src/spine.p4 -Dports=256  -DENABLE_DEBUG_TABLES  -DBITMASK_LENGTH=16  -DBITMASK_POSITION_INDICATOR_BITS_LENGTH=4  -DPRECISION_FACTOR=3
+		p4src/src/spine.p4 -Dports=256  -DENABLE_DEBUG_TABLES  -DBITMASK_LENGTH=16  -DBITMASK_POSITION_INDICATOR_BITS_LENGTH=4  -DPRECISION_FACTOR=2
 	sudo cp ./p4src/Build/spine.json /tmp/
 	sudo cp ./p4src/Build/spine_p4info.txt /tmp/
 	@echo "*** P4 program for spine switch compiled successfully! Output files are in p4src/Build"
@@ -58,7 +58,6 @@ start_ctrlr: Mycontroller.py
 
 clear-logs:
 	sudo rm -rf /tmp/*
-	rm -rf testAndMeasurement/TEST_RESULTS/*
 	rm -rf testAndMeasurement/TEST_LOG/*
 	rm -rf result/*
 	rm -rf log/*

@@ -2852,7 +2852,7 @@
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0x3"
+                        "value" : "0x2"
                       }
                     }
                   },
@@ -2868,7 +2868,7 @@
             "filename" : "p4src/src/dp_only_load_balancer.p4",
             "line" : 49,
             "column" : 12,
-            "source_fragment" : "load_counter_level = load_counter_value >> 3"
+            "source_fragment" : "load_counter_level = load_counter_value >> 2"
           }
         },
         {
