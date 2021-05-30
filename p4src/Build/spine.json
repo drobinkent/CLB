@@ -9,6 +9,9 @@
         ["tmp_1", 32, false],
         ["tmp_2", 32, false],
         ["ndp_processing_control_block_host_ipv6_tmp", 128, false],
+        ["tmp_3", 32, false],
+        ["tmp_4", 32, false],
+        ["temp_util_0", 32, false],
         ["userMetadata.l4_src_port", 16, false],
         ["userMetadata.l4_dst_port", 16, false],
         ["userMetadata.is_multicast", 1, false],
@@ -631,7 +634,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "p4src/src/spine.p4",
-        "line" : 249,
+        "line" : 258,
         "column" : 8,
         "source_fragment" : "DeparserImpl"
       },
@@ -837,7 +840,7 @@
       "id" : 1,
       "source_info" : {
         "filename" : "p4src/src/spine.p4",
-        "line" : 219,
+        "line" : 228,
         "column" : 8,
         "source_fragment" : "update_checksum(hdr.ndp.isValid(), ..."
       },
@@ -2229,6 +2232,293 @@
             "line" : 198,
             "column" : 11,
             "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "spine207",
+      "id" : 23,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "*",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["standard_metadata", "egress_port"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "&",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["ipv6", "dst_addr"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0xffff"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/spine.p4",
+            "line" : 206,
+            "column" : 32,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port * (bit<32>)hdr.ipv6.dst_addr[15:0]"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_util_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "destination_util_counter"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/spine.p4",
+            "line" : 207,
+            "column" : 7,
+            "source_fragment" : "destination_util_counter.read(temp_util, (bit<32>)register_index)"
+          }
+        },
+        {
+          "op" : "log_msg",
+          "parameters" : [
+            {
+              "type" : "string",
+              "value" : "Old util was {}"
+            },
+            {
+              "type" : "parameters_vector",
+              "value" : [
+                {
+                  "type" : "field",
+                  "value" : ["scalars", "temp_util_0"]
+                }
+              ]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/spine.p4",
+            "line" : 208,
+            "column" : 7,
+            "source_fragment" : "       log_msg(\\\"Old util was {}\\\",{temp_util});"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_util_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "temp_util_0"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["standard_metadata", "packet_length"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/spine.p4",
+            "line" : 209,
+            "column" : 7,
+            "source_fragment" : "temp_util = temp_util + standard_metadata.packet_length"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "*",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["standard_metadata", "egress_port"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "&",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["ipv6", "dst_addr"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0xffff"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/spine.p4",
+            "line" : 206,
+            "column" : 32,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port * (bit<32>)hdr.ipv6.dst_addr[15:0]"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "destination_util_counter"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_util_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/spine.p4",
+            "line" : 210,
+            "column" : 7,
+            "source_fragment" : "destination_util_counter.write( (bit<32>)register_index, temp_util)"
+          }
+        },
+        {
+          "op" : "log_msg",
+          "parameters" : [
+            {
+              "type" : "string",
+              "value" : "new util is {}"
+            },
+            {
+              "type" : "parameters_vector",
+              "value" : [
+                {
+                  "type" : "field",
+                  "value" : ["scalars", "temp_util_0"]
+                }
+              ]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/spine.p4",
+            "line" : 211,
+            "column" : 7,
+            "source_fragment" : "       log_msg(\\\"new util is {}\\\",{temp_util});"
           }
         }
       ]
@@ -3952,12 +4242,41 @@
           "direct_meters" : null,
           "action_ids" : [20],
           "actions" : ["NoAction"],
-          "base_default_next" : null,
+          "base_default_next" : "tbl_spine207",
           "next_tables" : {
-            "NoAction" : null
+            "NoAction" : "tbl_spine207"
           },
           "default_entry" : {
             "action_id" : 20,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_spine207",
+          "id" : 19,
+          "source_info" : {
+            "filename" : "p4src/src/spine.p4",
+            "line" : 207,
+            "column" : 7,
+            "source_fragment" : "destination_util_counter.read(temp_util, (bit<32>)register_index); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [23],
+          "actions" : ["spine207"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "spine207" : null
+          },
+          "default_entry" : {
+            "action_id" : 23,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -4044,7 +4363,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "p4src/src/spine.p4",
-        "line" : 219,
+        "line" : 228,
         "column" : 8,
         "source_fragment" : "update_checksum(hdr.ndp.isValid(), ..."
       },

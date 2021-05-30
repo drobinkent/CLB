@@ -703,26 +703,6 @@ tables {
 }
 tables {
   preamble {
-    id: 37632590
-    name: "IngressPipeImpl.dp_only_load_balancing_control_block.weight_group_finder_mat"
-    alias: "weight_group_finder_mat"
-  }
-  match_fields {
-    id: 1
-    name: "local_metadata.packet_bitmask"
-    bitwidth: 16
-    match_type: TERNARY
-  }
-  action_refs {
-    id: 31252216
-  }
-  action_refs {
-    id: 26140191
-  }
-  size: 1024
-}
-tables {
-  preamble {
     id: 39819042
     name: "EgressPipeImpl.debug_std_meta_egress_start.dbg_table"
     alias: "debug_std_meta_egress_start.dbg_table"
@@ -1095,25 +1075,6 @@ actions {
     id: 1
     name: "port_num"
     bitwidth: 9
-  }
-}
-actions {
-  preamble {
-    id: 31252216
-    name: "IngressPipeImpl.dp_only_load_balancing_control_block.weight_group_finder_action_without_param"
-    alias: "weight_group_finder_action_without_param"
-  }
-}
-actions {
-  preamble {
-    id: 26140191
-    name: "IngressPipeImpl.dp_only_load_balancing_control_block.weight_group_finder_action_with_param"
-    alias: "weight_group_finder_action_with_param"
-  }
-  params {
-    id: 1
-    name: "link_location_index"
-    bitwidth: 32
   }
 }
 action_profiles {

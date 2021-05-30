@@ -31,6 +31,7 @@
 #include "l2_ternary.p4"
 #include "leaf_downstream_routing.p4"
 #include "dp_only_load_balancer.p4"
+#include "hula.p4"
 
 
 control VerifyChecksumImpl(inout parsed_headers_t hdr,inout local_metadata_t meta)
@@ -67,6 +68,7 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
     l2_ternary_processing() l2_ternary_processing_control_block;
     my_station_processing() my_station_processing_control_block;
     ndp_processing() ndp_processing_control_block;
+    hula_load_balancing() hula_load_balancing_control_block;
 
     //#ifdef DP_ALGO_ECMP
     //upstream_routing() upstream_ecmp_routing_control_block;
@@ -148,22 +150,20 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
                 local_metadata.flag_hdr.found_multi_criteria_paths = true;
                 #ifdef DP_ALGO_ECMP
                 local_metadata.flag_hdr.found_multi_criteria_paths = false; // this means we must need to use ecmp path
+                if ( local_metadata.flag_hdr.found_multi_criteria_paths  == false){ // this means in multicriteria table we have not found any paths. This may be due to lack of proper traffic class or IP predix in those tables
+                    upstream_ecmp_routing_control_block.apply(hdr, local_metadata, standard_metadata);
+                }
                 #endif
 
 
                 #ifdef DP_ALGO_CLB
                 dp_only_load_balancing_control_block.apply(hdr, local_metadata, standard_metadata);
-
                 #endif
-                if ( local_metadata.flag_hdr.found_multi_criteria_paths  == false){ // this means in multicriteria table we have not found any paths. This may be due to lack of proper traffic class or IP predix in those tables
-                    upstream_ecmp_routing_control_block.apply(hdr, local_metadata, standard_metadata);
-                    //simply Call the new block here
-                    log_msg("LB: Load balanced path not found. USing ECMP");
-                    load_balancer_missed_counter.count((bit<32>)0);
-                }
-                //log_msg("egress spec is {} and egress port is {}",{standard_metadata.egress_spec , standard_metadata.egress_port});
 
-                //for clb path we will wrap around the counter.
+                #ifdef DP_ALGO_HULA
+                hula_load_balancing_control_block.apply(hdr, local_metadata, standard_metadata);
+                #endif
+
             }
         }
     }else{

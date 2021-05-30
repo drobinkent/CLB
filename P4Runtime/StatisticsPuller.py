@@ -43,10 +43,15 @@ class StatisticsPuller:
     def __init__(self, nameToSwitchMap):
         self.isRunning = True
         self.nameToSwitchMap = nameToSwitchMap
-        x = threading.Thread(target=self.thread_function, args=())
-        logger.info("Main    : before running thread")
-        x.start()
-        logger.info("StatisticsPuller thread started")
+        for dev in self.nameToSwitchMap:
+            f =  open(ConfConst.CONTROLLER_STATISTICS_RESULT_FILE_PATH+dev+".json", mode='a', buffering=1024)
+            self.nameToSwitchMap.get(dev).controllerStatsFile = f
+            x = threading.Thread(target=self.thread_function, args=())
+            self.statisticPullerthread = x
+            self.p4dev = self.nameToSwitchMap.get(dev)
+            logger.info("Stiatisticspuller thread for device: "+str(dev)+" is being started")
+            x.start()
+            logger.info("Stiatisticspuller thread for device: "+str(dev)+" has started")
 
 
 
@@ -57,16 +62,16 @@ class StatisticsPuller:
         # nRow = math.ceil(squareRootOftotalNumOfSwitches)
         # nColumn = math.ceil(totalNumOfSwitches/nRow)
         # fig, axes = plot.subplots(nrows=nRow, ncols=nColumn, sharex=True, sharey=True)
-        for dev in self.nameToSwitchMap:
-            f =  open(ConfConst.CONTROLLER_STATISTICS_RESULT_FILE_PATH+dev+".json", mode='a', buffering=1024)
-            self.nameToSwitchMap.get(dev).controllerStatsFile = f
+        # for dev in self.nameToSwitchMap:
+        #     f =  open(ConfConst.CONTROLLER_STATISTICS_RESULT_FILE_PATH+dev+".json", mode='a', buffering=1024)
+        #     self.nameToSwitchMap.get(dev).controllerStatsFile = f
         while(self.isRunning):
             time.sleep(ConfConst.STATISTICS_PULLING_INTERVAL)
             index=0
-            hostObject = self.nameToSwitchMap.get(ConfConst.CLB_TESTER_DEVICE_NAME)
-            statJson = self.pullStatsFromSwitch(dev=hostObject)
-            hostObject.controllerStatsFile.write(json.dumps(statJson, cls=statJsonWrapper.PortStatisticsJSONWrapper))
-            hostObject.controllerStatsFile.flush()
+            switchObject = self.p4dev
+            statJson = self.pullStatsFromSwitch(dev=switchObject)
+            switchObject.controllerStatsFile.write(json.dumps(statJson, cls=statJsonWrapper.PortStatisticsJSONWrapper))
+            switchObject.controllerStatsFile.flush()
 
     logger.info("Thread %s: finishing", "StatisticsPuller")
 

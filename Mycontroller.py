@@ -187,7 +187,7 @@ class MyP4Controller():
         # this method will pull various counter and register values from the switches and plot data accordingly.
         #Also save the collected statitstics for each device in corresponding data structure.
         self.statisticsPuller = P4Runtime.StatisticsPuller.StatisticsPuller(self.nameToSwitchMap)
-        self.loadBalancerTester = LoadBalancer.LoadBalanacer(allLinksAsList = [5,6,7,8],  bitMaskLength=ConfConst.BITMASK_LENGTH, nameToSwitchMap = self.nameToSwitchMap)
+        # self.loadBalancerTester = LoadBalancer.LoadBalanacer(allLinksAsList = [5,6,7,8],  bitMaskLength=ConfConst.BITMASK_LENGTH, nameToSwitchMap = self.nameToSwitchMap)
 
 
 
