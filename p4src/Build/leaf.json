@@ -20,6 +20,9 @@
         ["dp_only_load_balancing_control_block_stored_bitmask_read_value", 16, false],
         ["dp_only_load_balancing_control_block_temp", 32, false],
         ["tmp_9", 32, false],
+        ["tmp_10", 32, false],
+        ["tmp_11", 32, false],
+        ["temp_util_0", 32, false],
         ["userMetadata.l4_src_port", 16, false],
         ["userMetadata.l4_dst_port", 16, false],
         ["userMetadata.is_multicast", 1, false],
@@ -642,7 +645,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "p4src/src/leaf.p4",
-        "line" : 292,
+        "line" : 298,
         "column" : 8,
         "source_fragment" : "DeparserImpl"
       },
@@ -717,11 +720,11 @@
       "id" : 5,
       "source_info" : {
         "filename" : "p4src/src/CONSTANTS.p4",
-        "line" : 156,
+        "line" : 157,
         "column" : 59,
         "source_fragment" : "egressPortCounter"
       },
-      "size" : 256,
+      "size" : 16,
       "is_direct" : false
     },
     {
@@ -729,7 +732,7 @@
       "id" : 6,
       "source_info" : {
         "filename" : "p4src/src/CONSTANTS.p4",
-        "line" : 175,
+        "line" : 176,
         "column" : 41,
         "source_fragment" : "load_balancer_missed_counter"
       },
@@ -767,7 +770,7 @@
       "id" : 2,
       "source_info" : {
         "filename" : "p4src/src/CONSTANTS.p4",
-        "line" : 171,
+        "line" : 172,
         "column" : 42,
         "source_fragment" : "@name(\\\"load_counter\\\")register<bit<32>>(1) load_counter;"
       },
@@ -779,7 +782,7 @@
       "id" : 3,
       "source_info" : {
         "filename" : "p4src/src/CONSTANTS.p4",
-        "line" : 172,
+        "line" : 173,
         "column" : 44,
         "source_fragment" : "@name(\\\"stored_bitmask\\\")register<bit<16>>(1) stored_bitmask;"
       },
@@ -791,7 +794,7 @@
       "id" : 4,
       "source_info" : {
         "filename" : "p4src/src/CONSTANTS.p4",
-        "line" : 173,
+        "line" : 174,
         "column" : 50,
         "source_fragment" : "@name(\\\"level_to_link_store\\\")register<bit<32>>(16) level_to_link_store;"
       },
@@ -802,12 +805,24 @@
       "name" : "test_2d_array",
       "id" : 5,
       "source_info" : {
-        "filename" : "p4src/src/leaf.p4",
-        "line" : 22,
+        "filename" : "p4src/src/CONSTANTS.p4",
+        "line" : 177,
         "column" : 47,
         "source_fragment" : "@name(\\\"test_2d_array\\\")register<bit<32>>(16*16) test_2d_array;"
       },
       "size" : 256,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "destination_util_counter",
+      "id" : 6,
+      "source_info" : {
+        "filename" : "p4src/src/leaf.p4",
+        "line" : 22,
+        "column" : 87,
+        "source_fragment" : "@name(\\\"destination_util_counter\\\")register<bit<32>>(MAX_PORTS_IN_SWITCH*MAX_TOR_SUBNET) destination_util_counter;"
+      },
+      "size" : 128,
       "bitwidth" : 32
     }
   ],
@@ -848,7 +863,7 @@
       "id" : 1,
       "source_info" : {
         "filename" : "p4src/src/leaf.p4",
-        "line" : 262,
+        "line" : 268,
         "column" : 8,
         "source_fragment" : "update_checksum(hdr.ndp.isValid(), ..."
       },
@@ -1213,7 +1228,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/CONSTANTS.p4",
-            "line" : 53,
+            "line" : 54,
             "column" : 33,
             "source_fragment" : "0x33_33_00_00_00_01; ..."
           }
@@ -1289,7 +1304,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/CONSTANTS.p4",
-            "line" : 49,
+            "line" : 50,
             "column" : 31,
             "source_fragment" : "58; ..."
           }
@@ -1308,7 +1323,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/CONSTANTS.p4",
-            "line" : 56,
+            "line" : 57,
             "column" : 29,
             "source_fragment" : "136; ..."
           }
@@ -1346,7 +1361,7 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/CONSTANTS.p4",
-            "line" : 57,
+            "line" : 58,
             "column" : 38,
             "source_fragment" : "2; ..."
           }
@@ -3655,6 +3670,238 @@
             "column" : 4,
             "source_fragment" : "egressPortCounter.count((bit<32>)standard_metadata.egress_port)"
           }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_10"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "*",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["standard_metadata", "egress_port"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "&",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["ipv6", "dst_addr"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0xffff"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/leaf.p4",
+            "line" : 247,
+            "column" : 29,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port * (bit<32>)hdr.ipv6.dst_addr[15:0]"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_util_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "destination_util_counter"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_10"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/leaf.p4",
+            "line" : 248,
+            "column" : 4,
+            "source_fragment" : "destination_util_counter.read(temp_util, (bit<32>)register_index)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_util_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "temp_util_0"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["standard_metadata", "packet_length"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/leaf.p4",
+            "line" : 249,
+            "column" : 4,
+            "source_fragment" : "temp_util = temp_util + standard_metadata.packet_length"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_11"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "*",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["standard_metadata", "egress_port"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "&",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["ipv6", "dst_addr"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0xffff"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/leaf.p4",
+            "line" : 247,
+            "column" : 29,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port * (bit<32>)hdr.ipv6.dst_addr[15:0]"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "destination_util_counter"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_11"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_util_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/leaf.p4",
+            "line" : 250,
+            "column" : 4,
+            "source_fragment" : "destination_util_counter.write( (bit<32>)register_index, temp_util)"
+          }
         }
       ]
     }
@@ -5889,7 +6136,7 @@
             "filename" : "p4src/src/leaf.p4",
             "line" : 243,
             "column" : 4,
-            "source_fragment" : "egressPortCounter.count((bit<32>)standard_metadata.egress_port)"
+            "source_fragment" : "egressPortCounter.count((bit<32>)standard_metadata.egress_port); ..."
           },
           "key" : [],
           "match_type" : "exact",
@@ -5992,7 +6239,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "p4src/src/leaf.p4",
-        "line" : 262,
+        "line" : 268,
         "column" : 8,
         "source_fragment" : "update_checksum(hdr.ndp.isValid(), ..."
       },

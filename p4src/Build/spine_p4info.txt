@@ -1085,7 +1085,7 @@ counters {
   spec {
     unit: PACKETS
   }
-  size: 256
+  size: 16
 }
 counters {
   preamble {
@@ -1257,6 +1257,21 @@ registers {
     }
   }
   size: 256
+}
+registers {
+  preamble {
+    id: 381278579
+    name: "destination_util_counter"
+    alias: "destination_util_counter"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 32
+      }
+    }
+  }
+  size: 128
 }
 registers {
   preamble {

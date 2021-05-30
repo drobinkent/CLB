@@ -24,7 +24,8 @@
 #define CPU_CLONE_SESSION_ID 255
 
 
-const bit<32> MAX_PORTS_IN_SWITCH = 256;
+const bit<32> MAX_PORTS_IN_SWITCH = 16;
+const bit<32> MAX_TOR_SUBNET = 8;  //Maximum ToR supported by our simulation
 const bit<32> MAX_FLOW_TYPES = 64;  //traffic class 6 bits. so at most 64 types of flow can be there.
 //------------------------------------------------------------------------------
 // TYPEDEF DECLARATIONS
@@ -174,6 +175,9 @@ const bit<8> WINDOW_INCREASE_RATIO = 8;
 const bit<32> ALL_ONE_BIT_MASK= 0b11111111111111111111111111111111;
 counter((bit<32>)1, CounterType.packets) load_balancer_missed_counter;
 @name("test_2d_array")register<bit<32>>(BITMASK_LENGTH*BITMASK_LENGTH) test_2d_array;
+
+@name("destination_util_counter")register<bit<32>>(MAX_PORTS_IN_SWITCH*MAX_TOR_SUBNET) destination_util_counter;
+
 
 #endif
 

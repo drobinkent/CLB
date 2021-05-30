@@ -201,6 +201,15 @@ control EgressPipeImpl (inout parsed_headers_t hdr,
        debug_std_meta_egress_start.apply(hdr, local_metadata, standard_metadata);
        #endif  // ENABLE_DEBUG_TABLES
 
+       //This block is  for destination based util count by each path
+       bit<32> temp_util = 0;
+       bit<32> register_index = (bit<32>)standard_metadata.egress_port * (bit<32>)hdr.ipv6.dst_addr[15:0]; //rightmost 16 bit shows the ToR ID in our scheme.
+       destination_util_counter.read(temp_util, (bit<32>)register_index);
+       log_msg("Old util was {}",{temp_util});
+       temp_util = temp_util + standard_metadata.packet_length;
+       destination_util_counter.write( (bit<32>)register_index, temp_util);
+       log_msg("new util is {}",{temp_util});
+
     }
 }
 
