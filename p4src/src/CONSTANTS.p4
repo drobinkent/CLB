@@ -24,9 +24,7 @@
 #define CPU_CLONE_SESSION_ID 255
 
 
-const bit<32> MAX_PORTS_IN_SWITCH = 16;
-const bit<32> MAX_TOR_SUBNET = 8;  //Maximum ToR supported by our simulation
-const bit<32> MAX_FLOW_TYPES = 64;  //traffic class 6 bits. so at most 64 types of flow can be there.
+
 //------------------------------------------------------------------------------
 // TYPEDEF DECLARATIONS
 // To favor readability.
@@ -154,7 +152,7 @@ const bit<19> ECN_THRESHOLD = 2;
 const bit<32> SEQ_NUMBER_THRESHOLD_FOR_RATE_CONTROL = 5000; // this means for each 10000 byte we will check for rate control. We may want to increase this
 
 //======================================= Stateful data structures============================================================
-counter((bit<32>)MAX_PORTS_IN_SWITCH, CounterType.packets) egressPortCounter;
+
 
 
 
@@ -169,6 +167,10 @@ const bit<8> WINDOW_INCREASE_RATIO = 8;
 
 
 //===============================================CLB Related Constants
+const bit<32> MAX_PORTS_IN_SWITCH = 16;
+const bit<32> MAX_TOR_SUBNET = 8;  //Maximum ToR supported by our simulation
+const bit<32> MAX_FLOW_TYPES = 64;  //traffic class 6 bits. so at most 64 types of flow can be there.
+counter((bit<32>)MAX_PORTS_IN_SWITCH, CounterType.packets) egressPortCounter;
 @name("load_counter")register<bit<32>>(1) load_counter;
 @name("stored_bitmask")register<bit<BITMASK_LENGTH>>(1) stored_bitmask;
 @name("level_to_link_store")register<bit<32>>(BITMASK_LENGTH) level_to_link_store;
@@ -176,8 +178,8 @@ const bit<32> ALL_ONE_BIT_MASK= 0b11111111111111111111111111111111;
 counter((bit<32>)1, CounterType.packets) load_balancer_missed_counter;
 @name("test_2d_array")register<bit<32>>(BITMASK_LENGTH*BITMASK_LENGTH) test_2d_array;
 
-@name("destination_util_counter")register<bit<32>>(MAX_PORTS_IN_SWITCH*MAX_TOR_SUBNET) destination_util_counter;
-
+//register<bit<32>>(MAX_PORTS_IN_SWITCH*MAX_TOR_SUBNET) destination_util_counter;
+counter((bit<32>)MAX_PORTS_IN_SWITCH*MAX_TOR_SUBNET, CounterType.bytes) destination_util_counter;
 
 #endif
 

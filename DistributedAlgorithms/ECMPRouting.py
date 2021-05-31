@@ -27,7 +27,7 @@ class ECMPRouting:
         self.egressQueueDepthBasedRoutingInfo = RoutingInfo(name = "Egress queue Depth Based Routing Info Store")
         pass
 
-    def setup(self):
+    def setup(self,nameToSwitchMap):
         '''
         This function setup all the relevant stuffs for running the algorithm
         '''
@@ -48,6 +48,8 @@ class ECMPRouting:
         #     pass
         # elif self.p4dev.fabric_device_config.switch_type == jp.SwitchType.SUPER_SPINE:
         #     pass
+        self.nameToSwitchMap = nameToSwitchMap
+        self.p4dev.setupECMPUpstreamRouting()
         return
 
     def processFeedbackPacket(self, parsedPkt, dev):

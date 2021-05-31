@@ -102,9 +102,10 @@ PORT_STATISTICS_HISTORY_LENGTH = 1000 # this means the history will be
 #======================= Different Test Scenarios
 class DataplnaeAlgorithm(Enum):
     DP_ALGO_BASIC_ECMP = "ecmp"
-    DP_ALGO_CP_ASSISTED_POLICY_ROUTING = "DP_ALGO_CP_ASSISTED_POLICY_ROUTING"
+    DP_ALGO_BASIC_HULA = "hula"
+    DP_ALGO_BASIC_CLB = "clb"
 
-ALGORITHM_IN_USE = DataplnaeAlgorithm.DP_ALGO_BASIC_ECMP  #For CLB it will be always ECMP
+ALGORITHM_IN_USE = DataplnaeAlgorithm.DP_ALGO_BASIC_HULA  #For CLB it will be always ECMP
 
 
 queueRateForHostFacingPortsOfLeafSwitch = 180
@@ -200,3 +201,7 @@ DISTRO2_INSTALL_DELAY = 110  # Weight distribution 2 will be installed after 50 
 
 BITMASK_LENGTH = 16
 
+
+#======================= Must match with the P4 program
+MAX_PORTS_IN_SWITCH = 16; #Maximum Supported ports in a switch to reflect the dataplane configuration
+MAX_TOR_SUBNET = 8;  #Maximum ToR supported by our simulation

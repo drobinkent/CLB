@@ -1,6 +1,8 @@
 
 #import CentralizedAlgorithms as centrAlgo
 import DistributedAlgorithms.ECMPRouting as ecmpRouting
+import DistributedAlgorithms.HulaRouting as hulaRouting
+
 import math
 
 import InternalConfig
@@ -242,6 +244,16 @@ def collectPacketCounterForAllPort(dev, counterName):
         statMap[i] = val
     return statMap
 
+def collectDestinationBasedLinkeUtilization(dev, counterName):
+    totalCounterToRead = ConfConst.MAX_PORTS_IN_SWITCH * ConfConst.MAX_TOR_SUBNET
+    linkUtilDataAsList = []
+    for i in range (0, totalCounterToRead):
+        val = readPacketCounter(dev, counterName,i)
+        # if(val>0):
+        #     statMap[i] = val
+        linkUtilDataAsList.append(val)
+    return linkUtilDataAsList
+
 def readLBMissedPackets(dev):
     val = readPacketCounter(dev=dev, counterName="load_balancer_missed_counter", counterIndex = 0)
     return val
@@ -269,6 +281,7 @@ def readAllCounters(dev):
     return egressPortStats, [] , [],  [], lbMissedPAckets
 
 
+
 def resetAllCounters(dev):
     COUNTER_NAMES = {"egressPortCounter", "ingressPortCounter", "ctrlPktToCPCounter", "p2pFeedbackCounter"}
     resetPacketCounterForAllPort(dev, "egressPortCounter")
@@ -285,8 +298,19 @@ def getAlgo(dev, dpAlgo):
     # TODO : Can we make an array in config and write them there. This function will only read the arrray and load relevant classses??
     if (dpAlgo == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_ECMP) :
         return ecmpRouting.ECMPRouting(dev = dev)
+    if (dpAlgo == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_HULA) :
+        return hulaRouting.HulaRouting(dev = dev)
+    if (dpAlgo == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_CLB) :
+        return ecmpRouting.ECMPRouting(dev = dev)
 
     pass
+
+def getAllLeafSwitches(nameToSwitchMap):
+    leafSwitchList = []
+    for dev in nameToSwitchMap:
+        if (nameToSwitchMap.get(dev).fabric_device_config.switch_type == jp.SwitchType.LEAF ):
+            leafSwitchList.append(nameToSwitchMap.get(dev))
+    return leafSwitchList
 
 # def getLinearMetricsLevels(startingValue, interval, endingValue):
 #     '''

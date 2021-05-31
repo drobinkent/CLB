@@ -68,12 +68,15 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
     l2_ternary_processing() l2_ternary_processing_control_block;
     my_station_processing() my_station_processing_control_block;
     ndp_processing() ndp_processing_control_block;
-    hula_load_balancing() hula_load_balancing_control_block;
 
-    //#ifdef DP_ALGO_ECMP
-    //upstream_routing() upstream_ecmp_routing_control_block;
-    //#endif
+    #ifdef DP_ALGO_ECMP
     upstream_routing() upstream_ecmp_routing_control_block;
+    #endif
+
+
+    #ifdef DP_ALGO_HULA
+    hula_load_balancing() hula_load_balancing_control_block;
+    #endif
 
 
     #ifdef DP_ALGO_CLB
@@ -245,13 +248,15 @@ control EgressPipeImpl (inout parsed_headers_t hdr,
     egressPortCounter.count((bit<32>)standard_metadata.egress_port);
 
     //This block is  for destination based util count by each path
-    bit<32> temp_util = 0;
+    /*bit<32> temp_util = 0;
     bit<32> register_index = (bit<32>)standard_metadata.egress_port * (bit<32>)hdr.ipv6.dst_addr[15:0]; //rightmost 16 bit shows the ToR ID in our scheme.
-    destination_util_counter.read(temp_util, (bit<32>)register_index);
+    destination_util_counter.count((bit<32>)register_index);
     log_msg("Old util was {}",{temp_util});
     temp_util = temp_util + standard_metadata.packet_length;
     destination_util_counter.write( (bit<32>)register_index, temp_util);
-    log_msg("new util is {}",{temp_util});
+    log_msg("new util is {}",{temp_util});*/
+    bit<32> counter_index = (bit<32>)standard_metadata.egress_port * (bit<32>)hdr.ipv6.dst_addr[31:15]; //rightmost 16 bit shows the ToR ID in our scheme.
+    destination_util_counter.count((bit<32>)counter_index);
     }
 }
 

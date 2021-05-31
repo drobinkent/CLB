@@ -30,6 +30,7 @@
 #include "my_station.p4"
 #include "l2_ternary.p4"
 #include "spine_downstream_routing.p4"
+#include "hula.p4"
 
 // *** V1MODEL
 //
@@ -93,8 +94,19 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
     //#ifdef DP_ALGO_ECMP
         //upstream_routing() upstream_ecmp_routing_control_block;
         //#endif
+   #ifdef DP_ALGO_ECMP
     upstream_routing() upstream_ecmp_routing_control_block;
+    #endif
 
+
+    #ifdef DP_ALGO_HULA
+    hula_load_balancing() hula_load_balancing_control_block;
+    #endif
+
+
+    #ifdef DP_ALGO_CLB
+    dp_only_load_balancing() dp_only_load_balancing_control_block;
+    #endif
 
     // *** APPLY BLOCK STATEMENT
     apply {
@@ -131,11 +143,21 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
                 //if (local_metadata.m_color >1) {drop();}
                 if(hdr.ipv6.hop_limit == 0) { drop(); }
             }else{
-            //Route the packet to upstream paths
-
+            #ifdef DP_ALGO_ECMP
+            local_metadata.flag_hdr.found_multi_criteria_paths = false; // this means we must need to use ecmp path
+            if ( local_metadata.flag_hdr.found_multi_criteria_paths  == false){ // this means in multicriteria table we have not found any paths. This may be due to lack of proper traffic class or IP predix in those tables
                 upstream_ecmp_routing_control_block.apply(hdr, local_metadata, standard_metadata);
+            }
+            #endif
 
-            //log_msg("egress spec is {} and egress port is {}",{standard_metadata.egress_spec , standard_metadata.egress_port});
+
+            #ifdef DP_ALGO_CLB
+            dp_only_load_balancing_control_block.apply(hdr, local_metadata, standard_metadata);
+            #endif
+
+            #ifdef DP_ALGO_HULA
+            hula_load_balancing_control_block.apply(hdr, local_metadata, standard_metadata);
+            #endif
             }
         }
     }else{
@@ -201,14 +223,16 @@ control EgressPipeImpl (inout parsed_headers_t hdr,
        debug_std_meta_egress_start.apply(hdr, local_metadata, standard_metadata);
        #endif  // ENABLE_DEBUG_TABLES
 
-       //This block is  for destination based util count by each path
-       bit<32> temp_util = 0;
-       bit<32> register_index = (bit<32>)standard_metadata.egress_port * (bit<32>)hdr.ipv6.dst_addr[15:0]; //rightmost 16 bit shows the ToR ID in our scheme.
-       destination_util_counter.read(temp_util, (bit<32>)register_index);
-       log_msg("Old util was {}",{temp_util});
-       temp_util = temp_util + standard_metadata.packet_length;
-       destination_util_counter.write( (bit<32>)register_index, temp_util);
-       log_msg("new util is {}",{temp_util});
+        //This block is  for destination based util count by each path
+      /*bit<32> temp_util = 0;
+      bit<32> register_index = (bit<32>)standard_metadata.egress_port * (bit<32>)hdr.ipv6.dst_addr[15:0]; //rightmost 16 bit shows the ToR ID in our scheme.
+      destination_util_counter.count((bit<32>)register_index);
+      log_msg("Old util was {}",{temp_util});
+      temp_util = temp_util + standard_metadata.packet_length;
+      destination_util_counter.write( (bit<32>)register_index, temp_util);
+      log_msg("new util is {}",{temp_util});*/
+      bit<32> counter_index = (bit<32>)standard_metadata.egress_port * (bit<32>)hdr.ipv6.dst_addr[15:0]; //rightmost 16 bit shows the ToR ID in our scheme.
+      destination_util_counter.count((bit<32>)counter_index);
 
     }
 }
