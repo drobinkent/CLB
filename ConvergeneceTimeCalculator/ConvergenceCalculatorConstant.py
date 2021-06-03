@@ -4,12 +4,12 @@ import crc16
 TOTAL_TOR_SWITCHES=10000 # we want to
 
 
-experimantTableSize=8192
-experimentPrecision=4
-experimentTotalPaths=8
-experimentIteration = 10
-experimentHashTableSize = 524288
-experimentDestinationNumbers=10240
+experimantTableSize=1048576
+experimentPrecision=10240
+experimentTotalPaths=256
+experimentIteration = 1
+experimentHashTableSize = 65536
+experimentDestinationNumbers=1
 experimentIPv6Prefix = "192:0:0:1::/64"
 # Assuem a leaf spine topologu where each leaf switch has N upword ports. Hence between each pair of leaf switch
 # there will be at least N distinct paths (totaly edge disjoint paths between a pair a leaf siwthc can be much more larger ).
@@ -104,16 +104,22 @@ def generatePathWeights(tableSize, precision, totalPaths, iteration):
 
     rnd_array = np.random.multinomial(_sum, np.ones(n)/n, size=iteration)
     rnd_array = rnd_array*precision
-    print(rnd_array)
+    # print(rnd_array)
     # print("Sum is ", np.sum(rnd_array))
-    print(list(rnd_array))
+    # print(list(rnd_array))
+    total = 0
+    for i in range (0,len(rnd_array[0])):
+        rnd_array[0][i] = rnd_array[0][i]+total
+        total = rnd_array[0][i]
+
+
     return  rnd_array
 
 
 
 
-def wcmpUpdateCalculation():
-    pathWeights = list(generatePathWeights(tableSize=experimantTableSize, precision=experimentPrecision, totalPaths=experimentTotalPaths, iteration = experimentIteration))
+def wcmpUpdateCalculation(tableSize, precision, totalPaths, iteration):
+    pathWeights = list(generatePathWeights(tableSize, precision, totalPaths, iteration ))
     oldPathWeightDistribution  = np.zeros(shape = experimentTotalPaths,dtype="int")
     print(oldPathWeightDistribution)
     newPathWeightDistribution =  pathWeights[0]
@@ -124,24 +130,51 @@ def wcmpUpdateCalculation():
         newPathWeightDistribution =  pathWeights[i+1]
         print("Total is "+str(total))
 
+#wcmpUpdateCalculation(tableSize=experimantTableSize, precision=experimentPrecision, totalPaths=experimentTotalPaths, iteration = experimentIteration)
 
 class CrcHashTable:
     def __init__(self, tableSize):
         self.table = []
         self.tableSize = tableSize
+        self.totalInsertion =  0
+        self.collisionNumer = 0
+        self.existingEntriesInTable = 0
         for i in range (0, self.tableSize):
-            self.table.append(-1)
+                self.table.append(-1)
 
     def insert(self, ipaddress, port):
-        self.collisionNumer = 0
+        bytesFromIP = bytes(ipaddress)
+        # print("bytes from ip address is "+str(bytesFromIP))
+        # bytesFromPort = bytes(int(port))
+        port = int(port)
+        bytesFromPort = port.to_bytes(8, byteorder = 'big')
+        # print("bytes from ip port is "+str((bytesFromPort)))
+        bytesData = bytesFromIP + bytesFromPort
+        # hashCode = crc16.crc16xmodem(bytesData,0x1D0F)
+        hashCode = crc16.crc16xmodem(bytesData,0x1D0F)%experimentHashTableSize
+        print("hashcode is "+str(hashCode))
+        # hashCode = zlib.crc32(bytesData,0x1D0F) % experimentHashTableSize
+        # hashCode = hash(bytesData)
+        # hashCode = hashCode % experimentHashTableSize
+        if(self.table[hashCode] != -1):
+            self.collisionNumer = self.collisionNumer+1
+            self.table[hashCode] = port
+        else:
+            self.table[hashCode] = port
+            self.totalInsertion = self.totalInsertion+1
+        self.existingEntriesInTable = self.existingEntriesInTable +1
+    def delete(self, ipaddress, port):
         bytesFromIP = bytes(ipaddress)
         bytesFromPort = bytes(port)
         bytesData = bytesFromIP + bytesFromPort
-        hashCode = crc16.crc16xmodem(bytesData)
-        if(self.table[hashCode] != -1):
-            self.collisionNumer = self.collisionNumer+1
-        else:
-            self.table[hashCode] = port
+        # hashCode = crc16.crc16xmodem(bytesData,0x1D0F)
+        hashCode = crc16.crc16xmodem(bytesData,0x1D0F)%experimentHashTableSize
+        # hashCode = zlib.crc32(bytesData,0x1D0F) % experimentHashTableSize
+        # hashCode = hash(bytesData)
+        # hashCode = hashCode % experimentHashTableSize
+        self.table[hashCode]  = -1
+        self.existingEntriesInTable = self.existingEntriesInTable -1
+        return
 
 
 # for ip in IPNetwork('10:0:1::/64'):
@@ -157,19 +190,70 @@ class CrcHashTable:
 def calculateHashCollision():
     ipaddressList = []
     i = 0
-    hTable =CrcHashTable(experimentHashTableSize)
+    # hTable =CrcHashTable(experimentHashTableSize)
     for ip in IPNetwork(experimentIPv6Prefix):
-        print ('%s' % ip)
-        print(zlib.crc32(bytes(ip)))
-        ipaddressList.append(ip)
+        # print ('%s' % ip)
+        # print(zlib.crc32(bytes(ip)))
+        weightList = []
+        for j in range (0,experimentIteration):
+            pathWeightBeforeAccumulation = list(generatePathWeights(tableSize=experimantTableSize, precision=experimentPrecision, totalPaths=experimentTotalPaths, iteration = experimentIteration))
+            weightList.append(pathWeightBeforeAccumulation)
+        ipaddressList.append((ip,weightList))
         i =i+1
         if (i>=experimentDestinationNumbers):
             break
-    for ip in ipaddressList:
-        pathWeights = list(generatePathWeights(tableSize=experimantTableSize, precision=experimentPrecision, totalPaths=experimentTotalPaths, iteration = 1))
-        for pWeight in pathWeights[0]:
-            hTable.insert(ip,pWeight*experimentPrecision)
-    print("Toal Collision is "+str(hTable.collisionNumer))
+    for j in range (0,experimentIteration):
+        hTable =CrcHashTable(experimentHashTableSize)
+        for e in ipaddressList:
+            ip = e[0]
+            pathWeights = e[1]
+            # if(j>0):
+            #     for k in range(0,len(pathWeights[j-1][0])):
+            #         pWeight = pathWeights[j-1][0][k]
+            #         hTable.delete(ip,k*pWeight*experimentPrecision)
+            for k in range(0,len(pathWeights[j][0])):
+                pWeight = pathWeights[j][0][k]
+                print("Inerting IP: "+str(ip)+" and weight "+str(pWeight))
+                print("Inerting IP: "+str(ip)+" and port "+str(pWeight))
+                hTable.insert(ip,pWeight*experimentPrecision)
+
+        print("Total Collision is "+str(hTable.collisionNumer))
+        print("Total insertion is "+str(hTable.totalInsertion))
+        print("Total entries in the table is "+str(hTable.existingEntriesInTable))
 
 
 calculateHashCollision()
+
+
+# def generate_random_integers(_sum, n):
+#     mean = int(_sum / n)
+#     variance = int(0.55 * mean)
+#
+#     min_v = mean - variance
+#     max_v = mean + variance
+#     array = [min_v] * n
+#
+#     diff = _sum - min_v * n
+#     while diff > 0:
+#         a = np.random.randint(0, n - 1)
+#         # np.random.normal(mu, sigma, 1000)
+#         if array[a] >= max_v:
+#             continue
+#         array[a] += 1
+#         diff -= 1
+#     print (array)
+#     print(sum(array))
+#     print(min(array))
+#     print(max(array))
+#
+# generate_random_integers(128000, 128)
+
+# from scipy.stats import truncnorm
+#
+# def get_truncated_normal(mean=0, sd=1, low=0, upp=10):
+#     return truncnorm(
+#         (low - mean) / sd, (upp - mean) / sd, loc=mean, scale=sd)
+# X = get_truncated_normal(mean=8, sd=2, low=1, upp=20)
+# val = X.rvs(4000).astype(int)
+# print(val)
+# print(sum(val))
