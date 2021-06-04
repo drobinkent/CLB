@@ -679,23 +679,21 @@ tables {
 }
 tables {
   preamble {
-    id: 49306671
-    name: "IngressPipeImpl.hula_load_balancing_control_block.hula_routing_table"
-    alias: "hula_routing_table"
+    id: 48633376
+    name: "IngressPipeImpl.clb_load_balancing_control_block.weight_group_finder_mat"
+    alias: "weight_group_finder_mat"
   }
   match_fields {
     id: 1
-    name: "hdr.ipv6.dst_addr"
-    bitwidth: 128
-    match_type: LPM
+    name: "local_metadata.packet_bitmask"
+    bitwidth: 16
+    match_type: TERNARY
   }
   action_refs {
-    id: 24146118
+    id: 17326561
   }
   action_refs {
-    id: 21257015
-    annotations: "@defaultonly"
-    scope: DEFAULT_ONLY
+    id: 29505526
   }
   size: 1024
 }
@@ -1051,28 +1049,21 @@ actions {
 }
 actions {
   preamble {
-    id: 25020101
-    name: "IngressPipeImpl.hula_load_balancing_control_block.hula_lookup_flowlet_map"
-    alias: "hula_lookup_flowlet_map"
+    id: 17326561
+    name: "IngressPipeImpl.clb_load_balancing_control_block.weight_group_finder_action_without_param"
+    alias: "weight_group_finder_action_without_param"
   }
 }
 actions {
   preamble {
-    id: 28905020
-    name: "IngressPipeImpl.hula_load_balancing_control_block.use_old_port"
-    alias: "use_old_port"
-  }
-}
-actions {
-  preamble {
-    id: 24146118
-    name: "IngressPipeImpl.hula_load_balancing_control_block.hula_set_upstream_egress_port"
-    alias: "hula_set_upstream_egress_port"
+    id: 29505526
+    name: "IngressPipeImpl.clb_load_balancing_control_block.weight_group_finder_action_with_param"
+    alias: "weight_group_finder_action_with_param"
   }
   params {
     id: 1
-    name: "port_num"
-    bitwidth: 9
+    name: "link_location_index"
+    bitwidth: 32
   }
 }
 counters {
@@ -1207,6 +1198,11 @@ controller_packet_metadata {
     name: "level_to_link_id_store_index"
     bitwidth: 32
   }
+  metadata {
+    id: 7
+    name: "tor_id"
+    bitwidth: 32
+  }
 }
 registers {
   preamble {
@@ -1221,7 +1217,7 @@ registers {
       }
     }
   }
-  size: 1
+  size: 8
 }
 registers {
   preamble {
@@ -1236,7 +1232,7 @@ registers {
       }
     }
   }
-  size: 1
+  size: 8
 }
 registers {
   preamble {
@@ -1251,7 +1247,7 @@ registers {
       }
     }
   }
-  size: 16
+  size: 128
 }
 registers {
   preamble {
@@ -1267,51 +1263,6 @@ registers {
     }
   }
   size: 256
-}
-registers {
-  preamble {
-    id: 379541175
-    name: "IngressPipeImpl.hula_load_balancing_control_block.ecmp_flowlet_id_map"
-    alias: "ecmp_flowlet_id_map"
-  }
-  type_spec {
-    bitstring {
-      bit {
-        bitwidth: 16
-      }
-    }
-  }
-  size: 8192
-}
-registers {
-  preamble {
-    id: 377072658
-    name: "IngressPipeImpl.hula_load_balancing_control_block.ecmp_flowlet_lasttime_map"
-    alias: "ecmp_flowlet_lasttime_map"
-  }
-  type_spec {
-    bitstring {
-      bit {
-        bitwidth: 48
-      }
-    }
-  }
-  size: 8192
-}
-registers {
-  preamble {
-    id: 377510160
-    name: "IngressPipeImpl.hula_load_balancing_control_block.flowlet_last_used_port"
-    alias: "flowlet_last_used_port"
-  }
-  type_spec {
-    bitstring {
-      bit {
-        bitwidth: 9
-      }
-    }
-  }
-  size: 8192
 }
 type_info {
 }

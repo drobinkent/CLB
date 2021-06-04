@@ -171,9 +171,9 @@ const bit<32> MAX_PORTS_IN_SWITCH = 16;
 const bit<32> MAX_TOR_SUBNET = 8;  //Maximum ToR supported by our simulation
 const bit<32> MAX_FLOW_TYPES = 64;  //traffic class 6 bits. so at most 64 types of flow can be there.
 counter((bit<32>)MAX_PORTS_IN_SWITCH, CounterType.packets) egressPortCounter;
-@name("load_counter")register<bit<32>>(1) load_counter;
-@name("stored_bitmask")register<bit<BITMASK_LENGTH>>(1) stored_bitmask;
-@name("level_to_link_store")register<bit<32>>(BITMASK_LENGTH) level_to_link_store;
+@name("load_counter")register<bit<32>>(MAX_TOR_SUBNET) load_counter;
+@name("stored_bitmask")register<bit<BITMASK_LENGTH>>(MAX_TOR_SUBNET) stored_bitmask;
+@name("level_to_link_store")register<bit<32>>(MAX_TOR_SUBNET*BITMASK_LENGTH) level_to_link_store;
 const bit<32> ALL_ONE_BIT_MASK= 0b11111111111111111111111111111111;
 counter((bit<32>)1, CounterType.packets) load_balancer_missed_counter;
 @name("test_2d_array")register<bit<32>>(BITMASK_LENGTH*BITMASK_LENGTH) test_2d_array;

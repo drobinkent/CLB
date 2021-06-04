@@ -31,6 +31,8 @@
 #include "l2_ternary.p4"
 #include "spine_downstream_routing.p4"
 #include "hula.p4"
+#include "clb_load_balancer.p4"
+
 
 // *** V1MODEL
 //
@@ -105,7 +107,7 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
 
 
     #ifdef DP_ALGO_CLB
-    dp_only_load_balancing() dp_only_load_balancing_control_block;
+    clb_load_balancing() clb_load_balancing_control_block;
     #endif
 
     // *** APPLY BLOCK STATEMENT
@@ -152,7 +154,7 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
 
 
             #ifdef DP_ALGO_CLB
-            dp_only_load_balancing_control_block.apply(hdr, local_metadata, standard_metadata);
+            clb_load_balancing_control_block.apply(hdr, local_metadata, standard_metadata);
             #endif
 
             #ifdef DP_ALGO_HULA

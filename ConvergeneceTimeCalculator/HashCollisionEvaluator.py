@@ -144,9 +144,20 @@ def calculateHashCollision(experimentIPv6Prefix, experimentDestinationNumbers, e
 # calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=10, experimentIteration=10, peakLoad= 1048576,  totalPaths=256, precision=32,standardDeviationOfPAthWeights=.4, hashtableSize = 8192)
 
 
-calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=24, experimentIteration=10, peakLoad= 1048576,  totalPaths=256, precision=32,standardDeviationOfPAthWeights=.4, hashtableSize = 65536)
-calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=48, experimentIteration=10, peakLoad= 1048576,  totalPaths=256, precision=32,standardDeviationOfPAthWeights=.4, hashtableSize = 65536)
-calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=72, experimentIteration=10, peakLoad= 1048576,  totalPaths=256, precision=32,standardDeviationOfPAthWeights=.4, hashtableSize = 65536)
-calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=96, experimentIteration=10, peakLoad= 1048576,  totalPaths=256, precision=32,standardDeviationOfPAthWeights=.4, hashtableSize = 65536)
+# calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=24, experimentIteration=10, peakLoad= 1048576,  totalPaths=256, precision=32,standardDeviationOfPAthWeights=.2, hashtableSize = 65536)
+# calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=48, experimentIteration=10, peakLoad= 1048576,  totalPaths=256, precision=32,standardDeviationOfPAthWeights=.2, hashtableSize = 65536)
+# calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=72, experimentIteration=10, peakLoad= 1048576,  totalPaths=256, precision=32,standardDeviationOfPAthWeights=.2, hashtableSize = 65536)
+# calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=96, experimentIteration=10, peakLoad= 1048576,  totalPaths=256, precision=32,standardDeviationOfPAthWeights=.2, hashtableSize = 65536)
+# print("\n\n\n\n")
+
+calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1048576,  totalPaths=32, precision=4,standardDeviationOfPAthWeights=.2, hashtableSize = 1024)
+calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1048576,  totalPaths=32, precision=16,standardDeviationOfPAthWeights=.2, hashtableSize = 2048)
+calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1048576,  totalPaths=32, precision=32,standardDeviationOfPAthWeights=.2, hashtableSize = 3072)
+calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1048576,  totalPaths=64, precision=4,standardDeviationOfPAthWeights=.2, hashtableSize = 1024)
+calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1048576,  totalPaths=64, precision=16,standardDeviationOfPAthWeights=.2, hashtableSize = 2048)
+calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1048576,  totalPaths=64, precision=32,standardDeviationOfPAthWeights=.2, hashtableSize = 3072)
+calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1048576,  totalPaths=64, precision=4,standardDeviationOfPAthWeights=.2, hashtableSize = 1024)
+calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1048576,  totalPaths=64, precision=16,standardDeviationOfPAthWeights=.2, hashtableSize = 2048)
+calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1048576,  totalPaths=64, precision=32,standardDeviationOfPAthWeights=.2, hashtableSize = 3072)
 
 

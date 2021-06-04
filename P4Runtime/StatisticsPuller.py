@@ -82,7 +82,7 @@ class StatisticsPuller:
         if ((self.p4dev.dpAlgorithm == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_HULA) and (self.p4dev.fabric_device_config.switch_type == jp.SwitchType.LEAF)):
             self.p4dev.hulaUtilBasedReconfigureForLeafSwitches(linkUtilStats)
             pass # dohuyla logic
-        if (self.p4dev.dpAlgorithm == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_CLB) :
+        if ((self.p4dev.dpAlgorithm == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_CLB)  and (self.p4dev.fabric_device_config.switch_type == jp.SwitchType.LEAF)):
             pass # do CLB logic
         pass
 

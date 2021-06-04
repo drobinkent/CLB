@@ -36,9 +36,10 @@ def generate_random_integers(wcmpTableSize, totalPaths, standardDeviationOfPAthW
         # print(min(array))
         # print(max(array))
         # print(np.std(array))
-        for a in array:
-            a=a*precision
+        # for a in array:
+        #     a=a*precision
         pathweights.append(array)
+        # print(array)
     return  pathweights
 
 # generate_random_integers(wcmpTableSize=3200,totalPaths=32,standardDeviationOfPAthWeights=.5)
@@ -69,11 +70,11 @@ def getTotalControlMessageForUpdatingWCMPTable(oldPathWeightDistribution, newPat
     # print("Total update (both insert and delete) required for the iteration is "+str(totalOldEntryDeleteRequiredInWCMPTable+totalNewEntryInsertRequiredInWCMPTable))
     return totalOldEntryDeleteRequiredInWCMPTable+totalNewEntryInsertRequiredInWCMPTable
 
-def wcmpUpdateCalculation(tableSize, precision, totalPaths, standardDeviationOfPAthWeights, iteration):
-    if (standardDeviationOfPAthWeights>=1) or (standardDeviationOfPAthWeights <=0):
+def wcmpUpdateCalculation(tableSize, precision, totalPaths, sigma, iteration):
+    if (sigma >= 1) or (sigma <= 0):
         print("Standard deviation of the paths must be in between 0 and 1")
         exit(1)
-    pathWeights = generate_random_integers(wcmpTableSize=int(tableSize/precision),totalPaths=totalPaths,standardDeviationOfPAthWeights=standardDeviationOfPAthWeights, iteration=iteration,precision=precision)
+    pathWeights = generate_random_integers(wcmpTableSize=int(tableSize/precision), totalPaths=totalPaths, standardDeviationOfPAthWeights=sigma, iteration=iteration, precision=precision)
 
     oldPathWeightDistribution  = np.zeros(shape = totalPaths,dtype="int")
     # print(oldPathWeightDistribution)
@@ -86,22 +87,27 @@ def wcmpUpdateCalculation(tableSize, precision, totalPaths, standardDeviationOfP
     # print("Average update message required "+str(total/iteration))
     mean = int((tableSize/precision)/totalPaths)
     print("WCMP table size: "+str(tableSize)+ " Total paths: "+str(totalPaths)+" Precision of load balancing: "+str(precision)+
-          " Mean value of the path weights: "+str(mean) + " Standard deviation of the path weights: "+str(standardDeviationOfPAthWeights*mean)
+          " Mean value of the path weights: "+str(mean) + " signma for the path weights: "+str(sigma )
             +" For total iteration: "+ str(iteration)+
-          " Average update message required "+str(total/iteration))
+          " Average number of update message required "+str(total/iteration))
 
-wcmpUpdateCalculation(tableSize=4096, precision=16,totalPaths=32, standardDeviationOfPAthWeights=.5, iteration=10)
-wcmpUpdateCalculation(tableSize=4096, precision=16,totalPaths=64, standardDeviationOfPAthWeights=.8, iteration=10)
-wcmpUpdateCalculation(tableSize=8192, precision=16,totalPaths=128, standardDeviationOfPAthWeights=.5, iteration=10)
-wcmpUpdateCalculation(tableSize=10240, precision=16,totalPaths=256, standardDeviationOfPAthWeights=.8, iteration=10)
-wcmpUpdateCalculation(tableSize=12800, precision=16,totalPaths=256, standardDeviationOfPAthWeights=.8, iteration=10)
+print("Experiments for evaluating convergence time for different lengths of WCMP table size, different number of paths, ")
+wcmpUpdateCalculation(tableSize=4096, precision=16,totalPaths=32, sigma=.8, iteration=10)
+wcmpUpdateCalculation(tableSize=4096, precision=16,totalPaths=64, sigma=.8, iteration=10)
+wcmpUpdateCalculation(tableSize=4096, precision=16,totalPaths=64, sigma=.8, iteration=10)
+wcmpUpdateCalculation(tableSize=8192, precision=16,totalPaths=128, sigma=.8, iteration=10)
+wcmpUpdateCalculation(tableSize=10240, precision=16,totalPaths=256, sigma=.8, iteration=10)
+wcmpUpdateCalculation(tableSize=12800, precision=16,totalPaths=256, sigma=.8, iteration=10)
 print("\n\n\n\n")
-wcmpUpdateCalculation(tableSize=4096, precision=2,totalPaths=32, standardDeviationOfPAthWeights=.5, iteration=10)
-wcmpUpdateCalculation(tableSize=4096, precision=4,totalPaths=32, standardDeviationOfPAthWeights=.5, iteration=10)
-wcmpUpdateCalculation(tableSize=4096, precision=8,totalPaths=32, standardDeviationOfPAthWeights=.5, iteration=10)
-wcmpUpdateCalculation(tableSize=4096, precision=16,totalPaths=32, standardDeviationOfPAthWeights=.5, iteration=10)
-wcmpUpdateCalculation(tableSize=4096, precision=32,totalPaths=32, standardDeviationOfPAthWeights=.5, iteration=10)
-wcmpUpdateCalculation(tableSize=4096, precision=128,totalPaths=32, standardDeviationOfPAthWeights=.8, iteration=10)
+print("Experiments for evaluating convergence time for different precision of load balancing, ")
+wcmpUpdateCalculation(tableSize=10240, precision=2, totalPaths=64, sigma=.8, iteration=10)
+wcmpUpdateCalculation(tableSize=10240, precision=4, totalPaths=64, sigma=.8, iteration=10)
+wcmpUpdateCalculation(tableSize=10240, precision=8, totalPaths=64, sigma=.8, iteration=10)
+wcmpUpdateCalculation(tableSize=10240, precision=16, totalPaths=64, sigma=.8, iteration=10)
+wcmpUpdateCalculation(tableSize=10240, precision=32, totalPaths=64, sigma=.8, iteration=10)
+wcmpUpdateCalculation(tableSize=10240, precision=32, totalPaths=64, sigma=.8, iteration=10)
+# wcmpUpdateCalculation(tableSize=24800, precision=32, totalPaths=128, sigma=.8, iteration=10
+
 
 
 # wcmpUpdateCalculation(tableSize=12800, precision=2,totalPaths=32, standardDeviationOfPAthWeights=.8, iteration=10)

@@ -140,6 +140,7 @@ struct local_metadata_t {
     bit<48> flow_inter_packet_gap;
     bit<48> flowlet_last_pkt_seen_time;
     bit<9> flowlet_last_used_path;
+    bit<32> tor_id;
 
 
 
@@ -213,6 +214,7 @@ header packet_out_t {
     bit<32> link_id;
     bit<32> bitmask; //Here we are keeping all 32 bit to avoid compile time configuration complexity. At apply blo0ck we will slice necesssary bits.
     bit<32> level_to_link_id_store_index;  //
+    bit<32> tor_id;  //
 }
 
 // Header for sensing peer to peer feedback

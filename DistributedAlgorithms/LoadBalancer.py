@@ -29,9 +29,23 @@ def modifyBit( n,  p,  b):
     mask = 1 << p
     return (n & ~mask) | ((b << p) & mask)
 
+def initMAT( switchObject, bitMaskLength):
+    allOneMAsk = BinaryMask(bitMaskLength)
+    allOneMAsk.setAllBitOne()
+    allOneMAskBinaryString = allOneMAsk.getBinaryString()
+    for j in range(0, bitMaskLength):
+        mask = BinaryMask(bitMaskLength)
+        mask.setNthBitWithB(n=j,b=1)
+        maskAsString = mask.getBinaryString()
+        switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskValueWithMaskAsString = allOneMAskBinaryString+"&&&"+maskAsString,
+                                                  actionParamValue=  j , priority= bitMaskLength-j+1) #1 added in the prioity bcz  0 priority doesn;t work
+
+
+
 class LoadBalanacer:
 
-    def __init__(self,  allLinksAsList, bitMaskLength, nameToSwitchMap ):
+    def __init__(self, torID,  allLinksAsList, bitMaskLength, nameToSwitchMap ):
+        self.torID = torID
         self.linkToCurrentLevel={}
         self.bitMaskLength = bitMaskLength
         self.bitMaskArray = []
@@ -41,39 +55,9 @@ class LoadBalanacer:
         for i in range(0,self.bitMaskLength):
             #Initializing all the bit masks with 0
             self.bitMaskArray.append(0)
-        self.isRunning =True
-        x = threading.Thread(target=self.load_balancer_config_thread_function, args=())
-        x.start()
-        logger.info("load_balancer_config_thread_function thread started")
 
-    def initMAT(self, switchObject, bitMaskLength):
-        allOneMAsk = BinaryMask(bitMaskLength)
-        allOneMAsk.setAllBitOne()
-        allOneMAskBinaryString = allOneMAsk.getBinaryString()
-        for j in range(0, bitMaskLength):
-            mask = BinaryMask(bitMaskLength)
-            mask.setNthBitWithB(n=j,b=1)
-            maskAsString = mask.getBinaryString()
-            switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskValueWithMaskAsString = allOneMAskBinaryString+"&&&"+maskAsString,
-                                                     actionParamValue=  j , priority= bitMaskLength-j+1) #1 added in the prioity bcz  0 priority doesn;t work
-            # switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskArrayIndex = i, packetBitmaskValueWithMaskAsString = allOneMAskBinaryString+"&&&"+maskAsString,
-            #                                           actionParamValue=i * bitMaskLength + j ,
-            #                                           priority= (bitMaskArrayMaxIndex * bitMaskLength)-(i * bitMaskLength + j)) #1 added in the prioity bcz  0 priority doesn;t work
 
-    def initMATOld(self, switchObject, bitMaskLength, bitMaskArrayMaxIndex):
-        allZeroMAsk = BinaryMask(bitMaskLength)
-        allZeroMAskBinaryStrings = allZeroMAsk.getBinaryString()
-        for i in range (0, bitMaskArrayMaxIndex):
-            for j in range(0, bitMaskLength):
-                mask = BinaryMask(bitMaskLength)
-                mask.setAllBitOne()
-                mask.setNthBitWithB(n=j,b=0)
-                maskAsString = mask.getBinaryString()
-                switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskArrayIndex = i, packetBitmaskValueWithMaskAsString = allZeroMAskBinaryStrings+"&&&"+maskAsString,
-                                                          actionParamValue=i * bitMaskLength + j , priority=i * bitMaskLength + j+1) #1 added in the prioity bcz  0 priority doesn;t work
-                # switchObject.addTernaryEntriesForCLBTMAt( packetBitmaskArrayIndex = i, packetBitmaskValueWithMaskAsString = allOneMAskBinaryString+"&&&"+maskAsString,
-                #                                           actionParamValue=i * bitMaskLength + j ,
-                #                                           priority= (bitMaskArrayMaxIndex * bitMaskLength)-(i * bitMaskLength + j)) #1 added in the prioity bcz  0 priority doesn;t work
+
 
     def load_balancer_config_thread_function(self):
         logger.info("Thread %s: starting", "load_balancer_config_thread_function")
@@ -138,6 +122,7 @@ class LoadBalanacer:
         rawPktContent = rawPktContent + (linkID).to_bytes(4,'big')
         rawPktContent = rawPktContent + (bitmask).to_bytes(4,'big')
         rawPktContent = rawPktContent + (level_to_link_id_store_index).to_bytes(4,'big')
+        rawPktContent = rawPktContent + (int(self.torID)).to_bytes(4,'big')
 
         packet_out_req = p4runtime_pb2.StreamMessageRequest()
         port_hex = port.to_bytes(length=2, byteorder="big")
@@ -161,6 +146,10 @@ class LoadBalanacer:
         level_to_link_id_store_index_metadata_field = packet_out.metadata.add()
         level_to_link_id_store_index_metadata_field.metadata_id = 6
         level_to_link_id_store_index_metadata_field.value = (level_to_link_id_store_index).to_bytes(4,'big')
+
+        torID_metadata_field = packet_out.metadata.add()
+        torID_metadata_field.metadata_id = 7
+        torID_metadata_field.value = (int(self.torID)).to_bytes(4,'big')
 
         packet_out.payload = rawPktContent
         packet_out_req.packet.CopyFrom(packet_out)
@@ -192,12 +181,12 @@ class LoadBalanacer:
             newLevel = e[1]
             self.linkToCurrentLevel[link] = newLevel
             #index = int(newLevel / self.bitMaskLength)
-            index = 0 #For fat bitmask index is always 0
-            position = newLevel % self.bitMaskLength
+            index = 0 #As we are maintinaing only one bitmask per destination so index 0. But the data structure can be used for maintiaing multiple bitmask for a destination
+            position = newLevel -1
             #make a packet_out message now and insert In List parallely modify the self.bitMaskArray[index]
             self.bitMaskArray[index] = modifyBit(self.bitMaskArray[index], position, 1)
             pktForInsertlink = self.buildMetadataBasedPacketOut( clabFlag=64,  linkID=link,
-                                                   bitmask=self.bitMaskArray[index], level_to_link_id_store_index = newLevel)
+                                                   bitmask=self.bitMaskArray[index], level_to_link_id_store_index = (self.torID * ConfConst.BITMASK_LENGTH )+position)
             packetOutList.append(pktForInsertlink)
         return packetOutList
 

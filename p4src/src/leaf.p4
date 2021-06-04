@@ -30,7 +30,7 @@
 #include "my_station.p4"
 #include "l2_ternary.p4"
 #include "leaf_downstream_routing.p4"
-#include "dp_only_load_balancer.p4"
+#include "clb_load_balancer.p4"
 #include "hula.p4"
 
 
@@ -80,7 +80,7 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
 
 
     #ifdef DP_ALGO_CLB
-    dp_only_load_balancing() dp_only_load_balancing_control_block;
+    clb_load_balancing() clb_load_balancing_control_block;
     #endif
 
     apply {
@@ -98,13 +98,13 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
        //process control packet here -- header format for ctrtIn --> counterReset= yes or no,
        if(hdr.packet_out.clb_flags[7:7] == (bit<1>)1){
            bit<32> load_counter_value = 0;
-           load_counter.write(0, load_counter_value); //Reset the counter
+           load_counter.write(hdr.packet_out.tor_id, load_counter_value); //Reset the counter
            log_msg("LB: Control Message for reset counter found");
            mark_to_drop(standard_metadata);
            exit;
        }
        else if(hdr.packet_out.clb_flags[6:6] == (bit<1>)1){ //This is a control packet
-           stored_bitmask.write( (bit<32>)0, hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0]);
+           stored_bitmask.write( hdr.packet_out.tor_id, hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0]);
            level_to_link_store.write( (bit<32>)hdr.packet_out.level_to_link_id_store_index, hdr.packet_out.link_id);
            log_msg("LB: Control Message for path control:: linkID--{},  bitmask--{} level_to_link_id_store_index--{}",
                                           {hdr.packet_out.link_id, hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0], hdr.packet_out.level_to_link_id_store_index});
@@ -113,9 +113,9 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
            log_msg("LB: Control Message for path control:: linkID--{},  bitmask--{} level_to_link_id_store_index--{}",
                                                      {hdr.packet_out.link_id, hdr.packet_out.bitmask[BITMASK_LENGTH - 1 :0], hdr.packet_out.level_to_link_id_store_index});
        }
-    }else if (hdr.packet_in.isValid() && IS_RECIRCULATED(standard_metadata)) {  //This means this packet is replicated from egress to setup
+    }else if (hdr.packet_in.isValid() && IS_RECIRCULATED(standard_metadata)) {  //This means this packet is replicated from egress
         //log_msg("Found a recirculated packet");
-        local_metadata.flag_hdr.do_l3_l2 = false; //thie means . this packet doesn;t need normal forwarding processing. It wil only be used for updating the internal routing related information
+        local_metadata.flag_hdr.do_l3_l2 = false; //thie means . this packet doesn;t need normal forwarding processing.
         mark_to_drop(standard_metadata);
    }else{ //This means these packets are normal packets and they will generate the events
 
@@ -160,7 +160,7 @@ control IngressPipeImpl (inout parsed_headers_t    hdr,
 
 
                 #ifdef DP_ALGO_CLB
-                dp_only_load_balancing_control_block.apply(hdr, local_metadata, standard_metadata);
+                clb_load_balancing_control_block.apply(hdr, local_metadata, standard_metadata);
                 #endif
 
                 #ifdef DP_ALGO_HULA

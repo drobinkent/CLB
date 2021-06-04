@@ -11,7 +11,8 @@ import ConfigConst as CC
 INVALID_NEXT_BLOCK = -1
 
 class CLB:
-
+    # This class is basically for imeplementing the capacity extension mechanism of CLB.
+    #Still not tested and some features are incomplete
     def __init__(self,allLinksAsList, totalWeightGroups, bitMaskLength):
         self.totalWeightGroups = totalWeightGroups
         self.bitMaskLength = bitMaskLength

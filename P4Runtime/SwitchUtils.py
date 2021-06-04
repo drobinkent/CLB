@@ -2,6 +2,7 @@
 #import CentralizedAlgorithms as centrAlgo
 import DistributedAlgorithms.ECMPRouting as ecmpRouting
 import DistributedAlgorithms.HulaRouting as hulaRouting
+import DistributedAlgorithms.CLBWeightManager as clbWeightManager
 
 import math
 
@@ -301,7 +302,7 @@ def getAlgo(dev, dpAlgo):
     if (dpAlgo == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_HULA) :
         return hulaRouting.HulaRouting(dev = dev)
     if (dpAlgo == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_CLB) :
-        return ecmpRouting.ECMPRouting(dev = dev)
+        return clbWeightManager.CLBWeightManager(dev = dev)
 
     pass
 
