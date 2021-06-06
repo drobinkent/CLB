@@ -168,7 +168,7 @@ class MyP4Controller():
             swUtils.addCloneSessionForEachPort(s, s.maxPort)
             #TODO : need to save the metric level in device. So that we4 can later use dynamic scale up for metrices
 
-            s.initialCommonSetup()
+            s.initialCommonSetup(self.nameToSwitchMap)
             #====================
             # -- execute initial setup tasks
             s.ctrlPlaneLogic.setup(self.nameToSwitchMap)

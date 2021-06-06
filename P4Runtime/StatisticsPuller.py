@@ -66,30 +66,96 @@ class StatisticsPuller:
         # for dev in self.nameToSwitchMap:
         #     f =  open(ConfConst.CONTROLLER_STATISTICS_RESULT_FILE_PATH+dev+".json", mode='a', buffering=1024)
         #     self.nameToSwitchMap.get(dev).controllerStatsFile = f
+        switchObject = self.p4dev
+        self.oldLinkUtilStats = self.pullStatsFromSwitch(dev=switchObject)
         while(self.isRunning):
             time.sleep(ConfConst.STATISTICS_PULLING_INTERVAL)
             index=0
             switchObject = self.p4dev
             linkUtilStats = self.pullStatsFromSwitch(dev=switchObject)
-            self.useLinkUtilForPathReconfigure(linkUtilStats)
+            self.useLinkUtilForPathReconfigure(linkUtilStats, self.oldLinkUtilStats)
+            self.oldLinkUtilStats = linkUtilStats
             # switchObject.controllerStatsFile.write(json.dumps(statJson, cls=statJsonWrapper.PortStatisticsJSONWrapper))
             # switchObject.controllerStatsFile.flush()
         logger.info("Thread %s: finishing", "StatisticsPuller", str(self.p4dev.devName))
 
-    def useLinkUtilForPathReconfigure(self, linkUtilStats):
+    def useLinkUtilForPathReconfigure(self, linkUtilStats,oldLinkUtilStats):
         if (self.p4dev.dpAlgorithm == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_ECMP) : # do nothing
             return
         if ((self.p4dev.dpAlgorithm == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_HULA) and (self.p4dev.fabric_device_config.switch_type == jp.SwitchType.LEAF)):
-            self.p4dev.hulaUtilBasedReconfigureForLeafSwitches(linkUtilStats)
+            self.p4dev.hulaUtilBasedReconfigureForLeafSwitches(linkUtilStats,oldLinkUtilStats)
             pass # dohuyla logic
         if ((self.p4dev.dpAlgorithm == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_CLB)  and (self.p4dev.fabric_device_config.switch_type == jp.SwitchType.LEAF)):
+            # if(ConfConst.CLB_TESTER_DEVICE_NAME in self.p4dev.devName):
+            self.clbUtilBasedReconfigureForLeafSwitches(linkUtilStats, self.oldLinkUtilStats)
             pass # do CLB logic
         pass
 
-    # make hula table
-    # configure it at intitl setup
-    #
-    # use that table to reconfigure depending on link util.
+    def clbUtilBasedReconfigureForLeafSwitches(self, linkUtilStats,oldLinkUtilStats):
+        # for all leafswitch get their 16-31 th bit and convert it to int
+        # multply that with the upword port nubers
+        # get the resultindex th position in the pulled results.
+        # use that for that tor
+
+
+        for lswitch in self.p4dev.allLeafSwitchesInTheDCN:
+            e = lswitch.fabric_device_config.switch_host_subnet_prefix.index("/")
+            leafSubnetAsIP = lswitch.fabric_device_config.switch_host_subnet_prefix[0:e]
+            leafSubnetPrefixLength = lswitch.fabric_device_config.switch_host_subnet_prefix[e+1:len(lswitch.fabric_device_config.switch_host_subnet_prefix)]
+            r1 = lswitch.fabric_device_config.switch_host_subnet_prefix.rindex(":")
+            r2 = lswitch.fabric_device_config.switch_host_subnet_prefix[0:r1].rindex(":")
+            torID = int(lswitch.fabric_device_config.switch_host_subnet_prefix[r2+1:r1])
+
+            upwardPortList = list(self.p4dev.portToSpineSwitchMap.keys())
+            pathAndUtilist = []
+            totalUtil = 0
+            # if(torID !=3):
+            #     continue
+            # print("ToirId is "+str(torID))
+            # print("new Utilization data is  "+str(linkUtilStats))
+            # print("old Utilization data is  "+str(oldLinkUtilStats))
+            for uPort in upwardPortList:
+                index = int(uPort) + (torID*ConfConst.MAX_PORTS_IN_SWITCH) -1
+                # print("Index to be accessed "+str(index))
+                # print("Old util is "+str(linkUtilStats[index]))
+                utilInLastInterval = linkUtilStats[index] -  oldLinkUtilStats[index]
+                if(utilInLastInterval >0):
+                    pathAndUtilist.append((uPort,utilInLastInterval))
+                    totalUtil = totalUtil + utilInLastInterval
+                    # print("for port "+str(uPort)+" Util is "+str(utilInLastInterval))
+                else:
+                    pathAndUtilist.append((uPort,1))
+                    totalUtil = totalUtil + 1
+                    # print("for port "+str(uPort)+" Util is "+str(1))
+            # print("Total Util is "+str(totalUtil))
+            # perUnitWeight = totalUtil/ConfConst.BITMASK_LENGTH
+            # totalWeight = ConfConst.BITMASK_LENGTH
+            # weightDistro = []
+            portDistribInverse = []
+            total=0
+            for pUtil in pathAndUtilist:
+                port = pUtil[0]
+                util = pUtil[1]
+                portWeight =  int((ConfConst.BITMASK_LENGTH)/(util/totalUtil))
+                portDistribInverse.append((port,portWeight))
+                total = total+ portWeight
+                # print("for port "+str(port)+" inverse util is "+str(portWeight))
+            # print("Totoal Weight is "+str(total))
+            accumDistrib2 = []
+            newTotal=0
+            for pUtil in portDistribInverse:
+                port = pUtil[0]
+                util = pUtil[1]
+                newTotal = newTotal+ int((util/total) * ConfConst.BITMASK_LENGTH)
+                accumDistrib2.append((port,newTotal))
+                # print("Final weight for port "+str(port)+"  uis "+str(newTotal))
+            self.p4dev.ctrlPlaneLogic.processStatisticsPulledFromSwitch(torID,accumDistrib2)
+            # if(ConfConst.CLB_TESTER_DEVICE_NAME in self.p4dev.devName):
+            #     print("Newly installed distrib is "+str(accumDistrib2))
+
+
+        pass
+
 
     def indexToRowColumn(self, index, totalColumns):
         row = int(math.floor(index/float(totalColumns)))

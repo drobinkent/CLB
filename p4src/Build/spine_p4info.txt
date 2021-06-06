@@ -171,120 +171,126 @@ tables {
   }
   match_fields {
     id: 28
+    name: "hdr.ipv6.dst_addr"
+    bitwidth: 128
+    match_type: EXACT
+  }
+  match_fields {
+    id: 29
     name: "hdr.icmpv6.type"
     bitwidth: 8
     match_type: EXACT
   }
   match_fields {
-    id: 29
+    id: 30
     name: "hdr.ipv6.next_hdr"
     bitwidth: 8
     match_type: EXACT
   }
   match_fields {
-    id: 30
+    id: 31
     name: "hdr.ipv6.flow_label"
     bitwidth: 20
     match_type: EXACT
   }
   match_fields {
-    id: 31
+    id: 32
     name: "hdr.ipv6.traffic_class"
     bitwidth: 6
     match_type: EXACT
   }
   match_fields {
-    id: 32
+    id: 33
     name: "hdr.tcp.src_port"
     bitwidth: 16
     match_type: EXACT
   }
   match_fields {
-    id: 33
+    id: 34
     name: "hdr.tcp.dst_port"
     bitwidth: 16
     match_type: EXACT
   }
   match_fields {
-    id: 34
+    id: 35
     name: "hdr.tcp.seq_no"
     bitwidth: 32
     match_type: EXACT
   }
   match_fields {
-    id: 35
+    id: 36
     name: "hdr.tcp.ack_no"
     bitwidth: 32
     match_type: EXACT
   }
   match_fields {
-    id: 36
+    id: 37
     name: "hdr.tcp.data_offset"
     bitwidth: 4
     match_type: EXACT
   }
   match_fields {
-    id: 37
+    id: 38
     name: "hdr.tcp.res"
     bitwidth: 3
     match_type: EXACT
   }
   match_fields {
-    id: 38
+    id: 39
     name: "hdr.tcp.ecn"
     bitwidth: 3
     match_type: EXACT
   }
   match_fields {
-    id: 39
+    id: 40
     name: "hdr.tcp.urg_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 40
+    id: 41
     name: "hdr.tcp.ack_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 41
+    id: 42
     name: "hdr.tcp.psh_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 42
+    id: 43
     name: "hdr.tcp.rst_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 43
+    id: 44
     name: "hdr.tcp.syn_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 44
+    id: 45
     name: "hdr.tcp.fin_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 45
+    id: 46
     name: "hdr.tcp.window"
     bitwidth: 16
     match_type: EXACT
   }
   match_fields {
-    id: 46
+    id: 47
     name: "hdr.tcp.checksum"
     bitwidth: 16
     match_type: EXACT
   }
   match_fields {
-    id: 47
+    id: 48
     name: "hdr.tcp.urgent_ptr"
     bitwidth: 16
     match_type: EXACT
@@ -465,120 +471,126 @@ tables {
   }
   match_fields {
     id: 28
+    name: "hdr.ipv6.dst_addr"
+    bitwidth: 128
+    match_type: EXACT
+  }
+  match_fields {
+    id: 29
     name: "hdr.icmpv6.type"
     bitwidth: 8
     match_type: EXACT
   }
   match_fields {
-    id: 29
+    id: 30
     name: "hdr.ipv6.next_hdr"
     bitwidth: 8
     match_type: EXACT
   }
   match_fields {
-    id: 30
+    id: 31
     name: "hdr.ipv6.flow_label"
     bitwidth: 20
     match_type: EXACT
   }
   match_fields {
-    id: 31
+    id: 32
     name: "hdr.ipv6.traffic_class"
     bitwidth: 6
     match_type: EXACT
   }
   match_fields {
-    id: 32
+    id: 33
     name: "hdr.tcp.src_port"
     bitwidth: 16
     match_type: EXACT
   }
   match_fields {
-    id: 33
+    id: 34
     name: "hdr.tcp.dst_port"
     bitwidth: 16
     match_type: EXACT
   }
   match_fields {
-    id: 34
+    id: 35
     name: "hdr.tcp.seq_no"
     bitwidth: 32
     match_type: EXACT
   }
   match_fields {
-    id: 35
+    id: 36
     name: "hdr.tcp.ack_no"
     bitwidth: 32
     match_type: EXACT
   }
   match_fields {
-    id: 36
+    id: 37
     name: "hdr.tcp.data_offset"
     bitwidth: 4
     match_type: EXACT
   }
   match_fields {
-    id: 37
+    id: 38
     name: "hdr.tcp.res"
     bitwidth: 3
     match_type: EXACT
   }
   match_fields {
-    id: 38
+    id: 39
     name: "hdr.tcp.ecn"
     bitwidth: 3
     match_type: EXACT
   }
   match_fields {
-    id: 39
+    id: 40
     name: "hdr.tcp.urg_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 40
+    id: 41
     name: "hdr.tcp.ack_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 41
+    id: 42
     name: "hdr.tcp.psh_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 42
+    id: 43
     name: "hdr.tcp.rst_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 43
+    id: 44
     name: "hdr.tcp.syn_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 44
+    id: 45
     name: "hdr.tcp.fin_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 45
+    id: 46
     name: "hdr.tcp.window"
     bitwidth: 16
     match_type: EXACT
   }
   match_fields {
-    id: 46
+    id: 47
     name: "hdr.tcp.checksum"
     bitwidth: 16
     match_type: EXACT
   }
   match_fields {
-    id: 47
+    id: 48
     name: "hdr.tcp.urgent_ptr"
     bitwidth: 16
     match_type: EXACT
@@ -829,120 +841,126 @@ tables {
   }
   match_fields {
     id: 28
+    name: "hdr.ipv6.dst_addr"
+    bitwidth: 128
+    match_type: EXACT
+  }
+  match_fields {
+    id: 29
     name: "hdr.icmpv6.type"
     bitwidth: 8
     match_type: EXACT
   }
   match_fields {
-    id: 29
+    id: 30
     name: "hdr.ipv6.next_hdr"
     bitwidth: 8
     match_type: EXACT
   }
   match_fields {
-    id: 30
+    id: 31
     name: "hdr.ipv6.flow_label"
     bitwidth: 20
     match_type: EXACT
   }
   match_fields {
-    id: 31
+    id: 32
     name: "hdr.ipv6.traffic_class"
     bitwidth: 6
     match_type: EXACT
   }
   match_fields {
-    id: 32
+    id: 33
     name: "hdr.tcp.src_port"
     bitwidth: 16
     match_type: EXACT
   }
   match_fields {
-    id: 33
+    id: 34
     name: "hdr.tcp.dst_port"
     bitwidth: 16
     match_type: EXACT
   }
   match_fields {
-    id: 34
+    id: 35
     name: "hdr.tcp.seq_no"
     bitwidth: 32
     match_type: EXACT
   }
   match_fields {
-    id: 35
+    id: 36
     name: "hdr.tcp.ack_no"
     bitwidth: 32
     match_type: EXACT
   }
   match_fields {
-    id: 36
+    id: 37
     name: "hdr.tcp.data_offset"
     bitwidth: 4
     match_type: EXACT
   }
   match_fields {
-    id: 37
+    id: 38
     name: "hdr.tcp.res"
     bitwidth: 3
     match_type: EXACT
   }
   match_fields {
-    id: 38
+    id: 39
     name: "hdr.tcp.ecn"
     bitwidth: 3
     match_type: EXACT
   }
   match_fields {
-    id: 39
+    id: 40
     name: "hdr.tcp.urg_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 40
+    id: 41
     name: "hdr.tcp.ack_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 41
+    id: 42
     name: "hdr.tcp.psh_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 42
+    id: 43
     name: "hdr.tcp.rst_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 43
+    id: 44
     name: "hdr.tcp.syn_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 44
+    id: 45
     name: "hdr.tcp.fin_control_flag"
     bitwidth: 1
     match_type: EXACT
   }
   match_fields {
-    id: 45
+    id: 46
     name: "hdr.tcp.window"
     bitwidth: 16
     match_type: EXACT
   }
   match_fields {
-    id: 46
+    id: 47
     name: "hdr.tcp.checksum"
     bitwidth: 16
     match_type: EXACT
   }
   match_fields {
-    id: 47
+    id: 48
     name: "hdr.tcp.urgent_ptr"
     bitwidth: 16
     match_type: EXACT
@@ -1047,7 +1065,7 @@ counters {
   spec {
     unit: BYTES
   }
-  size: 128
+  size: 64
 }
 direct_counters {
   preamble {
@@ -1156,7 +1174,7 @@ registers {
       }
     }
   }
-  size: 8
+  size: 4
 }
 registers {
   preamble {
@@ -1171,7 +1189,7 @@ registers {
       }
     }
   }
-  size: 8
+  size: 4
 }
 registers {
   preamble {
@@ -1186,7 +1204,7 @@ registers {
       }
     }
   }
-  size: 128
+  size: 64
 }
 registers {
   preamble {

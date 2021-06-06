@@ -709,7 +709,7 @@
         "column" : 72,
         "source_fragment" : "destination_util_counter"
       },
-      "size" : 128,
+      "size" : 64,
       "is_direct" : false
     }
   ],
@@ -723,7 +723,7 @@
         "column" : 55,
         "source_fragment" : "@name(\\\"load_counter\\\")register<bit<32>>(MAX_TOR_SUBNET) load_counter;"
       },
-      "size" : 8,
+      "size" : 4,
       "bitwidth" : 32
     },
     {
@@ -735,7 +735,7 @@
         "column" : 57,
         "source_fragment" : "@name(\\\"stored_bitmask\\\")register<bit<16>>(MAX_TOR_SUBNET) stored_bitmask;"
       },
-      "size" : 8,
+      "size" : 4,
       "bitwidth" : 16
     },
     {
@@ -747,7 +747,7 @@
         "column" : 65,
         "source_fragment" : "@name(\\\"level_to_link_store\\\")register<bit<32>>(MAX_TOR_SUBNET*16) level_to_link_store;"
       },
-      "size" : 128,
+      "size" : 64,
       "bitwidth" : 32
     },
     {
@@ -2094,6 +2094,12 @@
             },
             {
               "match_type" : "exact",
+              "name" : "hdr.ipv6.dst_addr",
+              "target" : ["ipv6", "dst_addr"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
               "name" : "hdr.icmpv6.type",
               "target" : ["icmpv6", "type"],
               "mask" : null
@@ -2658,6 +2664,12 @@
               "match_type" : "exact",
               "name" : "local_metadata.flag_hdr.is_pkt_toward_host",
               "target" : ["flag_hdr", "is_pkt_toward_host"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "hdr.ipv6.dst_addr",
+              "target" : ["ipv6", "dst_addr"],
               "mask" : null
             },
             {
@@ -3251,6 +3263,12 @@
               "match_type" : "exact",
               "name" : "local_metadata.flag_hdr.is_pkt_toward_host",
               "target" : ["flag_hdr", "is_pkt_toward_host"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "hdr.ipv6.dst_addr",
+              "target" : ["ipv6", "dst_addr"],
               "mask" : null
             },
             {

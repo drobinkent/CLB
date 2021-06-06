@@ -697,7 +697,7 @@ class Device:
         return
 
 
-    def hulaUtilBasedReconfigureForLeafSwitches(self, linkUtilStats):
+    def hulaUtilBasedReconfigureForLeafSwitches(self, linkUtilStats,oldLinkUtilStats):
         # for all leafswitch get their 16-31 th bit and convert it to int
         # multply that with the upword port nubers
         # get the resultindex th position in the pulled results.
@@ -725,34 +725,12 @@ class Device:
                                   actionParamName="port_num", oldActionParamValue = None, newActionParamValue= str(minUtilPort))
             # logger.info("Hula path update done for destination "+str(leafSubnetAsIP))
         pass
-    def clbUtilBasedReconfigureForLeafSwitches(self, linkUtilStats):
-        # for all leafswitch get their 16-31 th bit and convert it to int
-        # multply that with the upword port nubers
-        # get the resultindex th position in the pulled results.
-        # use that for that tor
-        for lswitch in self.allLeafSwitchesInTheDCN:
-            e = lswitch.fabric_device_config.switch_host_subnet_prefix.index("/")
-            leafSubnetAsIP = lswitch.fabric_device_config.switch_host_subnet_prefix[0:e]
-            leafSubnetPrefixLength = lswitch.fabric_device_config.switch_host_subnet_prefix[e+1:len(lswitch.fabric_device_config.switch_host_subnet_prefix)]
-            r1 = lswitch.fabric_device_config.switch_host_subnet_prefix.rindex(":")
-            r2 = lswitch.fabric_device_config.switch_host_subnet_prefix[0:r1].rindex(":")
-            torID = int(lswitch.fabric_device_config.switch_host_subnet_prefix[r2+1:r1])
-            # print("ToirId is ")
-            upwardPortList = list(self.portToSpineSwitchMap.keys())
-            pathAndUtilist = []
-            for uPort in upwardPortList:
-                index = int(uPort) + (torID*ConfConst.MAX_PORTS_IN_SWITCH)
-                pathAndUtilist.append((uPort,linkUtilStats[index] ))
-        #Simply Reverse strategy like DASH can work
-        pass
+
 
     def setupHULAUpstreamRouting(self,nameToSwitchMap):
         '''
         This function setup all the relevant stuffs for running the algorithm
         '''
-
-        self.allLeafSwitchesInTheDCN = swUtils.getAllLeafSwitches(nameToSwitchMap)
-
         if self.fabric_device_config.switch_type == SwitchType.LEAF:
             upwardPortList = list(self.portToSpineSwitchMap.keys())
             for lswitch in self.allLeafSwitchesInTheDCN:
@@ -775,7 +753,7 @@ class Device:
         return
 
 
-    def initialCommonSetup(self):
+    def initialCommonSetup(self,nameToSwitchMap):
         '''This funciotn setup dataplane entries for various muslticast grousp and NDP entries and downstream routing in each switch. Irrespective of
         Dataplane algorithms these tasks are common.
         '''
@@ -787,6 +765,7 @@ class Device:
                 fieldName="hdr.ethernet.dst_addr", fieldValue=self.fabric_device_config.my_station_mac)
             leafUtils.addNDPentries(self)
             leafUtils.addDownstreamRoutingRuleForLeafSwitch(self)
+            self.allLeafSwitchesInTheDCN = swUtils.getAllLeafSwitches(nameToSwitchMap)
         elif self.fabric_device_config.switch_type == SwitchType.SPINE:
             spineUtils.addDownstreamRoutingRuleForSpineSwitch(self)
         elif self.fabric_device_config.switch_type == SwitchType.SUPER_SPINE:

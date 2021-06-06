@@ -52,6 +52,8 @@
                 local_metadata.flag_hdr.downstream_routing_table_hit: exact;
                 local_metadata.flag_hdr.is_pkt_toward_host:exact;
 
+                hdr.ipv6.dst_addr:exact;
+
 
                 //all hdr field
 

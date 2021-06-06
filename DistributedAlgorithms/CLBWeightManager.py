@@ -108,3 +108,7 @@ class CLBWeightManager:
         #     print("Valid path_delay_event_type :"+str(parsedPkt.path_delay_event_type))
         pass
 
+    def processStatisticsPulledFromSwitch(self,torID, accumulatedWeightDistribution):
+        clbForTOR = self.torIDToCLB.get(torID)
+        clbForTOR.installDistributionInCPAndGeneratePacketOutMessages(accumulatedWeightDistribution, firstTimeFlag = False)
+

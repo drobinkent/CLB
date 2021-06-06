@@ -98,6 +98,7 @@ class ServerThread:
         # print('Connected by udp client', addr)
 
         #now keep talking with the client
+        totalRcvdBytes=0
         while True:
             # receive data from client (data, addr)
             data, addr = s.recvfrom(1024) # buffer size is 1024 bytes
@@ -105,7 +106,8 @@ class ServerThread:
                 break
             #print("rcvd")
             reply = 'OK...disconnecting'
-
+            totalRcvdBytes = totalRcvdBytes + len(data)
+            print("Toal Byte recevied "+str(totalRcvdBytes))
             # s.sendto(reply , addr)
             # print ('Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + reply.strip())
 

@@ -19,7 +19,6 @@
         ["clb_load_balancing_control_block_stored_bitmask_read_value", 16, false],
         ["clb_load_balancing_control_block_temp", 32, false],
         ["tmp_8", 32, false],
-        ["tmp_9", 32, false],
         ["userMetadata.l4_src_port", 16, false],
         ["userMetadata.l4_dst_port", 16, false],
         ["userMetadata.is_multicast", 1, false],
@@ -644,7 +643,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "p4src/src/leaf.p4",
-        "line" : 306,
+        "line" : 310,
         "column" : 8,
         "source_fragment" : "DeparserImpl"
       },
@@ -735,7 +734,7 @@
         "column" : 72,
         "source_fragment" : "destination_util_counter"
       },
-      "size" : 128,
+      "size" : 64,
       "is_direct" : false
     }
   ],
@@ -749,7 +748,7 @@
         "column" : 55,
         "source_fragment" : "@name(\\\"load_counter\\\")register<bit<32>>(MAX_TOR_SUBNET) load_counter;"
       },
-      "size" : 8,
+      "size" : 4,
       "bitwidth" : 32
     },
     {
@@ -761,7 +760,7 @@
         "column" : 57,
         "source_fragment" : "@name(\\\"stored_bitmask\\\")register<bit<16>>(MAX_TOR_SUBNET) stored_bitmask;"
       },
-      "size" : 8,
+      "size" : 4,
       "bitwidth" : 16
     },
     {
@@ -773,7 +772,7 @@
         "column" : 65,
         "source_fragment" : "@name(\\\"level_to_link_store\\\")register<bit<32>>(MAX_TOR_SUBNET*16) level_to_link_store;"
       },
-      "size" : 128,
+      "size" : 64,
       "bitwidth" : 32
     },
     {
@@ -795,7 +794,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "p4src/src/leaf.p4",
-        "line" : 276,
+        "line" : 280,
         "column" : 8,
         "source_fragment" : "update_checksum(hdr.ndp.isValid(), ..."
       },
@@ -3566,7 +3565,7 @@
       ]
     },
     {
-      "name" : "leaf248",
+      "name" : "leaf263",
       "id" : 30,
       "runtime_data" : [],
       "primitives" : [
@@ -3584,109 +3583,94 @@
                 "value" : {
                   "op" : "&",
                   "left" : {
-                    "type" : "field",
-                    "value" : ["standard_metadata", "egress_port"]
-                  },
-                  "right" : {
-                    "type" : "hexstr",
-                    "value" : "0xffffffff"
-                  }
-                }
-              }
-            }
-          ],
-          "source_info" : {
-            "filename" : "p4src/src/leaf.p4",
-            "line" : 248,
-            "column" : 28,
-            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
-          }
-        },
-        {
-          "op" : "count",
-          "parameters" : [
-            {
-              "type" : "counter_array",
-              "value" : "egressPortCounter"
-            },
-            {
-              "type" : "field",
-              "value" : ["scalars", "tmp_8"]
-            }
-          ],
-          "source_info" : {
-            "filename" : "p4src/src/leaf.p4",
-            "line" : 248,
-            "column" : 4,
-            "source_fragment" : "egressPortCounter.count((bit<32>)standard_metadata.egress_port)"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "tmp_9"]
-            },
-            {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "&",
-                  "left" : {
                     "type" : "expression",
                     "value" : {
-                      "op" : "*",
+                      "op" : "+",
                       "left" : {
-                        "type" : "expression",
-                        "value" : {
-                          "op" : "&",
-                          "left" : {
-                            "type" : "field",
-                            "value" : ["standard_metadata", "egress_port"]
-                          },
-                          "right" : {
-                            "type" : "hexstr",
-                            "value" : "0xffffffff"
-                          }
-                        }
-                      },
-                      "right" : {
                         "type" : "expression",
                         "value" : {
                           "op" : "&",
                           "left" : {
                             "type" : "expression",
                             "value" : {
-                              "op" : "&",
+                              "op" : "+",
                               "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "&",
+                                  "left" : {
+                                    "type" : "field",
+                                    "value" : ["standard_metadata", "egress_port"]
+                                  },
+                                  "right" : {
+                                    "type" : "hexstr",
+                                    "value" : "0xffffffff"
+                                  }
+                                }
+                              },
+                              "right" : {
                                 "type" : "expression",
                                 "value" : {
                                   "op" : "&",
                                   "left" : {
                                     "type" : "expression",
                                     "value" : {
-                                      "op" : ">>",
+                                      "op" : "<<",
                                       "left" : {
-                                        "type" : "field",
-                                        "value" : ["ipv6", "dst_addr"]
+                                        "type" : "expression",
+                                        "value" : {
+                                          "op" : "&",
+                                          "left" : {
+                                            "type" : "expression",
+                                            "value" : {
+                                              "op" : "&",
+                                              "left" : {
+                                                "type" : "expression",
+                                                "value" : {
+                                                  "op" : "&",
+                                                  "left" : {
+                                                    "type" : "expression",
+                                                    "value" : {
+                                                      "op" : ">>",
+                                                      "left" : {
+                                                        "type" : "field",
+                                                        "value" : ["ipv6", "dst_addr"]
+                                                      },
+                                                      "right" : {
+                                                        "type" : "hexstr",
+                                                        "value" : "0x10"
+                                                      }
+                                                    }
+                                                  },
+                                                  "right" : {
+                                                    "type" : "hexstr",
+                                                    "value" : "0xffffffffffffffffffffffffffffffff"
+                                                  }
+                                                }
+                                              },
+                                              "right" : {
+                                                "type" : "hexstr",
+                                                "value" : "0xffff"
+                                              }
+                                            }
+                                          },
+                                          "right" : {
+                                            "type" : "hexstr",
+                                            "value" : "0xffffffff"
+                                          }
+                                        }
                                       },
                                       "right" : {
                                         "type" : "hexstr",
-                                        "value" : "0xf"
+                                        "value" : "0x4"
                                       }
                                     }
                                   },
                                   "right" : {
                                     "type" : "hexstr",
-                                    "value" : "0xffffffffffffffffffffffffffffffff"
+                                    "value" : "0xffffffff"
                                   }
                                 }
-                              },
-                              "right" : {
-                                "type" : "hexstr",
-                                "value" : "0x01ffff"
                               }
                             }
                           },
@@ -3695,6 +3679,10 @@
                             "value" : "0xffffffff"
                           }
                         }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffffffff"
                       }
                     }
                   },
@@ -3708,9 +3696,9 @@
           ],
           "source_info" : {
             "filename" : "p4src/src/leaf.p4",
-            "line" : 258,
+            "line" : 259,
             "column" : 28,
-            "source_fragment" : "(bit<32>)standard_metadata.egress_port * (bit<32>)hdr.ipv6.dst_addr[31:15]"
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port + (MAX_PORTS_IN_SWITCH* (bit<32>)hdr.ipv6.dst_addr[31:16]) -1"
           }
         },
         {
@@ -3722,12 +3710,12 @@
             },
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_9"]
+              "value" : ["scalars", "tmp_8"]
             }
           ],
           "source_info" : {
             "filename" : "p4src/src/leaf.p4",
-            "line" : 259,
+            "line" : 263,
             "column" : 4,
             "source_fragment" : "destination_util_counter.count((bit<32>)counter_index)"
           }
@@ -4091,6 +4079,12 @@
               "match_type" : "exact",
               "name" : "local_metadata.flag_hdr.is_pkt_toward_host",
               "target" : ["flag_hdr", "is_pkt_toward_host"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "hdr.ipv6.dst_addr",
+              "target" : ["ipv6", "dst_addr"],
               "mask" : null
             },
             {
@@ -4882,6 +4876,12 @@
             },
             {
               "match_type" : "exact",
+              "name" : "hdr.ipv6.dst_addr",
+              "target" : ["ipv6", "dst_addr"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
               "name" : "hdr.icmpv6.type",
               "target" : ["icmpv6", "type"],
               "mask" : null
@@ -5604,6 +5604,12 @@
             },
             {
               "match_type" : "exact",
+              "name" : "hdr.ipv6.dst_addr",
+              "target" : ["ipv6", "dst_addr"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
               "name" : "hdr.icmpv6.type",
               "target" : ["icmpv6", "type"],
               "mask" : null
@@ -5731,9 +5737,9 @@
           "direct_meters" : null,
           "action_ids" : [27],
           "actions" : ["NoAction"],
-          "base_default_next" : "tbl_leaf248",
+          "base_default_next" : "tbl_leaf263",
           "next_tables" : {
-            "NoAction" : "tbl_leaf248"
+            "NoAction" : "tbl_leaf263"
           },
           "default_entry" : {
             "action_id" : 27,
@@ -5743,13 +5749,13 @@
           }
         },
         {
-          "name" : "tbl_leaf248",
+          "name" : "tbl_leaf263",
           "id" : 26,
           "source_info" : {
             "filename" : "p4src/src/leaf.p4",
-            "line" : 248,
+            "line" : 263,
             "column" : 4,
-            "source_fragment" : "egressPortCounter.count((bit<32>)standard_metadata.egress_port); ..."
+            "source_fragment" : "destination_util_counter.count((bit<32>)counter_index)"
           },
           "key" : [],
           "match_type" : "exact",
@@ -5759,10 +5765,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [30],
-          "actions" : ["leaf248"],
+          "actions" : ["leaf263"],
           "base_default_next" : null,
           "next_tables" : {
-            "leaf248" : null
+            "leaf263" : null
           },
           "default_entry" : {
             "action_id" : 30,
@@ -5852,7 +5858,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "p4src/src/leaf.p4",
-        "line" : 276,
+        "line" : 280,
         "column" : 8,
         "source_fragment" : "update_checksum(hdr.ndp.isValid(), ..."
       },
