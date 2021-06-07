@@ -101,12 +101,12 @@ def l2StridePatternTestPairCreator(nameToHostMap, maxPortcountInSwitch):
             destList.append((peerHostObject))
             count = count+1
         print("Src: "+srcHostName+" peer host:"+peerName)
-        if(count>=(len(nameToHostMap))/2):
+        if(count>=(len(nameToHostMap))):
             break;
 
 
     return srcList, destList
-def getStrideDeploymentPairs(nameToHostMap,maxPortcountInSwitch,testCaseName, loadFactor, testDuration):
+def getStrideDeploymentPairs(nameToHostMap,maxPortcountInSwitch,testCaseName, loadFactor, testDuration,testStartDelay ):
     # foreach scrc-dest-pair
     #       login to src
     #       foreach of the flows
@@ -124,11 +124,14 @@ def getStrideDeploymentPairs(nameToHostMap,maxPortcountInSwitch,testCaseName, lo
         j=0
         for i in range(0, len(srcList)):
             flowArrivalTimesByflowType = calculateFlowArrivalTimes(loadFactor, testDuration)
-            for i in range (0, len(ConfigConst.FLOW_TYPE_IDENTIFIER_BY_FLOW_VOLUME_IN_KB)):
-                flowsizeInPacket = math.ceil(((ConfigConst.FLOW_TYPE_IDENTIFIER_BY_FLOW_VOLUME_IN_KB[i]*1024)/(ConfigConst.PACKET_SIZE)))
-                for j in range (0, len(flowArrivalTimesByflowType[i])):
-                    flowArraivalTime = flowArrivalTimesByflowType[i][j]
-                    newDeploymentPair = tc.IPerfDeplymentPair(srcList[i], destList[i], srcList[i].getNextIPerf3ClientPort(), destList[i].getNextIPerf3ServerPort(),testCaseName, startTime= flowArraivalTime)
+            for j in range (0, len(ConfigConst.FLOW_TYPE_IDENTIFIER_BY_FLOW_VOLUME_IN_KB)):
+                flowsizeAsPacketCount = math.ceil(((ConfigConst.FLOW_TYPE_IDENTIFIER_BY_FLOW_VOLUME_IN_KB[j]*1024)/(ConfigConst.PACKET_SIZE)))
+                for k in range (0, len(flowArrivalTimesByflowType[j])):
+                    flowArraivalTime = flowArrivalTimesByflowType[j][k]
+                    newDeploymentPair = tc.IPerfDeplymentPair(srcList[i], destList[i], srcList[i].getNextIPerf3ClientPort(),
+                                                              destList[i].getNextIPerf3ServerPort(),testCaseName = testCaseName,
+                                                              srcHostName=srcList[i].hostName, destHostName= destList[i].hostName,
+                                                              startTime= flowArraivalTime+float(testStartDelay),flowSizeinPackets= flowsizeAsPacketCount)
                     deploymentPairList.append(newDeploymentPair)
                     print(newDeploymentPair.getServerCommand())
     return deploymentPairList
@@ -184,20 +187,46 @@ class TestCommandDeployer:
                 print("Timer file closed ")
 
     def generateTestCommands(self, testCaseNAme,loadFactor,testDuration, maxPortcountInSwitch):
-        deploymentPairsAsList = getStrideDeploymentPairs(nameToHostMap = self.nameToHostMap,maxPortcountInSwitch = maxPortcountInSwitch,testCaseName = testCaseNAme, loadFactor=loadFactor, testDuration=testDuration)
+        deploymentPairsAsList = getStrideDeploymentPairs(nameToHostMap = self.nameToHostMap,maxPortcountInSwitch = maxPortcountInSwitch,testCaseName = testCaseNAme,
+                                                         loadFactor=loadFactor, testDuration=testDuration, testStartDelay = self.testStartDelay)
+        access_rights = 0o777
+        self.testCaseNAme = testCaseNAme
         try:
             original_umask = os.umask(0)
-            fh = open(self.resultFolder + "/"+testCaseNAme, 'w+')
+            logger.info("Original mask is "+str(original_umask))
+            folderTobecreated = confConst.TEST_RESULT_FOLDER+"/"+self.testCaseNAme
+
+            print("folder creation completed")
+            os.umask(original_umask)
+        except Exception as e:
+            logger.error("Exception occured in creating folder for test case results. ", e)
+
+        try:
+            original_umask = os.umask(0)
+            fh = open(self.resultFolder + "/"+testCaseNAme+".serverdat", 'w+')
             for d in deploymentPairsAsList:
                 fh.write(str(d.getServerCommand()))
                 fh.write("\n")
             os.umask(original_umask)
         except Exception as e:
-                logger.error("Exception occured in creating flow scheduler condofuration for . "+testCaseNAme+". Exception is ", e)
+                logger.error("Exception occured in creating serverside flow scheduler configuration for . "+testCaseNAme+". Exception is ", e)
         finally:
             if(fh != None):
                 fh.close()
-                print("Timer file closed ")
+                print("Serverdat file closed ")
+        try:
+            original_umask = os.umask(0)
+            fh = open(self.resultFolder + "/"+testCaseNAme+".clientdat", 'w+')
+            for d in deploymentPairsAsList:
+                fh.write(str(d.getCleintCommand()))
+                fh.write("\n")
+            os.umask(original_umask)
+        except Exception as e:
+            logger.error("Exception occurred in creating cleintside flow scheduler configuration for . "+testCaseNAme+". Exception is ", e)
+        finally:
+            if(fh != None):
+                fh.close()
+                print("clientdat file closed ")
 
 
 
@@ -208,7 +237,7 @@ if __name__ == "__main__":
     #This is always the topology configuration.
     topologyConfigFilePath =  confConst.TOPOLOGY_CONFIG_FILE
     testEvaluator = TestCommandDeployer(topologyConfigFilePath = confConst.TOPOLOGY_CONFIG_FILE,resultFolder = "FlowInfos" , clientPortStart=confConst.IPERF3_CLIENT_PORT_START,
-                        serverPortStart=confConst.IPERF3_SERVER_PORT_START, testStartDelay=50)
+                        serverPortStart=confConst.IPERF3_SERVER_PORT_START, testStartDelay=10)
     testEvaluator.setupTestCaseFolder()
-    testEvaluator.generateTestCommands( testCaseNAme= "WebSearchWorkLoad_load_factor_0_point_8",loadFactor=0.8,testDuration=200,maxPortcountInSwitch=ConfigConst.MAX_PORTS_IN_SWITCH)
+    testEvaluator.generateTestCommands( testCaseNAme= "WebSearchWorkLoad_load_factor_0.2",loadFactor=0.2,testDuration=50,maxPortcountInSwitch=ConfigConst.MAX_PORTS_IN_SWITCH)
 

@@ -1,0 +1,728 @@
+[06-07 17:50:23] p12062 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h0p0l0
+[06-07 17:50:23] p12062 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:23] p12062 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:23] p12063 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0001 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0000_32001_2001:1:1:1:0:0000:0001:0001_42001 31.52505352138654 
+
+[06-07 17:50:23] p12062 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:23] p12062 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:23] p12062 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:23] p12063 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0001 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0000_32002_2001:1:1:1:0:0000:0001:0001_42002 33.99527010576951 
+
+[06-07 17:50:23] p12062 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:23] p12063 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0001 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0000_32003_2001:1:1:1:0:0000:0001:0001_42003 39.415368855810044 
+
+[06-07 17:50:23] p12062 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:23] p12063 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0001 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0000_32004_2001:1:1:1:0:0000:0001:0001_42004 45.30537579630218 
+
+[06-07 17:50:23] p12063 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0001 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0000_32005_2001:1:1:1:0:0000:0001:0001_42005 45.40303983883705 
+
+[06-07 17:50:23] p12062 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:23] p12063 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0001 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0000_32006_2001:1:1:1:0:0000:0001:0001_42006 45.45858069786138 
+
+[06-07 17:50:23] p12062 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42009 
+
+[06-07 17:50:23] p12063 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0001 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0000_32007_2001:1:1:1:0:0000:0001:0001_42007 51.460399036553966 
+
+[06-07 17:50:23] p12063 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0001 42008 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0000_32008_2001:1:1:1:0:0000:0001:0001_42008 53.5904389196983 
+
+[06-07 17:50:23] p12063 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0001 42009 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0000_32009_2001:1:1:1:0:0000:0001:0001_42009 53.71548917288525 
+
+[06-07 17:50:23] p12062 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42010 
+
+[06-07 17:50:23] p12062 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42011 
+
+[06-07 17:50:23] p12062 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42012 
+
+[06-07 17:50:23] p12085 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0001 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32001_2001:1:1:1:0:0000:0002:0001_42001 10.875898293310012 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h0p0l1
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:23] p12085 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0001 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32002_2001:1:1:1:0:0000:0002:0001_42002 35.80326335664324 
+
+[06-07 17:50:23] p12085 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0001 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32003_2001:1:1:1:0:0000:0002:0001_42003 40.24742547837445 
+
+[06-07 17:50:23] p12085 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0001 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32004_2001:1:1:1:0:0000:0002:0001_42004 51.51300868847446 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:23] p12085 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0001 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32005_2001:1:1:1:0:0000:0002:0001_42005 56.497876522606596 
+
+[06-07 17:50:23] p12085 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0001 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32006_2001:1:1:1:0:0000:0002:0001_42006 57.30837309788258 
+
+[06-07 17:50:23] p12085 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0001 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32007_2001:1:1:1:0:0000:0002:0001_42007 58.56696017241596 
+
+[06-07 17:50:23] p12085 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0001 42008 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32008_2001:1:1:1:0:0000:0002:0001_42008 15.064790769507777 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:23] p12085 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0001 42009 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32009_2001:1:1:1:0:0000:0002:0001_42009 57.80033365004617 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:23] p12181 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0001 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32001_2001:1:1:1:0:0000:0003:0001_42001 19.893507105411956 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h0p0l2
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42009 
+
+[06-07 17:50:23] p12181 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0001 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32002_2001:1:1:1:0:0000:0003:0001_42002 25.648096885105303 
+
+[06-07 17:50:23] p12181 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0001 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32003_2001:1:1:1:0:0000:0003:0001_42003 30.75719174895904 
+
+[06-07 17:50:23] p12181 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0001 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32004_2001:1:1:1:0:0000:0003:0001_42004 36.14558637214931 
+
+[06-07 17:50:23] p12181 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0001 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32005_2001:1:1:1:0:0000:0003:0001_42005 47.279355766781684 
+
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:23] p12181 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0001 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32006_2001:1:1:1:0:0000:0003:0001_42006 53.427601051848306 
+
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42010 
+
+[06-07 17:50:23] p12181 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0001 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32007_2001:1:1:1:0:0000:0003:0001_42007 57.01056998980416 
+
+[06-07 17:50:23] p12227 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h0p0l3
+[06-07 17:50:23] p12227 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42011 
+
+[06-07 17:50:23] p12181 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0001 42008 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32008_2001:1:1:1:0:0000:0003:0001_42008 57.80054639557157 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42012 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42013 
+
+[06-07 17:50:23] p12227 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:23] p12181 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0001 42009 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32009_2001:1:1:1:0:0000:0003:0001_42009 58.61647976409084 
+
+[06-07 17:50:23] p12227 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42014 
+
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:23] p12231 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0001 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32001_2001:1:1:1:0:0000:0000:0001_42001 10.835467192027572 
+
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42009 
+
+[06-07 17:50:23] p12181 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0001 42010 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32010_2001:1:1:1:0:0000:0003:0001_42010 59.02736102467157 
+
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42010 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42015 
+
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42011 
+
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42012 
+
+[06-07 17:50:23] p12227 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42016 
+
+[06-07 17:50:23] p12181 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0001 42011 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32011_2001:1:1:1:0:0000:0003:0001_42011 20.523002891641866 
+
+[06-07 17:50:23] p12231 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0001 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32002_2001:1:1:1:0:0000:0000:0001_42002 10.939190233044574 
+
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42013 
+
+[06-07 17:50:23] p12231 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0001 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32003_2001:1:1:1:0:0000:0000:0001_42003 13.002241569246916 
+
+[06-07 17:50:23] p12227 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42017 
+
+[06-07 17:50:23] p12181 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0001 42012 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32012_2001:1:1:1:0:0000:0003:0001_42012 39.049038191876676 
+
+[06-07 17:50:23] p12231 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0001 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32004_2001:1:1:1:0:0000:0000:0001_42004 13.142389877220058 
+
+[06-07 17:50:23] p12182 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42014 
+
+[06-07 17:50:23] p12227 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42018 
+
+[06-07 17:50:23] p12231 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0001 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32005_2001:1:1:1:0:0000:0000:0001_42005 16.273549697518217 
+
+[06-07 17:50:23] p12231 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0001 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32006_2001:1:1:1:0:0000:0000:0001_42006 23.270412802982733 
+
+[06-07 17:50:23] p12227 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42019 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42020 
+
+[06-07 17:50:23] p12086 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42021 
+
+[06-07 17:50:23] p12231 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0001 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32007_2001:1:1:1:0:0000:0000:0001_42007 27.795683174231275 
+
+[06-07 17:50:23] p12231 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0001 42008 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32008_2001:1:1:1:0:0000:0000:0001_42008 33.23539481350499 
+
+[06-07 17:50:23] p12231 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0001 42009 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32009_2001:1:1:1:0:0000:0000:0001_42009 43.622283390959616 
+
+[06-07 17:50:23] p12227 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:23] p12231 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h0p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0001 42010 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32010_2001:1:1:1:0:0000:0000:0001_42010 44.30528603842638 
+
+[06-07 17:50:23] p12227 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h0p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42009 
+
+[06-07 17:50:23] p12423 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h1p0l0
+[06-07 17:50:23] p12423 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:23] p12423 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:23] p12423 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:23] p12423 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:23] p12423 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:23] p12423 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:23] p12423 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:23] p12423 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:23] p12423 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42009 
+
+[06-07 17:50:23] p12423 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42010 
+
+[06-07 17:50:23] p12418 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0002 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32001_2001:1:1:1:0:0000:0001:0002_42001 10.097317580382528 
+
+[06-07 17:50:23] p12418 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0002 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32002_2001:1:1:1:0:0000:0001:0002_42002 11.835054913617256 
+
+[06-07 17:50:23] p12418 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0002 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32003_2001:1:1:1:0:0000:0001:0002_42003 12.677720592114502 
+
+[06-07 17:50:23] p12418 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0002 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32004_2001:1:1:1:0:0000:0001:0002_42004 25.007327750696053 
+
+[06-07 17:50:23] p12418 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0002 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32005_2001:1:1:1:0:0000:0001:0002_42005 35.21168811899753 
+
+[06-07 17:50:23] p12418 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0002 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32006_2001:1:1:1:0:0000:0001:0002_42006 37.619943793858695 
+
+[06-07 17:50:23] p12418 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0002 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32007_2001:1:1:1:0:0000:0001:0002_42007 37.83107312444078 
+
+[06-07 17:50:23] p12484 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0002 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32001_2001:1:1:1:0:0000:0002:0002_42001 10.197290635481467 
+
+[06-07 17:50:23] p12418 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0002 42008 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32008_2001:1:1:1:0:0000:0001:0002_42008 52.147250260448025 
+
+[06-07 17:50:23] p12418 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0002 42009 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32009_2001:1:1:1:0:0000:0001:0002_42009 54.17634833878231 
+
+[06-07 17:50:23] p12482 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h1p0l1
+[06-07 17:50:23] p12482 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:23] p12484 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0002 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32002_2001:1:1:1:0:0000:0002:0002_42002 13.308649337282516 
+
+[06-07 17:50:23] p12418 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0002 42010 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32010_2001:1:1:1:0:0000:0001:0002_42010 59.57728429790737 
+
+[06-07 17:50:23] p12482 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:23] p12482 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:23] p12418 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0002 42011 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32011_2001:1:1:1:0:0000:0001:0002_42011 16.401511065520275 
+
+[06-07 17:50:23] p12482 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:23] p12484 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0002 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32003_2001:1:1:1:0:0000:0002:0002_42003 14.742755130779964 
+
+[06-07 17:50:23] p12484 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0002 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32004_2001:1:1:1:0:0000:0002:0002_42004 26.32769104402707 
+
+[06-07 17:50:23] p12482 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:23] p12418 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0002 42012 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32012_2001:1:1:1:0:0000:0001:0002_42012 16.984222418163846 
+
+[06-07 17:50:23] p12482 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:23] p12484 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0002 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32005_2001:1:1:1:0:0000:0002:0002_42005 28.89726043963657 
+
+[06-07 17:50:23] p12484 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0002 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32006_2001:1:1:1:0:0000:0002:0002_42006 31.575039768709665 
+
+[06-07 17:50:23] p12484 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0002 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32007_2001:1:1:1:0:0000:0002:0002_42007 34.968276693465 
+
+[06-07 17:50:24] p12484 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0002 42008 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32008_2001:1:1:1:0:0000:0002:0002_42008 37.39211899232005 
+
+[06-07 17:50:24] p12482 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:24] p12482 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:24] p12484 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0002 42009 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32009_2001:1:1:1:0:0000:0002:0002_42009 48.73903406389344 
+
+[06-07 17:50:24] p12484 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0002 42010 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32010_2001:1:1:1:0:0000:0002:0002_42010 59.85846158037487 
+
+[06-07 17:50:24] p12484 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0002 42011 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32011_2001:1:1:1:0:0000:0002:0002_42011 17.170505748441215 
+
+[06-07 17:50:24] p12484 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0002 42012 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32012_2001:1:1:1:0:0000:0002:0002_42012 21.76694947328645 
+
+[06-07 17:50:24] p12482 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42009 
+
+[06-07 17:50:24] p12617 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0002 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0001_32001_2001:1:1:1:0:0000:0003:0002_42001 19.326130225594643 
+
+[06-07 17:50:24] p12617 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0002 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0001_32002_2001:1:1:1:0:0000:0003:0002_42002 44.23319574629949 
+
+[06-07 17:50:24] p12617 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0002 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0001_32003_2001:1:1:1:0:0000:0003:0002_42003 50.41298854463523 
+
+[06-07 17:50:24] p12617 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0002 42004 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0001_32004_2001:1:1:1:0:0000:0003:0002_42004 52.75215743779743 
+
+[06-07 17:50:24] p12619 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h1p0l2
+[06-07 17:50:24] p12619 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:24] p12619 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:24] p12619 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:24] p12619 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:24] p12619 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:24] p12619 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:24] p12619 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:24] p12619 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:24] p12619 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42009 
+
+[06-07 17:50:24] p12648 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0002 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32001_2001:1:1:1:0:0000:0000:0002_42001 13.016068807739947 
+
+[06-07 17:50:24] p12651 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h1p0l3
+[06-07 17:50:24] p12651 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:24] p12648 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0002 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32002_2001:1:1:1:0:0000:0000:0002_42002 13.789612283925736 
+
+[06-07 17:50:24] p12651 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:24] p12651 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:24] p12648 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0002 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32003_2001:1:1:1:0:0000:0000:0002_42003 15.144896328317378 
+
+[06-07 17:50:24] p12648 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0002 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32004_2001:1:1:1:0:0000:0000:0002_42004 20.866025283615507 
+
+[06-07 17:50:24] p12651 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:24] p12648 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0002 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32005_2001:1:1:1:0:0000:0000:0002_42005 22.04469850300449 
+
+[06-07 17:50:24] p12648 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0002 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32006_2001:1:1:1:0:0000:0000:0002_42006 48.02201290718321 
+
+[06-07 17:50:24] p12651 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:24] p12651 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:24] p12648 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0002 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32007_2001:1:1:1:0:0000:0000:0002_42007 48.504171996999105 
+
+[06-07 17:50:24] p12651 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:24] p12651 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:24] p12651 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42009 
+
+[06-07 17:50:24] p12648 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0002 42008 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32008_2001:1:1:1:0:0000:0000:0002_42008 52.13748604718251 
+
+[06-07 17:50:24] p12651 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42010 
+
+[06-07 17:50:24] p12651 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42011 
+
+[06-07 17:50:24] p12648 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0002 42009 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32009_2001:1:1:1:0:0000:0000:0002_42009 56.939529440781904 
+
+[06-07 17:50:24] p12651 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h1p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42012 
+
+[06-07 17:50:24] p12648 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h1p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0002 42010 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32010_2001:1:1:1:0:0000:0000:0002_42010 22.179598985273365 
+
+[06-07 17:50:24] p12752 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0003 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32001_2001:1:1:1:0:0000:0001:0003_42001 12.221473241886436 
+
+[06-07 17:50:24] p12756 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h2p0l0
+[06-07 17:50:24] p12756 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:24] p12752 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0003 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32002_2001:1:1:1:0:0000:0001:0003_42002 22.370454434310247 
+
+[06-07 17:50:24] p12752 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0003 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32003_2001:1:1:1:0:0000:0001:0003_42003 23.726108866246655 
+
+[06-07 17:50:24] p12752 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0003 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32004_2001:1:1:1:0:0000:0001:0003_42004 25.458103685892183 
+
+[06-07 17:50:24] p12752 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0003 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32005_2001:1:1:1:0:0000:0001:0003_42005 27.40274859278944 
+
+[06-07 17:50:24] p12752 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0003 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32006_2001:1:1:1:0:0000:0001:0003_42006 39.78671351597761 
+
+[06-07 17:50:24] p12756 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:24] p12752 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0003 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32007_2001:1:1:1:0:0000:0001:0003_42007 57.423616035199714 
+
+[06-07 17:50:24] p12756 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:24] p12756 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:24] p12752 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0003 42008 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32008_2001:1:1:1:0:0000:0001:0003_42008 28.03800427331711 
+
+[06-07 17:50:24] p12756 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:24] p12752 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0003 42009 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32009_2001:1:1:1:0:0000:0001:0003_42009 34.10785416949308 
+
+[06-07 17:50:24] p12756 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:24] p12752 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0003 42010 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32010_2001:1:1:1:0:0000:0001:0003_42010 42.10667122926574 
+
+[06-07 17:50:24] p12756 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:24] p12756 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:24] p12756 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42009 
+
+[06-07 17:50:24] p12756 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42010 
+
+[06-07 17:50:24] p12853 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h2p0l1
+[06-07 17:50:24] p12853 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:24] p12847 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0003 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32001_2001:1:1:1:0:0000:0002:0003_42001 19.07745586054274 
+
+[06-07 17:50:24] p12853 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:24] p12853 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:24] p12847 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0003 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32002_2001:1:1:1:0:0000:0002:0003_42002 19.77415270805927 
+
+[06-07 17:50:24] p12853 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:24] p12847 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0003 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32003_2001:1:1:1:0:0000:0002:0003_42003 29.037742467496198 
+
+[06-07 17:50:24] p12847 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0003 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32004_2001:1:1:1:0:0000:0002:0003_42004 40.09893479931295 
+
+[06-07 17:50:24] p12847 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0003 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32005_2001:1:1:1:0:0000:0002:0003_42005 44.27939722381489 
+
+[06-07 17:50:24] p12853 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:24] p12853 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:24] p12847 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0003 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32006_2001:1:1:1:0:0000:0002:0003_42006 45.86354107508549 
+
+[06-07 17:50:24] p12847 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0003 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32007_2001:1:1:1:0:0000:0002:0003_42007 49.6188251718407 
+
+[06-07 17:50:24] p12847 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0003 42008 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32008_2001:1:1:1:0:0000:0002:0003_42008 44.47882666322172 
+
+[06-07 17:50:24] p12853 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:24] p12853 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:24] p12853 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42009 
+
+[06-07 17:50:24] p12853 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42010 
+
+[06-07 17:50:24] p12894 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0003 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32001_2001:1:1:1:0:0000:0003:0003_42001 14.007802057391185 
+
+[06-07 17:50:24] p12853 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42011 
+
+[06-07 17:50:24] p12893 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h2p0l2
+[06-07 17:50:24] p12893 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:24] p12893 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:24] p12893 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:24] p12853 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42012 
+
+[06-07 17:50:24] p12893 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:24] p12893 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:24] p12893 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:24] p12894 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0003 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32002_2001:1:1:1:0:0000:0003:0003_42002 18.953504086297375 
+
+[06-07 17:50:24] p12893 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:24] p12893 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:24] p12893 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42009 
+
+[06-07 17:50:24] p12894 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0003 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32003_2001:1:1:1:0:0000:0003:0003_42003 26.216921143204726 
+
+[06-07 17:50:24] p12893 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42010 
+
+[06-07 17:50:24] p12894 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0003 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32004_2001:1:1:1:0:0000:0003:0003_42004 28.290655768189158 
+
+[06-07 17:50:24] p12893 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42011 
+
+[06-07 17:50:24] p12894 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0003 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32005_2001:1:1:1:0:0000:0003:0003_42005 30.64749363847757 
+
+[06-07 17:50:24] p12893 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42012 
+
+[06-07 17:50:24] p12894 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0003 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32006_2001:1:1:1:0:0000:0003:0003_42006 31.14047770471295 
+
+[06-07 17:50:24] p12894 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0003 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32007_2001:1:1:1:0:0000:0003:0003_42007 31.308846214703536 
+
+[06-07 17:50:24] p12894 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0003 42008 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32008_2001:1:1:1:0:0000:0003:0003_42008 35.21748050158138 
+
+[06-07 17:50:24] p12894 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0003 42009 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32009_2001:1:1:1:0:0000:0003:0003_42009 36.47521282590526 
+
+[06-07 17:50:24] p12894 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0003 42010 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32010_2001:1:1:1:0:0000:0003:0003_42010 14.178731850761263 
+
+[06-07 17:50:24] p13026 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h2p0l3
+[06-07 17:50:24] p13026 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:24] p13026 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:24] p13026 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32001_2001:1:1:1:0:0000:0000:0003_42001 11.313239547731564 
+
+[06-07 17:50:24] p13026 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h2p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32002_2001:1:1:1:0:0000:0000:0003_42002 13.197816765611588 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32003_2001:1:1:1:0:0000:0000:0003_42003 13.222978148974187 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32004_2001:1:1:1:0:0000:0000:0003_42004 14.983653073727801 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32005_2001:1:1:1:0:0000:0000:0003_42005 20.5354195024554 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32006_2001:1:1:1:0:0000:0000:0003_42006 27.50285494057689 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32007_2001:1:1:1:0:0000:0000:0003_42007 29.296325750364417 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42008 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32008_2001:1:1:1:0:0000:0000:0003_42008 33.4176894080761 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42009 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32009_2001:1:1:1:0:0000:0000:0003_42009 34.35651951433392 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42010 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32010_2001:1:1:1:0:0000:0000:0003_42010 42.488498367372856 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42011 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32011_2001:1:1:1:0:0000:0000:0003_42011 42.9911759784641 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42012 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32012_2001:1:1:1:0:0000:0000:0003_42012 43.90079852092682 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42013 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32013_2001:1:1:1:0:0000:0000:0003_42013 48.30742520656338 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32001_2001:1:1:1:0:0000:0001:0000_42001 14.558393970423197 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32002_2001:1:1:1:0:0000:0001:0000_42002 18.51518111669484 
+
+[06-07 17:50:24] p13063 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h3p0l0
+[06-07 17:50:24] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42014 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32014_2001:1:1:1:0:0000:0000:0003_42014 52.45056168874691 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42015 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32015_2001:1:1:1:0:0000:0000:0003_42015 12.19463135281246 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32003_2001:1:1:1:0:0000:0001:0000_42003 27.16620553085159 
+
+[06-07 17:50:24] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32004_2001:1:1:1:0:0000:0001:0000_42004 32.150275180744586 
+
+[06-07 17:50:24] p13027 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h2p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0003 42016 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32016_2001:1:1:1:0:0000:0000:0003_42016 58.131294023609804 
+
+[06-07 17:50:24] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32005_2001:1:1:1:0:0000:0001:0000_42005 32.81054719341161 
+
+[06-07 17:50:24] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:24] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32006_2001:1:1:1:0:0000:0001:0000_42006 38.495864632134854 
+
+[06-07 17:50:24] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32007_2001:1:1:1:0:0000:0001:0000_42007 39.962924323840035 
+
+[06-07 17:50:24] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42008 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32008_2001:1:1:1:0:0000:0001:0000_42008 42.26691171114533 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42009 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32009_2001:1:1:1:0:0000:0001:0000_42009 42.399043212951035 
+
+[06-07 17:50:24] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:24] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42009 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42010 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32010_2001:1:1:1:0:0000:0001:0000_42010 42.49922889857125 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42011 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32011_2001:1:1:1:0:0000:0001:0000_42011 46.77224792806474 
+
+[06-07 17:50:24] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42010 
+
+[06-07 17:50:24] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42011 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42012 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32012_2001:1:1:1:0:0000:0001:0000_42012 54.130309858867186 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42013 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32013_2001:1:1:1:0:0000:0001:0000_42013 54.15786621054188 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42014 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32014_2001:1:1:1:0:0000:0001:0000_42014 56.08347959202356 
+
+[06-07 17:50:24] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42012 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42015 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32015_2001:1:1:1:0:0000:0001:0000_42015 58.65478317081739 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42016 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32016_2001:1:1:1:0:0000:0001:0000_42016 58.83638919156699 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42017 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32017_2001:1:1:1:0:0000:0001:0000_42017 59.447139462399655 
+
+[06-07 17:50:24] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42018 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32018_2001:1:1:1:0:0000:0001:0000_42018 11.856790380243023 
+
+[06-07 17:50:24] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42013 
+
+[06-07 17:50:25] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42014 
+
+[06-07 17:50:25] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42015 
+
+[06-07 17:50:25] p13063 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l0is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42016 
+
+[06-07 17:50:25] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42019 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32019_2001:1:1:1:0:0000:0001:0000_42019 17.77611245994629 
+
+[06-07 17:50:25] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42020 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32020_2001:1:1:1:0:0000:0001:0000_42020 25.337898499272256 
+
+[06-07 17:50:25] p13155 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h3p0l1
+[06-07 17:50:25] p13155 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:25] p13066 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l0is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0001:0000 42021 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32021_2001:1:1:1:0:0000:0001:0000_42021 30.525840028860625 
+
+[06-07 17:50:25] p13158 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0000 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32001_2001:1:1:1:0:0000:0002:0000_42001 16.18381727929126 
+
+[06-07 17:50:25] p13155 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:25] p13158 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0000 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32002_2001:1:1:1:0:0000:0002:0000_42002 22.877219107684233 
+
+[06-07 17:50:25] p13155 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:25] p13158 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0000 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32003_2001:1:1:1:0:0000:0002:0000_42003 27.320017702842755 
+
+[06-07 17:50:25] p13155 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:25] p13263 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h3p0l2
+[06-07 17:50:25] p13263 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:25] p13158 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0000 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32004_2001:1:1:1:0:0000:0002:0000_42004 27.87295534961548 
+
+[06-07 17:50:25] p13155 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:25] p13158 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0000 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32005_2001:1:1:1:0:0000:0002:0000_42005 28.785599412144677 
+
+[06-07 17:50:25] p13158 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0000 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32006_2001:1:1:1:0:0000:0002:0000_42006 31.114274527494576 
+
+[06-07 17:50:25] p13158 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0000 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32007_2001:1:1:1:0:0000:0002:0000_42007 36.87193540206907 
+
+[06-07 17:50:25] p13263 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:25] p13155 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:25] p13267 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0000 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0003_32001_2001:1:1:1:0:0000:0003:0000_42001 10.939151440090857 
+
+[06-07 17:50:25] p13155 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:25] p13158 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0000 42008 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32008_2001:1:1:1:0:0000:0002:0000_42008 41.12779867901547 
+
+[06-07 17:50:25] p13263 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:25] p13158 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0000 42009 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32009_2001:1:1:1:0:0000:0002:0000_42009 43.336976110456185 
+
+[06-07 17:50:25] p13155 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:25] p13267 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0000 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0003_32002_2001:1:1:1:0:0000:0003:0000_42002 13.87051195436559 
+
+[06-07 17:50:25] p13263 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:25] p13155 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42009 
+
+[06-07 17:50:25] p13158 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0000 42010 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32010_2001:1:1:1:0:0000:0002:0000_42010 47.96622861682108 
+
+[06-07 17:50:25] p13158 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0000 42011 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32011_2001:1:1:1:0:0000:0002:0000_42011 49.250333991015566 
+
+[06-07 17:50:25] p13155 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l1is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42010 
+
+[06-07 17:50:25] p13158 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0000 42012 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32012_2001:1:1:1:0:0000:0002:0000_42012 55.45877974909274 
+
+[06-07 17:50:25] p13263 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:25] p13267 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0000 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0003_32003_2001:1:1:1:0:0000:0003:0000_42003 14.460844468542858 
+
+[06-07 17:50:25] p13158 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0000 42013 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32013_2001:1:1:1:0:0000:0002:0000_42013 55.906653152080644 
+
+[06-07 17:50:25] p13158 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l1is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0002:0000 42014 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32014_2001:1:1:1:0:0000:0002:0000_42014 42.213836379873534 
+
+[06-07 17:50:25] p13267 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0000 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0003_32004_2001:1:1:1:0:0000:0003:0000_42004 20.531843568641612 
+
+[06-07 17:50:25] p13267 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0000 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0003_32005_2001:1:1:1:0:0000:0003:0000_42005 30.25671890793563 
+
+[06-07 17:50:25] p13267 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0000 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0003_32006_2001:1:1:1:0:0000:0003:0000_42006 33.275429333146405 
+
+[06-07 17:50:25] p13263 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:25] p13263 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:25] p13267 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0000 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0003_32007_2001:1:1:1:0:0000:0003:0000_42007 37.59447071955565 
+
+[06-07 17:50:25] p13267 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0000 42008 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0003_32008_2001:1:1:1:0:0000:0003:0000_42008 41.775830647681644 
+
+[06-07 17:50:25] p13263 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l2is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:25] p13267 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l2is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0003:0000 42009 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0003_32009_2001:1:1:1:0:0000:0003:0000_42009 49.4204646292837 
+
+[06-07 17:50:25] p13409 {./MininetSimulator/TrafficDeployer.py:57} INFO - client command have ben read from the file for the host h3p0l3
+[06-07 17:50:25] p13409 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42001 
+
+[06-07 17:50:25] p13409 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42002 
+
+[06-07 17:50:25] p13409 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42003 
+
+[06-07 17:50:25] p13409 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42004 
+
+[06-07 17:50:25] p13409 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42005 
+
+[06-07 17:50:25] p13409 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42006 
+
+[06-07 17:50:25] p13409 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42007 
+
+[06-07 17:50:25] p13409 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42008 
+
+[06-07 17:50:25] p13409 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42009 
+
+[06-07 17:50:25] p13409 {./MininetSimulator/TrafficDeployer.py:66} INFO - Client side command for host h3p0l3is :sudo python3 ./MininetSimulator/Server.py 0:0:0:0:0:0:0:0 42010 
+
+[06-07 17:50:25] p13411 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0000 42001 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32001_2001:1:1:1:0:0000:0000:0000_42001 14.680718425316599 
+
+[06-07 17:50:25] p13411 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0000 42002 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32002_2001:1:1:1:0:0000:0000:0000_42002 20.19544482802756 
+
+[06-07 17:50:25] p13411 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0000 42003 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32003_2001:1:1:1:0:0000:0000:0000_42003 21.86389615796385 
+
+[06-07 17:50:25] p13411 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0000 42004 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32004_2001:1:1:1:0:0000:0000:0000_42004 24.347976304974715 
+
+[06-07 17:50:25] p13411 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0000 42005 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32005_2001:1:1:1:0:0000:0000:0000_42005 24.981043385031313 
+
+[06-07 17:50:25] p13411 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0000 42006 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32006_2001:1:1:1:0:0000:0000:0000_42006 31.921283278987563 
+
+[06-07 17:50:25] p13411 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0000 42007 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32007_2001:1:1:1:0:0000:0000:0000_42007 41.08429122077746 
+
+[06-07 17:50:25] p13411 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0000 42008 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32008_2001:1:1:1:0:0000:0000:0000_42008 43.30701447472999 
+
+[06-07 17:50:25] p13411 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0000 42009 50 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32009_2001:1:1:1:0:0000:0000:0000_42009 50.88979735921899 
+
+[06-07 17:50:25] p13411 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0000 42010 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32010_2001:1:1:1:0:0000:0000:0000_42010 50.02355855786475 
+
+[06-07 17:50:25] p13411 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0000 42011 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32011_2001:1:1:1:0:0000:0000:0000_42011 51.66162449162822 
+
+[06-07 17:50:25] p13411 {./MininetSimulator/TrafficDeployer.py:43} INFO - Server side command for host h3p0l3is :sudo python3 ./MininetSimulator/Client.py 2001:1:1:1:0:0000:0000:0000 42012 256 /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32012_2001:1:1:1:0:0000:0000:0000_42012 58.504169996979904 
+

@@ -64,8 +64,11 @@ class IPv6Host(Host):
         # self.cmd("python3 ./testAndMeasurement/iperf3_test.py "+self.name+" basic 4 &")
         print(self)
         self.cmd('/usr/sbin/sshd')
-        print("python3 ./MininetSimulator/CommandExecutor.py "+ CC.HOST_COMMAND_FOLDER+" "+self.name+ " &")
-        self.cmd("python3 ./MininetSimulator/CommandExecutor.py "+ CC.HOST_COMMAND_FOLDER+" "+self.name+ " &")
+        # print("python3 ./MininetSimulator/CommandExecutor.py "+ CC.HOST_COMMAND_FOLDER+" "+self.name+ " &")
+        # self.cmd("python3 ./MininetSimulator/CommandExecutor.py "+ CC.HOST_COMMAND_FOLDER+" "+self.name+ " &")
+        print("python3 ./MininetSimulator/TrafficDeployer.py "+ " "+self.name+ " &")
+        self.cmd("sudo python3 ./MininetSimulator/TrafficDeployer.py "+ " "+self.name+ " 0 &")
+        self.cmd("sudo python3 ./MininetSimulator/TrafficDeployer.py "+ " "+self.name+ " 1 &")
         print("Deployed comand executor")
 
 

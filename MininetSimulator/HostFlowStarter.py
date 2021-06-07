@@ -42,8 +42,7 @@ class HostFlowStarter:
             logger.info("Output of pwd command is "+str(out.read()))
             out = os.popen(command)
             logger.info("Output of command is "+str(out))
-            print("Dhur bal"+command)
-            print("Chat er val"+str(out.read()))
+
         except Exception as e:
             logger.info("Failed to execute command: "+ e)
 
