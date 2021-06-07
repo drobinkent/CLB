@@ -685,7 +685,7 @@
         "column" : 59,
         "source_fragment" : "egressPortCounter"
       },
-      "size" : 16,
+      "size" : 8,
       "is_direct" : false
     },
     {
@@ -709,7 +709,7 @@
         "column" : 72,
         "source_fragment" : "destination_util_counter"
       },
-      "size" : 64,
+      "size" : 32,
       "is_direct" : false
     }
   ],

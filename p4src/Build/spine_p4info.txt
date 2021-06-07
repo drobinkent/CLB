@@ -1043,7 +1043,7 @@ counters {
   spec {
     unit: PACKETS
   }
-  size: 16
+  size: 8
 }
 counters {
   preamble {
@@ -1065,7 +1065,7 @@ counters {
   spec {
     unit: BYTES
   }
-  size: 64
+  size: 32
 }
 direct_counters {
   preamble {

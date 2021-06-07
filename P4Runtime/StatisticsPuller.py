@@ -3,6 +3,8 @@ import threading
 import time
 import os
 import subprocess
+
+import ConfigConst
 import InternalConfig
 import P4Runtime.shell as sh
 from P4Runtime.context import Context
@@ -86,8 +88,8 @@ class StatisticsPuller:
             self.p4dev.hulaUtilBasedReconfigureForLeafSwitches(linkUtilStats,oldLinkUtilStats)
             pass # dohuyla logic
         if ((self.p4dev.dpAlgorithm == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_CLB)  and (self.p4dev.fabric_device_config.switch_type == jp.SwitchType.LEAF)):
-            # if(ConfConst.CLB_TESTER_DEVICE_NAME in self.p4dev.devName):
-            self.clbUtilBasedReconfigureForLeafSwitches(linkUtilStats, self.oldLinkUtilStats)
+            if(ConfConst.CLB_TESTER_DEVICE_NAME in self.p4dev.devName):
+                self.clbUtilBasedReconfigureForLeafSwitches(linkUtilStats, self.oldLinkUtilStats)
             pass # do CLB logic
         pass
 
@@ -109,46 +111,64 @@ class StatisticsPuller:
             upwardPortList = list(self.p4dev.portToSpineSwitchMap.keys())
             pathAndUtilist = []
             totalUtil = 0
-            # if(torID !=3):
-            #     continue
-            # print("ToirId is "+str(torID))
-            # print("new Utilization data is  "+str(linkUtilStats))
-            # print("old Utilization data is  "+str(oldLinkUtilStats))
+            if(torID !=3):
+                continue
+            print("ToirId is "+str(torID))
+            print("new Utilization data is  "+str(linkUtilStats))
+            print("old Utilization data is  "+str(oldLinkUtilStats))
             for uPort in upwardPortList:
                 index = int(uPort) + (torID*ConfConst.MAX_PORTS_IN_SWITCH) -1
-                # print("Index to be accessed "+str(index))
-                # print("Old util is "+str(linkUtilStats[index]))
+                print("Index to be accessed "+str(index))
+                print("New util is "+str(linkUtilStats[index]))
+                print("Old util is "+str(oldLinkUtilStats[index]))
                 utilInLastInterval = linkUtilStats[index] -  oldLinkUtilStats[index]
                 if(utilInLastInterval >0):
                     pathAndUtilist.append((uPort,utilInLastInterval))
                     totalUtil = totalUtil + utilInLastInterval
-                    # print("for port "+str(uPort)+" Util is "+str(utilInLastInterval))
+                    print("for port "+str(uPort)+" Util is "+str(utilInLastInterval))
                 else:
                     pathAndUtilist.append((uPort,1))
                     totalUtil = totalUtil + 1
                     # print("for port "+str(uPort)+" Util is "+str(1))
-            # print("Total Util is "+str(totalUtil))
-            # perUnitWeight = totalUtil/ConfConst.BITMASK_LENGTH
-            # totalWeight = ConfConst.BITMASK_LENGTH
-            # weightDistro = []
+            print("Total Util is "+str(totalUtil))
+            perUnitWeight = totalUtil/ConfConst.BITMASK_LENGTH
+            totalWeight = ConfConst.BITMASK_LENGTH
+            weightDistro = []
             portDistribInverse = []
             total=0
             for pUtil in pathAndUtilist:
                 port = pUtil[0]
                 util = pUtil[1]
-                portWeight =  int((ConfConst.BITMASK_LENGTH)/(util/totalUtil))
-                portDistribInverse.append((port,portWeight))
+                portWeight =  (util/totalUtil)
                 total = total+ portWeight
-                # print("for port "+str(port)+" inverse util is "+str(portWeight))
-            # print("Totoal Weight is "+str(total))
+                portDistribInverse.append((port,portWeight))
+                print("for port "+str(port)+" inverse util is "+str(portWeight))
+            print("Total Weight is "+str(total))
+            wSum = 0
+            oneUnit = total/ConfigConst.BITMASK_LENGTH
             accumDistrib2 = []
-            newTotal=0
+            newTotal = 0
             for pUtil in portDistribInverse:
                 port = pUtil[0]
                 util = pUtil[1]
-                newTotal = newTotal+ int((util/total) * ConfConst.BITMASK_LENGTH)
-                accumDistrib2.append((port,newTotal))
-                # print("Final weight for port "+str(port)+"  uis "+str(newTotal))
+                wSum = wSum + util
+                times = int(wSum/oneUnit)
+                if ((wSum - (times*oneUnit)) > 0 ):
+                    portWeight = times + 1
+                else:
+                    portWeight = times
+                accumDistrib2.append((port,portWeight))
+                print("Final weight for port "+str(port)+"  uis "+str(portWeight))
+
+
+            # accumDistrib2 = []
+            # newTotal=0
+            # for pUtil in portDistribInverse:
+            #     port = pUtil[0]
+            #     util = pUtil[1]
+            #     newTotal = newTotal+ int((util/total) * ConfConst.BITMASK_LENGTH)
+            #     accumDistrib2.append((port,newTotal))
+            #     print("Final weight for port "+str(port)+"  uis "+str(newTotal))
             self.p4dev.ctrlPlaneLogic.processStatisticsPulledFromSwitch(torID,accumDistrib2)
             # if(ConfConst.CLB_TESTER_DEVICE_NAME in self.p4dev.devName):
             #     print("Newly installed distrib is "+str(accumDistrib2))
@@ -156,6 +176,9 @@ class StatisticsPuller:
 
         pass
 
+# Conditions needed to be checked before assigning weight
+# a) any weight can not be 0-- at least 1
+# b) If at someplace the weight crosses bitmask legnth it should be asigned to max weight and others should be discarded.
 
     def indexToRowColumn(self, index, totalColumns):
         row = int(math.floor(index/float(totalColumns)))

@@ -1,6 +1,0 @@
-[06-05 19:49:32] p76511 {/home/deba/Desktop/CLB/testAndMeasurement/unused_codes/TestConfig.py:323} INFO - Finished reading and loading cfg
-[06-05 19:49:32] p76511 {TestCaseDeployer.py:90} INFO - Creating folder for test case
-[06-05 19:49:32] p76511 {TestCaseDeployer.py:93} INFO - Current working Directory is /home/deba/Desktop/CLB
-[06-05 19:54:31] p78396 {/home/deba/Desktop/CLB/testAndMeasurement/unused_codes/TestConfig.py:323} INFO - Finished reading and loading cfg
-[06-05 19:54:31] p78396 {TestCaseDeployer.py:90} INFO - Creating folder for test case
-[06-05 19:54:31] p78396 {TestCaseDeployer.py:93} INFO - Current working Directory is /home/deba/Desktop/CLB

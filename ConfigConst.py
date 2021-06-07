@@ -79,9 +79,9 @@ class DataplnaeAlgorithm(Enum):
 ALGORITHM_IN_USE = DataplnaeAlgorithm.DP_ALGO_BASIC_CLB #For CLB it will be always ECMP
 
 
-queueRateForHostFacingPortsOfLeafSwitch = 40
-queueRateForSpineFacingPortsOfLeafSwitch = 20
-queueRateForLeafSwitchFacingPortsOfSpineSwitch= 128
+queueRateForHostFacingPortsOfLeafSwitch = 64
+queueRateForSpineFacingPortsOfLeafSwitch = 32
+queueRateForLeafSwitchFacingPortsOfSpineSwitch= 32
 queueRateForSuperSpineSwitchFacingPortsOfSpineSwitch=512
 queueRateForSpineSwitchFacingPortsOfSuperSpineSwitch=512
 queueRateForExternalInternetFacingPortsOfSuperSpineSwitch=2048
@@ -114,7 +114,7 @@ EGRESS_QUEUE_DEPTH_DELAY_LEVELS_LINEAR = [(0, 2, 0, 0),(3,5,1,0), (6, 10,2,00)]
 FLOW_TYPE_IDENTIFIER_BY_FLOW_VOLUME_IN_KB = [50, 256]  # These means in our experiments we will consider 2 types of traffic . one with 50 KB size another 1 MB or 1024 KB
 FLOW_TYPE_LOAD_RATIO = [80, 20]  # This means 80% flows are short and 20# are large
 FLOW_VOLUME_IDENTIFIER_VARIATION_LIMIT_IN_PERCENTAGE = 80 # this means any flow size within range of 15% defined in previous array will be categorized as flow of same type. 80 percent is configured to acoomdate both 10kb and 50 kb flow
-PACKET_SIZE = 1200 # Each packet will be 1200 Byte size
+PACKET_SIZE = 1024 # Each packet will be 1200 Byte size
 
 
 
@@ -178,4 +178,4 @@ DISTRO2_INSTALL_DELAY = 110  # Weight distribution 2 will be installed after 50 
 MAX_PORTS_IN_SWITCH = 8; #Maximum Supported ports in a switch to reflect the dataplane configuration
 MAX_TOR_SUBNET = 4;  #Maximum ToR supported by our simulation
 BITMASK_LENGTH = 16
-PRECISION_OF_LOAD_BALANCING = 32
+PRECISION_OF_LOAD_BALANCING = 8

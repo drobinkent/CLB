@@ -710,7 +710,7 @@
         "column" : 59,
         "source_fragment" : "egressPortCounter"
       },
-      "size" : 16,
+      "size" : 8,
       "is_direct" : false
     },
     {
@@ -734,7 +734,7 @@
         "column" : 72,
         "source_fragment" : "destination_util_counter"
       },
-      "size" : 64,
+      "size" : 32,
       "is_direct" : false
     }
   ],
@@ -2658,7 +2658,7 @@
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0x2"
+                        "value" : "0x3"
                       }
                     }
                   },
@@ -2674,7 +2674,7 @@
             "filename" : "p4src/src/clb_load_balancer.p4",
             "line" : 50,
             "column" : 12,
-            "source_fragment" : "load_counter_level = load_counter_value >> 2"
+            "source_fragment" : "load_counter_level = load_counter_value >> 3"
           }
         },
         {
@@ -3662,7 +3662,7 @@
                                       },
                                       "right" : {
                                         "type" : "hexstr",
-                                        "value" : "0x4"
+                                        "value" : "0x3"
                                       }
                                     }
                                   },

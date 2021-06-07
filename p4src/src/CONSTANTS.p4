@@ -167,7 +167,7 @@ const bit<8> WINDOW_INCREASE_RATIO = 8;
 
 
 //===============================================CLB Related Constants
-const bit<32> MAX_PORTS_IN_SWITCH = 16;
+const bit<32> MAX_PORTS_IN_SWITCH = 8;
 const bit<32> MAX_TOR_SUBNET = 4;  //Maximum ToR supported by our simulation
 const bit<32> MAX_FLOW_TYPES = 64;  //traffic class 6 bits. so at most 64 types of flow can be there.
 counter((bit<32>)MAX_PORTS_IN_SWITCH, CounterType.packets) egressPortCounter;
