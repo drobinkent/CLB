@@ -714,7 +714,7 @@ class Device:
             minUtil = 0
             minUtilPort = upwardPortList[0]
             for uPort in upwardPortList:
-                index = int(uPort) + (torID*ConfConst.MAX_PORTS_IN_SWITCH)
+                index = int(uPort) + (torID*ConfConst.MAX_PORTS_IN_SWITCH) -1
                 if(linkUtilStats[index] <= minUtil):
                     minUtil = linkUtilStats[index]
                     minUtilPort = uPort

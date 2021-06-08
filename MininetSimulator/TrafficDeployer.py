@@ -40,12 +40,12 @@ def deployClientCommands(myhostName):
             if(host == myhostName):
                 # command = "sudo python3 ./MininetSimulator/Server.py "+tokens[3] + " "+tokens[4]+" \n"
                 command = "sudo python3 ./MininetSimulator/Client.py "+tokens[3] + " "+tokens[4]+ " "+tokens[5]+" "+tokens[6]+ " "+tokens[7]+" \n"
-                logger.info("Server side command for host "+myhostName+ "is :"+command)
+                logger.info("Client side command for host "+myhostName+ "is :"+command)
                 out = os.popen(command)
     except OSError as oe:
-        logger.info("Oserror ocurred in "+myhostName+" for executin command "+command+" error is "+str(oe))
+        logger.info("Oserror ocurred in "+myhostName+" for executing Client command "+command+" error is "+str(oe))
     except Exception as e:
-        logger.info("Exception ocurred in "+myhostName+" for executin command "+command+" error is "+str(e))
+        logger.info("Exception ocurred in "+myhostName+" for executing Client command "+command+" error is "+str(e))
 
 
 
@@ -63,12 +63,12 @@ def deployServerCommands(myhostName):
             if(host == myhostName):
                 # command = "sudo python3 ./MininetSimulator/Server.py "+tokens[3] + " "+tokens[4]+" \n"
                 command = "sudo python3 ./MininetSimulator/Server.py "+"0:0:0:0:0:0:0:0" + " "+tokens[4]+" \n"
-                logger.info("Client side command for host "+myhostName+ "is :"+command)
+                logger.info("Server side command for host "+myhostName+ "is :"+command)
                 out = os.popen(command)
     except OSError as oe:
-        logger.info("Oserror ocurred in "+myhostName+" for executin Client command "+command+" error is "+str(oe))
+        logger.info("Oserror ocurred in "+myhostName+" for executin Server command "+command+" error is "+str(oe))
     except Exception as e:
-        logger.info("Exception ocurred in "+myhostName+" for executin Client command "+command+" error is "+str(e))
+        logger.info("Exception ocurred in "+myhostName+" for executing Server command "+command+" error is "+str(e))
 
 if __name__ == "__main__":
     # if(sys.argv[1]!= "h0p0l0"):

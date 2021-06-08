@@ -76,7 +76,7 @@ class DataplnaeAlgorithm(Enum):
     DP_ALGO_BASIC_HULA = "hula"
     DP_ALGO_BASIC_CLB = "clb"
 
-ALGORITHM_IN_USE = DataplnaeAlgorithm.DP_ALGO_BASIC_CLB #For CLB it will be always ECMP
+ALGORITHM_IN_USE = DataplnaeAlgorithm.DP_ALGO_BASIC_ECMP #For CLB it will be always ECMP
 
 
 queueRateForHostFacingPortsOfLeafSwitch = 64

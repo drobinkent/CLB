@@ -88,8 +88,8 @@ class StatisticsPuller:
             self.p4dev.hulaUtilBasedReconfigureForLeafSwitches(linkUtilStats,oldLinkUtilStats)
             pass # dohuyla logic
         if ((self.p4dev.dpAlgorithm == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_CLB)  and (self.p4dev.fabric_device_config.switch_type == jp.SwitchType.LEAF)):
-            if(ConfConst.CLB_TESTER_DEVICE_NAME in self.p4dev.devName):
-                self.clbUtilBasedReconfigureForLeafSwitches(linkUtilStats, self.oldLinkUtilStats)
+            # if(ConfConst.CLB_TESTER_DEVICE_NAME in self.p4dev.devName):
+            self.clbUtilBasedReconfigureForLeafSwitches(linkUtilStats, self.oldLinkUtilStats)
             pass # do CLB logic
         pass
 
@@ -99,7 +99,8 @@ class StatisticsPuller:
         # get the resultindex th position in the pulled results.
         # use that for that tor
 
-
+        logger.info(" For switch "+ self.p4dev.devName+ "new Utilization data is  "+str(linkUtilStats))
+        logger.info(" For switch "+ self.p4dev.devName+ "old Utilization data is  "+str(oldLinkUtilStats))
         for lswitch in self.p4dev.allLeafSwitchesInTheDCN:
             e = lswitch.fabric_device_config.switch_host_subnet_prefix.index("/")
             leafSubnetAsIP = lswitch.fabric_device_config.switch_host_subnet_prefix[0:e]
@@ -111,26 +112,25 @@ class StatisticsPuller:
             upwardPortList = list(self.p4dev.portToSpineSwitchMap.keys())
             pathAndUtilist = []
             totalUtil = 0
-            if(torID !=3):
-                continue
-            print("ToirId is "+str(torID))
-            print("new Utilization data is  "+str(linkUtilStats))
-            print("old Utilization data is  "+str(oldLinkUtilStats))
+            # if(torID !=3):
+            #     continue
+            # print("ToirId is "+str(torID))
+
             for uPort in upwardPortList:
                 index = int(uPort) + (torID*ConfConst.MAX_PORTS_IN_SWITCH) -1
-                print("Index to be accessed "+str(index))
-                print("New util is "+str(linkUtilStats[index]))
-                print("Old util is "+str(oldLinkUtilStats[index]))
+                # print("Index to be accessed "+str(index))
+                # print("New util is "+str(linkUtilStats[index]))
+                # print("Old util is "+str(oldLinkUtilStats[index]))
                 utilInLastInterval = linkUtilStats[index] -  oldLinkUtilStats[index]
                 if(utilInLastInterval >0):
                     pathAndUtilist.append((uPort,utilInLastInterval))
                     totalUtil = totalUtil + utilInLastInterval
-                    print("for port "+str(uPort)+" Util is "+str(utilInLastInterval))
+                    # print("for port "+str(uPort)+" Util is "+str(utilInLastInterval))
                 else:
                     pathAndUtilist.append((uPort,1))
                     totalUtil = totalUtil + 1
                     # print("for port "+str(uPort)+" Util is "+str(1))
-            print("Total Util is "+str(totalUtil))
+            # print("Total Util is "+str(totalUtil))
             perUnitWeight = totalUtil/ConfConst.BITMASK_LENGTH
             totalWeight = ConfConst.BITMASK_LENGTH
             weightDistro = []
@@ -142,8 +142,8 @@ class StatisticsPuller:
                 portWeight =  (util/totalUtil)
                 total = total+ portWeight
                 portDistribInverse.append((port,portWeight))
-                print("for port "+str(port)+" inverse util is "+str(portWeight))
-            print("Total Weight is "+str(total))
+                # print("for port "+str(port)+" inverse util is "+str(portWeight))
+            # print("Total Weight is "+str(total))
             wSum = 0
             oneUnit = total/ConfigConst.BITMASK_LENGTH
             accumDistrib2 = []
@@ -158,7 +158,7 @@ class StatisticsPuller:
                 else:
                     portWeight = times
                 accumDistrib2.append((port,portWeight))
-                print("Final weight for port "+str(port)+"  uis "+str(portWeight))
+                # print("Final weight for port "+str(port)+"  uis "+str(portWeight))
 
 
             # accumDistrib2 = []

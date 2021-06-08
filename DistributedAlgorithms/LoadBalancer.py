@@ -72,16 +72,16 @@ class LoadBalanacer:
             currentTime = time.time()
             if ( (currentTime - start) > ConfConst.DISTRO1_INSTALL_DELAY) and ( (currentTime - start) < ConfConst.DISTRO2_INSTALL_DELAY) and (distr1InstallFlag == False):
                 accumulatedDistribution = self.getAccumulatedDistribution(ConfConst.LOAD_DISTRIBUTION_1)
-                print("Old distrib was "+str(json.dumps(ConfConst.LOAD_DISTRIBUTION_1)))
-                print("accumulated distrib is "+str(json.dumps(accumulatedDistribution)))
+                # print("Old distrib was "+str(json.dumps(ConfConst.LOAD_DISTRIBUTION_1)))
+                # print("accumulated distrib is "+str(json.dumps(accumulatedDistribution)))
                 packetOutList = self.installDistributionInCPAndGeneratePacketOutMessages(accumulatedDistribution, firstTimeFlag=True)
                 for p in packetOutList:
                     switchObject.send_already_built_control_packet_for_load_balancer(p)
                 distr1InstallFlag = True
             if ( (currentTime - start) > ConfConst.DISTRO2_INSTALL_DELAY) and (distr2InstallFlag == False):
                 accumulatedDistribution = self.getAccumulatedDistribution(ConfConst.LOAD_DISTRIBUTION_2)
-                print("Old distrib was "+str(json.dumps(ConfConst.LOAD_DISTRIBUTION_2)))
-                print("accumulated distrib is "+str(json.dumps(accumulatedDistribution)))
+                # print("Old distrib was "+str(json.dumps(ConfConst.LOAD_DISTRIBUTION_2)))
+                # print("accumulated distrib is "+str(json.dumps(accumulatedDistribution)))
                 packetOutList = self.installDistributionInCPAndGeneratePacketOutMessages(accumulatedDistribution)
                 for p in packetOutList:
                     switchObject.send_already_built_control_packet_for_load_balancer(p)

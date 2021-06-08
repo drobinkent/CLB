@@ -236,8 +236,19 @@ if __name__ == "__main__":
     # Real deployment configuration
     #This is always the topology configuration.
     topologyConfigFilePath =  confConst.TOPOLOGY_CONFIG_FILE
+    # testEvaluator = TestCommandDeployer(topologyConfigFilePath = confConst.TOPOLOGY_CONFIG_FILE,resultFolder = "FlowInfos" , clientPortStart=confConst.IPERF3_CLIENT_PORT_START,
+    #                     serverPortStart=confConst.IPERF3_SERVER_PORT_START, testStartDelay=10)
+    # testEvaluator.setupTestCaseFolder()
+    # testEvaluator.generateTestCommands( testCaseNAme= "WebSearchWorkLoad_load_factor_0.2",loadFactor=0.2,testDuration=200,maxPortcountInSwitch=ConfigConst.MAX_PORTS_IN_SWITCH)
+    #
+    #
+    # testEvaluator = TestCommandDeployer(topologyConfigFilePath = confConst.TOPOLOGY_CONFIG_FILE,resultFolder = "FlowInfos" , clientPortStart=confConst.IPERF3_CLIENT_PORT_START,
+    #                                     serverPortStart=confConst.IPERF3_SERVER_PORT_START, testStartDelay=10)
+    # testEvaluator.setupTestCaseFolder()
+    # testEvaluator.generateTestCommands( testCaseNAme= "WebSearchWorkLoad_load_factor_0.4",loadFactor=0.4,testDuration=200,maxPortcountInSwitch=ConfigConst.MAX_PORTS_IN_SWITCH)
+
     testEvaluator = TestCommandDeployer(topologyConfigFilePath = confConst.TOPOLOGY_CONFIG_FILE,resultFolder = "FlowInfos" , clientPortStart=confConst.IPERF3_CLIENT_PORT_START,
-                        serverPortStart=confConst.IPERF3_SERVER_PORT_START, testStartDelay=10)
+                                        serverPortStart=confConst.IPERF3_SERVER_PORT_START, testStartDelay=10)
     testEvaluator.setupTestCaseFolder()
-    testEvaluator.generateTestCommands( testCaseNAme= "WebSearchWorkLoad_load_factor_0.2",loadFactor=0.2,testDuration=50,maxPortcountInSwitch=ConfigConst.MAX_PORTS_IN_SWITCH)
+    testEvaluator.generateTestCommands( testCaseNAme= "WebSearchWorkLoad_load_factor_0.8",loadFactor=0.8,testDuration=100,maxPortcountInSwitch=ConfigConst.MAX_PORTS_IN_SWITCH)
 
