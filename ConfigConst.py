@@ -18,6 +18,7 @@ HOST_COMMAND_FOLDER = "./MininetSimulator/PER_HOST_COMMANDS/"
 
 # This is the file where all controller logs wil be written
 CONTROLLER_LOG_FILE_PATH = "./log/CONTROLLER.log"
+STATISTICS_LOG_FILE_PATH = "./log/STATISTICS.log"
 MAX_LOG_FILE_SIZE  =  52428800 #50 MB
 MAX_LOG_FILE_BACKUP_COUNT = 250  # MAximum 25 files will be kept
 IPERF_MAX_FLOW_RATE_FOR_SERVER = "4K"  #Iperf flow rate is made maximum to 64K. if we keep ubnlimited it swamps the buffer and experiemnts doesn't work really good
@@ -76,7 +77,7 @@ class DataplnaeAlgorithm(Enum):
     DP_ALGO_BASIC_HULA = "hula"
     DP_ALGO_BASIC_CLB = "clb"
 
-ALGORITHM_IN_USE = DataplnaeAlgorithm.DP_ALGO_BASIC_ECMP #For CLB it will be always ECMP
+ALGORITHM_IN_USE = DataplnaeAlgorithm.DP_ALGO_BASIC_CLB #For CLB it will be always ECMP
 
 
 queueRateForHostFacingPortsOfLeafSwitch = 64
@@ -111,8 +112,8 @@ EGRESS_QUEUE_DEPTH_DELAY_LEVELS_LINEAR = [(0, 2, 0, 0),(3,5,1,0), (6, 10,2,00)]
 #######################################################################################################################################################################################
 #######################################################################################################################################################################################
 
-FLOW_TYPE_IDENTIFIER_BY_FLOW_VOLUME_IN_KB = [50, 256]  # These means in our experiments we will consider 2 types of traffic . one with 50 KB size another 1 MB or 1024 KB
-FLOW_TYPE_LOAD_RATIO = [80, 20]  # This means 80% flows are short and 20# are large
+FLOW_TYPE_IDENTIFIER_BY_FLOW_VOLUME_IN_KB = [ 50, 128,  256,1024]  # These means in our experiments we will consider 2 types of traffic . one with 50 KB size another 1 MB or 1024 KB
+FLOW_TYPE_LOAD_RATIO = [ 10,5, 5, 80]  # This means 80% flows are short and 20# are large
 FLOW_VOLUME_IDENTIFIER_VARIATION_LIMIT_IN_PERCENTAGE = 80 # this means any flow size within range of 15% defined in previous array will be categorized as flow of same type. 80 percent is configured to acoomdate both 10kb and 50 kb flow
 PACKET_SIZE = 1024 # Each packet will be 1200 Byte size
 

@@ -15,7 +15,7 @@ logging.StreamHandler(stream=None)
 logger.setLevel(logging.INFO)
 
 import HostFlowStarter as hfs
-TEST_START_DELAY = 100
+TEST_START_DELAY = 125
 BUFFER_SIZE = 1024
 SERVER_CONFIG_FILE = cc.TCP_SERVER_COMAND_FILE
 CLIENT_CONFIG_FILE = cc.TCP_CLIENT_COMAND_FILE
@@ -39,7 +39,7 @@ def deployClientCommands(myhostName):
             host = tokens[0]
             if(host == myhostName):
                 # command = "sudo python3 ./MininetSimulator/Server.py "+tokens[3] + " "+tokens[4]+" \n"
-                command = "sudo python3 ./MininetSimulator/Client.py "+tokens[3] + " "+tokens[4]+ " "+tokens[5]+" "+tokens[6]+ " "+tokens[7]+" \n"
+                command = "sudo python3 ./MininetSimulator/Client.py "+tokens[3] + " "+tokens[4]+ " "+tokens[5]+" "+tokens[6]+ " "+str(float(tokens[7]))+str(TEST_START_DELAY)+" \n"
                 logger.info("Client side command for host "+myhostName+ "is :"+command)
                 out = os.popen(command)
     except OSError as oe:
@@ -62,7 +62,7 @@ def deployServerCommands(myhostName):
             host = tokens[0]
             if(host == myhostName):
                 # command = "sudo python3 ./MininetSimulator/Server.py "+tokens[3] + " "+tokens[4]+" \n"
-                command = "sudo python3 ./MininetSimulator/Server.py "+"0:0:0:0:0:0:0:0" + " "+tokens[4]+" \n"
+                command = "sudo python3 ./MininetSimulator/Server.py "+"0:0:0:0:0:0:0:0" + " "+tokens[4]+  " "+str(float(tokens[5]))+str(TEST_START_DELAY)+" \n"
                 logger.info("Server side command for host "+myhostName+ "is :"+command)
                 out = os.popen(command)
     except OSError as oe:

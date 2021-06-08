@@ -19,16 +19,7 @@ logger.setLevel(logging.INFO)
 if len(sys.argv) < 4 :	# not enough arguments specified
 	sys.exit(2)
 
-TCP_IP = sys.argv[1]	# server address
-TCP_PORT = int(sys.argv[2])
-BUFFER_SIZE = 1024
-# PACKETS_TO_SEND = float(sys.argv[3])/BUFFER_SIZE;
-PACKETS_TO_SEND = float(sys.argv[3])
-RESULT_FILE = sys.argv[4]
-START_DELAY = float(sys.argv[5])
-MESSAGE = "d" * BUFFER_SIZE		# packet to send
-sleep(START_DELAY)
-start=datetime.now()
+
 # create socket and connect to server
 
 # fcntl.fcntl(s, fcntl.F_SETFL, os.O_NONBLOCK)
@@ -39,6 +30,16 @@ start=datetime.now()
 #sender sender_port receiver flow_size start_time end_time FCT bw
 
 try:
+	TCP_IP = sys.argv[1]	# server address
+	TCP_PORT = int(sys.argv[2])
+	BUFFER_SIZE = 1024
+	# PACKETS_TO_SEND = float(sys.argv[3])/BUFFER_SIZE;
+	PACKETS_TO_SEND = float(sys.argv[3])
+	RESULT_FILE = sys.argv[4]
+	START_DELAY = float(sys.argv[5])
+	MESSAGE = "d" * BUFFER_SIZE		# packet to send
+	sleep(START_DELAY)
+	start=datetime.now()
 	s = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
 	s.connect((TCP_IP, TCP_PORT))
 	logger.info("Connected to server :"+TCP_IP+ " at port "+str(TCP_PORT))

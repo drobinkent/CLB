@@ -46,10 +46,10 @@ def calculateFlowArrivalTimes(loadFactor, duration):
         lambdaForFlowType.append((1/totalFlowRequiredForFlowType[i]))
         totalFlowRequiredForFlowTypeOverWholeDuration.append(int(1/lambdaForFlowType[i]))
         # totalIterationForFlowType.append(duration/)
-    # print(lambdaForFlowType)
-    # print(totalFlowRequiredForFlowType)
-    # print(networkRateForFlowType)
-    # print(totalFlowRequiredForFlowTypeOverWholeDuration)
+        # print(lambdaForFlowType)
+        # print(totalFlowRequiredForFlowType)
+        # print(networkRateForFlowType)
+        # print(totalFlowRequiredForFlowTypeOverWholeDuration)
     flowArrivalTimesByflowType = []
     for i in range (0, len(ConfigConst.FLOW_TYPE_IDENTIFIER_BY_FLOW_VOLUME_IN_KB)):
         numbPoints = scipy.stats.poisson( int(totalFlowRequiredForFlowType[i])).rvs()#Poisson number of points
@@ -100,7 +100,7 @@ def l2StridePatternTestPairCreator(nameToHostMap, maxPortcountInSwitch):
             srcList.append(srcHost)
             destList.append((peerHostObject))
             count = count+1
-        print("Src: "+srcHostName+" peer host:"+peerName)
+        # print("Src: "+srcHostName+" peer host:"+peerName)
         if(count>=(len(nameToHostMap))):
             break;
 
@@ -133,7 +133,7 @@ def getStrideDeploymentPairs(nameToHostMap,maxPortcountInSwitch,testCaseName, lo
                                                               srcHostName=srcList[i].hostName, destHostName= destList[i].hostName,
                                                               startTime= flowArraivalTime+float(testStartDelay),flowSizeinPackets= flowsizeAsPacketCount)
                     deploymentPairList.append(newDeploymentPair)
-                    print(newDeploymentPair.getServerCommand())
+                    # print(newDeploymentPair.getServerCommand())
     return deploymentPairList
 
 class TestCommandDeployer:
@@ -236,19 +236,32 @@ if __name__ == "__main__":
     # Real deployment configuration
     #This is always the topology configuration.
     topologyConfigFilePath =  confConst.TOPOLOGY_CONFIG_FILE
-    # testEvaluator = TestCommandDeployer(topologyConfigFilePath = confConst.TOPOLOGY_CONFIG_FILE,resultFolder = "FlowInfos" , clientPortStart=confConst.IPERF3_CLIENT_PORT_START,
-    #                     serverPortStart=confConst.IPERF3_SERVER_PORT_START, testStartDelay=10)
-    # testEvaluator.setupTestCaseFolder()
-    # testEvaluator.generateTestCommands( testCaseNAme= "WebSearchWorkLoad_load_factor_0.2",loadFactor=0.2,testDuration=200,maxPortcountInSwitch=ConfigConst.MAX_PORTS_IN_SWITCH)
-    #
-    #
-    # testEvaluator = TestCommandDeployer(topologyConfigFilePath = confConst.TOPOLOGY_CONFIG_FILE,resultFolder = "FlowInfos" , clientPortStart=confConst.IPERF3_CLIENT_PORT_START,
-    #                                     serverPortStart=confConst.IPERF3_SERVER_PORT_START, testStartDelay=10)
-    # testEvaluator.setupTestCaseFolder()
-    # testEvaluator.generateTestCommands( testCaseNAme= "WebSearchWorkLoad_load_factor_0.4",loadFactor=0.4,testDuration=200,maxPortcountInSwitch=ConfigConst.MAX_PORTS_IN_SWITCH)
+    testEvaluator = TestCommandDeployer(topologyConfigFilePath = confConst.TOPOLOGY_CONFIG_FILE,resultFolder = "FlowInfos" , clientPortStart=confConst.IPERF3_CLIENT_PORT_START,
+                        serverPortStart=confConst.IPERF3_SERVER_PORT_START, testStartDelay=10)
+    testEvaluator.setupTestCaseFolder()
+    testEvaluator.generateTestCommands( testCaseNAme= "WebSearchWorkLoad_load_factor_0.2",loadFactor=0.2,testDuration=150,maxPortcountInSwitch=ConfigConst.MAX_PORTS_IN_SWITCH)
+
+    #--------------------
 
     testEvaluator = TestCommandDeployer(topologyConfigFilePath = confConst.TOPOLOGY_CONFIG_FILE,resultFolder = "FlowInfos" , clientPortStart=confConst.IPERF3_CLIENT_PORT_START,
                                         serverPortStart=confConst.IPERF3_SERVER_PORT_START, testStartDelay=10)
     testEvaluator.setupTestCaseFolder()
-    testEvaluator.generateTestCommands( testCaseNAme= "WebSearchWorkLoad_load_factor_0.8",loadFactor=0.8,testDuration=100,maxPortcountInSwitch=ConfigConst.MAX_PORTS_IN_SWITCH)
+    testEvaluator.generateTestCommands( testCaseNAme= "WebSearchWorkLoad_load_factor_0.4",loadFactor=0.4,testDuration=150,maxPortcountInSwitch=ConfigConst.MAX_PORTS_IN_SWITCH)
 
+    #--------------------
+    testEvaluator = TestCommandDeployer(topologyConfigFilePath = confConst.TOPOLOGY_CONFIG_FILE,resultFolder = "FlowInfos" , clientPortStart=confConst.IPERF3_CLIENT_PORT_START,
+                                        serverPortStart=confConst.IPERF3_SERVER_PORT_START, testStartDelay=10)
+    testEvaluator.setupTestCaseFolder()
+    testEvaluator.generateTestCommands( testCaseNAme= "WebSearchWorkLoad_load_factor_0.5",loadFactor=0.5,testDuration=150,maxPortcountInSwitch=ConfigConst.MAX_PORTS_IN_SWITCH)
+
+    #--------------------
+    testEvaluator = TestCommandDeployer(topologyConfigFilePath = confConst.TOPOLOGY_CONFIG_FILE,resultFolder = "FlowInfos" , clientPortStart=confConst.IPERF3_CLIENT_PORT_START,
+                                        serverPortStart=confConst.IPERF3_SERVER_PORT_START, testStartDelay=10)
+    testEvaluator.setupTestCaseFolder()
+    testEvaluator.generateTestCommands( testCaseNAme= "WebSearchWorkLoad_load_factor_0.7",loadFactor=0.7,testDuration=150,maxPortcountInSwitch=ConfigConst.MAX_PORTS_IN_SWITCH)
+
+    #--------------------
+    testEvaluator = TestCommandDeployer(topologyConfigFilePath = confConst.TOPOLOGY_CONFIG_FILE,resultFolder = "FlowInfos" , clientPortStart=confConst.IPERF3_CLIENT_PORT_START,
+                                        serverPortStart=confConst.IPERF3_SERVER_PORT_START, testStartDelay=10)
+    testEvaluator.setupTestCaseFolder()
+    testEvaluator.generateTestCommands( testCaseNAme= "WebSearchWorkLoad_load_factor_0.8",loadFactor=0.8,testDuration=200,maxPortcountInSwitch=ConfigConst.MAX_PORTS_IN_SWITCH)

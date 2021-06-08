@@ -27,7 +27,7 @@ import logging.handlers
 
 logger = logging.getLogger('StatisticsPuller')
 logger.handlers = []
-hdlr = logging.handlers.RotatingFileHandler(ConfConst.CONTROLLER_LOG_FILE_PATH, maxBytes = ConfConst.MAX_LOG_FILE_SIZE , backupCount= ConfConst.MAX_LOG_FILE_BACKUP_COUNT)
+hdlr = logging.handlers.RotatingFileHandler(ConfConst.STATISTICS_LOG_FILE_PATH, maxBytes = ConfConst.MAX_LOG_FILE_SIZE , backupCount= ConfConst.MAX_LOG_FILE_BACKUP_COUNT)
 hdlr.setLevel(logging.INFO)
 formatter = logging.Formatter('[%(asctime)s] p%(process)s {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s','%m-%d %H:%M:%S')
 hdlr.setFormatter(formatter)
@@ -83,12 +83,18 @@ class StatisticsPuller:
 
     def useLinkUtilForPathReconfigure(self, linkUtilStats,oldLinkUtilStats):
         if (self.p4dev.dpAlgorithm == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_ECMP) : # do nothing
+            logger.info("ECMP ALGORITHM: For switch "+ self.p4dev.devName+ "new Utilization data is  "+str(linkUtilStats))
+            logger.info("ECMP ALGORITHM: For switch "+ self.p4dev.devName+ "old Utilization data is  "+str(oldLinkUtilStats))
             return
         if ((self.p4dev.dpAlgorithm == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_HULA) and (self.p4dev.fabric_device_config.switch_type == jp.SwitchType.LEAF)):
+            logger.info("HULA ALGORITHM: For switch "+ self.p4dev.devName+ "new Utilization data is  "+str(linkUtilStats))
+            logger.info("HULA ALGORITHM: For switch "+ self.p4dev.devName+ "old Utilization data is  "+str(oldLinkUtilStats))
             self.p4dev.hulaUtilBasedReconfigureForLeafSwitches(linkUtilStats,oldLinkUtilStats)
             pass # dohuyla logic
         if ((self.p4dev.dpAlgorithm == ConfConst.DataplnaeAlgorithm.DP_ALGO_BASIC_CLB)  and (self.p4dev.fabric_device_config.switch_type == jp.SwitchType.LEAF)):
             # if(ConfConst.CLB_TESTER_DEVICE_NAME in self.p4dev.devName):
+            logger.info("CLB ALGORITHM: For switch "+ self.p4dev.devName+ "new Utilization data is  "+str(linkUtilStats))
+            logger.info("CLB ALGORITHM: For switch "+ self.p4dev.devName+ "old Utilization data is  "+str(oldLinkUtilStats))
             self.clbUtilBasedReconfigureForLeafSwitches(linkUtilStats, self.oldLinkUtilStats)
             pass # do CLB logic
         pass
@@ -99,8 +105,8 @@ class StatisticsPuller:
         # get the resultindex th position in the pulled results.
         # use that for that tor
 
-        logger.info(" For switch "+ self.p4dev.devName+ "new Utilization data is  "+str(linkUtilStats))
-        logger.info(" For switch "+ self.p4dev.devName+ "old Utilization data is  "+str(oldLinkUtilStats))
+        # logger.info(" For switch "+ self.p4dev.devName+ "new Utilization data is  "+str(linkUtilStats))
+        # logger.info(" For switch "+ self.p4dev.devName+ "old Utilization data is  "+str(oldLinkUtilStats))
         for lswitch in self.p4dev.allLeafSwitchesInTheDCN:
             e = lswitch.fabric_device_config.switch_host_subnet_prefix.index("/")
             leafSubnetAsIP = lswitch.fabric_device_config.switch_host_subnet_prefix[0:e]
