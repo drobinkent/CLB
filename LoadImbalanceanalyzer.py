@@ -3,9 +3,10 @@ import numpy as np
 import ConfigConst
 
 
-def getAVGFCTByFolder(filePath, algorithmName):
+def getAVGFCTByFolder(filePath, algorithmName, loadfactor):
     deviceToNewPortUtilizationDataMap = {}
     deviceToOldPortUtilizationDataMap = {}
+    print("\n\n\nAnalysis of load imbalance with algorithm "+algorithmName+" at loadfactor: ",loadfactor)
     try:
         f =open(filePath , 'r')
         lines = f.readlines()
@@ -39,7 +40,7 @@ def getAVGFCTByFolder(filePath, algorithmName):
                 # print("old"+deviceName+"--"+str(intList))
                 deviceToOldPortUtilizationDataMap[deviceName] = intList
 
-        print(len(deviceToNewPortUtilizationDataMap))
+        # print(len(deviceToNewPortUtilizationDataMap))
         #We will only consider the leaf switch's  switch-to-switch links load
 
         for switch in deviceToNewPortUtilizationDataMap:
@@ -68,18 +69,20 @@ def getAVGFCTByFolder(filePath, algorithmName):
                 packetcountVsImbalanceCDF = {}
                 portImbalanceCDF = 0
                 portLoadAsList = np.sort(portLoadAsList) # Sorting to put in cdf graph
-                print(np.sort(portLoadAsList))
+                # print(np.sort(portLoadAsList))
                 # print(totalImbalance)
                 for i in range(len(portLoadAsList)):
                     portImbalanceCDF = portImbalanceCDF + (portLoadAsList[i]/totalImbalance)
                     packetcountVsImbalanceCDF[portLoadAsList[i]] = portImbalanceCDF
                 print(packetcountVsImbalanceCDF)
+                for k in packetcountVsImbalanceCDF.keys():
+                    print("",k,", ",packetcountVsImbalanceCDF.get(k))
 
 
     except Exception as e:
         print("Exception occcured in processing load imbalance analyzer from file "+filePath+ ". Exception is ",e.with_traceback())
 
 
-getAVGFCTByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/ECMP_RESULTS/STATISTICS_load_factor_0.8.log", "ECMP")
-
-getAVGFCTByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/CLB_RESULTS/STATISTICS_load_factor_0.8.log", "CLB")
+getAVGFCTByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/ECMP_RESULTS/STATISTICS_load_factor_0.8.log", "ECMP", 0.8)
+getAVGFCTByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/HULA_RESULTS/STATISTICS_load_factor_0.8.log", "HULA", 0.8)
+getAVGFCTByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/CLB_RESULTS/STATISTICS_load_factor_0.8.log", "CLB", 0.8)
