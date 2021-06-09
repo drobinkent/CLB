@@ -96,5 +96,5 @@ SPINE_TO_SUPER_SPINE_BW = SPINE_TO_SUPER_SPINE_BW_10Mbps
 HOST_COMMAND_FOLDER  = "./MininetSimulator/PER_HOST_COMMANDS/"
 HOST_COMMAND_LOGS = "./MininetSimulator/TEST_LOG/"
 
-TCP_SERVER_COMAND_FILE = "/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/FlowInfos/WebSearchWorkLoad_load_factor_0.8.serverdat"
-TCP_CLIENT_COMAND_FILE = "/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/FlowInfos/WebSearchWorkLoad_load_factor_0.8.clientdat"
+TCP_SERVER_COMAND_FILE = "/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/FlowInfos/WebSearchWorkLoad_load_factor_0.4.serverdat"
+TCP_CLIENT_COMAND_FILE = "/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/FlowInfos/WebSearchWorkLoad_load_factor_0.4.clientdat"
