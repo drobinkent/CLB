@@ -38,12 +38,20 @@ control hula_load_balancing(inout parsed_headers_t    hdr,
         hdr.ipv6.hop_limit = hdr.ipv6.hop_limit - 1;
         flowlet_last_used_port.write((bit<32>)local_metadata.flowlet_map_index,(bit<9>)standard_metadata.egress_spec );
     }
+
+    action hula_set_upstream_default_egress_port(port_num_t port_num) {
+        standard_metadata.egress_spec = port_num;
+        // Decrement TTL
+        hdr.ipv6.hop_limit = hdr.ipv6.hop_limit - 1;
+        flowlet_last_used_port.write((bit<32>)local_metadata.flowlet_map_index,(bit<9>)standard_metadata.egress_spec );
+    }
    table hula_routing_table {
        key = {
             hdr.ipv6.dst_addr:          lpm;
        }
        actions = {
            hula_set_upstream_egress_port;
+           @defaultonly hula_set_upstream_default_egress_port;
        }
    }
 

@@ -8,11 +8,12 @@
         ["tmp_0", 32, false],
         ["tmp_1", 32, false],
         ["tmp_2", 32, false],
-        ["tmp_3", 16, false],
+        ["tmp_3", 32, false],
         ["tmp_4", 16, false],
         ["tmp_5", 16, false],
+        ["tmp_6", 16, false],
         ["ndp_processing_control_block_host_ipv6_tmp", 128, false],
-        ["tmp_6", 32, false],
+        ["tmp_7", 32, false],
         ["userMetadata.l4_src_port", 16, false],
         ["userMetadata.l4_dst_port", 16, false],
         ["userMetadata.is_multicast", 1, false],
@@ -1874,8 +1875,136 @@
       ]
     },
     {
-      "name" : "leaf101",
+      "name" : "IngressPipeImpl.hula_load_balancing_control_block.hula_set_upstream_default_egress_port",
       "id" : 13,
+      "runtime_data" : [
+        {
+          "name" : "port_num",
+          "bitwidth" : 9
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/hula.p4",
+            "line" : 43,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.egress_spec = port_num"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv6", "hop_limit"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["ipv6", "hop_limit"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/hula.p4",
+            "line" : 45,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv6.hop_limit = hdr.ipv6.hop_limit - 1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata.flowlet_map_index"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/hula.p4",
+            "line" : 46,
+            "column" : 37,
+            "source_fragment" : "(bit<32>)local_metadata.flowlet_map_index"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "IngressPipeImpl.hula_load_balancing_control_block.flowlet_last_used_port"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/src/hula.p4",
+            "line" : 46,
+            "column" : 8,
+            "source_fragment" : "flowlet_last_used_port.write((bit<32>)local_metadata.flowlet_map_index,(bit<9>)standard_metadata.egress_spec )"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "leaf101",
+      "id" : 14,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -1950,7 +2079,7 @@
     },
     {
       "name" : "leaf107",
-      "id" : 14,
+      "id" : 15,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -1958,7 +2087,7 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_3"]
+              "value" : ["scalars", "tmp_4"]
             },
             {
               "type" : "expression",
@@ -1998,7 +2127,7 @@
             },
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_3"]
+              "value" : ["scalars", "tmp_4"]
             }
           ],
           "source_info" : {
@@ -2036,7 +2165,7 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_4"]
+              "value" : ["scalars", "tmp_5"]
             },
             {
               "type" : "expression",
@@ -2079,7 +2208,7 @@
                 },
                 {
                   "type" : "field",
-                  "value" : ["scalars", "tmp_4"]
+                  "value" : ["scalars", "tmp_5"]
                 },
                 {
                   "type" : "field",
@@ -2099,7 +2228,7 @@
     },
     {
       "name" : "leaf112",
-      "id" : 15,
+      "id" : 16,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2131,7 +2260,7 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_5"]
+              "value" : ["scalars", "tmp_6"]
             },
             {
               "type" : "expression",
@@ -2174,7 +2303,7 @@
                 },
                 {
                   "type" : "field",
-                  "value" : ["scalars", "tmp_5"]
+                  "value" : ["scalars", "tmp_6"]
                 },
                 {
                   "type" : "field",
@@ -2194,7 +2323,7 @@
     },
     {
       "name" : "leaf91",
-      "id" : 16,
+      "id" : 17,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2255,7 +2384,7 @@
     },
     {
       "name" : "leaf118",
-      "id" : 17,
+      "id" : 18,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2306,7 +2435,7 @@
     },
     {
       "name" : "leaf87",
-      "id" : 18,
+      "id" : 19,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2371,7 +2500,7 @@
     },
     {
       "name" : "ndp43",
-      "id" : 19,
+      "id" : 20,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2436,7 +2565,7 @@
     },
     {
       "name" : "ndp47",
-      "id" : 20,
+      "id" : 21,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2472,7 +2601,7 @@
     },
     {
       "name" : "leaf135",
-      "id" : 21,
+      "id" : 22,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2489,7 +2618,7 @@
     },
     {
       "name" : "l2_ternary44",
-      "id" : 22,
+      "id" : 23,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2506,7 +2635,7 @@
     },
     {
       "name" : "my_station24",
-      "id" : 23,
+      "id" : 24,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2542,7 +2671,7 @@
     },
     {
       "name" : "my_station25",
-      "id" : 24,
+      "id" : 25,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2578,7 +2707,7 @@
     },
     {
       "name" : "leaf149",
-      "id" : 25,
+      "id" : 26,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2600,7 +2729,7 @@
     },
     {
       "name" : "leaf148",
-      "id" : 26,
+      "id" : 27,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2636,7 +2765,7 @@
     },
     {
       "name" : "leaf152",
-      "id" : 27,
+      "id" : 28,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2701,13 +2830,13 @@
     },
     {
       "name" : "NoAction",
-      "id" : 28,
+      "id" : 29,
       "runtime_data" : [],
       "primitives" : []
     },
     {
       "name" : "leaf228",
-      "id" : 29,
+      "id" : 30,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2758,7 +2887,7 @@
     },
     {
       "name" : "leaf240",
-      "id" : 30,
+      "id" : 31,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2780,7 +2909,7 @@
     },
     {
       "name" : "leaf263",
-      "id" : 31,
+      "id" : 32,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -2788,7 +2917,7 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_6"]
+              "value" : ["scalars", "tmp_7"]
             },
             {
               "type" : "expression",
@@ -2924,7 +3053,7 @@
             },
             {
               "type" : "field",
-              "value" : ["scalars", "tmp_6"]
+              "value" : ["scalars", "tmp_7"]
             }
           ],
           "source_info" : {
@@ -2965,14 +3094,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [18],
+          "action_ids" : [19],
           "actions" : ["leaf87"],
           "base_default_next" : "node_3",
           "next_tables" : {
             "leaf87" : "node_3"
           },
           "default_entry" : {
-            "action_id" : 18,
+            "action_id" : 19,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -2994,14 +3123,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [16],
+          "action_ids" : [17],
           "actions" : ["leaf91"],
           "base_default_next" : "node_5",
           "next_tables" : {
             "leaf91" : "node_5"
           },
           "default_entry" : {
-            "action_id" : 16,
+            "action_id" : 17,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -3023,14 +3152,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [13],
+          "action_ids" : [14],
           "actions" : ["leaf101"],
           "base_default_next" : "IngressPipeImpl.debug_std_meta_ingress_start.dbg_table",
           "next_tables" : {
             "leaf101" : "IngressPipeImpl.debug_std_meta_ingress_start.dbg_table"
           },
           "default_entry" : {
-            "action_id" : 13,
+            "action_id" : 14,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -3052,14 +3181,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [14],
+          "action_ids" : [15],
           "actions" : ["leaf107"],
           "base_default_next" : "IngressPipeImpl.debug_std_meta_ingress_start.dbg_table",
           "next_tables" : {
             "leaf107" : "IngressPipeImpl.debug_std_meta_ingress_start.dbg_table"
           },
           "default_entry" : {
-            "action_id" : 14,
+            "action_id" : 15,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -3081,14 +3210,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [15],
+          "action_ids" : [16],
           "actions" : ["leaf112"],
           "base_default_next" : "IngressPipeImpl.debug_std_meta_ingress_start.dbg_table",
           "next_tables" : {
             "leaf112" : "IngressPipeImpl.debug_std_meta_ingress_start.dbg_table"
           },
           "default_entry" : {
-            "action_id" : 15,
+            "action_id" : 16,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -3110,14 +3239,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [17],
+          "action_ids" : [18],
           "actions" : ["leaf118"],
           "base_default_next" : "IngressPipeImpl.debug_std_meta_ingress_start.dbg_table",
           "next_tables" : {
             "leaf118" : "IngressPipeImpl.debug_std_meta_ingress_start.dbg_table"
           },
           "default_entry" : {
-            "action_id" : 17,
+            "action_id" : 18,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -3494,14 +3623,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [19],
+          "action_ids" : [20],
           "actions" : ["ndp43"],
           "base_default_next" : "tbl_leaf135",
           "next_tables" : {
             "ndp43" : "tbl_leaf135"
           },
           "default_entry" : {
-            "action_id" : 19,
+            "action_id" : 20,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -3523,14 +3652,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [20],
+          "action_ids" : [21],
           "actions" : ["ndp47"],
           "base_default_next" : "tbl_leaf135",
           "next_tables" : {
             "ndp47" : "tbl_leaf135"
           },
           "default_entry" : {
-            "action_id" : 20,
+            "action_id" : 21,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -3552,14 +3681,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [21],
+          "action_ids" : [22],
           "actions" : ["leaf135"],
           "base_default_next" : "node_18",
           "next_tables" : {
             "leaf135" : "node_18"
           },
           "default_entry" : {
-            "action_id" : 21,
+            "action_id" : 22,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -3618,14 +3747,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [22],
+          "action_ids" : [23],
           "actions" : ["l2_ternary44"],
           "base_default_next" : "IngressPipeImpl.my_station_processing_control_block.my_station_table",
           "next_tables" : {
             "l2_ternary44" : "IngressPipeImpl.my_station_processing_control_block.my_station_table"
           },
           "default_entry" : {
-            "action_id" : 22,
+            "action_id" : 23,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -3684,14 +3813,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [23],
+          "action_ids" : [24],
           "actions" : ["my_station24"],
           "base_default_next" : "node_24",
           "next_tables" : {
             "my_station24" : "node_24"
           },
           "default_entry" : {
-            "action_id" : 23,
+            "action_id" : 24,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -3713,14 +3842,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [24],
+          "action_ids" : [25],
           "actions" : ["my_station25"],
           "base_default_next" : "node_24",
           "next_tables" : {
             "my_station25" : "node_24"
           },
           "default_entry" : {
-            "action_id" : 24,
+            "action_id" : 25,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -3779,14 +3908,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [26],
+          "action_ids" : [27],
           "actions" : ["leaf148"],
           "base_default_next" : "node_28",
           "next_tables" : {
             "leaf148" : "node_28"
           },
           "default_entry" : {
-            "action_id" : 26,
+            "action_id" : 27,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -3808,14 +3937,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [25],
+          "action_ids" : [26],
           "actions" : ["leaf149"],
           "base_default_next" : "IngressPipeImpl.ingress_end_debug.dbg_table",
           "next_tables" : {
             "leaf149" : "IngressPipeImpl.ingress_end_debug.dbg_table"
           },
           "default_entry" : {
-            "action_id" : 25,
+            "action_id" : 26,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -3837,14 +3966,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [27],
+          "action_ids" : [28],
           "actions" : ["leaf152"],
           "base_default_next" : "tbl_hula_load_balancing_control_block_hula_lookup_flowlet_map",
           "next_tables" : {
             "leaf152" : "tbl_hula_load_balancing_control_block_hula_lookup_flowlet_map"
           },
           "default_entry" : {
-            "action_id" : 27,
+            "action_id" : 28,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -3855,7 +3984,7 @@
           "id" : 20,
           "source_info" : {
             "filename" : "p4src/src/hula.p4",
-            "line" : 52,
+            "line" : 60,
             "column" : 7,
             "source_fragment" : "hula_lookup_flowlet_time_map()"
           },
@@ -3884,7 +4013,7 @@
           "id" : 21,
           "source_info" : {
             "filename" : "p4src/src/hula.p4",
-            "line" : 41,
+            "line" : 48,
             "column" : 9,
             "source_fragment" : "hula_routing_table"
           },
@@ -3902,11 +4031,12 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [12, 5],
-          "actions" : ["IngressPipeImpl.hula_load_balancing_control_block.hula_set_upstream_egress_port", "NoAction"],
+          "action_ids" : [12, 13, 5],
+          "actions" : ["IngressPipeImpl.hula_load_balancing_control_block.hula_set_upstream_egress_port", "IngressPipeImpl.hula_load_balancing_control_block.hula_set_upstream_default_egress_port", "NoAction"],
           "base_default_next" : "IngressPipeImpl.ingress_end_debug.dbg_table",
           "next_tables" : {
             "IngressPipeImpl.hula_load_balancing_control_block.hula_set_upstream_egress_port" : "IngressPipeImpl.ingress_end_debug.dbg_table",
+            "IngressPipeImpl.hula_load_balancing_control_block.hula_set_upstream_default_egress_port" : "IngressPipeImpl.ingress_end_debug.dbg_table",
             "NoAction" : "IngressPipeImpl.ingress_end_debug.dbg_table"
           },
           "default_entry" : {
@@ -3921,7 +4051,7 @@
           "id" : 22,
           "source_info" : {
             "filename" : "p4src/src/hula.p4",
-            "line" : 56,
+            "line" : 64,
             "column" : 12,
             "source_fragment" : "use_old_port()"
           },
@@ -4607,7 +4737,7 @@
           "id" : 9,
           "source_info" : {
             "filename" : "p4src/src/hula.p4",
-            "line" : 53,
+            "line" : 61,
             "column" : 11,
             "source_fragment" : "local_metadata.flow_inter_packet_gap > FLOWLET_INTER_PACKET_GAP_THRESHOLD"
           },
@@ -4657,14 +4787,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [29],
+          "action_ids" : [30],
           "actions" : ["leaf228"],
           "base_default_next" : "node_40",
           "next_tables" : {
             "leaf228" : "node_40"
           },
           "default_entry" : {
-            "action_id" : 29,
+            "action_id" : 30,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -4686,14 +4816,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [30],
+          "action_ids" : [31],
           "actions" : ["leaf240"],
           "base_default_next" : "EgressPipeImpl.debug_std_meta_egress_start.dbg_table",
           "next_tables" : {
             "leaf240" : "EgressPipeImpl.debug_std_meta_egress_start.dbg_table"
           },
           "default_entry" : {
-            "action_id" : 30,
+            "action_id" : 31,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -5004,14 +5134,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [28],
+          "action_ids" : [29],
           "actions" : ["NoAction"],
           "base_default_next" : "tbl_leaf263",
           "next_tables" : {
             "NoAction" : "tbl_leaf263"
           },
           "default_entry" : {
-            "action_id" : 28,
+            "action_id" : 29,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -5033,14 +5163,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [31],
+          "action_ids" : [32],
           "actions" : ["leaf263"],
           "base_default_next" : null,
           "next_tables" : {
             "leaf263" : null
           },
           "default_entry" : {
-            "action_id" : 31,
+            "action_id" : 32,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true

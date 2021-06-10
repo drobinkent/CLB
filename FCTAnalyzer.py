@@ -72,12 +72,13 @@ def getPercentileFCTByFolder(folderName):
     totalFlowsize = 0
     totalOfFlowSizeMultipliedByAvgFct=0
     for f in flowTypeVsFCTMap:
-        # print(str(f) + " -- ",np.percentile(flowTypeVsFCTMap.get(f), 80))
-        # print(str(f) + " -- ",flowTypeVsFlowCountMap.get(f))
-        # # print(str(f) + " -- ",flowTypeVsFCTMap.get(f)/flowTypeVsFlowCountMap.get(f))
-        # print(str(f) + " -- ",np.average(flowTypeVsFCTMap.get(f)))
+        print(str(f) + " -- ",np.percentile(flowTypeVsFCTMap.get(f), 80))
+        print(str(f) + " -- ",flowTypeVsFlowCountMap.get(f))
+        # print(str(f) + " -- ",flowTypeVsFCTMap.get(f)/flowTypeVsFlowCountMap.get(f))
+        print(str(f) + " -- ",np.average(flowTypeVsFCTMap.get(f)))
         totalFlowsize= totalFlowsize+ float(f)
-        totalOfFlowSizeMultipliedByAvgFct = totalOfFlowSizeMultipliedByAvgFct + ( float(f) * np.average(flowTypeVsFCTMap.get(f)))
+        # totalOfFlowSizeMultipliedByAvgFct = totalOfFlowSizeMultipliedByAvgFct + ( float(f) * np.average(flowTypeVsFCTMap.get(f)))
+        totalOfFlowSizeMultipliedByAvgFct = totalOfFlowSizeMultipliedByAvgFct + ( float(f) * np.percentile(flowTypeVsFCTMap.get(f),50))
     print("Average FCT  = ", totalOfFlowSizeMultipliedByAvgFct/totalFlowsize)
 
     pass

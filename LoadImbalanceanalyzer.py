@@ -42,7 +42,7 @@ def getAVGFCTByFolder(filePath, algorithmName, loadfactor):
 
         # print(len(deviceToNewPortUtilizationDataMap))
         #We will only consider the leaf switch's  switch-to-switch links load
-
+        switchToImbalanceCDFMap = {}
         for switch in deviceToNewPortUtilizationDataMap:
             if switch.find("l") > -1: # this means leaf switch
                 print("Switch name "+switch)
@@ -75,9 +75,10 @@ def getAVGFCTByFolder(filePath, algorithmName, loadfactor):
                     portImbalanceCDF = portImbalanceCDF + (portLoadAsList[i]/totalImbalance)
                     packetcountVsImbalanceCDF[portLoadAsList[i]] = portImbalanceCDF
                 print(packetcountVsImbalanceCDF)
-                for k in packetcountVsImbalanceCDF.keys():
-                    print("",k,", ",packetcountVsImbalanceCDF.get(k))
-
+                # for k in packetcountVsImbalanceCDF.keys():
+                #     print("",k,", ",packetcountVsImbalanceCDF.get(k))
+                switchToImbalanceCDFMap[switch] = packetcountVsImbalanceCDF
+        print(switchToImbalanceCDFMap)
 
     except Exception as e:
         print("Exception occcured in processing load imbalance analyzer from file "+filePath+ ". Exception is ",e.with_traceback())

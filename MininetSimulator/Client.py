@@ -7,7 +7,7 @@ import socket
 import sys
 from datetime import datetime
 from time import sleep
-
+SEND_BUF_SIZE = 8192
 logger = logging.getLogger('TRAFFIC_DEPLOYER_CLIET.py')
 hdlr = logging.FileHandler('./log/TRAFFIC_DEPLOYER_CLIENT.log')
 formatter = logging.Formatter('[%(asctime)s] p%(process)s {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s','%m-%d %H:%M:%S')
@@ -41,6 +41,10 @@ try:
 	sleep(START_DELAY)
 	start=datetime.now()
 	s = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
+	# s.setsockopt(
+	# 	socket.SOL_SOCKET,
+	# 	socket.SO_SNDBUF,
+	# 	SEND_BUF_SIZE)
 	s.connect((TCP_IP, TCP_PORT))
 	logger.info("Connected to server :"+TCP_IP+ " at port "+str(TCP_PORT))
 	x = 0

@@ -1,678 +1,324 @@
-[06-08 22:17:46] p9042 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42001
-[06-08 22:17:46] p9042 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:17:46] p9042 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32001_2001:1:1:1:0:0000:0001:0000_42001
-[06-08 22:17:47] p8588 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42001
-[06-08 22:17:47] p8588 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:17:47] p8588 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0002_32001_2001:1:1:1:0:0000:0001:0003_42001
-[06-08 22:17:48] p8801 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42018
-[06-08 22:17:48] p9038 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42002
-[06-08 22:17:48] p9038 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:17:48] p9038 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32002_2001:1:1:1:0:0000:0001:0000_42002
-[06-08 22:17:49] p9195 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42018
-[06-08 22:17:49] p8554 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42013
-[06-08 22:17:49] p9240 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42002
-[06-08 22:17:49] p9240 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:17:49] p9240 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32002_2001:1:1:1:0:0000:0003:0000_42002
-[06-08 22:17:49] p8948 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42001
-[06-08 22:17:49] p8948 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:17:49] p8948 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0002_32001_2001:1:1:1:0:0000:0000:0003_42001
-[06-08 22:17:52] p8801 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:17:52] p8801 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32018_2001:1:1:1:0:0000:0002:0003_42018
-[06-08 22:17:53] p9297 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42012
-[06-08 22:17:53] p9301 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42013
-[06-08 22:17:54] p8379 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42010
-[06-08 22:17:54] p8441 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42013
-[06-08 22:17:54] p8154 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42011
-[06-08 22:17:54] p9301 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:17:54] p9301 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32013_2001:1:1:1:0:0000:0003:0000_42013
-[06-08 22:17:54] p8677 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42001
-[06-08 22:17:54] p8677 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:17:54] p8677 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32001_2001:1:1:1:0:0000:0002:0003_42001
-[06-08 22:17:55] p9045 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42003
-[06-08 22:17:55] p9045 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:17:55] p9045 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32003_2001:1:1:1:0:0000:0001:0000_42003
-[06-08 22:17:55] p9297 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:17:55] p9297 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32012_2001:1:1:1:0:0000:0003:0000_42012
-[06-08 22:17:56] p8949 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42002
-[06-08 22:17:56] p8949 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:17:56] p8949 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0002_32002_2001:1:1:1:0:0000:0000:0003_42002
-[06-08 22:17:58] p7781 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0001 at port 42001
-[06-08 22:17:58] p7781 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:17:58] p7781 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0000_32001_2001:1:1:1:0:0000:0001:0001_42001
-[06-08 22:17:59] p8554 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:17:59] p8554 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32013_2001:1:1:1:0:0000:0000:0002_42013
-[06-08 22:18:00] p8794 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42016
-[06-08 22:18:00] p8619 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42010
-[06-08 22:18:01] p8224 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42010
-[06-08 22:18:04] p7855 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0001 at port 42009
-[06-08 22:18:04] p9175 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42009
-[06-08 22:18:05] p8204 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42008
-[06-08 22:18:06] p8379 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:06] p8379 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0001_32010_2001:1:1:1:0:0000:0002:0002_42010
-[06-08 22:18:08] p9098 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42001
-[06-08 22:18:08] p9098 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:08] p9098 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0003_32001_2001:1:1:1:0:0000:0002:0000_42001
-[06-08 22:18:08] p8691 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42002
-[06-08 22:18:08] p8691 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:08] p8691 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32002_2001:1:1:1:0:0000:0002:0003_42002
-[06-08 22:18:09] p8234 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42011
-[06-08 22:18:09] p9109 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42002
-[06-08 22:18:09] p9109 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:09] p9109 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0003_32002_2001:1:1:1:0:0000:0002:0000_42002
-[06-08 22:18:09] p8794 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:09] p8794 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32016_2001:1:1:1:0:0000:0002:0003_42016
-[06-08 22:18:10] p8204 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:10] p8204 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0001_32008_2001:1:1:1:0:0000:0001:0002_42008
-[06-08 22:18:10] p8878 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42013
-[06-08 22:18:10] p9351 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42021
-[06-08 22:18:10] p7788 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0001 at port 42002
-[06-08 22:18:10] p7788 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:10] p7788 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0000_32002_2001:1:1:1:0:0000:0001:0001_42002
-[06-08 22:18:10] p8341 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42006
-[06-08 22:18:11] p8370 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42009
-[06-08 22:18:13] p8586 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42002
-[06-08 22:18:13] p8586 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:13] p8586 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0002_32002_2001:1:1:1:0:0000:0001:0003_42002
-[06-08 22:18:14] p9311 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42014
-[06-08 22:18:14] p9065 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42004
-[06-08 22:18:14] p9065 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:14] p9065 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32004_2001:1:1:1:0:0000:0001:0000_42004
-[06-08 22:18:15] p7838 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0001 at port 42007
-[06-08 22:18:15] p9413 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42009
-[06-08 22:18:17] p9164 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42008
-[06-08 22:18:17] p8339 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42007
-[06-08 22:18:17] p8827 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42001
-[06-08 22:18:17] p8827 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:17] p8827 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32001_2001:1:1:1:0:0000:0003:0003_42001
-[06-08 22:18:17] p8055 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42010
-[06-08 22:18:17] p9306 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42015
-[06-08 22:18:17] p8817 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42002
-[06-08 22:18:17] p8817 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:17] p8817 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32002_2001:1:1:1:0:0000:0003:0003_42002
-[06-08 22:18:18] p8459 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42014
-[06-08 22:18:18] p9311 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:18] p9311 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32014_2001:1:1:1:0:0000:0003:0000_42014
-[06-08 22:18:19] p8726 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42003
-[06-08 22:18:19] p8726 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:19] p8726 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32003_2001:1:1:1:0:0000:0002:0003_42003
-[06-08 22:18:20] p9063 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42005
-[06-08 22:18:20] p9063 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:20] p9063 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32005_2001:1:1:1:0:0000:0001:0000_42005
-[06-08 22:18:21] p8959 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42003
-[06-08 22:18:21] p8959 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:21] p8959 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0002_32003_2001:1:1:1:0:0000:0000:0003_42003
-[06-08 22:18:22] p9243 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42003
-[06-08 22:18:22] p9243 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:22] p9243 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32003_2001:1:1:1:0:0000:0003:0000_42003
-[06-08 22:18:22] p8233 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42009
-[06-08 22:18:23] p9115 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42003
-[06-08 22:18:23] p9115 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:23] p9115 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0003_32003_2001:1:1:1:0:0000:0002:0000_42003
-[06-08 22:18:24] p7951 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42014
-[06-08 22:18:25] p8170 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42001
-[06-08 22:18:25] p8170 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:25] p8170 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0001_32001_2001:1:1:1:0:0000:0001:0002_42001
-[06-08 22:18:26] p8591 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42003
-[06-08 22:18:26] p8591 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:26] p8591 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0002_32003_2001:1:1:1:0:0000:0001:0003_42003
-[06-08 22:18:26] p9079 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42006
-[06-08 22:18:26] p9079 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:26] p9079 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32006_2001:1:1:1:0:0000:0001:0000_42006
-[06-08 22:18:27] p8192 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42002
-[06-08 22:18:27] p8192 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:27] p8192 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0001_32002_2001:1:1:1:0:0000:0001:0002_42002
-[06-08 22:18:27] p7934 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42013
-[06-08 22:18:27] p8963 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42004
-[06-08 22:18:27] p8963 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:27] p8963 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0002_32004_2001:1:1:1:0:0000:0000:0003_42004
-[06-08 22:18:27] p8549 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42014
-[06-08 22:18:28] p9080 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42007
-[06-08 22:18:28] p9080 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:28] p9080 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32007_2001:1:1:1:0:0000:0001:0000_42007
-[06-08 22:18:28] p8890 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42014
-[06-08 22:18:29] p8893 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42015
-[06-08 22:18:30] p8313 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42001
-[06-08 22:18:30] p8313 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:30] p8313 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0001_32001_2001:1:1:1:0:0000:0002:0002_42001
-[06-08 22:18:31] p8017 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42007
-[06-08 22:18:31] p7826 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42001
-[06-08 22:18:31] p7826 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:31] p7826 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0000_32001_2001:1:1:1:0:0000:0002:0001_42001
-[06-08 22:18:31] p8072 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42011
-[06-08 22:18:31] p7972 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42002
-[06-08 22:18:31] p7972 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:31] p7972 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0000_32002_2001:1:1:1:0:0000:0003:0001_42002
-[06-08 22:18:33] p9189 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42010
-[06-08 22:18:34] p8058 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42001
-[06-08 22:18:34] p8058 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:34] p8058 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0000_32001_2001:1:1:1:0:0000:0000:0001_42001
-[06-08 22:18:34] p9396 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42006
-[06-08 22:18:34] p7797 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0001 at port 42003
-[06-08 22:18:34] p7797 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:34] p7797 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0000_32003_2001:1:1:1:0:0000:0001:0001_42003
-[06-08 22:18:37] p8871 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42009
-[06-08 22:18:37] p7868 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0001 at port 42010
-[06-08 22:18:38] p9101 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42008
-[06-08 22:18:38] p9101 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:38] p9101 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32008_2001:1:1:1:0:0000:0001:0000_42008
-[06-08 22:18:38] p8738 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42004
-[06-08 22:18:38] p8738 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:38] p8738 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32004_2001:1:1:1:0:0000:0002:0003_42004
-[06-08 22:18:38] p9323 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42016
-[06-08 22:18:39] p7854 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42002
-[06-08 22:18:39] p7854 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:39] p7854 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0000_32002_2001:1:1:1:0:0000:0002:0001_42002
-[06-08 22:18:39] p9263 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42004
-[06-08 22:18:39] p9263 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:39] p9263 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32004_2001:1:1:1:0:0000:0003:0000_42004
-[06-08 22:18:40] p8173 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42003
-[06-08 22:18:40] p8173 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:40] p8173 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0001_32003_2001:1:1:1:0:0000:0001:0002_42003
-[06-08 22:18:40] p7824 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0001 at port 42008
-[06-08 22:18:40] p7874 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42007
-[06-08 22:18:40] p8749 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42005
-[06-08 22:18:40] p8749 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:40] p8749 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32005_2001:1:1:1:0:0000:0002:0003_42005
-[06-08 22:18:41] p8352 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42001
-[06-08 22:18:41] p8352 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:41] p8352 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0001_32001_2001:1:1:1:0:0000:0003:0002_42001
-[06-08 22:18:42] p9417 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42007
-[06-08 22:18:43] p9192 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42011
-[06-08 22:18:45] p8740 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42006
-[06-08 22:18:45] p8740 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:45] p8740 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32006_2001:1:1:1:0:0000:0002:0003_42006
-[06-08 22:18:45] p7885 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42008
-[06-08 22:18:46] p9375 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42022
-[06-08 22:18:46] p9110 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42009
-[06-08 22:18:46] p9110 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:46] p9110 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32009_2001:1:1:1:0:0000:0001:0000_42009
-[06-08 22:18:46] p8044 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42002
-[06-08 22:18:46] p8044 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:46] p8044 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0000_32002_2001:1:1:1:0:0000:0000:0001_42002
-[06-08 22:18:46] p8427 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42010
-[06-08 22:18:48] p9269 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42005
-[06-08 22:18:48] p9269 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:48] p9269 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32005_2001:1:1:1:0:0000:0003:0000_42005
-[06-08 22:18:48] p8066 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42003
-[06-08 22:18:48] p8066 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:48] p8066 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0000_32003_2001:1:1:1:0:0000:0000:0001_42003
-[06-08 22:18:49] p8077 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42004
-[06-08 22:18:49] p8077 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:49] p8077 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0000_32004_2001:1:1:1:0:0000:0000:0001_42004
-[06-08 22:18:49] p9264 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42006
-[06-08 22:18:49] p9264 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:49] p9264 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32006_2001:1:1:1:0:0000:0003:0000_42006
-[06-08 22:18:49] p8372 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42002
-[06-08 22:18:49] p8372 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:49] p8372 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0001_32002_2001:1:1:1:0:0000:0003:0002_42002
-[06-08 22:18:51] p8380 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42003
-[06-08 22:18:51] p8380 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:51] p8380 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0001_32003_2001:1:1:1:0:0000:0003:0002_42003
-[06-08 22:18:52] p8750 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42007
-[06-08 22:18:52] p8750 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:52] p8750 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32007_2001:1:1:1:0:0000:0002:0003_42007
-[06-08 22:18:56] p8818 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42003
-[06-08 22:18:56] p8818 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:56] p8818 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32003_2001:1:1:1:0:0000:0003:0003_42003
-[06-08 22:18:56] p8015 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42008
-[06-08 22:18:57] p7974 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42003
-[06-08 22:18:57] p7974 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:57] p7974 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0000_32003_2001:1:1:1:0:0000:0003:0001_42003
-[06-08 22:18:58] p9120 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42010
-[06-08 22:18:58] p9120 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:58] p9120 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32010_2001:1:1:1:0:0000:0001:0000_42010
-[06-08 22:18:58] p8600 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42004
-[06-08 22:18:58] p8600 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:58] p8600 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0002_32004_2001:1:1:1:0:0000:0001:0003_42004
-[06-08 22:18:58] p8475 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42001
-[06-08 22:18:58] p8475 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:18:58] p8475 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32001_2001:1:1:1:0:0000:0000:0002_42001
-[06-08 22:19:00] p8823 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42004
-[06-08 22:19:00] p8823 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:00] p8823 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32004_2001:1:1:1:0:0000:0003:0003_42004
-[06-08 22:19:00] p7878 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42009
-[06-08 22:19:01] p8530 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42012
-[06-08 22:19:02] p8976 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42005
-[06-08 22:19:02] p8976 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:02] p8976 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0002_32005_2001:1:1:1:0:0000:0000:0003_42005
-[06-08 22:19:03] p9402 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42001
-[06-08 22:19:03] p9402 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:03] p9402 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0003_32001_2001:1:1:1:0:0000:0000:0000_42001
-[06-08 22:19:03] p9334 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42017
-[06-08 22:19:03] p8378 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42004
-[06-08 22:19:03] p8378 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:03] p8378 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0001_32004_2001:1:1:1:0:0000:0003:0002_42004
-[06-08 22:19:03] p8613 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42009
-[06-08 22:19:04] p8090 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42005
-[06-08 22:19:04] p8090 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:04] p8090 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0000_32005_2001:1:1:1:0:0000:0000:0001_42005
-[06-08 22:19:04] p9417 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:04] p9417 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0003_32007_2001:1:1:1:0:0000:0000:0000_42007
-[06-08 22:19:04] p8495 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42002
-[06-08 22:19:04] p8495 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:04] p8495 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32002_2001:1:1:1:0:0000:0000:0002_42002
-[06-08 22:19:04] p8757 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42008
-[06-08 22:19:04] p8757 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:04] p8757 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32008_2001:1:1:1:0:0000:0002:0003_42008
-[06-08 22:19:05] p8317 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42002
-[06-08 22:19:05] p8317 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:05] p8317 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0001_32002_2001:1:1:1:0:0000:0002:0002_42002
-[06-08 22:19:05] p8762 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42009
-[06-08 22:19:05] p8762 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:05] p8762 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32009_2001:1:1:1:0:0000:0002:0003_42009
-[06-08 22:19:06] p9026 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42012
-[06-08 22:19:06] p9376 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42023
-[06-08 22:19:07] p8875 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42011
-[06-08 22:19:08] p8775 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42010
-[06-08 22:19:08] p8775 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:08] p8775 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32010_2001:1:1:1:0:0000:0002:0003_42010
-[06-08 22:19:08] p9125 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42004
-[06-08 22:19:08] p9125 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:08] p9125 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0003_32004_2001:1:1:1:0:0000:0002:0000_42004
-[06-08 22:19:08] p9372 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42024
-[06-08 22:19:09] p8484 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42003
-[06-08 22:19:09] p8484 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:09] p8484 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32003_2001:1:1:1:0:0000:0000:0002_42003
-[06-08 22:19:10] p8341 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:10] p8341 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0001_32006_2001:1:1:1:0:0000:0002:0002_42006
-[06-08 22:19:11] p9141 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42011
-[06-08 22:19:11] p9141 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:11] p9141 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32011_2001:1:1:1:0:0000:0001:0000_42011
-[06-08 22:19:11] p8768 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42011
-[06-08 22:19:11] p8768 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:11] p8768 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32011_2001:1:1:1:0:0000:0002:0003_42011
-[06-08 22:19:13] p8896 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42016
-[06-08 22:19:13] p9384 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42025
-[06-08 22:19:14] p8497 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42004
-[06-08 22:19:14] p8497 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:14] p8497 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32004_2001:1:1:1:0:0000:0000:0002_42004
-[06-08 22:19:14] p8373 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42011
-[06-08 22:19:15] p9412 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42008
-[06-08 22:19:15] p8194 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42004
-[06-08 22:19:15] p8194 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:15] p8194 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0001_32004_2001:1:1:1:0:0000:0001:0002_42004
-[06-08 22:19:17] p8509 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42005
-[06-08 22:19:17] p8509 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:17] p8509 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32005_2001:1:1:1:0:0000:0000:0002_42005
-[06-08 22:19:17] p7794 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0001 at port 42004
-[06-08 22:19:17] p7794 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:17] p7794 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0000_32004_2001:1:1:1:0:0000:0001:0001_42004
-[06-08 22:19:18] p8508 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42006
-[06-08 22:19:18] p8508 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:18] p8508 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32006_2001:1:1:1:0:0000:0000:0002_42006
-[06-08 22:19:18] p8245 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42012
-[06-08 22:19:18] p8599 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42005
-[06-08 22:19:18] p8599 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:18] p8599 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0002_32005_2001:1:1:1:0:0000:0001:0003_42005
-[06-08 22:19:19] p8997 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42008
-[06-08 22:19:19] p8100 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42007
-[06-08 22:19:22] p8834 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42005
-[06-08 22:19:22] p8834 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:22] p8834 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32005_2001:1:1:1:0:0000:0003:0003_42005
-[06-08 22:19:22] p9132 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42005
-[06-08 22:19:22] p9132 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:22] p9132 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0003_32005_2001:1:1:1:0:0000:0002:0000_42005
-[06-08 22:19:22] p9030 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42013
-[06-08 22:19:24] p8198 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42005
-[06-08 22:19:24] p8198 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:24] p8198 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0001_32005_2001:1:1:1:0:0000:0001:0002_42005
-[06-08 22:19:24] p8553 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42015
-[06-08 22:19:25] p8122 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42006
-[06-08 22:19:25] p8122 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:25] p8122 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0000_32006_2001:1:1:1:0:0000:0000:0001_42006
-[06-08 22:19:25] p9385 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42003
-[06-08 22:19:26] p9139 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42006
-[06-08 22:19:26] p9139 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:26] p9139 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0003_32006_2001:1:1:1:0:0000:0002:0000_42006
-[06-08 22:19:27] p9414 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42010
-[06-08 22:19:28] p8323 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42003
-[06-08 22:19:28] p8323 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:28] p8323 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0001_32003_2001:1:1:1:0:0000:0002:0002_42003
-[06-08 22:19:30] p8849 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42006
-[06-08 22:19:30] p8849 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:30] p8849 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32006_2001:1:1:1:0:0000:0003:0003_42006
-[06-08 22:19:32] p8983 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42006
-[06-08 22:19:32] p8983 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:32] p8983 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0002_32006_2001:1:1:1:0:0000:0000:0003_42006
-[06-08 22:19:33] p8210 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42006
-[06-08 22:19:33] p8210 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:33] p8210 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0001_32006_2001:1:1:1:0:0000:0001:0002_42006
-[06-08 22:19:34] p9135 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42007
-[06-08 22:19:34] p9135 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:34] p9135 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0003_32007_2001:1:1:1:0:0000:0002:0000_42007
-[06-08 22:19:35] p7838 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:35] p7838 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0000_32007_2001:1:1:1:0:0000:0001:0001_42007
-[06-08 22:19:35] p9416 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42011
-[06-08 22:19:37] p8852 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42007
-[06-08 22:19:37] p8852 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:37] p8852 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32007_2001:1:1:1:0:0000:0003:0003_42007
-[06-08 22:19:37] p9346 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42020
-[06-08 22:19:38] p8776 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42012
-[06-08 22:19:38] p8776 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:38] p8776 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32012_2001:1:1:1:0:0000:0002:0003_42012
-[06-08 22:19:38] p9148 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42012
-[06-08 22:19:38] p9148 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:38] p9148 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32012_2001:1:1:1:0:0000:0001:0000_42012
-[06-08 22:19:38] p8365 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42008
-[06-08 22:19:39] p8831 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42019
-[06-08 22:19:39] p9170 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42014
-[06-08 22:19:39] p9170 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:39] p9170 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32014_2001:1:1:1:0:0000:0001:0000_42014
-[06-08 22:19:40] p9009 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42009
-[06-08 22:19:41] p8530 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:41] p8530 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32012_2001:1:1:1:0:0000:0000:0002_42012
-[06-08 22:19:41] p7934 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:41] p7934 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0000_32013_2001:1:1:1:0:0000:0002:0001_42013
-[06-08 22:19:42] p7796 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0001 at port 42005
-[06-08 22:19:42] p7796 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:42] p7796 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0000_32005_2001:1:1:1:0:0000:0001:0001_42005
-[06-08 22:19:42] p9159 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42013
-[06-08 22:19:42] p9159 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:42] p9159 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32013_2001:1:1:1:0:0000:0001:0000_42013
-[06-08 22:19:42] p8114 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42010
-[06-08 22:19:43] p8784 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42015
-[06-08 22:19:43] p8392 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42005
-[06-08 22:19:43] p8392 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:43] p8392 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0001_32005_2001:1:1:1:0:0000:0003:0002_42005
-[06-08 22:19:44] p8536 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42007
-[06-08 22:19:44] p8536 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:44] p8536 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32007_2001:1:1:1:0:0000:0000:0002_42007
-[06-08 22:19:44] p7987 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42004
-[06-08 22:19:44] p7987 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:44] p7987 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0000_32004_2001:1:1:1:0:0000:0003:0001_42004
-[06-08 22:19:45] p8152 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42008
-[06-08 22:19:45] p7992 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42005
-[06-08 22:19:45] p9178 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42015
-[06-08 22:19:45] p7992 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:45] p7992 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0000_32005_2001:1:1:1:0:0000:0003:0001_42005
-[06-08 22:19:45] p9178 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:45] p9178 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32015_2001:1:1:1:0:0000:0001:0000_42015
-[06-08 22:19:46] p7801 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0001 at port 42006
-[06-08 22:19:46] p7801 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:46] p7801 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0000_32006_2001:1:1:1:0:0000:0001:0001_42006
-[06-08 22:19:46] p8396 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42006
-[06-08 22:19:46] p8396 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:46] p8396 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0001_32006_2001:1:1:1:0:0000:0003:0002_42006
-[06-08 22:19:47] p8880 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42012
-[06-08 22:19:47] p7894 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42010
-[06-08 22:19:47] p8867 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42010
-[06-08 22:19:47] p8020 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42009
-[06-08 22:19:48] p7874 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:48] p7874 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0000_32007_2001:1:1:1:0:0000:0002:0001_42007
-[06-08 22:19:48] p7991 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42006
-[06-08 22:19:48] p7991 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:48] p7991 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0000_32006_2001:1:1:1:0:0000:0003:0001_42006
-[06-08 22:19:48] p7953 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42015
-[06-08 22:19:48] p8854 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42008
-[06-08 22:19:48] p8854 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:48] p8854 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32008_2001:1:1:1:0:0000:0003:0003_42008
-[06-08 22:19:49] p8568 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42016
-[06-08 22:19:50] p9335 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42018
-[06-08 22:19:51] p8610 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42006
-[06-08 22:19:51] p8610 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:51] p8610 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0002_32006_2001:1:1:1:0:0000:0001:0003_42006
-[06-08 22:19:51] p9207 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42012
-[06-08 22:19:52] p9268 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42007
-[06-08 22:19:52] p9268 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:52] p9268 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32007_2001:1:1:1:0:0000:0003:0000_42007
-[06-08 22:19:53] p8627 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42011
-[06-08 22:19:53] p9047 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42014
-[06-08 22:19:53] p8444 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42011
-[06-08 22:19:54] p9347 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42019
-[06-08 22:19:54] p8992 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42007
-[06-08 22:19:54] p8992 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:54] p8992 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0002_32007_2001:1:1:1:0:0000:0000:0003_42007
-[06-08 22:19:54] p8613 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:54] p8613 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0002_32009_2001:1:1:1:0:0000:0001:0003_42009
-[06-08 22:19:54] p8778 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42013
-[06-08 22:19:54] p8778 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:54] p8778 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32013_2001:1:1:1:0:0000:0002:0003_42013
-[06-08 22:19:55] p9278 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42008
-[06-08 22:19:55] p9278 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:55] p9278 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32008_2001:1:1:1:0:0000:0003:0000_42008
-[06-08 22:19:55] p8326 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42004
-[06-08 22:19:55] p8326 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:55] p8326 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0001_32004_2001:1:1:1:0:0000:0002:0002_42004
-[06-08 22:19:56] p8782 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42014
-[06-08 22:19:56] p8782 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:19:56] p8782 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32014_2001:1:1:1:0:0000:0002:0003_42014
-[06-08 22:19:57] p8799 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42017
-[06-08 22:19:58] p9008 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42010
-[06-08 22:19:59] p8514 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42010
-[06-08 22:19:59] p7889 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0001 at port 42011
-[06-08 22:19:59] p8397 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42012
-[06-08 22:20:01] p7913 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42011
-[06-08 22:20:01] p9391 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42004
-[06-08 22:20:01] p8531 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42011
-[06-08 22:20:04] p9222 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42013
-[06-08 22:20:04] p7858 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42003
-[06-08 22:20:04] p7858 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:04] p7858 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0000_32003_2001:1:1:1:0:0000:0002:0001_42003
-[06-08 22:20:04] p8624 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42012
-[06-08 22:20:04] p9203 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42016
-[06-08 22:20:04] p9203 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:04] p9203 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32016_2001:1:1:1:0:0000:0001:0000_42016
-[06-08 22:20:04] p8410 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42007
-[06-08 22:20:04] p8410 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:04] p8410 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0001_32007_2001:1:1:1:0:0000:0003:0002_42007
-[06-08 22:20:04] p8614 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42007
-[06-08 22:20:04] p8614 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:04] p8614 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0002_32007_2001:1:1:1:0:0000:0001:0003_42007
-[06-08 22:20:05] p8370 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:05] p8370 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0001_32009_2001:1:1:1:0:0000:0002:0002_42009
-[06-08 22:20:05] p7852 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42004
-[06-08 22:20:05] p7852 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:05] p7852 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0000_32004_2001:1:1:1:0:0000:0002:0001_42004
-[06-08 22:20:05] p8564 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42017
-[06-08 22:20:06] p8202 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42007
-[06-08 22:20:06] p8202 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:06] p8202 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0001_32007_2001:1:1:1:0:0000:0001:0002_42007
-[06-08 22:20:06] p8416 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42008
-[06-08 22:20:06] p8416 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:06] p8416 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0001_32008_2001:1:1:1:0:0000:0003:0002_42008
-[06-08 22:20:07] p8518 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42008
-[06-08 22:20:07] p8518 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:07] p8518 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32008_2001:1:1:1:0:0000:0000:0002_42008
-[06-08 22:20:08] p8111 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42009
-[06-08 22:20:10] p7914 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42012
-[06-08 22:20:10] p9213 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42019
-[06-08 22:20:10] p7867 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42005
-[06-08 22:20:10] p7867 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:10] p7867 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0000_32005_2001:1:1:1:0:0000:0002:0001_42005
-[06-08 22:20:10] p8324 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42005
-[06-08 22:20:10] p8324 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:10] p8324 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0001_32005_2001:1:1:1:0:0000:0002:0002_42005
-[06-08 22:20:11] p8607 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42008
-[06-08 22:20:11] p8607 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:11] p8607 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0002_32008_2001:1:1:1:0:0000:0001:0003_42008
-[06-08 22:20:12] p9303 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42009
-[06-08 22:20:12] p9303 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:12] p9303 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32009_2001:1:1:1:0:0000:0003:0000_42009
-[06-08 22:20:13] p8534 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42009
-[06-08 22:20:13] p8534 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:13] p8534 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32009_2001:1:1:1:0:0000:0000:0002_42009
-[06-08 22:20:13] p9291 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42010
-[06-08 22:20:13] p9291 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:13] p9291 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32010_2001:1:1:1:0:0000:0003:0000_42010
-[06-08 22:20:13] p9394 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42005
-[06-08 22:20:15] p9201 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42017
-[06-08 22:20:15] p9008 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:15] p9008 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0002_32010_2001:1:1:1:0:0000:0000:0003_42010
-[06-08 22:20:16] p9398 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42002
-[06-08 22:20:16] p9398 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:16] p9398 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0003_32002_2001:1:1:1:0:0000:0000:0000_42002
-[06-08 22:20:17] p9312 {./MininetSimulator/Client.py:45} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42011
-[06-08 22:20:17] p9312 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:17] p9312 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32011_2001:1:1:1:0:0000:0003:0000_42011
-[06-08 22:20:26] p9009 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:26] p9009 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0002_32009_2001:1:1:1:0:0000:0000:0003_42009
-[06-08 22:20:38] p8233 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:38] p8233 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0001_32009_2001:1:1:1:0:0000:0001:0002_42009
-[06-08 22:20:46] p8514 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:46] p8514 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32010_2001:1:1:1:0:0000:0000:0002_42010
-[06-08 22:20:53] p9391 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:53] p9391 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0003_32004_2001:1:1:1:0:0000:0000:0000_42004
-[06-08 22:20:58] p9334 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:20:58] p9334 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32017_2001:1:1:1:0:0000:0003:0000_42017
-[06-08 22:21:13] p9306 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:13] p9306 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32015_2001:1:1:1:0:0000:0003:0000_42015
-[06-08 22:21:21] p8152 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:21] p8152 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0000_32008_2001:1:1:1:0:0000:0000:0001_42008
-[06-08 22:21:23] p8365 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:23] p8365 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0001_32008_2001:1:1:1:0:0000:0002:0002_42008
-[06-08 22:21:23] p8339 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:23] p8339 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0001_32007_2001:1:1:1:0:0000:0002:0002_42007
-[06-08 22:21:25] p7885 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:25] p7885 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0000_32008_2001:1:1:1:0:0000:0002:0001_42008
-[06-08 22:21:27] p9323 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:27] p9323 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32016_2001:1:1:1:0:0000:0003:0000_42016
-[06-08 22:21:31] p7894 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:31] p7894 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0000_32010_2001:1:1:1:0:0000:0002:0001_42010
-[06-08 22:21:31] p9201 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:31] p9201 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32017_2001:1:1:1:0:0000:0001:0000_42017
-[06-08 22:21:35] p9195 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:35] p9195 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32018_2001:1:1:1:0:0000:0001:0000_42018
-[06-08 22:21:37] p8017 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:37] p8017 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0000_32007_2001:1:1:1:0:0000:0003:0001_42007
-[06-08 22:21:37] p7914 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:37] p7914 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0000_32012_2001:1:1:1:0:0000:0002:0001_42012
-[06-08 22:21:37] p8871 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:37] p8871 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32009_2001:1:1:1:0:0000:0003:0003_42009
-[06-08 22:21:40] p8100 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:40] p8100 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0000_32007_2001:1:1:1:0:0000:0000:0001_42007
-[06-08 22:21:42] p8020 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:42] p8020 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0000_32009_2001:1:1:1:0:0000:0003:0001_42009
-[06-08 22:21:45] p7824 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:45] p7824 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0000_32008_2001:1:1:1:0:0000:0001:0001_42008
-[06-08 22:21:55] p8867 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:55] p8867 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32010_2001:1:1:1:0:0000:0003:0003_42010
-[06-08 22:21:57] p8427 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:57] p8427 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0001_32010_2001:1:1:1:0:0000:0003:0002_42010
-[06-08 22:21:58] p8055 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:21:58] p8055 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0000_32010_2001:1:1:1:0:0000:0003:0001_42010
-[06-08 22:22:01] p8111 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:22:01] p8111 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0000_32009_2001:1:1:1:0:0000:0000:0001_42009
-[06-08 22:22:09] p8531 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:22:09] p8531 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32011_2001:1:1:1:0:0000:0000:0002_42011
-[06-08 22:22:09] p7913 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:22:09] p7913 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0000_32011_2001:1:1:1:0:0000:0002:0001_42011
-[06-08 22:22:10] p8015 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:22:10] p8015 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0000_32008_2001:1:1:1:0:0000:0003:0001_42008
-[06-08 22:22:10] p7878 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:22:10] p7878 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0000_32009_2001:1:1:1:0:0000:0002:0001_42009
-[06-08 22:22:12] p8997 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:22:12] p8997 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0002_32008_2001:1:1:1:0:0000:0000:0003_42008
-[06-08 22:22:14] p9335 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:22:14] p9335 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32018_2001:1:1:1:0:0000:0003:0000_42018
-[06-08 22:22:15] p9394 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:22:15] p9394 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0003_32005_2001:1:1:1:0:0000:0000:0000_42005
-[06-08 22:22:20] p9385 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:22:20] p9385 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0003_32003_2001:1:1:1:0:0000:0000:0000_42003
-[06-08 22:22:27] p8784 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:22:27] p8784 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32015_2001:1:1:1:0:0000:0002:0003_42015
-[06-08 22:22:37] p8799 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:22:37] p8799 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32017_2001:1:1:1:0:0000:0002:0003_42017
-[06-08 22:22:41] p9347 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:22:41] p9347 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32019_2001:1:1:1:0:0000:0003:0000_42019
-[06-08 22:22:53] p8444 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:22:53] p8444 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0001_32011_2001:1:1:1:0:0000:0003:0002_42011
-[06-08 22:23:05] p9396 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:23:05] p9396 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0003_32006_2001:1:1:1:0:0000:0000:0000_42006
-[06-08 22:23:13] p8875 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:23:13] p8875 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32011_2001:1:1:1:0:0000:0003:0003_42011
-[06-08 22:23:22] p9346 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:23:22] p9346 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32020_2001:1:1:1:0:0000:0003:0000_42020
-[06-08 22:23:25] p8114 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:23:25] p8114 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0000_32010_2001:1:1:1:0:0000:0000:0001_42010
-[06-08 22:23:34] p9164 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:23:34] p9164 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0003_32008_2001:1:1:1:0:0000:0002:0000_42008
-[06-08 22:23:36] p9412 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:23:36] p9412 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0003_32008_2001:1:1:1:0:0000:0000:0000_42008
-[06-08 22:23:56] p8880 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:23:56] p8880 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32012_2001:1:1:1:0:0000:0003:0003_42012
-[06-08 22:24:10] p8441 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:24:10] p8441 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0001_32013_2001:1:1:1:0:0000:0003:0002_42013
-[06-08 22:25:04] p8224 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:25:04] p8224 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0001_32010_2001:1:1:1:0:0000:0001:0002_42010
-[06-08 22:25:21] p8154 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:25:21] p8154 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0000_32011_2001:1:1:1:0:0000:0000:0001_42011
-[06-08 22:25:43] p8619 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:25:43] p8619 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0002_32010_2001:1:1:1:0:0000:0001:0003_42010
-[06-08 22:26:05] p8234 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:26:05] p8234 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0001_32011_2001:1:1:1:0:0000:0001:0002_42011
-[06-08 22:26:10] p8831 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:26:10] p8831 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0002_32019_2001:1:1:1:0:0000:0002:0003_42019
-[06-08 22:26:25] p8878 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:26:25] p8878 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32013_2001:1:1:1:0:0000:0003:0003_42013
-[06-08 22:26:47] p9213 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:26:47] p9213 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0003_32019_2001:1:1:1:0:0000:0001:0000_42019
-[06-08 22:26:51] p8624 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:26:51] p8624 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0002_32012_2001:1:1:1:0:0000:0001:0003_42012
-[06-08 22:26:53] p9351 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:26:53] p9351 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32021_2001:1:1:1:0:0000:0003:0000_42021
-[06-08 22:26:53] p8568 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:26:53] p8568 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32016_2001:1:1:1:0:0000:0000:0002_42016
-[06-08 22:26:59] p8373 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:26:59] p8373 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0001_32011_2001:1:1:1:0:0000:0002:0002_42011
-[06-08 22:27:06] p7868 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:06] p7868 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0000_32010_2001:1:1:1:0:0000:0001:0001_42010
-[06-08 22:27:07] p7855 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:07] p7855 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0000_32009_2001:1:1:1:0:0000:0001:0001_42009
-[06-08 22:27:07] p8245 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:07] p8245 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0001_32012_2001:1:1:1:0:0000:0001:0002_42012
-[06-08 22:27:08] p8549 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:08] p8549 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32014_2001:1:1:1:0:0000:0000:0002_42014
-[06-08 22:27:15] p9192 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:15] p9192 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0003_32011_2001:1:1:1:0:0000:0002:0000_42011
-[06-08 22:27:16] p7889 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:16] p7889 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0000_32011_2001:1:1:1:0:0000:0001:0001_42011
-[06-08 22:27:18] p9413 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:18] p9413 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0003_32009_2001:1:1:1:0:0000:0000:0000_42009
-[06-08 22:27:32] p8627 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:32] p8627 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0000:0002_32011_2001:1:1:1:0:0000:0001:0003_42011
-[06-08 22:27:33] p8397 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:33] p8397 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0001_32012_2001:1:1:1:0:0000:0002:0002_42012
-[06-08 22:27:36] p9416 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:36] p9416 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0003_32011_2001:1:1:1:0:0000:0000:0000_42011
-[06-08 22:27:37] p8553 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:37] p8553 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32015_2001:1:1:1:0:0000:0000:0002_42015
-[06-08 22:27:38] p9189 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:38] p9189 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0003_32010_2001:1:1:1:0:0000:0002:0000_42010
-[06-08 22:27:44] p9414 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:44] p9414 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0003_32010_2001:1:1:1:0:0000:0000:0000_42010
-[06-08 22:27:51] p9175 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:51] p9175 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0003_32009_2001:1:1:1:0:0000:0002:0000_42009
-[06-08 22:27:55] p9222 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:55] p9222 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0003_32013_2001:1:1:1:0:0000:0002:0000_42013
-[06-08 22:27:58] p9026 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:27:58] p9026 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0002_32012_2001:1:1:1:0:0000:0000:0003_42012
-[06-08 22:28:01] p9047 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:28:01] p9047 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0002_32014_2001:1:1:1:0:0000:0000:0003_42014
-[06-08 22:28:04] p7951 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:28:04] p7951 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0000_32014_2001:1:1:1:0:0000:0002:0001_42014
-[06-08 22:28:07] p9207 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:28:07] p9207 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0003_32012_2001:1:1:1:0:0000:0002:0000_42012
-[06-08 22:28:08] p9030 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:28:08] p9030 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0002_32013_2001:1:1:1:0:0000:0000:0003_42013
-[06-08 22:28:12] p7953 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:28:12] p7953 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0001:0000_32015_2001:1:1:1:0:0000:0002:0001_42015
-[06-08 22:28:22] p9375 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:28:22] p9375 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32022_2001:1:1:1:0:0000:0003:0000_42022
-[06-08 22:28:23] p8564 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:28:23] p8564 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0003:0001_32017_2001:1:1:1:0:0000:0000:0002_42017
-[06-08 22:28:42] p9384 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:28:42] p9384 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32025_2001:1:1:1:0:0000:0003:0000_42025
-[06-08 22:28:47] p9372 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:28:47] p9372 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32024_2001:1:1:1:0:0000:0003:0000_42024
-[06-08 22:28:47] p8896 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:28:47] p8896 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32016_2001:1:1:1:0:0000:0003:0003_42016
-[06-08 22:28:50] p8459 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:28:50] p8459 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0001_32014_2001:1:1:1:0:0000:0003:0002_42014
-[06-08 22:29:01] p8890 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:29:01] p8890 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32014_2001:1:1:1:0:0000:0003:0003_42014
-[06-08 22:29:02] p8893 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:29:02] p8893 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0002_32015_2001:1:1:1:0:0000:0003:0003_42015
-[06-08 22:29:09] p8072 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:29:09] p8072 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0000_32011_2001:1:1:1:0:0000:0003:0001_42011
-[06-08 22:29:10] p9376 {./MininetSimulator/Client.py:49} INFO - Data sending complete
-[06-08 22:29:10] p9376 {./MininetSimulator/Client.py:57} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.4/2001:1:1:1:0:0000:0002:0003_32023_2001:1:1:1:0:0000:0003:0000_42023
+[06-09 20:00:08] p15273 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42004
+[06-09 20:00:08] p15273 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:08] p15273 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32004_2001:1:1:1:0:0000:0001:0003_42004
+[06-09 20:00:11] p15208 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42003
+[06-09 20:00:11] p15208 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:11] p15208 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32003_2001:1:1:1:0:0000:0000:0002_42003
+[06-09 20:00:12] p15586 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42001
+[06-09 20:00:12] p15586 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:12] p15586 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32001_2001:1:1:1:0:0000:0002:0000_42001
+[06-09 20:00:12] p15505 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42005
+[06-09 20:00:13] p15172 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42006
+[06-09 20:00:18] p15355 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42004
+[06-09 20:00:18] p15355 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:18] p15355 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32004_2001:1:1:1:0:0000:0002:0003_42004
+[06-09 20:00:21] p14974 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42001
+[06-09 20:00:21] p14974 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:21] p14974 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32001_2001:1:1:1:0:0000:0000:0001_42001
+[06-09 20:00:24] p15505 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:24] p15505 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32005_2001:1:1:1:0:0000:0000:0003_42005
+[06-09 20:00:26] p15180 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42007
+[06-09 20:00:27] p15383 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42001
+[06-09 20:00:27] p15383 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:27] p15383 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32001_2001:1:1:1:0:0000:0003:0003_42001
+[06-09 20:00:29] p15523 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42001
+[06-09 20:00:29] p15523 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:29] p15523 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32001_2001:1:1:1:0:0000:0001:0000_42001
+[06-09 20:00:30] p15009 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42005
+[06-09 20:00:30] p15600 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42002
+[06-09 20:00:30] p15600 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:30] p15600 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32002_2001:1:1:1:0:0000:0002:0000_42002
+[06-09 20:00:31] p15009 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:31] p15009 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32005_2001:1:1:1:0:0000:0001:0002_42005
+[06-09 20:00:34] p15568 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42006
+[06-09 20:00:36] p14787 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0001 at port 42001
+[06-09 20:00:36] p14787 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:36] p14787 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0000_32001_2001:1:1:1:0:0000:0001:0001_42001
+[06-09 20:00:36] p15568 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:36] p15568 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32006_2001:1:1:1:0:0000:0001:0000_42006
+[06-09 20:00:36] p14864 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42001
+[06-09 20:00:36] p14864 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:36] p14864 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32001_2001:1:1:1:0:0000:0003:0001_42001
+[06-09 20:00:36] p15392 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42002
+[06-09 20:00:36] p15392 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:36] p15392 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32002_2001:1:1:1:0:0000:0003:0003_42002
+[06-09 20:00:38] p15710 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42009
+[06-09 20:00:39] p15097 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42001
+[06-09 20:00:39] p15097 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:39] p15097 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32001_2001:1:1:1:0:0000:0002:0002_42001
+[06-09 20:00:40] p15164 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42003
+[06-09 20:00:40] p15180 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:40] p15180 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0001_32007_2001:1:1:1:0:0000:0003:0002_42007
+[06-09 20:00:40] p15172 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:40] p15172 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0001_32006_2001:1:1:1:0:0000:0003:0002_42006
+[06-09 20:00:41] p14812 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42001
+[06-09 20:00:41] p14812 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:41] p14812 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32001_2001:1:1:1:0:0000:0002:0001_42001
+[06-09 20:00:41] p14843 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42005
+[06-09 20:00:43] p15164 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:43] p15164 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0001_32003_2001:1:1:1:0:0000:0003:0002_42003
+[06-09 20:00:43] p14843 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:43] p14843 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32005_2001:1:1:1:0:0000:0002:0001_42005
+[06-09 20:00:43] p15412 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42004
+[06-09 20:00:43] p15095 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42002
+[06-09 20:00:43] p15095 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:43] p15095 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32002_2001:1:1:1:0:0000:0002:0002_42002
+[06-09 20:00:46] p15710 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:46] p15710 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32009_2001:1:1:1:0:0000:0000:0000_42009
+[06-09 20:00:48] p15100 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42003
+[06-09 20:00:48] p15100 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:48] p15100 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32003_2001:1:1:1:0:0000:0002:0002_42003
+[06-09 20:00:49] p15537 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42002
+[06-09 20:00:49] p15537 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:49] p15537 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32002_2001:1:1:1:0:0000:0001:0000_42002
+[06-09 20:00:49] p14979 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42004
+[06-09 20:00:50] p14796 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0001 at port 42003
+[06-09 20:00:50] p15101 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42004
+[06-09 20:00:50] p15101 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:50] p15101 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32004_2001:1:1:1:0:0000:0002:0002_42004
+[06-09 20:00:51] p15105 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42006
+[06-09 20:00:52] p14979 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:52] p14979 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32004_2001:1:1:1:0:0000:0000:0001_42004
+[06-09 20:00:52] p14796 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:52] p14796 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0000_32003_2001:1:1:1:0:0000:0001:0001_42003
+[06-09 20:00:54] p15001 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42002
+[06-09 20:00:54] p15105 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:54] p15105 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32006_2001:1:1:1:0:0000:0002:0002_42006
+[06-09 20:00:54] p15001 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:54] p15001 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32002_2001:1:1:1:0:0000:0001:0002_42002
+[06-09 20:00:55] p15644 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42001
+[06-09 20:00:55] p15644 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:55] p15644 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0003_32001_2001:1:1:1:0:0000:0003:0000_42001
+[06-09 20:00:55] p15664 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42003
+[06-09 20:00:56] p15188 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42001
+[06-09 20:00:56] p15188 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:56] p15188 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32001_2001:1:1:1:0:0000:0000:0002_42001
+[06-09 20:00:58] p15486 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42001
+[06-09 20:00:58] p15486 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:58] p15486 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32001_2001:1:1:1:0:0000:0000:0003_42001
+[06-09 20:00:59] p15620 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42003
+[06-09 20:00:59] p15620 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:00:59] p15620 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32003_2001:1:1:1:0:0000:0002:0000_42003
+[06-09 20:01:00] p15288 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42005
+[06-09 20:01:00] p15204 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42004
+[06-09 20:01:01] p15288 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:01] p15288 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32005_2001:1:1:1:0:0000:0001:0003_42005
+[06-09 20:01:01] p15412 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:01] p15412 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32004_2001:1:1:1:0:0000:0003:0003_42004
+[06-09 20:01:02] p15156 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42004
+[06-09 20:01:02] p15262 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42001
+[06-09 20:01:02] p15262 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:02] p15262 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32001_2001:1:1:1:0:0000:0001:0003_42001
+[06-09 20:01:03] p15156 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:03] p15156 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0001_32004_2001:1:1:1:0:0000:0003:0002_42004
+[06-09 20:01:04] p15677 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42004
+[06-09 20:01:06] p15261 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42002
+[06-09 20:01:06] p15261 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:06] p15261 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32002_2001:1:1:1:0:0000:0001:0003_42002
+[06-09 20:01:09] p15622 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42004
+[06-09 20:01:09] p15622 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:09] p15622 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32004_2001:1:1:1:0:0000:0002:0000_42004
+[06-09 20:01:11] p15630 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42007
+[06-09 20:01:11] p15143 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42001
+[06-09 20:01:11] p15143 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:11] p15143 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0001_32001_2001:1:1:1:0:0000:0003:0002_42001
+[06-09 20:01:12] p15189 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42002
+[06-09 20:01:12] p15189 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:12] p15189 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32002_2001:1:1:1:0:0000:0000:0002_42002
+[06-09 20:01:13] p14860 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42007
+[06-09 20:01:13] p14823 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42002
+[06-09 20:01:13] p14823 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:13] p14823 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32002_2001:1:1:1:0:0000:0002:0001_42002
+[06-09 20:01:13] p15630 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:13] p15630 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32007_2001:1:1:1:0:0000:0002:0000_42007
+[06-09 20:01:15] p15274 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42003
+[06-09 20:01:15] p15274 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:15] p15274 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32003_2001:1:1:1:0:0000:0001:0003_42003
+[06-09 20:01:16] p15647 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42008
+[06-09 20:01:16] p15386 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42007
+[06-09 20:01:18] p15700 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42006
+[06-09 20:01:18] p15664 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:18] p15664 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0003_32003_2001:1:1:1:0:0000:0003:0000_42003
+[06-09 20:01:20] p15700 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:20] p15700 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32006_2001:1:1:1:0:0000:0000:0000_42006
+[06-09 20:01:21] p14977 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42002
+[06-09 20:01:21] p14977 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:21] p14977 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32002_2001:1:1:1:0:0000:0000:0001_42002
+[06-09 20:01:23] p15647 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:23] p15647 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32008_2001:1:1:1:0:0000:0002:0000_42008
+[06-09 20:01:24] p15688 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42001
+[06-09 20:01:24] p15688 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:24] p15688 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32001_2001:1:1:1:0:0000:0000:0000_42001
+[06-09 20:01:25] p15535 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42003
+[06-09 20:01:25] p15535 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:25] p15535 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32003_2001:1:1:1:0:0000:0001:0000_42003
+[06-09 20:01:26] p15621 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42005
+[06-09 20:01:26] p15621 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:26] p15621 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32005_2001:1:1:1:0:0000:0002:0000_42005
+[06-09 20:01:26] p15340 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42001
+[06-09 20:01:26] p15340 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:26] p15340 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32001_2001:1:1:1:0:0000:0002:0003_42001
+[06-09 20:01:26] p15407 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42005
+[06-09 20:01:27] p15000 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42003
+[06-09 20:01:28] p15000 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:28] p15000 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32003_2001:1:1:1:0:0000:0001:0002_42003
+[06-09 20:01:31] p15674 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42005
+[06-09 20:01:33] p15407 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:33] p15407 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32005_2001:1:1:1:0:0000:0003:0003_42005
+[06-09 20:01:34] p15008 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42007
+[06-09 20:01:37] p15284 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42006
+[06-09 20:01:37] p15008 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:37] p15008 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32007_2001:1:1:1:0:0000:0001:0002_42007
+[06-09 20:01:38] p15635 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42009
+[06-09 20:01:39] p14829 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42003
+[06-09 20:01:39] p14829 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:39] p14829 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32003_2001:1:1:1:0:0000:0002:0001_42003
+[06-09 20:01:40] p15544 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42004
+[06-09 20:01:40] p15544 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:40] p15544 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32004_2001:1:1:1:0:0000:0001:0000_42004
+[06-09 20:01:41] p14870 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42002
+[06-09 20:01:41] p14870 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:41] p14870 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32002_2001:1:1:1:0:0000:0003:0001_42002
+[06-09 20:01:43] p15702 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42007
+[06-09 20:01:43] p15489 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42002
+[06-09 20:01:43] p15489 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:43] p15489 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32002_2001:1:1:1:0:0000:0000:0003_42002
+[06-09 20:01:44] p14790 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0001 at port 42002
+[06-09 20:01:44] p14790 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:44] p14790 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0000_32002_2001:1:1:1:0:0000:0001:0001_42002
+[06-09 20:01:46] p15226 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42005
+[06-09 20:01:46] p15119 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42007
+[06-09 20:01:47] p15702 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:47] p15702 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32007_2001:1:1:1:0:0000:0000:0000_42007
+[06-09 20:01:47] p15005 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42004
+[06-09 20:01:48] p15119 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:48] p15119 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32007_2001:1:1:1:0:0000:0002:0002_42007
+[06-09 20:01:48] p14885 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42006
+[06-09 20:01:48] p15402 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42008
+[06-09 20:01:49] p15364 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42005
+[06-09 20:01:50] p15005 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:50] p15005 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32004_2001:1:1:1:0:0000:0001:0002_42004
+[06-09 20:01:52] p14980 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42003
+[06-09 20:01:52] p14980 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:52] p14980 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32003_2001:1:1:1:0:0000:0000:0001_42003
+[06-09 20:01:53] p15364 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:53] p15364 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32005_2001:1:1:1:0:0000:0002:0003_42005
+[06-09 20:01:56] p15193 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42008
+[06-09 20:01:56] p15226 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:56] p15226 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32005_2001:1:1:1:0:0000:0000:0002_42005
+[06-09 20:01:56] p15706 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42008
+[06-09 20:01:58] p15218 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42009
+[06-09 20:01:59] p15706 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:59] p15706 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32008_2001:1:1:1:0:0000:0000:0000_42008
+[06-09 20:01:59] p14871 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42003
+[06-09 20:01:59] p14871 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:01:59] p14871 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32003_2001:1:1:1:0:0000:0003:0001_42003
+[06-09 20:02:00] p15552 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0000 at port 42005
+[06-09 20:02:00] p15552 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:00] p15552 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0003_32005_2001:1:1:1:0:0000:0001:0000_42005
+[06-09 20:02:02] p15332 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42002
+[06-09 20:02:02] p15332 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:02] p15332 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32002_2001:1:1:1:0:0000:0002:0003_42002
+[06-09 20:02:02] p15689 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42002
+[06-09 20:02:02] p15689 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:02] p15689 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32002_2001:1:1:1:0:0000:0000:0000_42002
+[06-09 20:02:03] p14983 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42005
+[06-09 20:02:03] p15494 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42003
+[06-09 20:02:04] p14983 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:04] p14983 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32005_2001:1:1:1:0:0000:0000:0001_42005
+[06-09 20:02:04] p14981 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0001 at port 42006
+[06-09 20:02:06] p15290 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0003 at port 42007
+[06-09 20:02:06] p15168 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42005
+[06-09 20:02:06] p15711 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42010
+[06-09 20:02:07] p15204 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:07] p15204 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32004_2001:1:1:1:0:0000:0000:0002_42004
+[06-09 20:02:07] p14876 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42005
+[06-09 20:02:08] p15168 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:08] p15168 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0001_32005_2001:1:1:1:0:0000:0003:0002_42005
+[06-09 20:02:08] p15393 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0003 at port 42003
+[06-09 20:02:08] p15393 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:08] p15393 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0002_32003_2001:1:1:1:0:0000:0003:0003_42003
+[06-09 20:02:08] p15011 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42008
+[06-09 20:02:09] p15006 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42001
+[06-09 20:02:09] p15006 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:09] p15006 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32001_2001:1:1:1:0:0000:0001:0002_42001
+[06-09 20:02:09] p15103 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42005
+[06-09 20:02:09] p15103 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:09] p15103 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32005_2001:1:1:1:0:0000:0002:0002_42005
+[06-09 20:02:11] p15691 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42003
+[06-09 20:02:11] p15691 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:11] p15691 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32003_2001:1:1:1:0:0000:0000:0000_42003
+[06-09 20:02:12] p15380 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42006
+[06-09 20:02:13] p15290 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:13] p15290 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32007_2001:1:1:1:0:0000:0001:0003_42007
+[06-09 20:02:13] p15651 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0000 at port 42002
+[06-09 20:02:13] p15651 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:13] p15651 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0003_32002_2001:1:1:1:0:0000:0003:0000_42002
+[06-09 20:02:16] p14885 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:16] p14885 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32006_2001:1:1:1:0:0000:0003:0001_42006
+[06-09 20:02:16] p15111 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0002 at port 42008
+[06-09 20:02:16] p15626 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0000 at port 42006
+[06-09 20:02:16] p15626 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:16] p15626 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32006_2001:1:1:1:0:0000:0002:0000_42006
+[06-09 20:02:17] p15147 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0002 at port 42002
+[06-09 20:02:17] p15147 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:17] p15147 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0001_32002_2001:1:1:1:0:0000:0003:0002_42002
+[06-09 20:02:17] p15693 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42004
+[06-09 20:02:17] p15693 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:17] p15693 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32004_2001:1:1:1:0:0000:0000:0000_42004
+[06-09 20:02:21] p15701 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0000 at port 42005
+[06-09 20:02:21] p15701 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:21] p15701 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32005_2001:1:1:1:0:0000:0000:0000_42005
+[06-09 20:02:21] p14849 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42006
+[06-09 20:02:22] p14849 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:22] p14849 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32006_2001:1:1:1:0:0000:0002:0001_42006
+[06-09 20:02:23] p15231 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0002 at port 42006
+[06-09 20:02:24] p15495 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0000:0003 at port 42004
+[06-09 20:02:27] p15495 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:27] p15495 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32004_2001:1:1:1:0:0000:0000:0003_42004
+[06-09 20:02:27] p14860 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:27] p14860 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32007_2001:1:1:1:0:0000:0002:0001_42007
+[06-09 20:02:28] p14855 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0001 at port 42004
+[06-09 20:02:28] p14855 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:28] p14855 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0000_32004_2001:1:1:1:0:0000:0002:0001_42004
+[06-09 20:02:30] p14880 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0003:0001 at port 42004
+[06-09 20:02:30] p14880 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:30] p14880 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32004_2001:1:1:1:0:0000:0003:0001_42004
+[06-09 20:02:32] p15343 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0002:0003 at port 42003
+[06-09 20:02:32] p15343 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:32] p15343 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32003_2001:1:1:1:0:0000:0002:0003_42003
+[06-09 20:02:32] p15380 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:32] p15380 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32006_2001:1:1:1:0:0000:0002:0003_42006
+[06-09 20:02:33] p15012 {./MininetSimulator/Client.py:49} INFO - Connected to server :2001:1:1:1:0:0000:0001:0002 at port 42006
+[06-09 20:02:35] p14876 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:35] p14876 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0000_32005_2001:1:1:1:0:0000:0003:0001_42005
+[06-09 20:02:35] p15012 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:35] p15012 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32006_2001:1:1:1:0:0000:0001:0002_42006
+[06-09 20:02:39] p15193 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:39] p15193 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0001_32008_2001:1:1:1:0:0000:0003:0002_42008
+[06-09 20:02:46] p15111 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:46] p15111 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0001_32008_2001:1:1:1:0:0000:0002:0002_42008
+[06-09 20:02:48] p15677 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:48] p15677 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0003_32004_2001:1:1:1:0:0000:0003:0000_42004
+[06-09 20:02:57] p15494 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:57] p15494 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0002_32003_2001:1:1:1:0:0000:0000:0003_42003
+[06-09 20:02:57] p15218 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:02:57] p15218 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0001_32009_2001:1:1:1:0:0000:0003:0002_42009
+[06-09 20:03:00] p14981 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:03:00] p14981 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0000_32006_2001:1:1:1:0:0000:0000:0001_42006
+[06-09 20:03:02] p15284 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:03:02] p15284 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0002_32006_2001:1:1:1:0:0000:0001:0003_42006
+[06-09 20:03:18] p15635 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:03:18] p15635 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0003_32009_2001:1:1:1:0:0000:0002:0000_42009
+[06-09 20:03:19] p15011 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:03:19] p15011 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0000:0001_32008_2001:1:1:1:0:0000:0001:0002_42008
+[06-09 20:03:21] p15711 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:03:21] p15711 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0003_32010_2001:1:1:1:0:0000:0000:0000_42010
+[06-09 20:03:35] p15402 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:03:35] p15402 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32008_2001:1:1:1:0:0000:0002:0003_42008
+[06-09 20:03:42] p15386 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:03:42] p15386 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0001:0002_32007_2001:1:1:1:0:0000:0002:0003_42007
+[06-09 20:03:44] p15231 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:03:44] p15231 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0003:0001_32006_2001:1:1:1:0:0000:0000:0002_42006
+[06-09 20:03:48] p15674 {./MininetSimulator/Client.py:53} INFO - Data sending complete
+[06-09 20:03:48] p15674 {./MininetSimulator/Client.py:61} INFO - Result file is /home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/WebSearchWorkLoad_load_factor_0.2/2001:1:1:1:0:0000:0002:0003_32005_2001:1:1:1:0:0000:0003:0000_42005

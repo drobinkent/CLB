@@ -45,6 +45,7 @@ class StatisticsPuller:
     def __init__(self, nameToSwitchMap, devName):
         self.isRunning = True
         self.nameToSwitchMap = nameToSwitchMap
+        self.devName = devName
         self.p4dev  = self.nameToSwitchMap.get(devName)
         f =  open(ConfConst.CONTROLLER_STATISTICS_RESULT_FILE_PATH+self.p4dev .devName+".json", mode='a', buffering=1024)
         self.nameToSwitchMap.get(devName).controllerStatsFile = f

@@ -705,6 +705,11 @@ tables {
     id: 24146118
   }
   action_refs {
+    id: 27157483
+    annotations: "@defaultonly"
+    scope: DEFAULT_ONLY
+  }
+  action_refs {
     id: 21257015
     annotations: "@defaultonly"
     scope: DEFAULT_ONLY
@@ -1086,6 +1091,18 @@ actions {
     id: 24146118
     name: "IngressPipeImpl.hula_load_balancing_control_block.hula_set_upstream_egress_port"
     alias: "hula_set_upstream_egress_port"
+  }
+  params {
+    id: 1
+    name: "port_num"
+    bitwidth: 9
+  }
+}
+actions {
+  preamble {
+    id: 27157483
+    name: "IngressPipeImpl.hula_load_balancing_control_block.hula_set_upstream_default_egress_port"
+    alias: "hula_set_upstream_default_egress_port"
   }
   params {
     id: 1
