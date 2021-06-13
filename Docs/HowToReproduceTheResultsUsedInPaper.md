@@ -15,3 +15,16 @@ utilization is across the rest of the path. because we have used stride pattern 
 tor s are not using this path. 
 
 we have used this to reduce motnioring cost
+
+
+# The paper presents 4 types of results 
+
+* Average Flow completion time analysis.
+    
+    To do that run the "python3 FCTAnalyzer.py". This depends on already generated informations after executing the 
+    flows over the simulated netowrk (explained in previous steps). 
+  
+* Load imbalance analysis
+
+    This also depends on previous results (the statistics.log s collected inprevious steps). 
+    After sollecting them run the follwoing command "python3 LoadImbalanceanalyzer.py"
