@@ -191,20 +191,35 @@ def getLoadImbalanceByFolder(filePath, algorithmName, loadfactor):
         print("Exception occcured in processing load imbalance analyzer from file "+filePath+ ". Exception is ",e.with_traceback())
 
 
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/ECMP_RESULTS/STATISTICS_load_factor_0.8.log", "ECMP", 0.8)
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/ECMP_RESULTS/STATISTICS_load_factor_0.7.log", "ECMP", 0.7)
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/ECMP_RESULTS/STATISTICS_load_factor_0.5.log", "ECMP", 0.5)
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/ECMP_RESULTS/STATISTICS_load_factor_0.4.log", "ECMP", 0.4)
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/ECMP_RESULTS/STATISTICS_load_factor_0.2.log", "ECMP", 0.2)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/ECMP_RESULTS/STATISTICS_load_factor_0.8.log", "ECMP", 0.8)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/ECMP_RESULTS/STATISTICS_load_factor_0.7.log", "ECMP", 0.7)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/ECMP_RESULTS/STATISTICS_load_factor_0.5.log", "ECMP", 0.5)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/ECMP_RESULTS/STATISTICS_load_factor_0.4.log", "ECMP", 0.4)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/ECMP_RESULTS/STATISTICS_load_factor_0.2.log", "ECMP", 0.2)
 print("\n\n")
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/HULA_RESULTS/STATISTICS_load_factor_0.8.log", "HULA", 0.8)
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/HULA_RESULTS/STATISTICS_load_factor_0.7.log", "HULA", 0.7)
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/HULA_RESULTS/STATISTICS_load_factor_0.5.log", "HULA", 0.5)
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/HULA_RESULTS/STATISTICS_load_factor_0.4.log", "HULA", 0.4)
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/HULA_RESULTS/STATISTICS_load_factor_0.2.log", "HULA", 0.2)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/HULA_RESULTS/STATISTICS_load_factor_0.8.log", "HULA", 0.8)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/HULA_RESULTS/STATISTICS_load_factor_0.7.log", "HULA", 0.7)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/HULA_RESULTS/STATISTICS_load_factor_0.5.log", "HULA", 0.5)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/HULA_RESULTS/STATISTICS_load_factor_0.4.log", "HULA", 0.4)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/HULA_RESULTS/STATISTICS_load_factor_0.2.log", "HULA", 0.2)
 print("\n\n")
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/CLB_RESULTS/STATISTICS_load_factor_0.8.log", "CLB", 0.8)
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/CLB_RESULTS/STATISTICS_load_factor_0.7.log", "CLB", 0.7)
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/CLB_RESULTS/STATISTICS_load_factor_0.5.log", "CLB", 0.5)
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/CLB_RESULTS/STATISTICS_load_factor_0.4.log", "CLB", 0.4)
-getLoadImbalanceByFolder("/home/deba/Desktop/CLB/testAndMeasurement/TEST_RESULTS/CLB_RESULTS/STATISTICS_load_factor_0.2.log", "CLB", 0.2)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/CLB_RESULTS/STATISTICS_load_factor_0.8.log", "CLB", 0.8)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/CLB_RESULTS/STATISTICS_load_factor_0.7.log", "CLB", 0.7)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/CLB_RESULTS/STATISTICS_load_factor_0.5.log", "CLB", 0.5)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/CLB_RESULTS/STATISTICS_load_factor_0.4.log", "CLB", 0.4)
+getLoadImbalanceByFolder(
+    "/testAndMeasurement/TEST_RESULTS_USED_IN_PAPER/TEST_RESULTS/CLB_RESULTS/STATISTICS_load_factor_0.2.log", "CLB", 0.2)

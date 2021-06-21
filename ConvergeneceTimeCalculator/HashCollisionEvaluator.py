@@ -211,7 +211,7 @@ print("\n\n\n\n")
 # calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1048576,  totalPaths=256, precision=16,standardDeviationOfPAthWeights=.8, hashtableSize = 12800)
 #
 
-print("Load balancing 1 Tbps (1*1024*1024*1024*1024 bps incoming load at precision of 4 Mb (16*1048576) using various ")
+print("Load balancing 1 Tbps (1*1024*1024*1024*1024 bps incoming load at precision of 16 Mb (16*1048576) using various length of arrray for WeightLevelToPathIDMapping")
 # calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1*1024*1024*1024*1024,  totalPaths=128, precision=4*1048576,standardDeviationOfPAthWeights=.5, hashtableSize = 1024)
 calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1*1024*1024*1024*1024,  totalPaths=128, precision=4*1048576,standardDeviationOfPAthWeights=.5, hashtableSize = 2048)
 # calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1*1024*1024*1024*1024,  totalPaths=128, precision=4*1048576,standardDeviationOfPAthWeights=.5, hashtableSize = 3072)
@@ -225,7 +225,7 @@ calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestina
 # calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1*1024*1024*1024*1024,  totalPaths=128, precision=4*1048576,standardDeviationOfPAthWeights=.8, hashtableSize = 12800)
 
 
-print("\n\bLoad balancing 1 Tbps (1*1024*1024*1024*1024 bps incoming load at precision of 8 Mb (16*1048576) using various ")
+print("Load balancing 1 Tbps (1*1024*1024*1024*1024 bps incoming load at precision of 16 Mb (16*1048576) using various length of arrray for WeightLevelToPathIDMapping")
 print("Deviation 0.5")
 
 # calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1*1024*1024*1024*1024,  totalPaths=128, precision=8*1048576,standardDeviationOfPAthWeights=.5, hashtableSize = 1024)
@@ -241,7 +241,7 @@ calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestina
 # calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1*1024*1024*1024*1024,  totalPaths=128, precision=4*1048576,standardDeviationOfPAthWeights=.5, hashtableSize = 12800)
 
 
-print("Load balancing 1 Tbps (1*1024*1024*1024*1024 bps incoming load at precision of 16 Mb (16*1048576) using various ")
+print("Load balancing 1 Tbps (1*1024*1024*1024*1024 bps incoming load at precision of 16 Mb (16*1048576) using various length of arrray for WeightLevelToPathIDMapping")
 print("Deviation 0.5")
 
 # calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1*1024*1024*1024*1024,  totalPaths=128, precision=16*1048576,standardDeviationOfPAthWeights=.5, hashtableSize = 1024)
@@ -255,3 +255,5 @@ calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestina
 # calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1*1024*1024*1024*1024,  totalPaths=128, precision=16*1048576,standardDeviationOfPAthWeights=.5, hashtableSize = 8192)
 # calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1*1024*1024*1024*1024,  totalPaths=128, precision=4*1048576,standardDeviationOfPAthWeights=.5, hashtableSize = 10240)
 # calculateHashCollision(experimentIPv6Prefix= "10:0:42:5::/96", experimentDestinationNumbers=1, experimentIteration=100, peakLoad= 1*1024*1024*1024*1024,  totalPaths=128, precision=4*1048576,standardDeviationOfPAthWeights=.5, hashtableSize = 12800)
+
+
